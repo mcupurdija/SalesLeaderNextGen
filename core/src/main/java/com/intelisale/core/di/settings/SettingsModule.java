@@ -1,4 +1,4 @@
-package com.intelisale.core.di;
+package com.intelisale.core.di.settings;
 
 import android.app.Application;
 import android.content.Context;

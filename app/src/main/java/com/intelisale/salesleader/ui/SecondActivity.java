@@ -12,4 +12,9 @@ public class SecondActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
     }
+
+    @Override
+    protected void inject() {
+
+    }
 }

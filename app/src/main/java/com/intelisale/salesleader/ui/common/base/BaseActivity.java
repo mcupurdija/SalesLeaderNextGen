@@ -10,6 +10,8 @@ import com.intelisale.salesleader.SalesLeader;
 @SuppressLint("Registered")
 public abstract class BaseActivity extends AppCompatActivity {
 
+    protected abstract void inject();
+
     public CoreComponent getCoreComponent() {
         return ((SalesLeader) getApplication()).getCoreComponent();
     }

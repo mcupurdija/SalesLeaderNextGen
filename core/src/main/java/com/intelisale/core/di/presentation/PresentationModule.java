@@ -1,4 +1,4 @@
-package com.intelisale.core.di;
+package com.intelisale.core.di.presentation;
 
 import android.app.Activity;
 import android.content.Context;

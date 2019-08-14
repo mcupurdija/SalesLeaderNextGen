@@ -1,7 +1,5 @@
 package com.intelisale.core.di;
 
-import android.app.Application;
-
 import com.intelisale.core.eventbus.EventBusPoster;
 import com.intelisale.core.eventbus.EventBusSubscriber;
 import com.intelisale.core.logging.MyLogger;
@@ -16,11 +14,11 @@ import dagger.Provides;
 @Module
 public class CoreModule {
 
-    private final Application mApplication;
-
-    public CoreModule(Application application) {
-        mApplication = application;
-    }
+//    private final Application mApplication;
+//
+//    public CoreModule(Application application) {
+//        mApplication = application;
+//    }
 
     @Singleton
     @Provides

@@ -1,7 +1,6 @@
 package com.intelisale.core.di;
 
-import com.intelisale.core.dialogFragment.DialogFragmentManager;
-import com.intelisale.core.toast.ToastManager;
+import com.intelisale.core.di.settings.SettingsModule;
 import com.intelisale.database.di.DatabaseModule;
 import com.intelisale.database.repository.UserRepository;
 import com.intelisale.networking.di.NetworkingModule;

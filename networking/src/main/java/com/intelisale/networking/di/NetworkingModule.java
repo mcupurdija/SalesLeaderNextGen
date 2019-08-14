@@ -14,6 +14,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 @Module
 public class NetworkingModule {
 
+    @Singleton
     @Provides
     Retrofit getRetrofit() {
         return new Retrofit.Builder()
@@ -23,6 +24,7 @@ public class NetworkingModule {
                 .build();
     }
 
+    @Singleton
     @Provides
     LoginApi getLoginApi(Retrofit retrofit) {
         return retrofit.create(LoginApi.class);
