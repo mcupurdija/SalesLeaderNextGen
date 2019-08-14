@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="DarkTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="colorError">@color/md_red_100</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+
+        <item name="textInputStyle">@style/TextInputStyleDark</item>
+        <item name="materialButtonStyle">@style/TextAppearanceButtonDark</item>
+    </style>
+
+    <style name="TextInputStyleDark" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    </style>
+
+    <style name="TextAppearanceButtonDark" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+</resources>

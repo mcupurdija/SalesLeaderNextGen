@@ -1,5 +1,6 @@
 package com.intelisale.salesleader.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.intelisale.core.di.presentation.PresentationModule;
@@ -20,8 +21,12 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         inject();
         setContentView(R.layout.activity_main);
-    }
 
+        try {
+            startActivity(new Intent(this, Class.forName("com.intelisale.login.LoginActivity")));
+        } catch (Exception ignored) {
+        }
+    }
 
     @Override
     protected void inject() {

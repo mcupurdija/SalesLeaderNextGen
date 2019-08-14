@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">192.168.15.13</domain>
+        <domain includeSubdomains="true">10.94.1.19</domain>
+        <domain includeSubdomains="true">100.0.0.250</domain>
+        <domain includeSubdomains="true">172.30.54.206</domain>
+        <domain includeSubdomains="true">192.168.2.84</domain>
+        <domain includeSubdomains="true">192.168.55.3</domain>
+        <domain includeSubdomains="true">213.57.112.98</domain>
+        <domain includeSubdomains="true">10.10.10.71</domain>
+        <domain includeSubdomains="true">192.168.75.3</domain>
+        <domain includeSubdomains="true">10.94.104.19</domain>
+        <domain includeSubdomains="true">sl-api.wurth.is</domain>
+    </domain-config>
+</network-security-config>

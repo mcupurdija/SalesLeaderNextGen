@@ -29,7 +29,8 @@ buildscript {
             'eventbus'      : '3.1.1',
             'glide'         : '4.9.0',
             'timber'        : '4.7.1',
-            'joda'          : '2.10.3'
+            'joda'          : '2.10.3',
+            'apache_c'      : '3.8.1'
     ]
     ext.names = [
             'applicationId': 'com.intelisale.salesleader'
