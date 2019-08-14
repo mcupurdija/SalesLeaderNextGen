@@ -36,7 +36,8 @@ public class SalesLeader extends Application {
     public CoreComponent getCoreComponent() {
         if (mCoreComponent == null) {
             mCoreComponent = DaggerCoreComponent.builder()
-                    .coreModule(new CoreModule(this))
+                    .application(this)
+                    .coreModule(new CoreModule())
                     .databaseModule(new DatabaseModule(this))
                     .networkingModule(new NetworkingModule())
                     .settingsModule(new SettingsModule())

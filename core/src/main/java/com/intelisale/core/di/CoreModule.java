@@ -1,11 +1,10 @@
 package com.intelisale.core.di;
 
-import android.app.Application;
-
 import com.intelisale.core.eventbus.EventBusPoster;
 import com.intelisale.core.eventbus.EventBusSubscriber;
 import com.intelisale.core.logging.MyLogger;
 import com.intelisale.core.useCase.LoginUseCase;
+import com.intelisale.networking.SessionManager;
 import com.intelisale.networking.api.LoginApi;
 
 import org.greenrobot.eventbus.EventBus;
@@ -17,12 +16,6 @@ import dagger.Provides;
 
 @Module
 public class CoreModule {
-
-    private final Application mApplication;
-
-    public CoreModule(Application application) {
-        mApplication = application;
-    }
 
     @Singleton
     @Provides
@@ -44,7 +37,7 @@ public class CoreModule {
 
     @Singleton
     @Provides
-    LoginUseCase loginUseCase(LoginApi loginApi) {
-        return new LoginUseCase(loginApi);
+    LoginUseCase loginUseCase(LoginApi loginApi, SessionManager sessionManager) {
+        return new LoginUseCase(loginApi, sessionManager);
     }
 }

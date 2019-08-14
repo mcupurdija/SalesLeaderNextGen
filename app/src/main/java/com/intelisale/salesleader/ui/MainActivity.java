@@ -10,12 +10,6 @@ import com.intelisale.salesleader.ui.common.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
-//    @Inject
-//    UserRepository userRepository;
-//
-//    @Inject
-//    ToastManager toastManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +20,11 @@ public class MainActivity extends BaseActivity {
             startActivity(new Intent(this, Class.forName("com.intelisale.login.LoginActivity")));
         } catch (Exception ignored) {
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override

@@ -18,4 +18,8 @@ public class SettingsManager {
         return mSettingsEntryFactory.getDataEntry(String.class, KEY_EXAMPLE_SETTING, "default");
     }
 
+    public void setExampleSetting(SettingDataEntry<String> entry, String value) {
+        entry.setValue(value);
+    }
+
 }
