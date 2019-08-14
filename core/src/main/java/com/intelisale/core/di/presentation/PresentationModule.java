@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.intelisale.core.dialog.DialogManager;
 import com.intelisale.core.dialogFragment.DialogFragmentManager;
 import com.intelisale.core.imageloader.ImageLoader;
 import com.intelisale.core.toast.ToastManager;
@@ -29,12 +30,17 @@ public class PresentationModule {
     }
 
     @Provides
-    DialogFragmentManager getDialogFragmentManager(FragmentManager fragmentManager) {
+    static DialogFragmentManager getDialogFragmentManager(FragmentManager fragmentManager) {
         return new DialogFragmentManager(fragmentManager);
     }
 
     @Provides
-    ToastManager toastManager(Context context) {
+    static DialogManager dialogManager(Context context) {
+        return new DialogManager(context);
+    }
+
+    @Provides
+    static ToastManager toastManager(Context context) {
         return new ToastManager(context);
     }
 
@@ -54,7 +60,7 @@ public class PresentationModule {
     }
 
     @Provides
-    ImageLoader imageLoader(Activity activity) {
+    static ImageLoader imageLoader(Activity activity) {
         return new ImageLoader(activity);
     }
 }

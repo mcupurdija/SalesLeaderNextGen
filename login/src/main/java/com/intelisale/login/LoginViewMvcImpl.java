@@ -4,6 +4,7 @@ import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -14,14 +15,19 @@ import org.apache.commons.lang3.StringUtils;
 
 class LoginViewMvcImpl extends BaseViewMvc<LoginViewMvc.Listener> implements LoginViewMvc {
 
+    private MaterialButton mLogin;
+    private ProgressBar mProgressBar;
+
     LoginViewMvcImpl(LayoutInflater layoutInflater, ViewGroup container) {
         setRootView(layoutInflater.inflate(R.layout.activity_login, container, false));
 
+        mLogin = findViewById(R.id.bLogin);
+        mProgressBar = findViewById(R.id.pbLogin);
         final TextInputLayout mUsernameLayout = findViewById(R.id.etlUsername);
         final TextInputEditText mUsername = findViewById(R.id.etUsername);
         final TextInputLayout mPasswordLayout = findViewById(R.id.etlPassword);
         final TextInputEditText mPassword = findViewById(R.id.etPassword);
-        final MaterialButton mLogin = findViewById(R.id.bLogin);
+
 
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,8 +55,16 @@ class LoginViewMvcImpl extends BaseViewMvc<LoginViewMvc.Listener> implements Log
                 for (Listener listener : getListeners()) {
                     listener.onLoginButtonClicked(username.toString(), password.toString());
                 }
+
+                mLogin.setEnabled(false);
+                mProgressBar.setVisibility(View.VISIBLE);
             }
         });
     }
 
+    void onLoginFailed() {
+
+        mProgressBar.setVisibility(View.GONE);
+        mLogin.setEnabled(true);
+    }
 }

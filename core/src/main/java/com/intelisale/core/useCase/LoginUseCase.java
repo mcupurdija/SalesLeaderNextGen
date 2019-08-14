@@ -18,15 +18,15 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
     public interface Listener {
         void onLoginSucceeded();
 
-        void onLoginFailed();
+        void onLoginFailed(String message);
     }
 
     private final LoginApi mLoginApi;
     private final SessionManager mSessionManager;
 
-    public LoginUseCase(LoginApi loginApi, SessionManager sessionManager) {
-        this.mLoginApi = loginApi;
-        this.mSessionManager = sessionManager;
+    public LoginUseCase(LoginApi mLoginApi, SessionManager mSessionManager) {
+        this.mLoginApi = mLoginApi;
+        this.mSessionManager = mSessionManager;
     }
 
     public void loginUser(String username, String password) {
@@ -48,7 +48,7 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
 
                     @Override
                     public void onError(Throwable e) {
-                        onLoginFailed();
+                        onLoginFailed(e.getMessage());
                     }
                 });
     }
@@ -75,7 +75,7 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
 
                     @Override
                     public void onError(Throwable e) {
-                        onLoginFailed();
+                        onLoginFailed(e.getMessage());
                     }
                 });
     }
@@ -86,9 +86,9 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
         }
     }
 
-    private void onLoginFailed() {
+    private void onLoginFailed(String message) {
         for (Listener listener : getListeners()) {
-            listener.onLoginFailed();
+            listener.onLoginFailed(message);
         }
     }
 }

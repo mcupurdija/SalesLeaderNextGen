@@ -1,29 +1,26 @@
 package com.intelisale.login;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.intelisale.core.di.presentation.PresentationModule;
+import com.intelisale.core.dialog.DialogManager;
 import com.intelisale.core.useCase.LoginUseCase;
 import com.intelisale.login.di.DaggerLoginComponent;
 import com.intelisale.salesleader.ui.common.base.BaseActivity;
 
 import javax.inject.Inject;
 
-import timber.log.Timber;
-
 public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener, LoginUseCase.Listener {
 
     @Inject
     LayoutInflater layoutInflater;
     @Inject
-    LoginUseCase mUseCase;
+    DialogManager mDialogManager;
     @Inject
-    Context mContext;
+    LoginUseCase mUseCase;
 
-    private LoginViewMvc mViewMvc;
+    private LoginViewMvcImpl mViewMvc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,16 +61,12 @@ public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener
 
     @Override
     public void onLoginSucceeded() {
-        new MaterialAlertDialogBuilder(mContext)
-                .setTitle("Title")
-                .setMessage("Message")
-                .setPositiveButton("Ok", null)
-                .show();
-        Timber.d("onLoginSucceeded");
+        finish();
     }
 
     @Override
-    public void onLoginFailed() {
-        Timber.d("onLoginFailed");
+    public void onLoginFailed(String message) {
+        mViewMvc.onLoginFailed();
+        mDialogManager.showAlertDialog(message);
     }
 }
