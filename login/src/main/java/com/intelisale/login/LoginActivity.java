@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 
 import com.intelisale.core.di.presentation.PresentationModule;
-import com.intelisale.core.dialog.DialogManager;
+import com.intelisale.core.notifications.DialogManager;
 import com.intelisale.core.useCase.LoginUseCase;
 import com.intelisale.login.di.DaggerLoginComponent;
 import com.intelisale.salesleader.ui.common.base.BaseActivity;
@@ -20,7 +20,7 @@ public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener
     @Inject
     LoginUseCase mUseCase;
 
-    private LoginViewMvcImpl mViewMvc;
+    private LoginViewMvc mViewMvc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +55,17 @@ public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener
     }
 
     @Override
+    public void onBackPressed() {
+    }
+
+    @Override
     public void onLoginButtonClicked(String username, String password) {
         mUseCase.loginUser(username, password);
     }
 
     @Override
     public void onLoginSucceeded() {
+        setResult(RESULT_OK);
         finish();
     }
 

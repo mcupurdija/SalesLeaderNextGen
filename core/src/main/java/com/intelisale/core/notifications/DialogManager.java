@@ -1,4 +1,4 @@
-package com.intelisale.core.dialog;
+package com.intelisale.core.notifications;
 
 import android.content.Context;
 

@@ -1,5 +1,6 @@
 package com.intelisale.core.useCase;
 
+import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.ui.BaseObservable;
 import com.intelisale.networking.SessionManager;
 import com.intelisale.networking.api.LoginApi;
@@ -22,11 +23,13 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
     }
 
     private final LoginApi mLoginApi;
+    private final SettingsManager mSettingsManager;
     private final SessionManager mSessionManager;
 
-    public LoginUseCase(LoginApi mLoginApi, SessionManager mSessionManager) {
+    public LoginUseCase(LoginApi mLoginApi, SettingsManager settingsManager, SessionManager sessionManager) {
         this.mLoginApi = mLoginApi;
-        this.mSessionManager = mSessionManager;
+        this.mSettingsManager = settingsManager;
+        this.mSessionManager = sessionManager;
     }
 
     public void loginUser(String username, String password) {
@@ -42,7 +45,9 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
                     @Override
                     public void onSuccess(LoginSchema loginSchema) {
 
+                        mSettingsManager.setToken(loginSchema.getToken());
                         mSessionManager.setToken(loginSchema.getToken());
+
                         getUserDetails();
                     }
 
@@ -68,7 +73,10 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
 
                         if (userDetails.getSuccess()) {
 
+                            mSettingsManager.setUserData("");
+                            mSettingsManager.setUserLogged(true);
                             mSessionManager.setUserDetailsSchema(userDetails.getData());
+
                             onLoginSucceeded();
                         }
                     }

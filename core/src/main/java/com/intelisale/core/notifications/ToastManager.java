@@ -1,4 +1,4 @@
-package com.intelisale.core.toast;
+package com.intelisale.core.notifications;
 
 import android.content.Context;
 import android.view.Gravity;

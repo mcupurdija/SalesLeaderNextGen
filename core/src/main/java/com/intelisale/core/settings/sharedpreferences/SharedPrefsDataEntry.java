@@ -37,7 +37,7 @@ abstract class SharedPrefsDataEntry<T> extends SettingDataEntry<T> implements
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        notifyListeners(key, getValue());
+        notifyListeners(getValue());
     }
 
 }

@@ -56,7 +56,7 @@ public abstract class SettingDataEntry<T> {
      */
     protected void onLastListenerUnregistered() {}
 
-    protected void notifyListeners(String key, T value){
+    protected void notifyListeners(T value){
         final List<SettingDataEntryChangeListener<T>> listenersCopy;
         synchronized (mListeners) {
             listenersCopy = new ArrayList<>(mListeners);

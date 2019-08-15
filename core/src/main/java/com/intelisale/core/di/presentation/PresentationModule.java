@@ -7,10 +7,10 @@ import android.view.LayoutInflater;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.intelisale.core.dialog.DialogManager;
 import com.intelisale.core.dialogFragment.DialogFragmentManager;
 import com.intelisale.core.imageloader.ImageLoader;
-import com.intelisale.core.toast.ToastManager;
+import com.intelisale.core.notifications.DialogManager;
+import com.intelisale.core.notifications.ToastManager;
 
 import dagger.Module;
 import dagger.Provides;

@@ -3,6 +3,7 @@ package com.intelisale.core.di;
 import com.intelisale.core.eventbus.EventBusPoster;
 import com.intelisale.core.eventbus.EventBusSubscriber;
 import com.intelisale.core.logging.MyLogger;
+import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.useCase.LoginUseCase;
 import com.intelisale.networking.SessionManager;
 import com.intelisale.networking.api.LoginApi;
@@ -37,7 +38,7 @@ public class CoreModule {
 
     @Singleton
     @Provides
-    LoginUseCase loginUseCase(LoginApi loginApi, SessionManager sessionManager) {
-        return new LoginUseCase(loginApi, sessionManager);
+    LoginUseCase loginUseCase(LoginApi loginApi, SettingsManager settingsManager, SessionManager sessionManager) {
+        return new LoginUseCase(loginApi, settingsManager, sessionManager);
     }
 }

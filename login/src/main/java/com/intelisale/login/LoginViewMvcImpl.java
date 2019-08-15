@@ -1,10 +1,13 @@
 package com.intelisale.login;
 
 import android.text.Editable;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -13,56 +16,73 @@ import com.intelisale.core.ui.BaseViewMvc;
 
 import org.apache.commons.lang3.StringUtils;
 
-class LoginViewMvcImpl extends BaseViewMvc<LoginViewMvc.Listener> implements LoginViewMvc {
+class LoginViewMvcImpl extends BaseViewMvc<LoginViewMvc.Listener> implements LoginViewMvc, TextView.OnEditorActionListener, View.OnClickListener {
 
+    private TextInputLayout mUsernameLayout;
+    private TextInputEditText mUsername;
+    private TextInputLayout mPasswordLayout;
+    private TextInputEditText mPassword;
     private MaterialButton mLogin;
     private ProgressBar mProgressBar;
 
     LoginViewMvcImpl(LayoutInflater layoutInflater, ViewGroup container) {
         setRootView(layoutInflater.inflate(R.layout.activity_login, container, false));
 
+        mUsernameLayout = findViewById(R.id.etlUsername);
+        mUsername = findViewById(R.id.etUsername);
+        mPasswordLayout = findViewById(R.id.etlPassword);
+        mPassword = findViewById(R.id.etPassword);
         mLogin = findViewById(R.id.bLogin);
         mProgressBar = findViewById(R.id.pbLogin);
-        final TextInputLayout mUsernameLayout = findViewById(R.id.etlUsername);
-        final TextInputEditText mUsername = findViewById(R.id.etUsername);
-        final TextInputLayout mPasswordLayout = findViewById(R.id.etlPassword);
-        final TextInputEditText mPassword = findViewById(R.id.etPassword);
 
-
-        mLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Editable username = mUsername.getText();
-                Editable password = mPassword.getText();
-
-                if (StringUtils.isBlank(username)) {
-                    mUsernameLayout.setError("You need to fill out this field");
-                    mUsernameLayout.requestFocus();
-                    return;
-                } else {
-                    mUsernameLayout.setError(null);
-                }
-
-                if (StringUtils.isEmpty(password)) {
-                    mPasswordLayout.setError("You need to fill out this field");
-                    mPasswordLayout.requestFocus();
-                    return;
-                } else {
-                    mPasswordLayout.setError(null);
-                }
-
-                for (Listener listener : getListeners()) {
-                    listener.onLoginButtonClicked(username.toString(), password.toString());
-                }
-
-                mLogin.setEnabled(false);
-                mProgressBar.setVisibility(View.VISIBLE);
-            }
-        });
+        mPassword.setOnEditorActionListener(this);
+        mLogin.setOnClickListener(this);
     }
 
-    void onLoginFailed() {
+    @Override
+    public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+        if (i == EditorInfo.IME_ACTION_DONE) {
+            onLogin();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onClick(View view) {
+        onLogin();
+    }
+
+    public void onLogin() {
+
+        Editable username = mUsername.getText();
+        Editable password = mPassword.getText();
+
+        if (StringUtils.isBlank(username)) {
+            mUsernameLayout.setError("You need to fill out this field");
+            mUsernameLayout.requestFocus();
+            return;
+        } else {
+            mUsernameLayout.setError(null);
+        }
+
+        if (StringUtils.isEmpty(password)) {
+            mPasswordLayout.setError("You need to fill out this field");
+            mPasswordLayout.requestFocus();
+            return;
+        } else {
+            mPasswordLayout.setError(null);
+        }
+
+        for (Listener listener : getListeners()) {
+            listener.onLoginButtonClicked(username.toString(), password.toString());
+        }
+
+        mLogin.setEnabled(false);
+        mProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    public void onLoginFailed() {
 
         mProgressBar.setVisibility(View.GONE);
         mLogin.setEnabled(true);
