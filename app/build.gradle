@@ -22,7 +22,9 @@ android {
         }
     }
 
-    dynamicFeatures = [":login"]
+    dynamicFeatures = [":login", ":sync"]
+
+
 }
 
 dependencies {
@@ -31,4 +33,5 @@ dependencies {
     implementation project(':core')
     implementation project(':database')
     implementation project(':networking')
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
 }

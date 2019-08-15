@@ -18,7 +18,7 @@ public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener
     @Inject
     DialogManager mDialogManager;
     @Inject
-    LoginUseCase mUseCase;
+    LoginUseCase mLoginUseCase;
 
     private LoginViewMvc mViewMvc;
 
@@ -44,14 +44,14 @@ public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener
     protected void onStart() {
         super.onStart();
         mViewMvc.registerListener(this);
-        mUseCase.registerListener(this);
+        mLoginUseCase.registerListener(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         mViewMvc.unregisterListener(this);
-        mUseCase.unregisterListener(this);
+        mLoginUseCase.unregisterListener(this);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener
 
     @Override
     public void onLoginButtonClicked(String username, String password) {
-        mUseCase.loginUser(username, password);
+        mLoginUseCase.loginUser(username, password);
     }
 
     @Override

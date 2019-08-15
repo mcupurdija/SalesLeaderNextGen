@@ -1,4 +1,4 @@
-package com.intelisale.core.imageloader;
+package com.intelisale.core.imageLoader;
 
 import android.app.Activity;
 import android.widget.ImageView;

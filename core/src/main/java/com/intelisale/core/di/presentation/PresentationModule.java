@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import com.intelisale.core.dialogFragment.DialogFragmentManager;
-import com.intelisale.core.imageloader.ImageLoader;
+import com.intelisale.core.imageLoader.ImageLoader;
 import com.intelisale.core.notifications.DialogManager;
 import com.intelisale.core.notifications.ToastManager;
 
