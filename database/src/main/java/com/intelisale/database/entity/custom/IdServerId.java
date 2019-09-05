@@ -2,22 +2,22 @@ package com.intelisale.database.entity.custom;
 
 public class IdServerId {
 
-    private int id;
-    private int serverId;
+    private Integer id;
+    private Integer serverId;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getServerId() {
+    public Integer getServerId() {
         return serverId;
     }
 
-    public void setServerId(int serverId) {
+    public void setServerId(Integer serverId) {
         this.serverId = serverId;
     }
 }

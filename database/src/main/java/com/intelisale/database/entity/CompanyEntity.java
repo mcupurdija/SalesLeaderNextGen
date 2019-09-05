@@ -11,8 +11,8 @@ public class CompanyEntity extends BaseAuditColumns {
     private String companyAddress;
     private String companyCity;
     private String companyPostCode;
-    private boolean disableLogin;
-    private boolean validateVisits;
+    private Boolean disableLogin;
+    private Boolean validateVisits;
 
     public String getCompanyName() {
         return companyName;
@@ -46,19 +46,19 @@ public class CompanyEntity extends BaseAuditColumns {
         this.companyPostCode = companyPostCode;
     }
 
-    public boolean isDisableLogin() {
+    public Boolean isDisableLogin() {
         return disableLogin;
     }
 
-    public void setDisableLogin(boolean disableLogin) {
+    public void setDisableLogin(Boolean disableLogin) {
         this.disableLogin = disableLogin;
     }
 
-    public boolean isValidateVisits() {
+    public Boolean isValidateVisits() {
         return validateVisits;
     }
 
-    public void setValidateVisits(boolean validateVisits) {
+    public void setValidateVisits(Boolean validateVisits) {
         this.validateVisits = validateVisits;
     }
 }

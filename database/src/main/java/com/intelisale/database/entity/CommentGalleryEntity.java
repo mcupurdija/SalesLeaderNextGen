@@ -7,25 +7,25 @@ import com.intelisale.database.entity.column.BaseColumns;
 @Entity(tableName = "CommentsGallery")
 public class CommentGalleryEntity extends BaseColumns {
 
-    private int serverId;
-    private int commentId;
+    private Integer serverId;
+    private Integer commentId;
     private String image;
     private String file;
     private String filePath;
 
-    public int getServerId() {
+    public Integer getServerId() {
         return serverId;
     }
 
-    public void setServerId(int serverId) {
+    public void setServerId(Integer serverId) {
         this.serverId = serverId;
     }
 
-    public int getCommentId() {
+    public Integer getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(int commentId) {
+    public void setCommentId(Integer commentId) {
         this.commentId = commentId;
     }
 

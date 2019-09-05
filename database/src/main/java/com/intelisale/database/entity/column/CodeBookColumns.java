@@ -4,7 +4,7 @@ public class CodeBookColumns extends BaseAuditColumns {
 
     private String code;
     private String description;
-    private int sortIndex;
+    private Integer sortIndex;
 
     public String getCode() {
         return code;
@@ -22,11 +22,11 @@ public class CodeBookColumns extends BaseAuditColumns {
         this.description = description;
     }
 
-    public int getSortIndex() {
+    public Integer getSortIndex() {
         return sortIndex;
     }
 
-    public void setSortIndex(int sortIndex) {
+    public void setSortIndex(Integer sortIndex) {
         this.sortIndex = sortIndex;
     }
 }

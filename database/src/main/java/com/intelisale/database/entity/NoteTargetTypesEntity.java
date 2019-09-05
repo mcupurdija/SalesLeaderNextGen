@@ -4,36 +4,34 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "NotesTargetTypes")
 public class NoteTargetTypesEntity extends CodeBookColumns {
 
-    private int noteTargetGroupId;
-    private int createdByUserId;
-    private DateTime createdDate;
+    private Integer noteTargetGroupId;
+    private Integer createdByUserId;
+    private String createdDate;
 
-    public int getNoteTargetGroupId() {
+    public Integer getNoteTargetGroupId() {
         return noteTargetGroupId;
     }
 
-    public void setNoteTargetGroupId(int noteTargetGroupId) {
+    public void setNoteTargetGroupId(Integer noteTargetGroupId) {
         this.noteTargetGroupId = noteTargetGroupId;
     }
 
-    public int getCreatedByUserId() {
+    public Integer getCreatedByUserId() {
         return createdByUserId;
     }
 
-    public void setCreatedByUserId(int createdByUserId) {
+    public void setCreatedByUserId(Integer createdByUserId) {
         this.createdByUserId = createdByUserId;
     }
 
-    public DateTime getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(DateTime createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 }

@@ -4,22 +4,20 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "Visits")
 public class VisitEntity extends BaseAuditColumns {
 
-    private int visitType;
-    private int visitResult;
-    private int visitSubResultId;
-    private int visitStatus;
-    private DateTime visitDate;
-    private DateTime visitArrivalTime;
-    private DateTime visitDepartureTime;
-    private int customerId;
-    private int employeeId;
-    private int odometerValue;
-    private int customerShipToAddressId;
+    private Integer visitType;
+    private Integer visitResult;
+    private Integer visitSubResultId;
+    private Integer visitStatus;
+    private String visitDate;
+    private String visitArrivalTime;
+    private String visitDepartureTime;
+    private Integer customerId;
+    private Integer employeeId;
+    private Integer odometerValue;
+    private Integer customerShipToAddressId;
     private String description;
     private String gpsLatitude;
     private String gpsLongitude;
@@ -28,98 +26,98 @@ public class VisitEntity extends BaseAuditColumns {
     private String gpsLongitudeEnd;
     private String gpsAccuracyEnd;
     private String telephoneRealizationDuration;
-    private int plannedVisitId;
-    private int documentHeaderId;
-    private int commentId;
-    private boolean onCustomerLocation;
-    private boolean sent;
-    private boolean deleted;
+    private Integer plannedVisitId;
+    private Integer documentHeaderId;
+    private Integer commentId;
+    private Boolean onCustomerLocation;
+    private Boolean sent;
+    private Boolean deleted;
 
-    public int getVisitType() {
+    public Integer getVisitType() {
         return visitType;
     }
 
-    public void setVisitType(int visitType) {
+    public void setVisitType(Integer visitType) {
         this.visitType = visitType;
     }
 
-    public int getVisitResult() {
+    public Integer getVisitResult() {
         return visitResult;
     }
 
-    public void setVisitResult(int visitResult) {
+    public void setVisitResult(Integer visitResult) {
         this.visitResult = visitResult;
     }
 
-    public int getVisitSubResultId() {
+    public Integer getVisitSubResultId() {
         return visitSubResultId;
     }
 
-    public void setVisitSubResultId(int visitSubResultId) {
+    public void setVisitSubResultId(Integer visitSubResultId) {
         this.visitSubResultId = visitSubResultId;
     }
 
-    public int getVisitStatus() {
+    public Integer getVisitStatus() {
         return visitStatus;
     }
 
-    public void setVisitStatus(int visitStatus) {
+    public void setVisitStatus(Integer visitStatus) {
         this.visitStatus = visitStatus;
     }
 
-    public DateTime getVisitDate() {
+    public String getVisitDate() {
         return visitDate;
     }
 
-    public void setVisitDate(DateTime visitDate) {
+    public void setVisitDate(String visitDate) {
         this.visitDate = visitDate;
     }
 
-    public DateTime getVisitArrivalTime() {
+    public String getVisitArrivalTime() {
         return visitArrivalTime;
     }
 
-    public void setVisitArrivalTime(DateTime visitArrivalTime) {
+    public void setVisitArrivalTime(String visitArrivalTime) {
         this.visitArrivalTime = visitArrivalTime;
     }
 
-    public DateTime getVisitDepartureTime() {
+    public String getVisitDepartureTime() {
         return visitDepartureTime;
     }
 
-    public void setVisitDepartureTime(DateTime visitDepartureTime) {
+    public void setVisitDepartureTime(String visitDepartureTime) {
         this.visitDepartureTime = visitDepartureTime;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public int getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
-    public int getOdometerValue() {
+    public Integer getOdometerValue() {
         return odometerValue;
     }
 
-    public void setOdometerValue(int odometerValue) {
+    public void setOdometerValue(Integer odometerValue) {
         this.odometerValue = odometerValue;
     }
 
-    public int getCustomerShipToAddressId() {
+    public Integer getCustomerShipToAddressId() {
         return customerShipToAddressId;
     }
 
-    public void setCustomerShipToAddressId(int customerShipToAddressId) {
+    public void setCustomerShipToAddressId(Integer customerShipToAddressId) {
         this.customerShipToAddressId = customerShipToAddressId;
     }
 
@@ -187,51 +185,51 @@ public class VisitEntity extends BaseAuditColumns {
         this.telephoneRealizationDuration = telephoneRealizationDuration;
     }
 
-    public int getPlannedVisitId() {
+    public Integer getPlannedVisitId() {
         return plannedVisitId;
     }
 
-    public void setPlannedVisitId(int plannedVisitId) {
+    public void setPlannedVisitId(Integer plannedVisitId) {
         this.plannedVisitId = plannedVisitId;
     }
 
-    public int getDocumentHeaderId() {
+    public Integer getDocumentHeaderId() {
         return documentHeaderId;
     }
 
-    public void setDocumentHeaderId(int documentHeaderId) {
+    public void setDocumentHeaderId(Integer documentHeaderId) {
         this.documentHeaderId = documentHeaderId;
     }
 
-    public int getCommentId() {
+    public Integer getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(int commentId) {
+    public void setCommentId(Integer commentId) {
         this.commentId = commentId;
     }
 
-    public boolean isOnCustomerLocation() {
+    public Boolean isOnCustomerLocation() {
         return onCustomerLocation;
     }
 
-    public void setOnCustomerLocation(boolean onCustomerLocation) {
+    public void setOnCustomerLocation(Boolean onCustomerLocation) {
         this.onCustomerLocation = onCustomerLocation;
     }
 
-    public boolean isSent() {
+    public Boolean isSent() {
         return sent;
     }
 
-    public void setSent(boolean sent) {
+    public void setSent(Boolean sent) {
         this.sent = sent;
     }
 
-    public boolean isDeleted() {
+    public Boolean isDeleted() {
         return deleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
     }
 }

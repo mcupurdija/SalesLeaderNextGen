@@ -4,61 +4,59 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "SaleOrderHeaders")
 public class SaleOrderHeaderEntity extends BaseAuditColumns {
 
-    private int documentTypeId;
+    private Integer documentTypeId;
     private String salesDocumentDeviceNo;
     private String salesDocumentNo;
-    private int customerId;
-    private DateTime documentDate;
-    private int warehouseId;
-    private int visitId;
+    private Integer customerId;
+    private String documentDate;
+    private Integer warehouseId;
+    private Integer visitId;
     private String externalDocumentNo;
-    private int createdByUserId;
-    private int employeeId;
-    private int customerShipToAddressId;
-    private int paymentMethodId;
-    private int customerPaymentConditionId;
-    private int shipmentMethodId;
-    private int contactId;
+    private Integer createdByUserId;
+    private Integer employeeId;
+    private Integer customerShipToAddressId;
+    private Integer paymentMethodId;
+    private Integer customerPaymentConditionId;
+    private Integer shipmentMethodId;
+    private Integer contactId;
     private String sellToContact;
     private String sellToContactPhone;
     private String quoteNo;
-    private int backOrderShipmentStatusId;
-    private boolean hideDiscountOnInvoice;
+    private Integer backOrderShipmentStatusId;
+    private Boolean hideDiscountOnInvoice;
     private String emailForSendingDocument;
-    private double totalLinesAmount;
-    private double totalDiscount;
-    private double invoiceDiscountPercent;
-    private double invoiceDiscAmountWithoutVAT;
-    private double invoiceDiscAmountWithVAT;
-    private double totalAmountWithoutVAT;
-    private double totalAmountWithVAT;
-    private DateTime requestedDeliveryDate;
+    private Double totalLinesAmount;
+    private Double totalDiscount;
+    private Double invoiceDiscountPercent;
+    private Double invoiceDiscAmountWithoutVAT;
+    private Double invoiceDiscAmountWithVAT;
+    private Double totalAmountWithoutVAT;
+    private Double totalAmountWithVAT;
+    private String requestedDeliveryDate;
     private String documentValidUntil;
-    private int salesDocumentConditionId;
-    private int salesDocumentTypeId;
-    private int pricesIncludedVAT;
+    private Integer salesDocumentConditionId;
+    private Integer salesDocumentTypeId;
+    private Integer pricesIncludedVAT;
     private String noteInternal;
     private String noteForCustomer;
-    private int documentVerificationStatusId;
-    private int selectedFromAllItemsCounter;
-    private int timeOnThePhone;
-    private double currMaxDiscountTotalAmountDifference;
-    private DateTime documentSentDate;
-    private boolean declaration;
-    private boolean discountUsed;
-    private boolean verified;
-    private boolean sent;
+    private Integer documentVerificationStatusId;
+    private Integer selectedFromAllItemsCounter;
+    private Integer timeOnThePhone;
+    private Double currMaxDiscountTotalAmountDifference;
+    private String documentSentDate;
+    private Boolean declaration;
+    private Boolean discountUsed;
+    private Boolean verified;
+    private Boolean sent;
 
-    public int getDocumentTypeId() {
+    public Integer getDocumentTypeId() {
         return documentTypeId;
     }
 
-    public void setDocumentTypeId(int documentTypeId) {
+    public void setDocumentTypeId(Integer documentTypeId) {
         this.documentTypeId = documentTypeId;
     }
 
@@ -78,35 +76,35 @@ public class SaleOrderHeaderEntity extends BaseAuditColumns {
         this.salesDocumentNo = salesDocumentNo;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public DateTime getDocumentDate() {
+    public String getDocumentDate() {
         return documentDate;
     }
 
-    public void setDocumentDate(DateTime documentDate) {
+    public void setDocumentDate(String documentDate) {
         this.documentDate = documentDate;
     }
 
-    public int getWarehouseId() {
+    public Integer getWarehouseId() {
         return warehouseId;
     }
 
-    public void setWarehouseId(int warehouseId) {
+    public void setWarehouseId(Integer warehouseId) {
         this.warehouseId = warehouseId;
     }
 
-    public int getVisitId() {
+    public Integer getVisitId() {
         return visitId;
     }
 
-    public void setVisitId(int visitId) {
+    public void setVisitId(Integer visitId) {
         this.visitId = visitId;
     }
 
@@ -118,59 +116,59 @@ public class SaleOrderHeaderEntity extends BaseAuditColumns {
         this.externalDocumentNo = externalDocumentNo;
     }
 
-    public int getCreatedByUserId() {
+    public Integer getCreatedByUserId() {
         return createdByUserId;
     }
 
-    public void setCreatedByUserId(int createdByUserId) {
+    public void setCreatedByUserId(Integer createdByUserId) {
         this.createdByUserId = createdByUserId;
     }
 
-    public int getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
-    public int getCustomerShipToAddressId() {
+    public Integer getCustomerShipToAddressId() {
         return customerShipToAddressId;
     }
 
-    public void setCustomerShipToAddressId(int customerShipToAddressId) {
+    public void setCustomerShipToAddressId(Integer customerShipToAddressId) {
         this.customerShipToAddressId = customerShipToAddressId;
     }
 
-    public int getPaymentMethodId() {
+    public Integer getPaymentMethodId() {
         return paymentMethodId;
     }
 
-    public void setPaymentMethodId(int paymentMethodId) {
+    public void setPaymentMethodId(Integer paymentMethodId) {
         this.paymentMethodId = paymentMethodId;
     }
 
-    public int getCustomerPaymentConditionId() {
+    public Integer getCustomerPaymentConditionId() {
         return customerPaymentConditionId;
     }
 
-    public void setCustomerPaymentConditionId(int customerPaymentConditionId) {
+    public void setCustomerPaymentConditionId(Integer customerPaymentConditionId) {
         this.customerPaymentConditionId = customerPaymentConditionId;
     }
 
-    public int getShipmentMethodId() {
+    public Integer getShipmentMethodId() {
         return shipmentMethodId;
     }
 
-    public void setShipmentMethodId(int shipmentMethodId) {
+    public void setShipmentMethodId(Integer shipmentMethodId) {
         this.shipmentMethodId = shipmentMethodId;
     }
 
-    public int getContactId() {
+    public Integer getContactId() {
         return contactId;
     }
 
-    public void setContactId(int contactId) {
+    public void setContactId(Integer contactId) {
         this.contactId = contactId;
     }
 
@@ -198,19 +196,19 @@ public class SaleOrderHeaderEntity extends BaseAuditColumns {
         this.quoteNo = quoteNo;
     }
 
-    public int getBackOrderShipmentStatusId() {
+    public Integer getBackOrderShipmentStatusId() {
         return backOrderShipmentStatusId;
     }
 
-    public void setBackOrderShipmentStatusId(int backOrderShipmentStatusId) {
+    public void setBackOrderShipmentStatusId(Integer backOrderShipmentStatusId) {
         this.backOrderShipmentStatusId = backOrderShipmentStatusId;
     }
 
-    public boolean isHideDiscountOnInvoice() {
+    public Boolean isHideDiscountOnInvoice() {
         return hideDiscountOnInvoice;
     }
 
-    public void setHideDiscountOnInvoice(boolean hideDiscountOnInvoice) {
+    public void setHideDiscountOnInvoice(Boolean hideDiscountOnInvoice) {
         this.hideDiscountOnInvoice = hideDiscountOnInvoice;
     }
 
@@ -222,67 +220,67 @@ public class SaleOrderHeaderEntity extends BaseAuditColumns {
         this.emailForSendingDocument = emailForSendingDocument;
     }
 
-    public double getTotalLinesAmount() {
+    public Double getTotalLinesAmount() {
         return totalLinesAmount;
     }
 
-    public void setTotalLinesAmount(double totalLinesAmount) {
+    public void setTotalLinesAmount(Double totalLinesAmount) {
         this.totalLinesAmount = totalLinesAmount;
     }
 
-    public double getTotalDiscount() {
+    public Double getTotalDiscount() {
         return totalDiscount;
     }
 
-    public void setTotalDiscount(double totalDiscount) {
+    public void setTotalDiscount(Double totalDiscount) {
         this.totalDiscount = totalDiscount;
     }
 
-    public double getInvoiceDiscountPercent() {
+    public Double getInvoiceDiscountPercent() {
         return invoiceDiscountPercent;
     }
 
-    public void setInvoiceDiscountPercent(double invoiceDiscountPercent) {
+    public void setInvoiceDiscountPercent(Double invoiceDiscountPercent) {
         this.invoiceDiscountPercent = invoiceDiscountPercent;
     }
 
-    public double getInvoiceDiscAmountWithoutVAT() {
+    public Double getInvoiceDiscAmountWithoutVAT() {
         return invoiceDiscAmountWithoutVAT;
     }
 
-    public void setInvoiceDiscAmountWithoutVAT(double invoiceDiscAmountWithoutVAT) {
+    public void setInvoiceDiscAmountWithoutVAT(Double invoiceDiscAmountWithoutVAT) {
         this.invoiceDiscAmountWithoutVAT = invoiceDiscAmountWithoutVAT;
     }
 
-    public double getInvoiceDiscAmountWithVAT() {
+    public Double getInvoiceDiscAmountWithVAT() {
         return invoiceDiscAmountWithVAT;
     }
 
-    public void setInvoiceDiscAmountWithVAT(double invoiceDiscAmountWithVAT) {
+    public void setInvoiceDiscAmountWithVAT(Double invoiceDiscAmountWithVAT) {
         this.invoiceDiscAmountWithVAT = invoiceDiscAmountWithVAT;
     }
 
-    public double getTotalAmountWithoutVAT() {
+    public Double getTotalAmountWithoutVAT() {
         return totalAmountWithoutVAT;
     }
 
-    public void setTotalAmountWithoutVAT(double totalAmountWithoutVAT) {
+    public void setTotalAmountWithoutVAT(Double totalAmountWithoutVAT) {
         this.totalAmountWithoutVAT = totalAmountWithoutVAT;
     }
 
-    public double getTotalAmountWithVAT() {
+    public Double getTotalAmountWithVAT() {
         return totalAmountWithVAT;
     }
 
-    public void setTotalAmountWithVAT(double totalAmountWithVAT) {
+    public void setTotalAmountWithVAT(Double totalAmountWithVAT) {
         this.totalAmountWithVAT = totalAmountWithVAT;
     }
 
-    public DateTime getRequestedDeliveryDate() {
+    public String getRequestedDeliveryDate() {
         return requestedDeliveryDate;
     }
 
-    public void setRequestedDeliveryDate(DateTime requestedDeliveryDate) {
+    public void setRequestedDeliveryDate(String requestedDeliveryDate) {
         this.requestedDeliveryDate = requestedDeliveryDate;
     }
 
@@ -294,27 +292,27 @@ public class SaleOrderHeaderEntity extends BaseAuditColumns {
         this.documentValidUntil = documentValidUntil;
     }
 
-    public int getSalesDocumentConditionId() {
+    public Integer getSalesDocumentConditionId() {
         return salesDocumentConditionId;
     }
 
-    public void setSalesDocumentConditionId(int salesDocumentConditionId) {
+    public void setSalesDocumentConditionId(Integer salesDocumentConditionId) {
         this.salesDocumentConditionId = salesDocumentConditionId;
     }
 
-    public int getSalesDocumentTypeId() {
+    public Integer getSalesDocumentTypeId() {
         return salesDocumentTypeId;
     }
 
-    public void setSalesDocumentTypeId(int salesDocumentTypeId) {
+    public void setSalesDocumentTypeId(Integer salesDocumentTypeId) {
         this.salesDocumentTypeId = salesDocumentTypeId;
     }
 
-    public int getPricesIncludedVAT() {
+    public Integer getPricesIncludedVAT() {
         return pricesIncludedVAT;
     }
 
-    public void setPricesIncludedVAT(int pricesIncludedVAT) {
+    public void setPricesIncludedVAT(Integer pricesIncludedVAT) {
         this.pricesIncludedVAT = pricesIncludedVAT;
     }
 
@@ -334,75 +332,75 @@ public class SaleOrderHeaderEntity extends BaseAuditColumns {
         this.noteForCustomer = noteForCustomer;
     }
 
-    public int getDocumentVerificationStatusId() {
+    public Integer getDocumentVerificationStatusId() {
         return documentVerificationStatusId;
     }
 
-    public void setDocumentVerificationStatusId(int documentVerificationStatusId) {
+    public void setDocumentVerificationStatusId(Integer documentVerificationStatusId) {
         this.documentVerificationStatusId = documentVerificationStatusId;
     }
 
-    public int getSelectedFromAllItemsCounter() {
+    public Integer getSelectedFromAllItemsCounter() {
         return selectedFromAllItemsCounter;
     }
 
-    public void setSelectedFromAllItemsCounter(int selectedFromAllItemsCounter) {
+    public void setSelectedFromAllItemsCounter(Integer selectedFromAllItemsCounter) {
         this.selectedFromAllItemsCounter = selectedFromAllItemsCounter;
     }
 
-    public int getTimeOnThePhone() {
+    public Integer getTimeOnThePhone() {
         return timeOnThePhone;
     }
 
-    public void setTimeOnThePhone(int timeOnThePhone) {
+    public void setTimeOnThePhone(Integer timeOnThePhone) {
         this.timeOnThePhone = timeOnThePhone;
     }
 
-    public double getCurrMaxDiscountTotalAmountDifference() {
+    public Double getCurrMaxDiscountTotalAmountDifference() {
         return currMaxDiscountTotalAmountDifference;
     }
 
-    public void setCurrMaxDiscountTotalAmountDifference(double currMaxDiscountTotalAmountDifference) {
+    public void setCurrMaxDiscountTotalAmountDifference(Double currMaxDiscountTotalAmountDifference) {
         this.currMaxDiscountTotalAmountDifference = currMaxDiscountTotalAmountDifference;
     }
 
-    public DateTime getDocumentSentDate() {
+    public String getDocumentSentDate() {
         return documentSentDate;
     }
 
-    public void setDocumentSentDate(DateTime documentSentDate) {
+    public void setDocumentSentDate(String documentSentDate) {
         this.documentSentDate = documentSentDate;
     }
 
-    public boolean isDeclaration() {
+    public Boolean isDeclaration() {
         return declaration;
     }
 
-    public void setDeclaration(boolean declaration) {
+    public void setDeclaration(Boolean declaration) {
         this.declaration = declaration;
     }
 
-    public boolean isDiscountUsed() {
+    public Boolean isDiscountUsed() {
         return discountUsed;
     }
 
-    public void setDiscountUsed(boolean discountUsed) {
+    public void setDiscountUsed(Boolean discountUsed) {
         this.discountUsed = discountUsed;
     }
 
-    public boolean isVerified() {
+    public Boolean isVerified() {
         return verified;
     }
 
-    public void setVerified(boolean verified) {
+    public void setVerified(Boolean verified) {
         this.verified = verified;
     }
 
-    public boolean isSent() {
+    public Boolean isSent() {
         return sent;
     }
 
-    public void setSent(boolean sent) {
+    public void setSent(Boolean sent) {
         this.sent = sent;
     }
 }

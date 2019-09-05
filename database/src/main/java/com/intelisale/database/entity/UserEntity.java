@@ -12,8 +12,8 @@ public class UserEntity extends BaseAuditColumns {
     private String name;
     private String password;
     private String lastPassword;
-    private int companyId;
-    private int employeeId;
+    private Integer companyId;
+    private Integer employeeId;
 
     public String getFirstName() {
         return firstName;
@@ -55,19 +55,19 @@ public class UserEntity extends BaseAuditColumns {
         this.lastPassword = lastPassword;
     }
 
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(int companyId) {
+    public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
     }
 
-    public int getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 

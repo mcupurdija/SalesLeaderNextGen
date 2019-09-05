@@ -7,130 +7,130 @@ import com.intelisale.database.entity.column.BaseColumns;
 @Entity(tableName = "SalesLeaderItemsSoldToCustomerMonthlyTmp")
 public class SalesLeaderItemSoldToCustomerMonthlyTmpEntity extends BaseColumns {
 
-    private int itemId;
-    private double m1Qty;
-    private double m2Qty;
-    private double m3Qty;
-    private double m4Qty;
-    private double m5Qty;
-    private double m6Qty;
-    private double m7Qty;
-    private double m8Qty;
-    private double m9Qty;
-    private double m10Qty;
-    private double m11Qty;
-    private double m12Qty;
-    private double total;
+    private Integer itemId;
+    private Double m1Qty;
+    private Double m2Qty;
+    private Double m3Qty;
+    private Double m4Qty;
+    private Double m5Qty;
+    private Double m6Qty;
+    private Double m7Qty;
+    private Double m8Qty;
+    private Double m9Qty;
+    private Double m10Qty;
+    private Double m11Qty;
+    private Double m12Qty;
+    private Double total;
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
-    public double getM1Qty() {
+    public Double getM1Qty() {
         return m1Qty;
     }
 
-    public void setM1Qty(double m1Qty) {
+    public void setM1Qty(Double m1Qty) {
         this.m1Qty = m1Qty;
     }
 
-    public double getM2Qty() {
+    public Double getM2Qty() {
         return m2Qty;
     }
 
-    public void setM2Qty(double m2Qty) {
+    public void setM2Qty(Double m2Qty) {
         this.m2Qty = m2Qty;
     }
 
-    public double getM3Qty() {
+    public Double getM3Qty() {
         return m3Qty;
     }
 
-    public void setM3Qty(double m3Qty) {
+    public void setM3Qty(Double m3Qty) {
         this.m3Qty = m3Qty;
     }
 
-    public double getM4Qty() {
+    public Double getM4Qty() {
         return m4Qty;
     }
 
-    public void setM4Qty(double m4Qty) {
+    public void setM4Qty(Double m4Qty) {
         this.m4Qty = m4Qty;
     }
 
-    public double getM5Qty() {
+    public Double getM5Qty() {
         return m5Qty;
     }
 
-    public void setM5Qty(double m5Qty) {
+    public void setM5Qty(Double m5Qty) {
         this.m5Qty = m5Qty;
     }
 
-    public double getM6Qty() {
+    public Double getM6Qty() {
         return m6Qty;
     }
 
-    public void setM6Qty(double m6Qty) {
+    public void setM6Qty(Double m6Qty) {
         this.m6Qty = m6Qty;
     }
 
-    public double getM7Qty() {
+    public Double getM7Qty() {
         return m7Qty;
     }
 
-    public void setM7Qty(double m7Qty) {
+    public void setM7Qty(Double m7Qty) {
         this.m7Qty = m7Qty;
     }
 
-    public double getM8Qty() {
+    public Double getM8Qty() {
         return m8Qty;
     }
 
-    public void setM8Qty(double m8Qty) {
+    public void setM8Qty(Double m8Qty) {
         this.m8Qty = m8Qty;
     }
 
-    public double getM9Qty() {
+    public Double getM9Qty() {
         return m9Qty;
     }
 
-    public void setM9Qty(double m9Qty) {
+    public void setM9Qty(Double m9Qty) {
         this.m9Qty = m9Qty;
     }
 
-    public double getM10Qty() {
+    public Double getM10Qty() {
         return m10Qty;
     }
 
-    public void setM10Qty(double m10Qty) {
+    public void setM10Qty(Double m10Qty) {
         this.m10Qty = m10Qty;
     }
 
-    public double getM11Qty() {
+    public Double getM11Qty() {
         return m11Qty;
     }
 
-    public void setM11Qty(double m11Qty) {
+    public void setM11Qty(Double m11Qty) {
         this.m11Qty = m11Qty;
     }
 
-    public double getM12Qty() {
+    public Double getM12Qty() {
         return m12Qty;
     }
 
-    public void setM12Qty(double m12Qty) {
+    public void setM12Qty(Double m12Qty) {
         this.m12Qty = m12Qty;
     }
 
-    public double getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 }

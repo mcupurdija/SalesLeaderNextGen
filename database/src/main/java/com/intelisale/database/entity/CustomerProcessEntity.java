@@ -7,22 +7,22 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "CustomerProcesses")
 public class CustomerProcessEntity extends CodeBookColumns {
 
-    private int processId;
-    private int customerID;
+    private Integer processId;
+    private Integer customerID;
 
-    public int getProcessId() {
+    public Integer getProcessId() {
         return processId;
     }
 
-    public void setProcessId(int processId) {
+    public void setProcessId(Integer processId) {
         this.processId = processId;
     }
 
-    public int getCustomerID() {
+    public Integer getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(int customerID) {
+    public void setCustomerID(Integer customerID) {
         this.customerID = customerID;
     }
 }

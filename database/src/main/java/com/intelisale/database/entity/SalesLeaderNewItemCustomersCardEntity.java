@@ -7,13 +7,13 @@ import com.intelisale.database.entity.column.ItemsCustomersCardColumns;
 @Entity(tableName = "SalesLeaderNewItemsCustomersCard")
 public class SalesLeaderNewItemCustomersCardEntity extends ItemsCustomersCardColumns {
 
-    private int groupsOfCustomerId;
+    private Integer groupsOfCustomerId;
 
-    public int getGroupsOfCustomerId() {
+    public Integer getGroupsOfCustomerId() {
         return groupsOfCustomerId;
     }
 
-    public void setGroupsOfCustomerId(int groupsOfCustomerId) {
+    public void setGroupsOfCustomerId(Integer groupsOfCustomerId) {
         this.groupsOfCustomerId = groupsOfCustomerId;
     }
 }

@@ -4,24 +4,22 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "NotesAttachments")
 public class NoteAttachmentsEntity extends BaseAuditColumns {
 
-    private int noteId;
+    private Integer noteId;
     private String filePath;
     private String devicePath;
-    private DateTime createdDate;
-    private int typeId;
-    private boolean deletedFromDevice;
-    private boolean sent;
+    private String createdDate;
+    private Integer typeId;
+    private Boolean deletedFromDevice;
+    private Boolean sent;
 
-    public int getNoteId() {
+    public Integer getNoteId() {
         return noteId;
     }
 
-    public void setNoteId(int noteId) {
+    public void setNoteId(Integer noteId) {
         this.noteId = noteId;
     }
 
@@ -41,35 +39,35 @@ public class NoteAttachmentsEntity extends BaseAuditColumns {
         this.devicePath = devicePath;
     }
 
-    public DateTime getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(DateTime createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 
-    public int getTypeId() {
+    public Integer getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(int typeId) {
+    public void setTypeId(Integer typeId) {
         this.typeId = typeId;
     }
 
-    public boolean isDeletedFromDevice() {
+    public Boolean isDeletedFromDevice() {
         return deletedFromDevice;
     }
 
-    public void setDeletedFromDevice(boolean deletedFromDevice) {
+    public void setDeletedFromDevice(Boolean deletedFromDevice) {
         this.deletedFromDevice = deletedFromDevice;
     }
 
-    public boolean isSent() {
+    public Boolean isSent() {
         return sent;
     }
 
-    public void setSent(boolean sent) {
+    public void setSent(Boolean sent) {
         this.sent = sent;
     }
 }

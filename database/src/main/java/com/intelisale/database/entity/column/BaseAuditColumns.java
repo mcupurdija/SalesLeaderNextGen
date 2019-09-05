@@ -1,64 +1,59 @@
 package com.intelisale.database.entity.column;
 
-import com.intelisale.database.utils.DateUtils;
-
-import org.joda.time.DateTime;
+import androidx.room.ColumnInfo;
 
 public class BaseAuditColumns extends BaseColumns {
 
-    private int serverId;
-//    private int financialEntityId;
-    private String modifiedDate;
-    private int auditId;
-    private int modifiedByUserId;
-    private boolean active;
+    private Integer serverId;
 
-    public int getServerId() {
+    private Integer modifiedByUserId;
+
+    @ColumnInfo(defaultValue = "1970-01-01T00:00:00.000")
+    private String modifiedDate;
+
+    @ColumnInfo(defaultValue = "0")
+    private Integer auditId;
+
+    @ColumnInfo(defaultValue = "1")
+    private Boolean active;
+
+    public Integer getServerId() {
         return serverId;
     }
 
-    public void setServerId(int serverId) {
+    public void setServerId(Integer serverId) {
         this.serverId = serverId;
     }
 
-//    public int getFinancialEntityId() {
-//        return financialEntityId;
-//    }
-//
-//    public void setFinancialEntityId(int financialEntityId) {
-//        this.financialEntityId = financialEntityId;
-//    }
+    public Integer getModifiedByUserId() {
+        return modifiedByUserId;
+    }
+
+    public void setModifiedByUserId(Integer modifiedByUserId) {
+        this.modifiedByUserId = modifiedByUserId;
+    }
 
     public String getModifiedDate() {
-        if (modifiedDate != null) return modifiedDate;
-        return DateUtils.formatDateTime(new DateTime(1970, 1, 1, 0, 0, 0));
+        return modifiedDate;
     }
 
     public void setModifiedDate(String modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
 
-    public int getAuditId() {
+    public Integer getAuditId() {
         return auditId;
     }
 
-    public void setAuditId(int auditId) {
+    public void setAuditId(Integer auditId) {
         this.auditId = auditId;
     }
 
-    public int getModifiedByUserId() {
-        return modifiedByUserId;
-    }
-
-    public void setModifiedByUserId(int modifiedByUserId) {
-        this.modifiedByUserId = modifiedByUserId;
-    }
-
-    public boolean isActive() {
+    public Boolean isActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 }

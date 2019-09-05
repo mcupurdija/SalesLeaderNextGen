@@ -7,31 +7,31 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "SalesLeaderShelvesPerCustomers")
 public class SalesLeaderShelvePerCustomersEntity extends CodeBookColumns {
 
-    private int shelfItemId;
-    private int customerId;
-    private boolean shelfIsORSY100;
+    private Integer shelfItemId;
+    private Integer customerId;
+    private Boolean shelfIsORSY100;
 
-    public int getShelfItemId() {
+    public Integer getShelfItemId() {
         return shelfItemId;
     }
 
-    public void setShelfItemId(int shelfItemId) {
+    public void setShelfItemId(Integer shelfItemId) {
         this.shelfItemId = shelfItemId;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public boolean isShelfIsORSY100() {
+    public Boolean isShelfIsORSY100() {
         return shelfIsORSY100;
     }
 
-    public void setShelfIsORSY100(boolean shelfIsORSY100) {
+    public void setShelfIsORSY100(Boolean shelfIsORSY100) {
         this.shelfIsORSY100 = shelfIsORSY100;
     }
 }

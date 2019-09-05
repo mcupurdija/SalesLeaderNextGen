@@ -7,24 +7,24 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "SalesLeaderCategoriesAllowedToCustomer")
 public class SalesLeaderCategoryAllowedToCustomerEntity extends CodeBookColumns {
 
-    private int categoryOfItemsId;
-    private int salesLeaderSalesLevelTypeId;
+    private Integer categoryOfItemsId;
+    private Integer salesLeaderSalesLevelTypeId;
     private String salesLevelCode;
-    private int sourceTable;
+    private Integer sourceTable;
 
-    public int getCategoryOfItemsId() {
+    public Integer getCategoryOfItemsId() {
         return categoryOfItemsId;
     }
 
-    public void setCategoryOfItemsId(int categoryOfItemsId) {
+    public void setCategoryOfItemsId(Integer categoryOfItemsId) {
         this.categoryOfItemsId = categoryOfItemsId;
     }
 
-    public int getSalesLeaderSalesLevelTypeId() {
+    public Integer getSalesLeaderSalesLevelTypeId() {
         return salesLeaderSalesLevelTypeId;
     }
 
-    public void setSalesLeaderSalesLevelTypeId(int salesLeaderSalesLevelTypeId) {
+    public void setSalesLeaderSalesLevelTypeId(Integer salesLeaderSalesLevelTypeId) {
         this.salesLeaderSalesLevelTypeId = salesLeaderSalesLevelTypeId;
     }
 
@@ -36,11 +36,11 @@ public class SalesLeaderCategoryAllowedToCustomerEntity extends CodeBookColumns 
         this.salesLevelCode = salesLevelCode;
     }
 
-    public int getSourceTable() {
+    public Integer getSourceTable() {
         return sourceTable;
     }
 
-    public void setSourceTable(int sourceTable) {
+    public void setSourceTable(Integer sourceTable) {
         this.sourceTable = sourceTable;
     }
 }

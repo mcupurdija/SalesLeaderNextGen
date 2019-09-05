@@ -2,103 +2,103 @@ package com.intelisale.database.entity.column;
 
 public class ItemsCustomersCardColumns extends BaseAuditColumns {
 
-    private int itemId;
-    private int customerId;
-    private int branchMapRang;
-    private int squareColor;
-    private boolean soldInCurrentMonth;
-    private boolean itemHasTAForCustomer;
-    private boolean ovsItem;
-    private boolean itemIsComponentOfPackage;
-    private boolean itemHasCampaign;
-    private boolean itemIncludedForCustomer;
-    private int sortIndex;
+    private Integer itemId;
+    private Integer customerId;
+    private Integer branchMapRang;
+    private Integer squareColor;
+    private Boolean soldInCurrentMonth;
+    private Boolean itemHasTAForCustomer;
+    private Boolean ovsItem;
+    private Boolean itemIsComponentOfPackage;
+    private Boolean itemHasCampaign;
+    private Boolean itemIncludedForCustomer;
+    private Integer sortIndex;
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public int getBranchMapRang() {
+    public Integer getBranchMapRang() {
         return branchMapRang;
     }
 
-    public void setBranchMapRang(int branchMapRang) {
+    public void setBranchMapRang(Integer branchMapRang) {
         this.branchMapRang = branchMapRang;
     }
 
-    public int getSquareColor() {
+    public Integer getSquareColor() {
         return squareColor;
     }
 
-    public void setSquareColor(int squareColor) {
+    public void setSquareColor(Integer squareColor) {
         this.squareColor = squareColor;
     }
 
-    public boolean isSoldInCurrentMonth() {
+    public Boolean isSoldInCurrentMonth() {
         return soldInCurrentMonth;
     }
 
-    public void setSoldInCurrentMonth(boolean soldInCurrentMonth) {
+    public void setSoldInCurrentMonth(Boolean soldInCurrentMonth) {
         this.soldInCurrentMonth = soldInCurrentMonth;
     }
 
-    public boolean isItemHasTAForCustomer() {
+    public Boolean isItemHasTAForCustomer() {
         return itemHasTAForCustomer;
     }
 
-    public void setItemHasTAForCustomer(boolean itemHasTAForCustomer) {
+    public void setItemHasTAForCustomer(Boolean itemHasTAForCustomer) {
         this.itemHasTAForCustomer = itemHasTAForCustomer;
     }
 
-    public boolean isOvsItem() {
+    public Boolean isOvsItem() {
         return ovsItem;
     }
 
-    public void setOvsItem(boolean ovsItem) {
+    public void setOvsItem(Boolean ovsItem) {
         this.ovsItem = ovsItem;
     }
 
-    public boolean isItemIsComponentOfPackage() {
+    public Boolean isItemIsComponentOfPackage() {
         return itemIsComponentOfPackage;
     }
 
-    public void setItemIsComponentOfPackage(boolean itemIsComponentOfPackage) {
+    public void setItemIsComponentOfPackage(Boolean itemIsComponentOfPackage) {
         this.itemIsComponentOfPackage = itemIsComponentOfPackage;
     }
 
-    public boolean isItemHasCampaign() {
+    public Boolean isItemHasCampaign() {
         return itemHasCampaign;
     }
 
-    public void setItemHasCampaign(boolean itemHasCampaign) {
+    public void setItemHasCampaign(Boolean itemHasCampaign) {
         this.itemHasCampaign = itemHasCampaign;
     }
 
-    public boolean isItemIncludedForCustomer() {
+    public Boolean isItemIncludedForCustomer() {
         return itemIncludedForCustomer;
     }
 
-    public void setItemIncludedForCustomer(boolean itemIncludedForCustomer) {
+    public void setItemIncludedForCustomer(Boolean itemIncludedForCustomer) {
         this.itemIncludedForCustomer = itemIncludedForCustomer;
     }
 
-    public int getSortIndex() {
+    public Integer getSortIndex() {
         return sortIndex;
     }
 
-    public void setSortIndex(int sortIndex) {
+    public void setSortIndex(Integer sortIndex) {
         this.sortIndex = sortIndex;
     }
 }

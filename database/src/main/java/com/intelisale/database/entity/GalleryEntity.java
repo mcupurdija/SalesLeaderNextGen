@@ -7,26 +7,26 @@ import com.intelisale.database.entity.column.BaseColumns;
 @Entity(tableName = "Gallery")
 public class GalleryEntity extends BaseColumns {
 
-    private int serverId;
-    private int customerId;
+    private Integer serverId;
+    private Integer customerId;
     private String image;
     private String postingDate;
     private String description;
     private String tags;
 
-    public int getServerId() {
+    public Integer getServerId() {
         return serverId;
     }
 
-    public void setServerId(int serverId) {
+    public void setServerId(Integer serverId) {
         this.serverId = serverId;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 

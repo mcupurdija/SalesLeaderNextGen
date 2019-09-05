@@ -7,31 +7,31 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "SalesLeaderItemConnections")
 public class SalesLeaderItemConnectionsEntity extends CodeBookColumns {
 
-    private int itemId;
-    private int connectedItemId;
-    private int salesLeaderDirectionId;
+    private Integer itemId;
+    private Integer connectedItemId;
+    private Integer salesLeaderDirectionId;
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
-    public int getConnectedItemId() {
+    public Integer getConnectedItemId() {
         return connectedItemId;
     }
 
-    public void setConnectedItemId(int connectedItemId) {
+    public void setConnectedItemId(Integer connectedItemId) {
         this.connectedItemId = connectedItemId;
     }
 
-    public int getSalesLeaderDirectionId() {
+    public Integer getSalesLeaderDirectionId() {
         return salesLeaderDirectionId;
     }
 
-    public void setSalesLeaderDirectionId(int salesLeaderDirectionId) {
+    public void setSalesLeaderDirectionId(Integer salesLeaderDirectionId) {
         this.salesLeaderDirectionId = salesLeaderDirectionId;
     }
 }

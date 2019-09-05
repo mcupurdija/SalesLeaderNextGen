@@ -7,25 +7,25 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "UserDefinedLists")
 public class UserDefinedListEntity extends CodeBookColumns {
 
-    private int listId;
-    private int customerId;
+    private Integer listId;
+    private Integer customerId;
     private String listName;
     private String specialType;
-    private boolean listEditable;
+    private Boolean listEditable;
 
-    public int getListId() {
+    public Integer getListId() {
         return listId;
     }
 
-    public void setListId(int listId) {
+    public void setListId(Integer listId) {
         this.listId = listId;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
@@ -45,11 +45,11 @@ public class UserDefinedListEntity extends CodeBookColumns {
         this.specialType = specialType;
     }
 
-    public boolean isListEditable() {
+    public Boolean isListEditable() {
         return listEditable;
     }
 
-    public void setListEditable(boolean listEditable) {
+    public void setListEditable(Boolean listEditable) {
         this.listEditable = listEditable;
     }
 }

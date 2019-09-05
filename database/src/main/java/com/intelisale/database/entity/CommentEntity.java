@@ -4,42 +4,40 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "Comments")
 public class CommentEntity extends BaseAuditColumns {
 
-    private int customerId;
-    private int commentsSourceId;
-    private int commentsTargetId;
+    private Integer customerId;
+    private Integer commentsSourceId;
+    private Integer commentsTargetId;
     private String description;
     private String link;
-    private int userId;
-    private boolean checked;
+    private Integer userId;
+    private Boolean checked;
     private String reminder;
-    private DateTime createdDate;
+    private String createdDate;
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public int getCommentsSourceId() {
+    public Integer getCommentsSourceId() {
         return commentsSourceId;
     }
 
-    public void setCommentsSourceId(int commentsSourceId) {
+    public void setCommentsSourceId(Integer commentsSourceId) {
         this.commentsSourceId = commentsSourceId;
     }
 
-    public int getCommentsTargetId() {
+    public Integer getCommentsTargetId() {
         return commentsTargetId;
     }
 
-    public void setCommentsTargetId(int commentsTargetId) {
+    public void setCommentsTargetId(Integer commentsTargetId) {
         this.commentsTargetId = commentsTargetId;
     }
 
@@ -59,19 +57,19 @@ public class CommentEntity extends BaseAuditColumns {
         this.link = link;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public boolean isChecked() {
+    public Boolean isChecked() {
         return checked;
     }
 
-    public void setChecked(boolean checked) {
+    public void setChecked(Boolean checked) {
         this.checked = checked;
     }
 
@@ -83,11 +81,11 @@ public class CommentEntity extends BaseAuditColumns {
         this.reminder = reminder;
     }
 
-    public DateTime getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(DateTime createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 }

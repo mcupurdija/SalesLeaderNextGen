@@ -8,7 +8,7 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 public class CategoryOfItemsEntity extends CodeBookColumns {
 
     private String parentCode;
-    private int parentCategoryOfItemsId;
+    private Integer parentCategoryOfItemsId;
     private String smallPictureName;
     private String largePictureName;
 
@@ -20,11 +20,11 @@ public class CategoryOfItemsEntity extends CodeBookColumns {
         this.parentCode = parentCode;
     }
 
-    public int getParentCategoryOfItemsId() {
+    public Integer getParentCategoryOfItemsId() {
         return parentCategoryOfItemsId;
     }
 
-    public void setParentCategoryOfItemsId(int parentCategoryOfItemsId) {
+    public void setParentCategoryOfItemsId(Integer parentCategoryOfItemsId) {
         this.parentCategoryOfItemsId = parentCategoryOfItemsId;
     }
 

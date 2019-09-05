@@ -7,25 +7,25 @@ import com.intelisale.database.entity.column.BaseColumns;
 @Entity(tableName = "Settings")
 public class SettingEntity extends BaseColumns {
 
-    private int serverId;
-    private int financialEntityId;
+    private Integer serverId;
+    private Integer financialEntityId;
     private String name;
     private String value;
-    private boolean active;
+    private Boolean active;
 
-    public int getServerId() {
+    public Integer getServerId() {
         return serverId;
     }
 
-    public void setServerId(int serverId) {
+    public void setServerId(Integer serverId) {
         this.serverId = serverId;
     }
 
-    public int getFinancialEntityId() {
+    public Integer getFinancialEntityId() {
         return financialEntityId;
     }
 
-    public void setFinancialEntityId(int financialEntityId) {
+    public void setFinancialEntityId(Integer financialEntityId) {
         this.financialEntityId = financialEntityId;
     }
 
@@ -45,11 +45,11 @@ public class SettingEntity extends BaseColumns {
         this.value = value;
     }
 
-    public boolean isActive() {
+    public Boolean isActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 }

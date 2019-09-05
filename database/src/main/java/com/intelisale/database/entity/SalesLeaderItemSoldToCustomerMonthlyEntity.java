@@ -7,85 +7,85 @@ import com.intelisale.database.entity.column.BaseAuditColumns;
 @Entity(tableName = "SalesLeaderItemsSoldToCustomerMonthly")
 public class SalesLeaderItemSoldToCustomerMonthlyEntity extends BaseAuditColumns {
 
-    private int itemId;
-    private int customerId;
-    private int groupOfCustomerId;
-    private int soldYear;
-    private int soldMonth;
-    private double quantity;
-    private double turnover;
-    private double cogs;
-    private double salesLinesCount;
+    private Integer itemId;
+    private Integer customerId;
+    private Integer groupOfCustomerId;
+    private Integer soldYear;
+    private Integer soldMonth;
+    private Double quantity;
+    private Double turnover;
+    private Double cogs;
+    private Double salesLinesCount;
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public int getGroupOfCustomerId() {
+    public Integer getGroupOfCustomerId() {
         return groupOfCustomerId;
     }
 
-    public void setGroupOfCustomerId(int groupOfCustomerId) {
+    public void setGroupOfCustomerId(Integer groupOfCustomerId) {
         this.groupOfCustomerId = groupOfCustomerId;
     }
 
-    public int getSoldYear() {
+    public Integer getSoldYear() {
         return soldYear;
     }
 
-    public void setSoldYear(int soldYear) {
+    public void setSoldYear(Integer soldYear) {
         this.soldYear = soldYear;
     }
 
-    public int getSoldMonth() {
+    public Integer getSoldMonth() {
         return soldMonth;
     }
 
-    public void setSoldMonth(int soldMonth) {
+    public void setSoldMonth(Integer soldMonth) {
         this.soldMonth = soldMonth;
     }
 
-    public double getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
 
-    public double getTurnover() {
+    public Double getTurnover() {
         return turnover;
     }
 
-    public void setTurnover(double turnover) {
+    public void setTurnover(Double turnover) {
         this.turnover = turnover;
     }
 
-    public double getCogs() {
+    public Double getCogs() {
         return cogs;
     }
 
-    public void setCogs(double cogs) {
+    public void setCogs(Double cogs) {
         this.cogs = cogs;
     }
 
-    public double getSalesLinesCount() {
+    public Double getSalesLinesCount() {
         return salesLinesCount;
     }
 
-    public void setSalesLinesCount(double salesLinesCount) {
+    public void setSalesLinesCount(Double salesLinesCount) {
         this.salesLinesCount = salesLinesCount;
     }
 }

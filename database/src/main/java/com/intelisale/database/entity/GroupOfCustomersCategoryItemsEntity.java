@@ -7,40 +7,40 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "GroupsOfCustomersCategoryItems")
 public class GroupOfCustomersCategoryItemsEntity extends CodeBookColumns {
 
-    private int groupOfCustomerId;
-    private int categoryOfItemsId;
-    private int rank;
-    private int importance;
+    private Integer groupOfCustomerId;
+    private Integer categoryOfItemsId;
+    private Integer rank;
+    private Integer importance;
 
-    public int getGroupOfCustomerId() {
+    public Integer getGroupOfCustomerId() {
         return groupOfCustomerId;
     }
 
-    public void setGroupOfCustomerId(int groupOfCustomerId) {
+    public void setGroupOfCustomerId(Integer groupOfCustomerId) {
         this.groupOfCustomerId = groupOfCustomerId;
     }
 
-    public int getCategoryOfItemsId() {
+    public Integer getCategoryOfItemsId() {
         return categoryOfItemsId;
     }
 
-    public void setCategoryOfItemsId(int categoryOfItemsId) {
+    public void setCategoryOfItemsId(Integer categoryOfItemsId) {
         this.categoryOfItemsId = categoryOfItemsId;
     }
 
-    public int getRank() {
+    public Integer getRank() {
         return rank;
     }
 
-    public void setRank(int rank) {
+    public void setRank(Integer rank) {
         this.rank = rank;
     }
 
-    public int getImportance() {
+    public Integer getImportance() {
         return importance;
     }
 
-    public void setImportance(int importance) {
+    public void setImportance(Integer importance) {
         this.importance = importance;
     }
 }

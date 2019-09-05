@@ -7,13 +7,13 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "ServiceClassification")
 public class ServiceClassificationEntity extends CodeBookColumns {
 
-    private int serviceClassificationTypeId;
+    private Integer serviceClassificationTypeId;
 
-    public int getServiceClassificationTypeId() {
+    public Integer getServiceClassificationTypeId() {
         return serviceClassificationTypeId;
     }
 
-    public void setServiceClassificationTypeId(int serviceClassificationTypeId) {
+    public void setServiceClassificationTypeId(Integer serviceClassificationTypeId) {
         this.serviceClassificationTypeId = serviceClassificationTypeId;
     }
 }

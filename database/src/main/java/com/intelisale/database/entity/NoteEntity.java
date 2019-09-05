@@ -4,33 +4,31 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "Notes")
 public class NoteEntity extends BaseAuditColumns {
 
-    private int noteTargetTypeId;
-    private int noteTargetId;
+    private Integer noteTargetTypeId;
+    private Integer noteTargetId;
     private String noteContent;
-    private int customerId;
-    private int createdByUserId;
-    private DateTime createdDate;
+    private Integer customerId;
+    private Integer createdByUserId;
+    private String createdDate;
     private String reminder;
-    private boolean sent;
+    private Boolean sent;
 
-    public int getNoteTargetTypeId() {
+    public Integer getNoteTargetTypeId() {
         return noteTargetTypeId;
     }
 
-    public void setNoteTargetTypeId(int noteTargetTypeId) {
+    public void setNoteTargetTypeId(Integer noteTargetTypeId) {
         this.noteTargetTypeId = noteTargetTypeId;
     }
 
-    public int getNoteTargetId() {
+    public Integer getNoteTargetId() {
         return noteTargetId;
     }
 
-    public void setNoteTargetId(int noteTargetId) {
+    public void setNoteTargetId(Integer noteTargetId) {
         this.noteTargetId = noteTargetId;
     }
 
@@ -42,27 +40,27 @@ public class NoteEntity extends BaseAuditColumns {
         this.noteContent = noteContent;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public int getCreatedByUserId() {
+    public Integer getCreatedByUserId() {
         return createdByUserId;
     }
 
-    public void setCreatedByUserId(int createdByUserId) {
+    public void setCreatedByUserId(Integer createdByUserId) {
         this.createdByUserId = createdByUserId;
     }
 
-    public DateTime getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(DateTime createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 
@@ -74,11 +72,11 @@ public class NoteEntity extends BaseAuditColumns {
         this.reminder = reminder;
     }
 
-    public boolean isSent() {
+    public Boolean isSent() {
         return sent;
     }
 
-    public void setSent(boolean sent) {
+    public void setSent(Boolean sent) {
         this.sent = sent;
     }
 }

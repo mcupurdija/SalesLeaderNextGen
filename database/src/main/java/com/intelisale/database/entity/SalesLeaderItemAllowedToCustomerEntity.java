@@ -4,36 +4,34 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "SalesLeaderItemsAllowedToCustomer")
 public class SalesLeaderItemAllowedToCustomerEntity extends BaseAuditColumns {
 
-    private int itemId;
-    private int salesLeaderSalesLevelTypeId;
+    private Integer itemId;
+    private Integer salesLeaderSalesLevelTypeId;
     private String salesLevelCode;
-    private int salesPriceTypeId;
-    private double salesPrice;
-    private double salesDiscount;
+    private Integer salesPriceTypeId;
+    private Double salesPrice;
+    private Double salesDiscount;
     private String comment;
-    private DateTime fromDate;
-    private DateTime toDate;
-    private int approvalStatusId;
-    private int sortIndex;
+    private String fromDate;
+    private String toDate;
+    private Integer approvalStatusId;
+    private Integer sortIndex;
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
-    public int getSalesLeaderSalesLevelTypeId() {
+    public Integer getSalesLeaderSalesLevelTypeId() {
         return salesLeaderSalesLevelTypeId;
     }
 
-    public void setSalesLeaderSalesLevelTypeId(int salesLeaderSalesLevelTypeId) {
+    public void setSalesLeaderSalesLevelTypeId(Integer salesLeaderSalesLevelTypeId) {
         this.salesLeaderSalesLevelTypeId = salesLeaderSalesLevelTypeId;
     }
 
@@ -45,27 +43,27 @@ public class SalesLeaderItemAllowedToCustomerEntity extends BaseAuditColumns {
         this.salesLevelCode = salesLevelCode;
     }
 
-    public int getSalesPriceTypeId() {
+    public Integer getSalesPriceTypeId() {
         return salesPriceTypeId;
     }
 
-    public void setSalesPriceTypeId(int salesPriceTypeId) {
+    public void setSalesPriceTypeId(Integer salesPriceTypeId) {
         this.salesPriceTypeId = salesPriceTypeId;
     }
 
-    public double getSalesPrice() {
+    public Double getSalesPrice() {
         return salesPrice;
     }
 
-    public void setSalesPrice(double salesPrice) {
+    public void setSalesPrice(Double salesPrice) {
         this.salesPrice = salesPrice;
     }
 
-    public double getSalesDiscount() {
+    public Double getSalesDiscount() {
         return salesDiscount;
     }
 
-    public void setSalesDiscount(double salesDiscount) {
+    public void setSalesDiscount(Double salesDiscount) {
         this.salesDiscount = salesDiscount;
     }
 
@@ -77,35 +75,35 @@ public class SalesLeaderItemAllowedToCustomerEntity extends BaseAuditColumns {
         this.comment = comment;
     }
 
-    public DateTime getFromDate() {
+    public String getFromDate() {
         return fromDate;
     }
 
-    public void setFromDate(DateTime fromDate) {
+    public void setFromDate(String fromDate) {
         this.fromDate = fromDate;
     }
 
-    public DateTime getToDate() {
+    public String getToDate() {
         return toDate;
     }
 
-    public void setToDate(DateTime toDate) {
+    public void setToDate(String toDate) {
         this.toDate = toDate;
     }
 
-    public int getApprovalStatusId() {
+    public Integer getApprovalStatusId() {
         return approvalStatusId;
     }
 
-    public void setApprovalStatusId(int approvalStatusId) {
+    public void setApprovalStatusId(Integer approvalStatusId) {
         this.approvalStatusId = approvalStatusId;
     }
 
-    public int getSortIndex() {
+    public Integer getSortIndex() {
         return sortIndex;
     }
 
-    public void setSortIndex(int sortIndex) {
+    public void setSortIndex(Integer sortIndex) {
         this.sortIndex = sortIndex;
     }
 }

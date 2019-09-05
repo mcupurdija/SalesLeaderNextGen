@@ -4,45 +4,43 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "CustomerCustomLists")
 public class CustomerCustomListEntity extends BaseAuditColumns {
 
-    private int customerId;
-    private int customListHeaderId;
-    private DateTime fromDate;
-    private DateTime toDate;
+    private Integer customerId;
+    private Integer customListHeaderId;
+    private String fromDate;
+    private String toDate;
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public int getCustomListHeaderId() {
+    public Integer getCustomListHeaderId() {
         return customListHeaderId;
     }
 
-    public void setCustomListHeaderId(int customListHeaderId) {
+    public void setCustomListHeaderId(Integer customListHeaderId) {
         this.customListHeaderId = customListHeaderId;
     }
 
-    public DateTime getFromDate() {
+    public String getFromDate() {
         return fromDate;
     }
 
-    public void setFromDate(DateTime fromDate) {
+    public void setFromDate(String fromDate) {
         this.fromDate = fromDate;
     }
 
-    public DateTime getToDate() {
+    public String getToDate() {
         return toDate;
     }
 
-    public void setToDate(DateTime toDate) {
+    public void setToDate(String toDate) {
         this.toDate = toDate;
     }
 }

@@ -10,25 +10,25 @@ public class ItemEntity extends BaseAuditColumns {
     private String code;
     private String description;
     private String description2;
-    private int categoryOfItemsId;
-    private double unitSalesPriceLCY;
-    private int itemUnitOfMeasureId;
-    private double availableQuantity;
-    private int itemStatusId;
+    private Integer categoryOfItemsId;
+    private Double unitSalesPriceLCY;
+    private Integer itemUnitOfMeasureId;
+    private Double availableQuantity;
+    private Integer itemStatusId;
     private String statusOfItem;
     private String itemBarCodeForBSUOM;
-    private double minimumSalesUnitQty;
-    private double suggestedSalesUnitQty;
-    private int itemSuccessorId;
-    private int itemSuccessorStatusId;
-    private int itemVATGroupId;
+    private Double minimumSalesUnitQty;
+    private Double suggestedSalesUnitQty;
+    private Integer itemSuccessorId;
+    private Integer itemSuccessorStatusId;
+    private Integer itemVATGroupId;
     private String smallPictureName;
     private String largePictureName;
     private String youtubeVideoCode;
     private String extraField;
     private String catalogCode;
     private String productManager;
-    private boolean sent;
+    private Boolean sent;
 
     public String getCode() {
         return code;
@@ -54,43 +54,43 @@ public class ItemEntity extends BaseAuditColumns {
         this.description2 = description2;
     }
 
-    public int getCategoryOfItemsId() {
+    public Integer getCategoryOfItemsId() {
         return categoryOfItemsId;
     }
 
-    public void setCategoryOfItemsId(int categoryOfItemsId) {
+    public void setCategoryOfItemsId(Integer categoryOfItemsId) {
         this.categoryOfItemsId = categoryOfItemsId;
     }
 
-    public double getUnitSalesPriceLCY() {
+    public Double getUnitSalesPriceLCY() {
         return unitSalesPriceLCY;
     }
 
-    public void setUnitSalesPriceLCY(double unitSalesPriceLCY) {
+    public void setUnitSalesPriceLCY(Double unitSalesPriceLCY) {
         this.unitSalesPriceLCY = unitSalesPriceLCY;
     }
 
-    public int getItemUnitOfMeasureId() {
+    public Integer getItemUnitOfMeasureId() {
         return itemUnitOfMeasureId;
     }
 
-    public void setItemUnitOfMeasureId(int itemUnitOfMeasureId) {
+    public void setItemUnitOfMeasureId(Integer itemUnitOfMeasureId) {
         this.itemUnitOfMeasureId = itemUnitOfMeasureId;
     }
 
-    public double getAvailableQuantity() {
+    public Double getAvailableQuantity() {
         return availableQuantity;
     }
 
-    public void setAvailableQuantity(double availableQuantity) {
+    public void setAvailableQuantity(Double availableQuantity) {
         this.availableQuantity = availableQuantity;
     }
 
-    public int getItemStatusId() {
+    public Integer getItemStatusId() {
         return itemStatusId;
     }
 
-    public void setItemStatusId(int itemStatusId) {
+    public void setItemStatusId(Integer itemStatusId) {
         this.itemStatusId = itemStatusId;
     }
 
@@ -110,43 +110,43 @@ public class ItemEntity extends BaseAuditColumns {
         this.itemBarCodeForBSUOM = itemBarCodeForBSUOM;
     }
 
-    public double getMinimumSalesUnitQty() {
+    public Double getMinimumSalesUnitQty() {
         return minimumSalesUnitQty;
     }
 
-    public void setMinimumSalesUnitQty(double minimumSalesUnitQty) {
+    public void setMinimumSalesUnitQty(Double minimumSalesUnitQty) {
         this.minimumSalesUnitQty = minimumSalesUnitQty;
     }
 
-    public double getSuggestedSalesUnitQty() {
+    public Double getSuggestedSalesUnitQty() {
         return suggestedSalesUnitQty;
     }
 
-    public void setSuggestedSalesUnitQty(double suggestedSalesUnitQty) {
+    public void setSuggestedSalesUnitQty(Double suggestedSalesUnitQty) {
         this.suggestedSalesUnitQty = suggestedSalesUnitQty;
     }
 
-    public int getItemSuccessorId() {
+    public Integer getItemSuccessorId() {
         return itemSuccessorId;
     }
 
-    public void setItemSuccessorId(int itemSuccessorId) {
+    public void setItemSuccessorId(Integer itemSuccessorId) {
         this.itemSuccessorId = itemSuccessorId;
     }
 
-    public int getItemSuccessorStatusId() {
+    public Integer getItemSuccessorStatusId() {
         return itemSuccessorStatusId;
     }
 
-    public void setItemSuccessorStatusId(int itemSuccessorStatusId) {
+    public void setItemSuccessorStatusId(Integer itemSuccessorStatusId) {
         this.itemSuccessorStatusId = itemSuccessorStatusId;
     }
 
-    public int getItemVATGroupId() {
+    public Integer getItemVATGroupId() {
         return itemVATGroupId;
     }
 
-    public void setItemVATGroupId(int itemVATGroupId) {
+    public void setItemVATGroupId(Integer itemVATGroupId) {
         this.itemVATGroupId = itemVATGroupId;
     }
 
@@ -198,11 +198,11 @@ public class ItemEntity extends BaseAuditColumns {
         this.productManager = productManager;
     }
 
-    public boolean isSent() {
+    public Boolean isSent() {
         return sent;
     }
 
-    public void setSent(boolean sent) {
+    public void setSent(Boolean sent) {
         this.sent = sent;
     }
 }

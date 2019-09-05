@@ -7,31 +7,31 @@ import com.intelisale.database.entity.column.BaseAuditColumns;
 @Entity(tableName = "CustomListsLines")
 public class CustomListsLineEntity extends BaseAuditColumns {
 
-    private int customListHeaderId;
-    private int itemId;
-    private int sortIndex;
+    private Integer customListHeaderId;
+    private Integer itemId;
+    private Integer sortIndex;
 
-    public int getCustomListHeaderId() {
+    public Integer getCustomListHeaderId() {
         return customListHeaderId;
     }
 
-    public void setCustomListHeaderId(int customListHeaderId) {
+    public void setCustomListHeaderId(Integer customListHeaderId) {
         this.customListHeaderId = customListHeaderId;
     }
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
-    public int getSortIndex() {
+    public Integer getSortIndex() {
         return sortIndex;
     }
 
-    public void setSortIndex(int sortIndex) {
+    public void setSortIndex(Integer sortIndex) {
         this.sortIndex = sortIndex;
     }
 }

@@ -7,22 +7,22 @@ import com.intelisale.database.entity.column.BaseAuditColumns;
 @Entity(tableName = "StockInventoryHeaders")
 public class StockInventoryHeaderEntity extends BaseAuditColumns {
 
-    private int customerId;
-    private boolean sent;
+    private Integer customerId;
+    private Boolean sent;
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public boolean isSent() {
+    public Boolean isSent() {
         return sent;
     }
 
-    public void setSent(boolean sent) {
+    public void setSent(Boolean sent) {
         this.sent = sent;
     }
 }

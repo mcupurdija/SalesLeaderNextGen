@@ -5,95 +5,93 @@ import androidx.room.Entity;
 import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = TableNames.CUSTOMERS)
 public class CustomerEntity extends BaseAuditColumns {
 
     private String customerCode;
     private String potentialCustomerCode;
-    private int customerIdForCustomerBusinessUnit;
+    private Integer customerIdForCustomerBusinessUnit;
     private String customerBusinessUnitCode;
-    private int realCustomer;
+    private Boolean realCustomer;
     private String name;
     private String name2;
     private String address;
-    private int postalCodeAndCityId;
+    private Integer postalCodeAndCityId;
     private String phone;
     private String mobile;
     private String email;
     private String mb;
     private String vatNo;
-    private double creditLimit;
-    private double balanceLcy;
-    private double balanceDueLcy;
-    private int customerPaymentConditionId;
-    private int customerDiscGroupId;
-    private int customerPriceGroupId;
-    private int groupOfCustomerId;
-    private int secondaryGroupOfCustomerId;
+    private Double creditLimit;
+    private Double balanceLcy;
+    private Double balanceDueLcy;
+    private Integer customerPaymentConditionId;
+    private Integer customerDiscGroupId;
+    private Integer customerPriceGroupId;
+    private Integer groupOfCustomerId;
+    private Integer secondaryGroupOfCustomerId;
     private String smlTurnover;
     private String sean;
-    private int channel;
+    private Integer channel;
     private String blueCoatsNo;
     private String grayCoatsNo;
     private String potential;
     private String color;
     private String coefficient;
-    private double customerPersonalTurnover;
-    private double turnover3m;
-    private double turnover6m;
-    private double turnover12m;
-    private double turnoverYTM;
-    private double turnoverLastYear;
-    private double turnoverYear2;
-    private double turnoverYear3;
-    private double planCurrentYear;
-    private double planFulfillment;
-    private boolean existContractAgreement;
-    private boolean existTradeAgreement;
-    private boolean existOrsy;
-    private boolean existOrsy100;
-    private int buttonNo6;
+    private Double customerPersonalTurnover;
+    private Double turnover3m;
+    private Double turnover6m;
+    private Double turnover12m;
+    private Double turnoverYTM;
+    private Double turnoverLastYear;
+    private Double turnoverYear2;
+    private Double turnoverYear3;
+    private Double planCurrentYear;
+    private Double planFulfillment;
+    private Boolean existContractAgreement;
+    private Boolean existTradeAgreement;
+    private Boolean existOrsy;
+    private Boolean existOrsy100;
+    private Integer buttonNo6;
     private String priority;
     private String reminderLevel;
-    private DateTime dateLastPayment;
-    private DateTime dateLastInvoice;
-    private DateTime dateOldestOpenInvoice;
-    private double gp;
-    private int defaultCustomerShipToAddressId;
-    private int employeeId;
-    private int customerPaymentMethodId;
+    private String dateLastPayment;
+    private String dateLastInvoice;
+    private String dateOldestOpenInvoice;
+    private Double gp;
+    private Integer defaultCustomerShipToAddressId;
+    private Integer employeeId;
+    private Integer customerPaymentMethodId;
     private String gpsLatitude;
     private String gpsLongitude;
     private String gpsAccuracy;
-    private int customerVATGroupId;
-    private double invoiceDiscountPercent;
+    private Integer customerVATGroupId;
+    private Double invoiceDiscountPercent;
     private String parentData;
     private String customerHierarchyData;
-    private int customerTaskCount;
-    private boolean createFromPotential;
+    private Integer customerTaskCount;
+    private Boolean createFromPotential;
     private String primaryContactName;
-    private DateTime firstInvoiceDate;
-    private DateTime oldestOpenInvoiceDate;
-    private DateTime latestInvoiceDate;
-    private DateTime latestPaymentDate;
-    private double writeOff;
-    private double customer12MonthsPlan;
-    private double sinRadLat;
-    private double cosRadLat;
-    private double sinRadLong;
-    private double cosRadLong;
-    private double calculatedNumberOfVisits;
-    private double calculatedTimeAtCustomer;
-    private double visitProductivity6m;
-    private double balance1to30;
-    private double balance31to60;
-    private double balance61to90;
-    private double balance91toXyz;
-    private double balanceCritical;
-    private boolean treasuryBill;
-    private double paymentAvgDays;
+    private String firstInvoiceDate;
+    private String oldestOpenInvoiceDate;
+    private String latestInvoiceDate;
+    private String latestPaymentDate;
+    private Double writeOff;
+    private Double customer12MonthsPlan;
+    private Double sinRadLat;
+    private Double cosRadLat;
+    private Double sinRadLong;
+    private Double cosRadLong;
+    private Double calculatedNumberOfVisits;
+    private Double calculatedTimeAtCustomer;
+    private Double visitProductivity6m;
+    private Double balance1to30;
+    private Double balance31to60;
+    private Double balance61to90;
+    private Double balance91toXyz;
+    private Double balanceCritical;
+    private Integer treasuryBill;
+    private Double paymentAvgDays;
     private String fax;
     private String emailInvoices;
     private String emailReminders;
@@ -101,19 +99,19 @@ public class CustomerEntity extends BaseAuditColumns {
     private String contractType;
     private String pricingClass;
     private String fullCustomerCode;
-    private boolean centralOffice;
-    private int primaryContactId;
+    private Boolean centralOffice;
+    private Integer primaryContactId;
     private String assignedUserCode;
     private String assignedUserName;
-    private boolean focusCustomer;
-    private boolean customerActive;
+    private Boolean focusCustomer;
+    private Boolean customerActive;
     private String tradeLicenseNum;
     private String tradeLicenseExp;
     private String tradeLicenseType;
-    private double targetContractTurnover;
-    private double contractRealizationPct;
-    private DateTime gallerySyncDate;
-    private boolean sent;
+    private Double targetContractTurnover;
+    private Double contractRealizationPct;
+    private String gallerySyncDate;
+    private Boolean sent;
 
     public String getCustomerCode() {
         return customerCode;
@@ -131,11 +129,11 @@ public class CustomerEntity extends BaseAuditColumns {
         this.potentialCustomerCode = potentialCustomerCode;
     }
 
-    public int getCustomerIdForCustomerBusinessUnit() {
+    public Integer getCustomerIdForCustomerBusinessUnit() {
         return customerIdForCustomerBusinessUnit;
     }
 
-    public void setCustomerIdForCustomerBusinessUnit(int customerIdForCustomerBusinessUnit) {
+    public void setCustomerIdForCustomerBusinessUnit(Integer customerIdForCustomerBusinessUnit) {
         this.customerIdForCustomerBusinessUnit = customerIdForCustomerBusinessUnit;
     }
 
@@ -147,11 +145,11 @@ public class CustomerEntity extends BaseAuditColumns {
         this.customerBusinessUnitCode = customerBusinessUnitCode;
     }
 
-    public int getRealCustomer() {
+    public Boolean isRealCustomer() {
         return realCustomer;
     }
 
-    public void setRealCustomer(int realCustomer) {
+    public void setRealCustomer(Boolean realCustomer) {
         this.realCustomer = realCustomer;
     }
 
@@ -179,11 +177,11 @@ public class CustomerEntity extends BaseAuditColumns {
         this.address = address;
     }
 
-    public int getPostalCodeAndCityId() {
+    public Integer getPostalCodeAndCityId() {
         return postalCodeAndCityId;
     }
 
-    public void setPostalCodeAndCityId(int postalCodeAndCityId) {
+    public void setPostalCodeAndCityId(Integer postalCodeAndCityId) {
         this.postalCodeAndCityId = postalCodeAndCityId;
     }
 
@@ -227,67 +225,67 @@ public class CustomerEntity extends BaseAuditColumns {
         this.vatNo = vatNo;
     }
 
-    public double getCreditLimit() {
+    public Double getCreditLimit() {
         return creditLimit;
     }
 
-    public void setCreditLimit(double creditLimit) {
+    public void setCreditLimit(Double creditLimit) {
         this.creditLimit = creditLimit;
     }
 
-    public double getBalanceLcy() {
+    public Double getBalanceLcy() {
         return balanceLcy;
     }
 
-    public void setBalanceLcy(double balanceLcy) {
+    public void setBalanceLcy(Double balanceLcy) {
         this.balanceLcy = balanceLcy;
     }
 
-    public double getBalanceDueLcy() {
+    public Double getBalanceDueLcy() {
         return balanceDueLcy;
     }
 
-    public void setBalanceDueLcy(double balanceDueLcy) {
+    public void setBalanceDueLcy(Double balanceDueLcy) {
         this.balanceDueLcy = balanceDueLcy;
     }
 
-    public int getCustomerPaymentConditionId() {
+    public Integer getCustomerPaymentConditionId() {
         return customerPaymentConditionId;
     }
 
-    public void setCustomerPaymentConditionId(int customerPaymentConditionId) {
+    public void setCustomerPaymentConditionId(Integer customerPaymentConditionId) {
         this.customerPaymentConditionId = customerPaymentConditionId;
     }
 
-    public int getCustomerDiscGroupId() {
+    public Integer getCustomerDiscGroupId() {
         return customerDiscGroupId;
     }
 
-    public void setCustomerDiscGroupId(int customerDiscGroupId) {
+    public void setCustomerDiscGroupId(Integer customerDiscGroupId) {
         this.customerDiscGroupId = customerDiscGroupId;
     }
 
-    public int getCustomerPriceGroupId() {
+    public Integer getCustomerPriceGroupId() {
         return customerPriceGroupId;
     }
 
-    public void setCustomerPriceGroupId(int customerPriceGroupId) {
+    public void setCustomerPriceGroupId(Integer customerPriceGroupId) {
         this.customerPriceGroupId = customerPriceGroupId;
     }
 
-    public int getGroupOfCustomerId() {
+    public Integer getGroupOfCustomerId() {
         return groupOfCustomerId;
     }
 
-    public void setGroupOfCustomerId(int groupOfCustomerId) {
+    public void setGroupOfCustomerId(Integer groupOfCustomerId) {
         this.groupOfCustomerId = groupOfCustomerId;
     }
 
-    public int getSecondaryGroupOfCustomerId() {
+    public Integer getSecondaryGroupOfCustomerId() {
         return secondaryGroupOfCustomerId;
     }
 
-    public void setSecondaryGroupOfCustomerId(int secondaryGroupOfCustomerId) {
+    public void setSecondaryGroupOfCustomerId(Integer secondaryGroupOfCustomerId) {
         this.secondaryGroupOfCustomerId = secondaryGroupOfCustomerId;
     }
 
@@ -307,11 +305,11 @@ public class CustomerEntity extends BaseAuditColumns {
         this.sean = sean;
     }
 
-    public int getChannel() {
+    public Integer getChannel() {
         return channel;
     }
 
-    public void setChannel(int channel) {
+    public void setChannel(Integer channel) {
         this.channel = channel;
     }
 
@@ -355,123 +353,123 @@ public class CustomerEntity extends BaseAuditColumns {
         this.coefficient = coefficient;
     }
 
-    public double getCustomerPersonalTurnover() {
+    public Double getCustomerPersonalTurnover() {
         return customerPersonalTurnover;
     }
 
-    public void setCustomerPersonalTurnover(double customerPersonalTurnover) {
+    public void setCustomerPersonalTurnover(Double customerPersonalTurnover) {
         this.customerPersonalTurnover = customerPersonalTurnover;
     }
 
-    public double getTurnover3m() {
+    public Double getTurnover3m() {
         return turnover3m;
     }
 
-    public void setTurnover3m(double turnover3m) {
+    public void setTurnover3m(Double turnover3m) {
         this.turnover3m = turnover3m;
     }
 
-    public double getTurnover6m() {
+    public Double getTurnover6m() {
         return turnover6m;
     }
 
-    public void setTurnover6m(double turnover6m) {
+    public void setTurnover6m(Double turnover6m) {
         this.turnover6m = turnover6m;
     }
 
-    public double getTurnover12m() {
+    public Double getTurnover12m() {
         return turnover12m;
     }
 
-    public void setTurnover12m(double turnover12m) {
+    public void setTurnover12m(Double turnover12m) {
         this.turnover12m = turnover12m;
     }
 
-    public double getTurnoverYTM() {
+    public Double getTurnoverYTM() {
         return turnoverYTM;
     }
 
-    public void setTurnoverYTM(double turnoverYTM) {
+    public void setTurnoverYTM(Double turnoverYTM) {
         this.turnoverYTM = turnoverYTM;
     }
 
-    public double getTurnoverLastYear() {
+    public Double getTurnoverLastYear() {
         return turnoverLastYear;
     }
 
-    public void setTurnoverLastYear(double turnoverLastYear) {
+    public void setTurnoverLastYear(Double turnoverLastYear) {
         this.turnoverLastYear = turnoverLastYear;
     }
 
-    public double getTurnoverYear2() {
+    public Double getTurnoverYear2() {
         return turnoverYear2;
     }
 
-    public void setTurnoverYear2(double turnoverYear2) {
+    public void setTurnoverYear2(Double turnoverYear2) {
         this.turnoverYear2 = turnoverYear2;
     }
 
-    public double getTurnoverYear3() {
+    public Double getTurnoverYear3() {
         return turnoverYear3;
     }
 
-    public void setTurnoverYear3(double turnoverYear3) {
+    public void setTurnoverYear3(Double turnoverYear3) {
         this.turnoverYear3 = turnoverYear3;
     }
 
-    public double getPlanCurrentYear() {
+    public Double getPlanCurrentYear() {
         return planCurrentYear;
     }
 
-    public void setPlanCurrentYear(double planCurrentYear) {
+    public void setPlanCurrentYear(Double planCurrentYear) {
         this.planCurrentYear = planCurrentYear;
     }
 
-    public double getPlanFulfillment() {
+    public Double getPlanFulfillment() {
         return planFulfillment;
     }
 
-    public void setPlanFulfillment(double planFulfillment) {
+    public void setPlanFulfillment(Double planFulfillment) {
         this.planFulfillment = planFulfillment;
     }
 
-    public boolean isExistContractAgreement() {
+    public Boolean isExistContractAgreement() {
         return existContractAgreement;
     }
 
-    public void setExistContractAgreement(boolean existContractAgreement) {
+    public void setExistContractAgreement(Boolean existContractAgreement) {
         this.existContractAgreement = existContractAgreement;
     }
 
-    public boolean isExistTradeAgreement() {
+    public Boolean isExistTradeAgreement() {
         return existTradeAgreement;
     }
 
-    public void setExistTradeAgreement(boolean existTradeAgreement) {
+    public void setExistTradeAgreement(Boolean existTradeAgreement) {
         this.existTradeAgreement = existTradeAgreement;
     }
 
-    public boolean isExistOrsy() {
+    public Boolean isExistOrsy() {
         return existOrsy;
     }
 
-    public void setExistOrsy(boolean existOrsy) {
+    public void setExistOrsy(Boolean existOrsy) {
         this.existOrsy = existOrsy;
     }
 
-    public boolean isExistOrsy100() {
+    public Boolean isExistOrsy100() {
         return existOrsy100;
     }
 
-    public void setExistOrsy100(boolean existOrsy100) {
+    public void setExistOrsy100(Boolean existOrsy100) {
         this.existOrsy100 = existOrsy100;
     }
 
-    public int getButtonNo6() {
+    public Integer getButtonNo6() {
         return buttonNo6;
     }
 
-    public void setButtonNo6(int buttonNo6) {
+    public void setButtonNo6(Integer buttonNo6) {
         this.buttonNo6 = buttonNo6;
     }
 
@@ -491,59 +489,59 @@ public class CustomerEntity extends BaseAuditColumns {
         this.reminderLevel = reminderLevel;
     }
 
-    public DateTime getDateLastPayment() {
+    public String getDateLastPayment() {
         return dateLastPayment;
     }
 
-    public void setDateLastPayment(DateTime dateLastPayment) {
+    public void setDateLastPayment(String dateLastPayment) {
         this.dateLastPayment = dateLastPayment;
     }
 
-    public DateTime getDateLastInvoice() {
+    public String getDateLastInvoice() {
         return dateLastInvoice;
     }
 
-    public void setDateLastInvoice(DateTime dateLastInvoice) {
+    public void setDateLastInvoice(String dateLastInvoice) {
         this.dateLastInvoice = dateLastInvoice;
     }
 
-    public DateTime getDateOldestOpenInvoice() {
+    public String getDateOldestOpenInvoice() {
         return dateOldestOpenInvoice;
     }
 
-    public void setDateOldestOpenInvoice(DateTime dateOldestOpenInvoice) {
+    public void setDateOldestOpenInvoice(String dateOldestOpenInvoice) {
         this.dateOldestOpenInvoice = dateOldestOpenInvoice;
     }
 
-    public double getGp() {
+    public Double getGp() {
         return gp;
     }
 
-    public void setGp(double gp) {
+    public void setGp(Double gp) {
         this.gp = gp;
     }
 
-    public int getDefaultCustomerShipToAddressId() {
+    public Integer getDefaultCustomerShipToAddressId() {
         return defaultCustomerShipToAddressId;
     }
 
-    public void setDefaultCustomerShipToAddressId(int defaultCustomerShipToAddressId) {
+    public void setDefaultCustomerShipToAddressId(Integer defaultCustomerShipToAddressId) {
         this.defaultCustomerShipToAddressId = defaultCustomerShipToAddressId;
     }
 
-    public int getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
-    public int getCustomerPaymentMethodId() {
+    public Integer getCustomerPaymentMethodId() {
         return customerPaymentMethodId;
     }
 
-    public void setCustomerPaymentMethodId(int customerPaymentMethodId) {
+    public void setCustomerPaymentMethodId(Integer customerPaymentMethodId) {
         this.customerPaymentMethodId = customerPaymentMethodId;
     }
 
@@ -571,19 +569,19 @@ public class CustomerEntity extends BaseAuditColumns {
         this.gpsAccuracy = gpsAccuracy;
     }
 
-    public int getCustomerVATGroupId() {
+    public Integer getCustomerVATGroupId() {
         return customerVATGroupId;
     }
 
-    public void setCustomerVATGroupId(int customerVATGroupId) {
+    public void setCustomerVATGroupId(Integer customerVATGroupId) {
         this.customerVATGroupId = customerVATGroupId;
     }
 
-    public double getInvoiceDiscountPercent() {
+    public Double getInvoiceDiscountPercent() {
         return invoiceDiscountPercent;
     }
 
-    public void setInvoiceDiscountPercent(double invoiceDiscountPercent) {
+    public void setInvoiceDiscountPercent(Double invoiceDiscountPercent) {
         this.invoiceDiscountPercent = invoiceDiscountPercent;
     }
 
@@ -603,19 +601,19 @@ public class CustomerEntity extends BaseAuditColumns {
         this.customerHierarchyData = customerHierarchyData;
     }
 
-    public int getCustomerTaskCount() {
+    public Integer getCustomerTaskCount() {
         return customerTaskCount;
     }
 
-    public void setCustomerTaskCount(int customerTaskCount) {
+    public void setCustomerTaskCount(Integer customerTaskCount) {
         this.customerTaskCount = customerTaskCount;
     }
 
-    public boolean isCreateFromPotential() {
+    public Boolean isCreateFromPotential() {
         return createFromPotential;
     }
 
-    public void setCreateFromPotential(boolean createFromPotential) {
+    public void setCreateFromPotential(Boolean createFromPotential) {
         this.createFromPotential = createFromPotential;
     }
 
@@ -627,163 +625,163 @@ public class CustomerEntity extends BaseAuditColumns {
         this.primaryContactName = primaryContactName;
     }
 
-    public DateTime getFirstInvoiceDate() {
+    public String getFirstInvoiceDate() {
         return firstInvoiceDate;
     }
 
-    public void setFirstInvoiceDate(DateTime firstInvoiceDate) {
+    public void setFirstInvoiceDate(String firstInvoiceDate) {
         this.firstInvoiceDate = firstInvoiceDate;
     }
 
-    public DateTime getOldestOpenInvoiceDate() {
+    public String getOldestOpenInvoiceDate() {
         return oldestOpenInvoiceDate;
     }
 
-    public void setOldestOpenInvoiceDate(DateTime oldestOpenInvoiceDate) {
+    public void setOldestOpenInvoiceDate(String oldestOpenInvoiceDate) {
         this.oldestOpenInvoiceDate = oldestOpenInvoiceDate;
     }
 
-    public DateTime getLatestInvoiceDate() {
+    public String getLatestInvoiceDate() {
         return latestInvoiceDate;
     }
 
-    public void setLatestInvoiceDate(DateTime latestInvoiceDate) {
+    public void setLatestInvoiceDate(String latestInvoiceDate) {
         this.latestInvoiceDate = latestInvoiceDate;
     }
 
-    public DateTime getLatestPaymentDate() {
+    public String getLatestPaymentDate() {
         return latestPaymentDate;
     }
 
-    public void setLatestPaymentDate(DateTime latestPaymentDate) {
+    public void setLatestPaymentDate(String latestPaymentDate) {
         this.latestPaymentDate = latestPaymentDate;
     }
 
-    public double getWriteOff() {
+    public Double getWriteOff() {
         return writeOff;
     }
 
-    public void setWriteOff(double writeOff) {
+    public void setWriteOff(Double writeOff) {
         this.writeOff = writeOff;
     }
 
-    public double getCustomer12MonthsPlan() {
+    public Double getCustomer12MonthsPlan() {
         return customer12MonthsPlan;
     }
 
-    public void setCustomer12MonthsPlan(double customer12MonthsPlan) {
+    public void setCustomer12MonthsPlan(Double customer12MonthsPlan) {
         this.customer12MonthsPlan = customer12MonthsPlan;
     }
 
-    public double getSinRadLat() {
+    public Double getSinRadLat() {
         return sinRadLat;
     }
 
-    public void setSinRadLat(double sinRadLat) {
+    public void setSinRadLat(Double sinRadLat) {
         this.sinRadLat = sinRadLat;
     }
 
-    public double getCosRadLat() {
+    public Double getCosRadLat() {
         return cosRadLat;
     }
 
-    public void setCosRadLat(double cosRadLat) {
+    public void setCosRadLat(Double cosRadLat) {
         this.cosRadLat = cosRadLat;
     }
 
-    public double getSinRadLong() {
+    public Double getSinRadLong() {
         return sinRadLong;
     }
 
-    public void setSinRadLong(double sinRadLong) {
+    public void setSinRadLong(Double sinRadLong) {
         this.sinRadLong = sinRadLong;
     }
 
-    public double getCosRadLong() {
+    public Double getCosRadLong() {
         return cosRadLong;
     }
 
-    public void setCosRadLong(double cosRadLong) {
+    public void setCosRadLong(Double cosRadLong) {
         this.cosRadLong = cosRadLong;
     }
 
-    public double getCalculatedNumberOfVisits() {
+    public Double getCalculatedNumberOfVisits() {
         return calculatedNumberOfVisits;
     }
 
-    public void setCalculatedNumberOfVisits(double calculatedNumberOfVisits) {
+    public void setCalculatedNumberOfVisits(Double calculatedNumberOfVisits) {
         this.calculatedNumberOfVisits = calculatedNumberOfVisits;
     }
 
-    public double getCalculatedTimeAtCustomer() {
+    public Double getCalculatedTimeAtCustomer() {
         return calculatedTimeAtCustomer;
     }
 
-    public void setCalculatedTimeAtCustomer(double calculatedTimeAtCustomer) {
+    public void setCalculatedTimeAtCustomer(Double calculatedTimeAtCustomer) {
         this.calculatedTimeAtCustomer = calculatedTimeAtCustomer;
     }
 
-    public double getVisitProductivity6m() {
+    public Double getVisitProductivity6m() {
         return visitProductivity6m;
     }
 
-    public void setVisitProductivity6m(double visitProductivity6m) {
+    public void setVisitProductivity6m(Double visitProductivity6m) {
         this.visitProductivity6m = visitProductivity6m;
     }
 
-    public double getBalance1to30() {
+    public Double getBalance1to30() {
         return balance1to30;
     }
 
-    public void setBalance1to30(double balance1to30) {
+    public void setBalance1to30(Double balance1to30) {
         this.balance1to30 = balance1to30;
     }
 
-    public double getBalance31to60() {
+    public Double getBalance31to60() {
         return balance31to60;
     }
 
-    public void setBalance31to60(double balance31to60) {
+    public void setBalance31to60(Double balance31to60) {
         this.balance31to60 = balance31to60;
     }
 
-    public double getBalance61to90() {
+    public Double getBalance61to90() {
         return balance61to90;
     }
 
-    public void setBalance61to90(double balance61to90) {
+    public void setBalance61to90(Double balance61to90) {
         this.balance61to90 = balance61to90;
     }
 
-    public double getBalance91toXyz() {
+    public Double getBalance91toXyz() {
         return balance91toXyz;
     }
 
-    public void setBalance91toXyz(double balance91toXyz) {
+    public void setBalance91toXyz(Double balance91toXyz) {
         this.balance91toXyz = balance91toXyz;
     }
 
-    public double getBalanceCritical() {
+    public Double getBalanceCritical() {
         return balanceCritical;
     }
 
-    public void setBalanceCritical(double balanceCritical) {
+    public void setBalanceCritical(Double balanceCritical) {
         this.balanceCritical = balanceCritical;
     }
 
-    public boolean isTreasuryBill() {
+    public Integer getTreasuryBill() {
         return treasuryBill;
     }
 
-    public void setTreasuryBill(boolean treasuryBill) {
+    public void setTreasuryBill(Integer treasuryBill) {
         this.treasuryBill = treasuryBill;
     }
 
-    public double getPaymentAvgDays() {
+    public Double getPaymentAvgDays() {
         return paymentAvgDays;
     }
 
-    public void setPaymentAvgDays(double paymentAvgDays) {
+    public void setPaymentAvgDays(Double paymentAvgDays) {
         this.paymentAvgDays = paymentAvgDays;
     }
 
@@ -843,19 +841,19 @@ public class CustomerEntity extends BaseAuditColumns {
         this.fullCustomerCode = fullCustomerCode;
     }
 
-    public boolean isCentralOffice() {
+    public Boolean isCentralOffice() {
         return centralOffice;
     }
 
-    public void setCentralOffice(boolean centralOffice) {
+    public void setCentralOffice(Boolean centralOffice) {
         this.centralOffice = centralOffice;
     }
 
-    public int getPrimaryContactId() {
+    public Integer getPrimaryContactId() {
         return primaryContactId;
     }
 
-    public void setPrimaryContactId(int primaryContactId) {
+    public void setPrimaryContactId(Integer primaryContactId) {
         this.primaryContactId = primaryContactId;
     }
 
@@ -875,19 +873,19 @@ public class CustomerEntity extends BaseAuditColumns {
         this.assignedUserName = assignedUserName;
     }
 
-    public boolean isFocusCustomer() {
+    public Boolean isFocusCustomer() {
         return focusCustomer;
     }
 
-    public void setFocusCustomer(boolean focusCustomer) {
+    public void setFocusCustomer(Boolean focusCustomer) {
         this.focusCustomer = focusCustomer;
     }
 
-    public boolean isCustomerActive() {
+    public Boolean isCustomerActive() {
         return customerActive;
     }
 
-    public void setCustomerActive(boolean customerActive) {
+    public void setCustomerActive(Boolean customerActive) {
         this.customerActive = customerActive;
     }
 
@@ -915,35 +913,35 @@ public class CustomerEntity extends BaseAuditColumns {
         this.tradeLicenseType = tradeLicenseType;
     }
 
-    public double getTargetContractTurnover() {
+    public Double getTargetContractTurnover() {
         return targetContractTurnover;
     }
 
-    public void setTargetContractTurnover(double targetContractTurnover) {
+    public void setTargetContractTurnover(Double targetContractTurnover) {
         this.targetContractTurnover = targetContractTurnover;
     }
 
-    public double getContractRealizationPct() {
+    public Double getContractRealizationPct() {
         return contractRealizationPct;
     }
 
-    public void setContractRealizationPct(double contractRealizationPct) {
+    public void setContractRealizationPct(Double contractRealizationPct) {
         this.contractRealizationPct = contractRealizationPct;
     }
 
-    public DateTime getGallerySyncDate() {
+    public String getGallerySyncDate() {
         return gallerySyncDate;
     }
 
-    public void setGallerySyncDate(DateTime gallerySyncDate) {
+    public void setGallerySyncDate(String gallerySyncDate) {
         this.gallerySyncDate = gallerySyncDate;
     }
 
-    public boolean isSent() {
+    public Boolean isSent() {
         return sent;
     }
 
-    public void setSent(boolean sent) {
+    public void setSent(Boolean sent) {
         this.sent = sent;
     }
 }

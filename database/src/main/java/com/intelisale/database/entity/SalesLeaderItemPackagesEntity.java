@@ -7,40 +7,40 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "SalesLeaderItemsPackages")
 public class SalesLeaderItemPackagesEntity extends CodeBookColumns {
 
-    private int itemPackageId;
-    private int itemComponentId;
-    private double itemComponentPrice;
-    private double itemComponentQuantity;
+    private Integer itemPackageId;
+    private Integer itemComponentId;
+    private Double itemComponentPrice;
+    private Double itemComponentQuantity;
 
-    public int getItemPackageId() {
+    public Integer getItemPackageId() {
         return itemPackageId;
     }
 
-    public void setItemPackageId(int itemPackageId) {
+    public void setItemPackageId(Integer itemPackageId) {
         this.itemPackageId = itemPackageId;
     }
 
-    public int getItemComponentId() {
+    public Integer getItemComponentId() {
         return itemComponentId;
     }
 
-    public void setItemComponentId(int itemComponentId) {
+    public void setItemComponentId(Integer itemComponentId) {
         this.itemComponentId = itemComponentId;
     }
 
-    public double getItemComponentPrice() {
+    public Double getItemComponentPrice() {
         return itemComponentPrice;
     }
 
-    public void setItemComponentPrice(double itemComponentPrice) {
+    public void setItemComponentPrice(Double itemComponentPrice) {
         this.itemComponentPrice = itemComponentPrice;
     }
 
-    public double getItemComponentQuantity() {
+    public Double getItemComponentQuantity() {
         return itemComponentQuantity;
     }
 
-    public void setItemComponentQuantity(double itemComponentQuantity) {
+    public void setItemComponentQuantity(Double itemComponentQuantity) {
         this.itemComponentQuantity = itemComponentQuantity;
     }
 }

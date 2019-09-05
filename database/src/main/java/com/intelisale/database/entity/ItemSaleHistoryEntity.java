@@ -4,83 +4,81 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "ItemSaleHistory")
 public class ItemSaleHistoryEntity extends BaseColumns {
 
-    private int itemId;
-    private int customerId;
-    private DateTime postingDate;
-    private double quantity;
-    private int itemUnitOfMeasureId;
-    private double unitPrice;
-    private double lineDiscount;
-    private int salesPriceTypeId;
+    private Integer itemId;
+    private Integer customerId;
+    private String postingDate;
+    private Double quantity;
+    private Integer itemUnitOfMeasureId;
+    private Double unitPrice;
+    private Double lineDiscount;
+    private Integer salesPriceTypeId;
     private String salesSource;
-    private boolean priceIncreased;
+    private Boolean priceIncreased;
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public DateTime getPostingDate() {
+    public String getPostingDate() {
         return postingDate;
     }
 
-    public void setPostingDate(DateTime postingDate) {
+    public void setPostingDate(String postingDate) {
         this.postingDate = postingDate;
     }
 
-    public double getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
 
-    public int getItemUnitOfMeasureId() {
+    public Integer getItemUnitOfMeasureId() {
         return itemUnitOfMeasureId;
     }
 
-    public void setItemUnitOfMeasureId(int itemUnitOfMeasureId) {
+    public void setItemUnitOfMeasureId(Integer itemUnitOfMeasureId) {
         this.itemUnitOfMeasureId = itemUnitOfMeasureId;
     }
 
-    public double getUnitPrice() {
+    public Double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(double unitPrice) {
+    public void setUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
     }
 
-    public double getLineDiscount() {
+    public Double getLineDiscount() {
         return lineDiscount;
     }
 
-    public void setLineDiscount(double lineDiscount) {
+    public void setLineDiscount(Double lineDiscount) {
         this.lineDiscount = lineDiscount;
     }
 
-    public int getSalesPriceTypeId() {
+    public Integer getSalesPriceTypeId() {
         return salesPriceTypeId;
     }
 
-    public void setSalesPriceTypeId(int salesPriceTypeId) {
+    public void setSalesPriceTypeId(Integer salesPriceTypeId) {
         this.salesPriceTypeId = salesPriceTypeId;
     }
 
@@ -92,11 +90,11 @@ public class ItemSaleHistoryEntity extends BaseColumns {
         this.salesSource = salesSource;
     }
 
-    public boolean isPriceIncreased() {
+    public Boolean isPriceIncreased() {
         return priceIncreased;
     }
 
-    public void setPriceIncreased(boolean priceIncreased) {
+    public void setPriceIncreased(Boolean priceIncreased) {
         this.priceIncreased = priceIncreased;
     }
 }

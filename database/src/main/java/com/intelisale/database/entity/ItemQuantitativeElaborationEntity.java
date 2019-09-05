@@ -7,7 +7,7 @@ import com.intelisale.database.entity.column.BaseColumns;
 @Entity(tableName = "ItemQuantitativeElaboration")
 public class ItemQuantitativeElaborationEntity extends BaseColumns {
 
-    private int itemId;
+    private Integer itemId;
     private String standard;
     private String abc;
     private String price;
@@ -23,11 +23,11 @@ public class ItemQuantitativeElaborationEntity extends BaseColumns {
     private String value7;
     private String value8;
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 

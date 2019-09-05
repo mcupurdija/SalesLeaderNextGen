@@ -4,81 +4,79 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "SaleOrderLines")
 public class SaleOrderLineEntity extends BaseAuditColumns {
 
-    private int saleOrderHeaderId;
-    private int lineNo;
-    private int itemId;
+    private Integer saleOrderHeaderId;
+    private Integer lineNo;
+    private Integer itemId;
     private String itemDescription;
-    private int warehouseId;
-    private double quantity;
-    private double quantityAvailable;
-    private double ovsQuantityAvailable;
-    private double unitPriceWithoutVAT;
-    private double unitPriceWithVAT;
-    private double lineDiscountPr;
-    private double vatPercent;
-    private double lineDiscountPercent;
-    private double lineDiscAmountWithoutVAT;
-    private double lineDiscAmountWithVAT;
-    private double lineAmountWithoutVAT;
-    private double lineAmountWithVAT;
-    private double maxDiscount;
-    private double taPrice;
-    private double taDiscount;
-    private double ovsPrice;
-    private double ovsDiscount;
-    private double campaignPrice;
-    private double campaignDiscount;
-    private double regularPrice;
-    private double regularDiscount;
-    private double minSalesPrice;
-    private int itemUnitOfMeasureId;
-    private DateTime requestedDeliveryDate;
-    private int backOrderShipmentStatusId;
-    private int salesPriceTypeId;
-    private boolean requestedTradeAgreement;
-    private boolean orsyItem;
-    private int documentVerificationStatusId;
+    private Integer warehouseId;
+    private Double quantity;
+    private Double quantityAvailable;
+    private Double ovsQuantityAvailable;
+    private Double unitPriceWithoutVAT;
+    private Double unitPriceWithVAT;
+    private Double lineDiscountPr;
+    private Double vatPercent;
+    private Double lineDiscountPercent;
+    private Double lineDiscAmountWithoutVAT;
+    private Double lineDiscAmountWithVAT;
+    private Double lineAmountWithoutVAT;
+    private Double lineAmountWithVAT;
+    private Double maxDiscount;
+    private Double taPrice;
+    private Double taDiscount;
+    private Double ovsPrice;
+    private Double ovsDiscount;
+    private Double campaignPrice;
+    private Double campaignDiscount;
+    private Double regularPrice;
+    private Double regularDiscount;
+    private Double minSalesPrice;
+    private Integer itemUnitOfMeasureId;
+    private String requestedDeliveryDate;
+    private Integer backOrderShipmentStatusId;
+    private Integer salesPriceTypeId;
+    private Boolean requestedTradeAgreement;
+    private Boolean orsyItem;
+    private Integer documentVerificationStatusId;
     private String documentVerificationMessage;
-    private double bonusEarnings;
-    private double lastPrice;
-    private double minimumPrice;
-    private double basePrice;
-    private double sellingPrice;
-    private boolean ta;
+    private Double bonusEarnings;
+    private Double lastPrice;
+    private Double minimumPrice;
+    private Double basePrice;
+    private Double sellingPrice;
+    private Boolean ta;
     private String itemImportance;
-    private boolean discountSetAsZero;
-    private boolean priceSetAsZero;
-    private boolean priceLoaded;
-    private double priceUnit;
-    private double quantityAvailableAdd;
-    private int stockAvailabilityStatusId;
+    private Boolean discountSetAsZero;
+    private Boolean priceSetAsZero;
+    private Boolean priceLoaded;
+    private Double priceUnit;
+    private Double quantityAvailableAdd;
+    private Integer stockAvailabilityStatusId;
 
-    public int getSaleOrderHeaderId() {
+    public Integer getSaleOrderHeaderId() {
         return saleOrderHeaderId;
     }
 
-    public void setSaleOrderHeaderId(int saleOrderHeaderId) {
+    public void setSaleOrderHeaderId(Integer saleOrderHeaderId) {
         this.saleOrderHeaderId = saleOrderHeaderId;
     }
 
-    public int getLineNo() {
+    public Integer getLineNo() {
         return lineNo;
     }
 
-    public void setLineNo(int lineNo) {
+    public void setLineNo(Integer lineNo) {
         this.lineNo = lineNo;
     }
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
@@ -90,243 +88,243 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.itemDescription = itemDescription;
     }
 
-    public int getWarehouseId() {
+    public Integer getWarehouseId() {
         return warehouseId;
     }
 
-    public void setWarehouseId(int warehouseId) {
+    public void setWarehouseId(Integer warehouseId) {
         this.warehouseId = warehouseId;
     }
 
-    public double getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
 
-    public double getQuantityAvailable() {
+    public Double getQuantityAvailable() {
         return quantityAvailable;
     }
 
-    public void setQuantityAvailable(double quantityAvailable) {
+    public void setQuantityAvailable(Double quantityAvailable) {
         this.quantityAvailable = quantityAvailable;
     }
 
-    public double getOvsQuantityAvailable() {
+    public Double getOvsQuantityAvailable() {
         return ovsQuantityAvailable;
     }
 
-    public void setOvsQuantityAvailable(double ovsQuantityAvailable) {
+    public void setOvsQuantityAvailable(Double ovsQuantityAvailable) {
         this.ovsQuantityAvailable = ovsQuantityAvailable;
     }
 
-    public double getUnitPriceWithoutVAT() {
+    public Double getUnitPriceWithoutVAT() {
         return unitPriceWithoutVAT;
     }
 
-    public void setUnitPriceWithoutVAT(double unitPriceWithoutVAT) {
+    public void setUnitPriceWithoutVAT(Double unitPriceWithoutVAT) {
         this.unitPriceWithoutVAT = unitPriceWithoutVAT;
     }
 
-    public double getUnitPriceWithVAT() {
+    public Double getUnitPriceWithVAT() {
         return unitPriceWithVAT;
     }
 
-    public void setUnitPriceWithVAT(double unitPriceWithVAT) {
+    public void setUnitPriceWithVAT(Double unitPriceWithVAT) {
         this.unitPriceWithVAT = unitPriceWithVAT;
     }
 
-    public double getLineDiscountPr() {
+    public Double getLineDiscountPr() {
         return lineDiscountPr;
     }
 
-    public void setLineDiscountPr(double lineDiscountPr) {
+    public void setLineDiscountPr(Double lineDiscountPr) {
         this.lineDiscountPr = lineDiscountPr;
     }
 
-    public double getVatPercent() {
+    public Double getVatPercent() {
         return vatPercent;
     }
 
-    public void setVatPercent(double vatPercent) {
+    public void setVatPercent(Double vatPercent) {
         this.vatPercent = vatPercent;
     }
 
-    public double getLineDiscountPercent() {
+    public Double getLineDiscountPercent() {
         return lineDiscountPercent;
     }
 
-    public void setLineDiscountPercent(double lineDiscountPercent) {
+    public void setLineDiscountPercent(Double lineDiscountPercent) {
         this.lineDiscountPercent = lineDiscountPercent;
     }
 
-    public double getLineDiscAmountWithoutVAT() {
+    public Double getLineDiscAmountWithoutVAT() {
         return lineDiscAmountWithoutVAT;
     }
 
-    public void setLineDiscAmountWithoutVAT(double lineDiscAmountWithoutVAT) {
+    public void setLineDiscAmountWithoutVAT(Double lineDiscAmountWithoutVAT) {
         this.lineDiscAmountWithoutVAT = lineDiscAmountWithoutVAT;
     }
 
-    public double getLineDiscAmountWithVAT() {
+    public Double getLineDiscAmountWithVAT() {
         return lineDiscAmountWithVAT;
     }
 
-    public void setLineDiscAmountWithVAT(double lineDiscAmountWithVAT) {
+    public void setLineDiscAmountWithVAT(Double lineDiscAmountWithVAT) {
         this.lineDiscAmountWithVAT = lineDiscAmountWithVAT;
     }
 
-    public double getLineAmountWithoutVAT() {
+    public Double getLineAmountWithoutVAT() {
         return lineAmountWithoutVAT;
     }
 
-    public void setLineAmountWithoutVAT(double lineAmountWithoutVAT) {
+    public void setLineAmountWithoutVAT(Double lineAmountWithoutVAT) {
         this.lineAmountWithoutVAT = lineAmountWithoutVAT;
     }
 
-    public double getLineAmountWithVAT() {
+    public Double getLineAmountWithVAT() {
         return lineAmountWithVAT;
     }
 
-    public void setLineAmountWithVAT(double lineAmountWithVAT) {
+    public void setLineAmountWithVAT(Double lineAmountWithVAT) {
         this.lineAmountWithVAT = lineAmountWithVAT;
     }
 
-    public double getMaxDiscount() {
+    public Double getMaxDiscount() {
         return maxDiscount;
     }
 
-    public void setMaxDiscount(double maxDiscount) {
+    public void setMaxDiscount(Double maxDiscount) {
         this.maxDiscount = maxDiscount;
     }
 
-    public double getTaPrice() {
+    public Double getTaPrice() {
         return taPrice;
     }
 
-    public void setTaPrice(double taPrice) {
+    public void setTaPrice(Double taPrice) {
         this.taPrice = taPrice;
     }
 
-    public double getTaDiscount() {
+    public Double getTaDiscount() {
         return taDiscount;
     }
 
-    public void setTaDiscount(double taDiscount) {
+    public void setTaDiscount(Double taDiscount) {
         this.taDiscount = taDiscount;
     }
 
-    public double getOvsPrice() {
+    public Double getOvsPrice() {
         return ovsPrice;
     }
 
-    public void setOvsPrice(double ovsPrice) {
+    public void setOvsPrice(Double ovsPrice) {
         this.ovsPrice = ovsPrice;
     }
 
-    public double getOvsDiscount() {
+    public Double getOvsDiscount() {
         return ovsDiscount;
     }
 
-    public void setOvsDiscount(double ovsDiscount) {
+    public void setOvsDiscount(Double ovsDiscount) {
         this.ovsDiscount = ovsDiscount;
     }
 
-    public double getCampaignPrice() {
+    public Double getCampaignPrice() {
         return campaignPrice;
     }
 
-    public void setCampaignPrice(double campaignPrice) {
+    public void setCampaignPrice(Double campaignPrice) {
         this.campaignPrice = campaignPrice;
     }
 
-    public double getCampaignDiscount() {
+    public Double getCampaignDiscount() {
         return campaignDiscount;
     }
 
-    public void setCampaignDiscount(double campaignDiscount) {
+    public void setCampaignDiscount(Double campaignDiscount) {
         this.campaignDiscount = campaignDiscount;
     }
 
-    public double getRegularPrice() {
+    public Double getRegularPrice() {
         return regularPrice;
     }
 
-    public void setRegularPrice(double regularPrice) {
+    public void setRegularPrice(Double regularPrice) {
         this.regularPrice = regularPrice;
     }
 
-    public double getRegularDiscount() {
+    public Double getRegularDiscount() {
         return regularDiscount;
     }
 
-    public void setRegularDiscount(double regularDiscount) {
+    public void setRegularDiscount(Double regularDiscount) {
         this.regularDiscount = regularDiscount;
     }
 
-    public double getMinSalesPrice() {
+    public Double getMinSalesPrice() {
         return minSalesPrice;
     }
 
-    public void setMinSalesPrice(double minSalesPrice) {
+    public void setMinSalesPrice(Double minSalesPrice) {
         this.minSalesPrice = minSalesPrice;
     }
 
-    public int getItemUnitOfMeasureId() {
+    public Integer getItemUnitOfMeasureId() {
         return itemUnitOfMeasureId;
     }
 
-    public void setItemUnitOfMeasureId(int itemUnitOfMeasureId) {
+    public void setItemUnitOfMeasureId(Integer itemUnitOfMeasureId) {
         this.itemUnitOfMeasureId = itemUnitOfMeasureId;
     }
 
-    public DateTime getRequestedDeliveryDate() {
+    public String getRequestedDeliveryDate() {
         return requestedDeliveryDate;
     }
 
-    public void setRequestedDeliveryDate(DateTime requestedDeliveryDate) {
+    public void setRequestedDeliveryDate(String requestedDeliveryDate) {
         this.requestedDeliveryDate = requestedDeliveryDate;
     }
 
-    public int getBackOrderShipmentStatusId() {
+    public Integer getBackOrderShipmentStatusId() {
         return backOrderShipmentStatusId;
     }
 
-    public void setBackOrderShipmentStatusId(int backOrderShipmentStatusId) {
+    public void setBackOrderShipmentStatusId(Integer backOrderShipmentStatusId) {
         this.backOrderShipmentStatusId = backOrderShipmentStatusId;
     }
 
-    public int getSalesPriceTypeId() {
+    public Integer getSalesPriceTypeId() {
         return salesPriceTypeId;
     }
 
-    public void setSalesPriceTypeId(int salesPriceTypeId) {
+    public void setSalesPriceTypeId(Integer salesPriceTypeId) {
         this.salesPriceTypeId = salesPriceTypeId;
     }
 
-    public boolean isRequestedTradeAgreement() {
+    public Boolean isRequestedTradeAgreement() {
         return requestedTradeAgreement;
     }
 
-    public void setRequestedTradeAgreement(boolean requestedTradeAgreement) {
+    public void setRequestedTradeAgreement(Boolean requestedTradeAgreement) {
         this.requestedTradeAgreement = requestedTradeAgreement;
     }
 
-    public boolean isOrsyItem() {
+    public Boolean isOrsyItem() {
         return orsyItem;
     }
 
-    public void setOrsyItem(boolean orsyItem) {
+    public void setOrsyItem(Boolean orsyItem) {
         this.orsyItem = orsyItem;
     }
 
-    public int getDocumentVerificationStatusId() {
+    public Integer getDocumentVerificationStatusId() {
         return documentVerificationStatusId;
     }
 
-    public void setDocumentVerificationStatusId(int documentVerificationStatusId) {
+    public void setDocumentVerificationStatusId(Integer documentVerificationStatusId) {
         this.documentVerificationStatusId = documentVerificationStatusId;
     }
 
@@ -338,51 +336,51 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.documentVerificationMessage = documentVerificationMessage;
     }
 
-    public double getBonusEarnings() {
+    public Double getBonusEarnings() {
         return bonusEarnings;
     }
 
-    public void setBonusEarnings(double bonusEarnings) {
+    public void setBonusEarnings(Double bonusEarnings) {
         this.bonusEarnings = bonusEarnings;
     }
 
-    public double getLastPrice() {
+    public Double getLastPrice() {
         return lastPrice;
     }
 
-    public void setLastPrice(double lastPrice) {
+    public void setLastPrice(Double lastPrice) {
         this.lastPrice = lastPrice;
     }
 
-    public double getMinimumPrice() {
+    public Double getMinimumPrice() {
         return minimumPrice;
     }
 
-    public void setMinimumPrice(double minimumPrice) {
+    public void setMinimumPrice(Double minimumPrice) {
         this.minimumPrice = minimumPrice;
     }
 
-    public double getBasePrice() {
+    public Double getBasePrice() {
         return basePrice;
     }
 
-    public void setBasePrice(double basePrice) {
+    public void setBasePrice(Double basePrice) {
         this.basePrice = basePrice;
     }
 
-    public double getSellingPrice() {
+    public Double getSellingPrice() {
         return sellingPrice;
     }
 
-    public void setSellingPrice(double sellingPrice) {
+    public void setSellingPrice(Double sellingPrice) {
         this.sellingPrice = sellingPrice;
     }
 
-    public boolean isTa() {
+    public Boolean isTa() {
         return ta;
     }
 
-    public void setTa(boolean ta) {
+    public void setTa(Boolean ta) {
         this.ta = ta;
     }
 
@@ -394,51 +392,51 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.itemImportance = itemImportance;
     }
 
-    public boolean isDiscountSetAsZero() {
+    public Boolean isDiscountSetAsZero() {
         return discountSetAsZero;
     }
 
-    public void setDiscountSetAsZero(boolean discountSetAsZero) {
+    public void setDiscountSetAsZero(Boolean discountSetAsZero) {
         this.discountSetAsZero = discountSetAsZero;
     }
 
-    public boolean isPriceSetAsZero() {
+    public Boolean isPriceSetAsZero() {
         return priceSetAsZero;
     }
 
-    public void setPriceSetAsZero(boolean priceSetAsZero) {
+    public void setPriceSetAsZero(Boolean priceSetAsZero) {
         this.priceSetAsZero = priceSetAsZero;
     }
 
-    public boolean isPriceLoaded() {
+    public Boolean isPriceLoaded() {
         return priceLoaded;
     }
 
-    public void setPriceLoaded(boolean priceLoaded) {
+    public void setPriceLoaded(Boolean priceLoaded) {
         this.priceLoaded = priceLoaded;
     }
 
-    public double getPriceUnit() {
+    public Double getPriceUnit() {
         return priceUnit;
     }
 
-    public void setPriceUnit(double priceUnit) {
+    public void setPriceUnit(Double priceUnit) {
         this.priceUnit = priceUnit;
     }
 
-    public double getQuantityAvailableAdd() {
+    public Double getQuantityAvailableAdd() {
         return quantityAvailableAdd;
     }
 
-    public void setQuantityAvailableAdd(double quantityAvailableAdd) {
+    public void setQuantityAvailableAdd(Double quantityAvailableAdd) {
         this.quantityAvailableAdd = quantityAvailableAdd;
     }
 
-    public int getStockAvailabilityStatusId() {
+    public Integer getStockAvailabilityStatusId() {
         return stockAvailabilityStatusId;
     }
 
-    public void setStockAvailabilityStatusId(int stockAvailabilityStatusId) {
+    public void setStockAvailabilityStatusId(Integer stockAvailabilityStatusId) {
         this.stockAvailabilityStatusId = stockAvailabilityStatusId;
     }
 }

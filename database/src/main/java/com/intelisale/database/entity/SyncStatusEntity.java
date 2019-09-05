@@ -4,15 +4,13 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "SyncStatus")
 public class SyncStatusEntity extends BaseColumns {
 
     private String tableName;
-    private DateTime syncDate;
-    private int syncProgress;
-    private int status;
+    private String syncDate;
+    private Integer syncProgress;
+    private Integer status;
 
     public String getTableName() {
         return tableName;
@@ -22,27 +20,27 @@ public class SyncStatusEntity extends BaseColumns {
         this.tableName = tableName;
     }
 
-    public DateTime getSyncDate() {
+    public String getSyncDate() {
         return syncDate;
     }
 
-    public void setSyncDate(DateTime syncDate) {
+    public void setSyncDate(String syncDate) {
         this.syncDate = syncDate;
     }
 
-    public int getSyncProgress() {
+    public Integer getSyncProgress() {
         return syncProgress;
     }
 
-    public void setSyncProgress(int syncProgress) {
+    public void setSyncProgress(Integer syncProgress) {
         this.syncProgress = syncProgress;
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 }

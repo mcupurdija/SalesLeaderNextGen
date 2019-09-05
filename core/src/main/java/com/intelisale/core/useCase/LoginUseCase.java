@@ -50,6 +50,7 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
                     public void onSuccess(LoginSchema loginSchema) {
 
                         mSettingsManager.setToken(loginSchema.getToken());
+
                         mSessionManager.setToken(loginSchema.getToken());
 
                         getUserDetails();

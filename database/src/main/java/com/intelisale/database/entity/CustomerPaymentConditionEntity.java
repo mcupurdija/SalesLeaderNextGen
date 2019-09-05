@@ -7,13 +7,13 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "CustomerPaymentConditions")
 public class CustomerPaymentConditionEntity extends CodeBookColumns {
 
-    private int noOfDays;
+    private Integer noOfDays;
 
-    public int getNoOfDays() {
+    public Integer getNoOfDays() {
         return noOfDays;
     }
 
-    public void setNoOfDays(int noOfDays) {
+    public void setNoOfDays(Integer noOfDays) {
         this.noOfDays = noOfDays;
     }
 }

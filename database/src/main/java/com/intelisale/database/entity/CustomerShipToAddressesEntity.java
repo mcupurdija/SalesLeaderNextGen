@@ -9,14 +9,14 @@ public class CustomerShipToAddressesEntity extends CodeBookColumns {
 
     private String description2;
     private String address;
-    private int postalCodeAndCityId;
+    private Integer postalCodeAndCityId;
     private String countyRegion;
     private String phoneNo;
     private String mobileNo;
     private String faxNo;
     private String email;
     private String homePage;
-    private int customerId;
+    private Integer customerId;
     private String municipalityOfOperating;
     private String regionOfOperating;
     private String cityOfOperating;
@@ -43,11 +43,11 @@ public class CustomerShipToAddressesEntity extends CodeBookColumns {
         this.address = address;
     }
 
-    public int getPostalCodeAndCityId() {
+    public Integer getPostalCodeAndCityId() {
         return postalCodeAndCityId;
     }
 
-    public void setPostalCodeAndCityId(int postalCodeAndCityId) {
+    public void setPostalCodeAndCityId(Integer postalCodeAndCityId) {
         this.postalCodeAndCityId = postalCodeAndCityId;
     }
 
@@ -99,11 +99,11 @@ public class CustomerShipToAddressesEntity extends CodeBookColumns {
         this.homePage = homePage;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 

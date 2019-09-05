@@ -7,58 +7,58 @@ import com.intelisale.database.entity.column.BaseAuditColumns;
 @Entity(tableName = "CustomerProductGroupPotential")
 public class CustomerProductGroupPotentialEntity extends BaseAuditColumns {
 
-    private int categoryOfItemsId;
-    private double turnover;
-    private double potential;
-    private double unusedPotential;
-    private int noOfItems;
-    private int categoryRank;
+    private Integer categoryOfItemsId;
+    private Double turnover;
+    private Double potential;
+    private Double unusedPotential;
+    private Integer noOfItems;
+    private Integer categoryRank;
 
-    public int getCategoryOfItemsId() {
+    public Integer getCategoryOfItemsId() {
         return categoryOfItemsId;
     }
 
-    public void setCategoryOfItemsId(int categoryOfItemsId) {
+    public void setCategoryOfItemsId(Integer categoryOfItemsId) {
         this.categoryOfItemsId = categoryOfItemsId;
     }
 
-    public double getTurnover() {
+    public Double getTurnover() {
         return turnover;
     }
 
-    public void setTurnover(double turnover) {
+    public void setTurnover(Double turnover) {
         this.turnover = turnover;
     }
 
-    public double getPotential() {
+    public Double getPotential() {
         return potential;
     }
 
-    public void setPotential(double potential) {
+    public void setPotential(Double potential) {
         this.potential = potential;
     }
 
-    public double getUnusedPotential() {
+    public Double getUnusedPotential() {
         return unusedPotential;
     }
 
-    public void setUnusedPotential(double unusedPotential) {
+    public void setUnusedPotential(Double unusedPotential) {
         this.unusedPotential = unusedPotential;
     }
 
-    public int getNoOfItems() {
+    public Integer getNoOfItems() {
         return noOfItems;
     }
 
-    public void setNoOfItems(int noOfItems) {
+    public void setNoOfItems(Integer noOfItems) {
         this.noOfItems = noOfItems;
     }
 
-    public int getCategoryRank() {
+    public Integer getCategoryRank() {
         return categoryRank;
     }
 
-    public void setCategoryRank(int categoryRank) {
+    public void setCategoryRank(Integer categoryRank) {
         this.categoryRank = categoryRank;
     }
 }

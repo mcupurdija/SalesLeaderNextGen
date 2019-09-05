@@ -7,31 +7,31 @@ import com.intelisale.database.entity.column.BaseColumns;
 @Entity(tableName = "SalesLeaderItemsToBring")
 public class SalesLeaderItemToBringEntity extends BaseColumns {
 
-    private int itemId;
-    private int branchMapRang;
-    private int squareColor;
+    private Integer itemId;
+    private Integer branchMapRang;
+    private Integer squareColor;
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
-    public int getBranchMapRang() {
+    public Integer getBranchMapRang() {
         return branchMapRang;
     }
 
-    public void setBranchMapRang(int branchMapRang) {
+    public void setBranchMapRang(Integer branchMapRang) {
         this.branchMapRang = branchMapRang;
     }
 
-    public int getSquareColor() {
+    public Integer getSquareColor() {
         return squareColor;
     }
 
-    public void setSquareColor(int squareColor) {
+    public void setSquareColor(Integer squareColor) {
         this.squareColor = squareColor;
     }
 }

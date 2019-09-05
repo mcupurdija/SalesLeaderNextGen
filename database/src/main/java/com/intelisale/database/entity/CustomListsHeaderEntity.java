@@ -7,31 +7,31 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = "CustomListsHeaders")
 public class CustomListsHeaderEntity extends CodeBookColumns {
 
-    private int salesLeaderSalesLevelTypeId;
-    private int salesLevelId;
-    private boolean forAllUsers;
+    private Integer salesLeaderSalesLevelTypeId;
+    private Integer salesLevelId;
+    private Boolean forAllUsers;
 
-    public int getSalesLeaderSalesLevelTypeId() {
+    public Integer getSalesLeaderSalesLevelTypeId() {
         return salesLeaderSalesLevelTypeId;
     }
 
-    public void setSalesLeaderSalesLevelTypeId(int salesLeaderSalesLevelTypeId) {
+    public void setSalesLeaderSalesLevelTypeId(Integer salesLeaderSalesLevelTypeId) {
         this.salesLeaderSalesLevelTypeId = salesLeaderSalesLevelTypeId;
     }
 
-    public int getSalesLevelId() {
+    public Integer getSalesLevelId() {
         return salesLevelId;
     }
 
-    public void setSalesLevelId(int salesLevelId) {
+    public void setSalesLevelId(Integer salesLevelId) {
         this.salesLevelId = salesLevelId;
     }
 
-    public boolean isForAllUsers() {
+    public Boolean isForAllUsers() {
         return forAllUsers;
     }
 
-    public void setForAllUsers(boolean forAllUsers) {
+    public void setForAllUsers(Boolean forAllUsers) {
         this.forAllUsers = forAllUsers;
     }
 }

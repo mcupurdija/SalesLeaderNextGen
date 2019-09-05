@@ -13,13 +13,13 @@ public class ContactEntity extends BaseAuditColumns {
     private String phone;
     private String mobile;
     private String email;
-    private int customerId;
-    private int contactDepartmentId;
-    private int contactPositionId;
-    private int employeeId;
+    private Integer customerId;
+    private Integer contactDepartmentId;
+    private Integer contactPositionId;
+    private Integer employeeId;
     private String address;
-    private int postalCodeAndCityId;
-    private boolean sent;
+    private Integer postalCodeAndCityId;
+    private Boolean sent;
 
     public String getCode() {
         return code;
@@ -69,35 +69,35 @@ public class ContactEntity extends BaseAuditColumns {
         this.email = email;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public int getContactDepartmentId() {
+    public Integer getContactDepartmentId() {
         return contactDepartmentId;
     }
 
-    public void setContactDepartmentId(int contactDepartmentId) {
+    public void setContactDepartmentId(Integer contactDepartmentId) {
         this.contactDepartmentId = contactDepartmentId;
     }
 
-    public int getContactPositionId() {
+    public Integer getContactPositionId() {
         return contactPositionId;
     }
 
-    public void setContactPositionId(int contactPositionId) {
+    public void setContactPositionId(Integer contactPositionId) {
         this.contactPositionId = contactPositionId;
     }
 
-    public int getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -109,19 +109,19 @@ public class ContactEntity extends BaseAuditColumns {
         this.address = address;
     }
 
-    public int getPostalCodeAndCityId() {
+    public Integer getPostalCodeAndCityId() {
         return postalCodeAndCityId;
     }
 
-    public void setPostalCodeAndCityId(int postalCodeAndCityId) {
+    public void setPostalCodeAndCityId(Integer postalCodeAndCityId) {
         this.postalCodeAndCityId = postalCodeAndCityId;
     }
 
-    public boolean isSent() {
+    public Boolean isSent() {
         return sent;
     }
 
-    public void setSent(boolean sent) {
+    public void setSent(Boolean sent) {
         this.sent = sent;
     }
 }

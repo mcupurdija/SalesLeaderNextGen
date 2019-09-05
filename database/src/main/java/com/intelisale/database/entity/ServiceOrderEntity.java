@@ -4,39 +4,37 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "ServiceOrders")
 public class ServiceOrderEntity extends BaseColumns {
 
-    private int serverId;
+    private Integer serverId;
     private String serviceOrderNo;
-    private DateTime serviceOrderDate;
-    private int customerId;
-    private int customerShipToAddressId;
-    private int itemId;
+    private String serviceOrderDate;
+    private Integer customerId;
+    private Integer customerShipToAddressId;
+    private Integer itemId;
     private String reclamationText;
     private String phoneNo;
     private String note;
-    private int quantityForReclamation;
+    private Integer quantityForReclamation;
     private String service;
-    private boolean notifyCourier;
+    private Boolean notifyCourier;
     private String serviceClassificationCallCode;
-    private int serviceClassificationCallId;
+    private Integer serviceClassificationCallId;
     private String serviceClassificationProblemCode;
-    private int serviceClassificationProblemId;
+    private Integer serviceClassificationProblemId;
     private String contactPersonCode;
     private String invoiceNo;
     private String shipmentMethodCode;
     private String remarksNote;
     private String serialNo;
-    private boolean sent;
+    private Boolean sent;
 
-    public int getServerId() {
+    public Integer getServerId() {
         return serverId;
     }
 
-    public void setServerId(int serverId) {
+    public void setServerId(Integer serverId) {
         this.serverId = serverId;
     }
 
@@ -48,35 +46,35 @@ public class ServiceOrderEntity extends BaseColumns {
         this.serviceOrderNo = serviceOrderNo;
     }
 
-    public DateTime getServiceOrderDate() {
+    public String getServiceOrderDate() {
         return serviceOrderDate;
     }
 
-    public void setServiceOrderDate(DateTime serviceOrderDate) {
+    public void setServiceOrderDate(String serviceOrderDate) {
         this.serviceOrderDate = serviceOrderDate;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public int getCustomerShipToAddressId() {
+    public Integer getCustomerShipToAddressId() {
         return customerShipToAddressId;
     }
 
-    public void setCustomerShipToAddressId(int customerShipToAddressId) {
+    public void setCustomerShipToAddressId(Integer customerShipToAddressId) {
         this.customerShipToAddressId = customerShipToAddressId;
     }
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
@@ -104,11 +102,11 @@ public class ServiceOrderEntity extends BaseColumns {
         this.note = note;
     }
 
-    public int getQuantityForReclamation() {
+    public Integer getQuantityForReclamation() {
         return quantityForReclamation;
     }
 
-    public void setQuantityForReclamation(int quantityForReclamation) {
+    public void setQuantityForReclamation(Integer quantityForReclamation) {
         this.quantityForReclamation = quantityForReclamation;
     }
 
@@ -120,11 +118,11 @@ public class ServiceOrderEntity extends BaseColumns {
         this.service = service;
     }
 
-    public boolean isNotifyCourier() {
+    public Boolean isNotifyCourier() {
         return notifyCourier;
     }
 
-    public void setNotifyCourier(boolean notifyCourier) {
+    public void setNotifyCourier(Boolean notifyCourier) {
         this.notifyCourier = notifyCourier;
     }
 
@@ -136,11 +134,11 @@ public class ServiceOrderEntity extends BaseColumns {
         this.serviceClassificationCallCode = serviceClassificationCallCode;
     }
 
-    public int getServiceClassificationCallId() {
+    public Integer getServiceClassificationCallId() {
         return serviceClassificationCallId;
     }
 
-    public void setServiceClassificationCallId(int serviceClassificationCallId) {
+    public void setServiceClassificationCallId(Integer serviceClassificationCallId) {
         this.serviceClassificationCallId = serviceClassificationCallId;
     }
 
@@ -152,11 +150,11 @@ public class ServiceOrderEntity extends BaseColumns {
         this.serviceClassificationProblemCode = serviceClassificationProblemCode;
     }
 
-    public int getServiceClassificationProblemId() {
+    public Integer getServiceClassificationProblemId() {
         return serviceClassificationProblemId;
     }
 
-    public void setServiceClassificationProblemId(int serviceClassificationProblemId) {
+    public void setServiceClassificationProblemId(Integer serviceClassificationProblemId) {
         this.serviceClassificationProblemId = serviceClassificationProblemId;
     }
 
@@ -200,11 +198,11 @@ public class ServiceOrderEntity extends BaseColumns {
         this.serialNo = serialNo;
     }
 
-    public boolean isSent() {
+    public Boolean isSent() {
         return sent;
     }
 
-    public void setSent(boolean sent) {
+    public void setSent(Boolean sent) {
         this.sent = sent;
     }
 }

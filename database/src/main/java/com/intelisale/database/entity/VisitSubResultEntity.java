@@ -8,7 +8,7 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 public class VisitSubResultEntity extends CodeBookColumns {
 
     private String name;
-    private int visitTypeId;
+    private Integer visitTypeId;
 
     public String getName() {
         return name;
@@ -18,11 +18,11 @@ public class VisitSubResultEntity extends CodeBookColumns {
         this.name = name;
     }
 
-    public int getVisitTypeId() {
+    public Integer getVisitTypeId() {
         return visitTypeId;
     }
 
-    public void setVisitTypeId(int visitTypeId) {
+    public void setVisitTypeId(Integer visitTypeId) {
         this.visitTypeId = visitTypeId;
     }
 }

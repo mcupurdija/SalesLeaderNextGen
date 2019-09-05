@@ -7,20 +7,20 @@ import com.intelisale.database.entity.column.BaseAuditColumns;
 @Entity(tableName = "CustomerStatistics")
 public class CustomerStatisticsEntity extends BaseAuditColumns {
 
-    private int customerId;
+    private Integer customerId;
     private String period;
-    private double turnover;
-    private int items;
-    private int lines;
-    private int visits;
-    private int orders;
-    private int offers;
+    private Double turnover;
+    private Integer items;
+    private Integer lines;
+    private Integer visits;
+    private Integer orders;
+    private Integer offers;
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
@@ -32,51 +32,51 @@ public class CustomerStatisticsEntity extends BaseAuditColumns {
         this.period = period;
     }
 
-    public double getTurnover() {
+    public Double getTurnover() {
         return turnover;
     }
 
-    public void setTurnover(double turnover) {
+    public void setTurnover(Double turnover) {
         this.turnover = turnover;
     }
 
-    public int getItems() {
+    public Integer getItems() {
         return items;
     }
 
-    public void setItems(int items) {
+    public void setItems(Integer items) {
         this.items = items;
     }
 
-    public int getLines() {
+    public Integer getLines() {
         return lines;
     }
 
-    public void setLines(int lines) {
+    public void setLines(Integer lines) {
         this.lines = lines;
     }
 
-    public int getVisits() {
+    public Integer getVisits() {
         return visits;
     }
 
-    public void setVisits(int visits) {
+    public void setVisits(Integer visits) {
         this.visits = visits;
     }
 
-    public int getOrders() {
+    public Integer getOrders() {
         return orders;
     }
 
-    public void setOrders(int orders) {
+    public void setOrders(Integer orders) {
         this.orders = orders;
     }
 
-    public int getOffers() {
+    public Integer getOffers() {
         return offers;
     }
 
-    public void setOffers(int offers) {
+    public void setOffers(Integer offers) {
         this.offers = offers;
     }
 }

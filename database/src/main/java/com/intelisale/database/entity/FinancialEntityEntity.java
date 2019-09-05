@@ -7,7 +7,7 @@ import com.intelisale.database.entity.column.BaseAuditColumns;
 @Entity(tableName = "FinancialEntities")
 public class FinancialEntityEntity extends BaseAuditColumns {
 
-    private int companyID;
+    private Integer companyID;
     private String name;
     private String address;
     private String city;
@@ -17,11 +17,11 @@ public class FinancialEntityEntity extends BaseAuditColumns {
     private String sqlServerUserName;
     private String sqlServerPassword;
 
-    public int getCompanyID() {
+    public Integer getCompanyID() {
         return companyID;
     }
 
-    public void setCompanyID(int companyID) {
+    public void setCompanyID(Integer companyID) {
         this.companyID = companyID;
     }
 

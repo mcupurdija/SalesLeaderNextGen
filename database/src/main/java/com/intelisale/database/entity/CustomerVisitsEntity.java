@@ -4,54 +4,52 @@ import androidx.room.Entity;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-import org.joda.time.DateTime;
-
 @Entity(tableName = "CustomerVisits")
 public class CustomerVisitsEntity extends BaseAuditColumns {
 
-    private int customerId;
-    private int customerVisits;
-    private DateTime visitDate;
-    private int customerTime;
-    private int productivityPerVisit;
+    private Integer customerId;
+    private Integer customerVisits;
+    private String visitDate;
+    private Integer customerTime;
+    private Integer productivityPerVisit;
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    public int getCustomerVisits() {
+    public Integer getCustomerVisits() {
         return customerVisits;
     }
 
-    public void setCustomerVisits(int customerVisits) {
+    public void setCustomerVisits(Integer customerVisits) {
         this.customerVisits = customerVisits;
     }
 
-    public DateTime getVisitDate() {
+    public String getVisitDate() {
         return visitDate;
     }
 
-    public void setVisitDate(DateTime visitDate) {
+    public void setVisitDate(String visitDate) {
         this.visitDate = visitDate;
     }
 
-    public int getCustomerTime() {
+    public Integer getCustomerTime() {
         return customerTime;
     }
 
-    public void setCustomerTime(int customerTime) {
+    public void setCustomerTime(Integer customerTime) {
         this.customerTime = customerTime;
     }
 
-    public int getProductivityPerVisit() {
+    public Integer getProductivityPerVisit() {
         return productivityPerVisit;
     }
 
-    public void setProductivityPerVisit(int productivityPerVisit) {
+    public void setProductivityPerVisit(Integer productivityPerVisit) {
         this.productivityPerVisit = productivityPerVisit;
     }
 }
