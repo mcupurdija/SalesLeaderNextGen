@@ -51,6 +51,22 @@ abstract class BaseDao<T> {
     public abstract Single<Integer> deleteRx(T obj);
 
     @RawQuery
+    abstract int getCount(SimpleSQLiteQuery simpleSQLiteQuery);
+
+    @Transaction
+    public int getCount(String tableName) {
+        return getCount(new SimpleSQLiteQuery("SELECT COUNT(*) FROM " + tableName));
+    }
+
+    @RawQuery
+    abstract String getMaxModifiedDate(SimpleSQLiteQuery simpleSQLiteQuery);
+
+    @Transaction
+    public String getMaxModifiedDate(String tableName) {
+        return getMaxModifiedDate(new SimpleSQLiteQuery("SELECT MAX(modifiedDate) FROM " + tableName));
+    }
+
+    @RawQuery
     abstract List<IdServerId> getIdServerId(SimpleSQLiteQuery simpleSQLiteQuery);
 
     @Transaction

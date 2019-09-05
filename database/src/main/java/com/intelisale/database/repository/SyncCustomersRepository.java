@@ -63,8 +63,8 @@ public class SyncCustomersRepository {
     }
 
     public String getCustomersModifiedDate() {
-        if (customerDao.getCount() > 0) {
-            return customerDao.getModifiedDate();
+        if (customerDao.getCount(TableNames.CUSTOMERS) > 0) {
+            return customerDao.getMaxModifiedDate(TableNames.CUSTOMERS);
         } else {
             return DateUtils.formatDateTime(new DateTime(1970, 1, 1, 0, 0, 0));
         }
