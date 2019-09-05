@@ -8,6 +8,7 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.intelisale.database.AppDatabase;
+import com.intelisale.database.repository.SyncCustomersRepository;
 import com.intelisale.database.repository.UserRepository;
 
 import java.util.concurrent.Executors;
@@ -52,9 +53,27 @@ public class DatabaseModule {
 
     @Singleton
     @Provides
-    static UserRepository getUserRepository(AppDatabase appDatabase) {
+    static UserRepository userRepository(AppDatabase appDatabase) {
         return new UserRepository(appDatabase.getUserDao());
     }
+
+    @Singleton
+    @Provides
+    static SyncCustomersRepository syncCustomersRepository(AppDatabase appDatabase) {
+        return new SyncCustomersRepository(
+                appDatabase.getCustomerDao(),
+                appDatabase.getCustomerProcessDao(),
+                appDatabase.getCustomerShipToAddressesDao(),
+                appDatabase.getCustomerVisitsDao(),
+                appDatabase.getCustomerStatisticsDao(),
+                appDatabase.getCustomerPlanTurnoverDao(),
+                appDatabase.getCustomerProductGroupPotentialDao(),
+                appDatabase.getCustomerCustomListDao(),
+                appDatabase.getCustomListsLineDao(),
+                appDatabase.getSalesLeaderShelvePerCustomersDao(),
+                appDatabase.getSalesLeaderCategoryAllowedToCustomerDao());
+    }
+
 //
 //    @Singleton
 //    @Provides

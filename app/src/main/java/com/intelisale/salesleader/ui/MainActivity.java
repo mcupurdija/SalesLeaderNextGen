@@ -6,11 +6,14 @@ import android.view.LayoutInflater;
 
 import androidx.annotation.Nullable;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intelisale.core.di.presentation.PresentationModule;
 import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.util.Activities;
 import com.intelisale.core.util.ActivityHelper;
+import com.intelisale.core.util.HttpUtils;
 import com.intelisale.networking.SessionManager;
+import com.intelisale.networking.schema.login.UserDetailsSchema;
 import com.intelisale.salesleader.di.DaggerMainComponent;
 import com.intelisale.salesleader.ui.common.base.BaseActivity;
 
@@ -21,11 +24,13 @@ public class MainActivity extends BaseActivity implements MainViewMvc.Listener {
     private static final int LOGIN_REQUEST_CODE = 0;
 
     @Inject
-    LayoutInflater layoutInflater;
+    LayoutInflater mLayoutInflater;
     @Inject
-    SettingsManager settingsManager;
+    ObjectMapper mObjectMapper;
     @Inject
-    SessionManager sessionManager;
+    SettingsManager mSettingsManager;
+    @Inject
+    SessionManager mSessionManager;
 
     private MainViewMvc mViewMvc;
 
@@ -33,12 +38,15 @@ public class MainActivity extends BaseActivity implements MainViewMvc.Listener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         inject();
-        mViewMvc = new MainViewMvcImpl(layoutInflater, null, this);
+        mViewMvc = new MainViewMvcImpl(mLayoutInflater, null, this);
         setContentView(mViewMvc.getRootView());
 
         mViewMvc.setNavigationDrawer();
 
-        if (!settingsManager.isUserLogged()) {
+        if (mSettingsManager.isUserLogged()) {
+            mSessionManager.setToken(mSessionManager.getToken());
+            mSessionManager.setUserDetailsSchema(HttpUtils.deserialize(mObjectMapper, mSettingsManager.getUserData(), UserDetailsSchema.class));
+        } else {
             startActivityForResult(ActivityHelper.intentTo(Activities.LoginActivity), LOGIN_REQUEST_CODE);
             overridePendingTransition(0, 0);
         }

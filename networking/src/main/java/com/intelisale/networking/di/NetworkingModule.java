@@ -3,6 +3,8 @@ package com.intelisale.networking.di;
 import com.intelisale.networking.Endpoints;
 import com.intelisale.networking.SessionManager;
 import com.intelisale.networking.api.LoginApi;
+import com.intelisale.networking.api.SyncApi;
+import com.intelisale.networking.interceptor.LoggingInterceptor;
 import com.intelisale.networking.interceptor.TokenInterceptor;
 
 import javax.inject.Singleton;
@@ -22,6 +24,7 @@ public class NetworkingModule {
     OkHttpClient okHttpClient(SessionManager sessionManager) {
 
         return new OkHttpClient().newBuilder()
+                .addInterceptor(new LoggingInterceptor())
                 .addInterceptor(new TokenInterceptor(sessionManager))
                 .build();
     }
@@ -42,5 +45,11 @@ public class NetworkingModule {
     @Provides
     LoginApi loginApi(Retrofit retrofit) {
         return retrofit.create(LoginApi.class);
+    }
+
+    @Singleton
+    @Provides
+    SyncApi syncApi(Retrofit retrofit) {
+        return retrofit.create(SyncApi.class);
     }
 }

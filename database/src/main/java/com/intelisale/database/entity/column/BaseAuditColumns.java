@@ -1,12 +1,14 @@
 package com.intelisale.database.entity.column;
 
+import com.intelisale.database.utils.DateUtils;
+
 import org.joda.time.DateTime;
 
 public class BaseAuditColumns extends BaseColumns {
 
     private int serverId;
 //    private int financialEntityId;
-    private DateTime modifiedDate;
+    private String modifiedDate;
     private int auditId;
     private int modifiedByUserId;
     private boolean active;
@@ -27,12 +29,12 @@ public class BaseAuditColumns extends BaseColumns {
 //        this.financialEntityId = financialEntityId;
 //    }
 
-
-    public DateTime getModifiedDate() {
-        return modifiedDate;
+    public String getModifiedDate() {
+        if (modifiedDate != null) return modifiedDate;
+        return DateUtils.formatDateTime(new DateTime(1970, 1, 1, 0, 0, 0));
     }
 
-    public void setModifiedDate(DateTime modifiedDate) {
+    public void setModifiedDate(String modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
 

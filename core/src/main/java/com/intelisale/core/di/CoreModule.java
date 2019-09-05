@@ -1,5 +1,6 @@
 package com.intelisale.core.di;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intelisale.core.eventbus.EventBusPoster;
 import com.intelisale.core.eventbus.EventBusSubscriber;
 import com.intelisale.core.logging.MyLogger;
@@ -26,6 +27,12 @@ public class CoreModule {
 
     @Singleton
     @Provides
+    ObjectMapper objectMapper() {
+        return new ObjectMapper();
+    }
+
+    @Singleton
+    @Provides
     EventBusPoster eventBusPoster() {
         return new EventBusPoster(EventBus.getDefault());
     }
@@ -38,7 +45,7 @@ public class CoreModule {
 
     @Singleton
     @Provides
-    LoginUseCase loginUseCase(LoginApi loginApi, SettingsManager settingsManager, SessionManager sessionManager) {
-        return new LoginUseCase(loginApi, settingsManager, sessionManager);
+    LoginUseCase loginUseCase(ObjectMapper objectMapper, LoginApi loginApi, SettingsManager settingsManager, SessionManager sessionManager) {
+        return new LoginUseCase(objectMapper, loginApi, settingsManager, sessionManager);
     }
 }

@@ -1,10 +1,17 @@
 package com.intelisale.database.dao;
 
+import android.util.SparseIntArray;
+
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
+import androidx.room.RawQuery;
 import androidx.room.Transaction;
 import androidx.room.Update;
+import androidx.sqlite.db.SimpleSQLiteQuery;
+
+import com.intelisale.database.entity.column.BaseAuditColumns;
+import com.intelisale.database.entity.custom.IdServerId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,8 +50,24 @@ abstract class BaseDao<T> {
     @Delete
     public abstract Single<Integer> deleteRx(T obj);
 
+    @RawQuery
+    abstract List<IdServerId> getIdServerId(SimpleSQLiteQuery simpleSQLiteQuery);
+
     @Transaction
-    public void insertOrUpdate(T obj) {
+    public SparseIntArray getIdServerId(String tableName) {
+
+        List<IdServerId> idServerIdList = getIdServerId(new SimpleSQLiteQuery("SELECT id, serverId FROM " + tableName));
+
+        SparseIntArray sparseIntArray = new SparseIntArray();
+        for (IdServerId idServerId : idServerIdList) {
+            sparseIntArray.append(idServerId.getServerId(), idServerId.getId());
+        }
+
+        return sparseIntArray;
+    }
+
+    @Transaction
+    public void insertOrUpdateByServerId(T obj) {
 
         long id = insert(obj);
         if (id == -1L) update(obj);
@@ -61,5 +84,32 @@ abstract class BaseDao<T> {
         }
 
         if (!objToUpdateList.isEmpty()) update(objToUpdateList);
+    }
+
+    @Transaction
+    public void insertOrUpdateByServerId(List<T> objList, SparseIntArray idServerIdArray) {
+
+        if (idServerIdArray.size() > 0) {
+
+            List<T> objToUpdateList = new ArrayList<>();
+            List<T> objToInsertList = new ArrayList<>();
+
+            for (T obj : objList) {
+
+                int id = idServerIdArray.get(((BaseAuditColumns) obj).getServerId());
+                if (id > 0) {
+                    ((BaseAuditColumns) obj).setId(id);
+                    objToUpdateList.add(obj);
+                } else {
+                    objToInsertList.add(obj);
+                }
+            }
+
+            update(objToUpdateList);
+            insert(objToInsertList);
+
+        } else {
+            insert(objList);
+        }
     }
 }

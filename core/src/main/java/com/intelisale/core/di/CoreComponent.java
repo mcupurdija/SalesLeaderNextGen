@@ -2,6 +2,7 @@ package com.intelisale.core.di;
 
 import android.app.Application;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intelisale.core.di.settings.SettingsModule;
 import com.intelisale.core.eventbus.EventBusPoster;
 import com.intelisale.core.eventbus.EventBusSubscriber;
@@ -9,8 +10,10 @@ import com.intelisale.core.logging.MyLogger;
 import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.useCase.LoginUseCase;
 import com.intelisale.database.di.DatabaseModule;
+import com.intelisale.database.repository.SyncCustomersRepository;
 import com.intelisale.database.repository.UserRepository;
 import com.intelisale.networking.SessionManager;
+import com.intelisale.networking.api.SyncApi;
 import com.intelisale.networking.di.NetworkingModule;
 
 import javax.inject.Singleton;
@@ -45,6 +48,8 @@ public interface CoreComponent {
 
     MyLogger logger();
 
+    ObjectMapper objectMapper();
+
     EventBusPoster eventBusPoster();
 
     EventBusSubscriber eventBusSubscriber();
@@ -52,4 +57,8 @@ public interface CoreComponent {
     LoginUseCase loginUseCase();
 
     UserRepository userRepository();
+
+    SyncCustomersRepository syncCustomersRepository();
+
+    SyncApi syncApi();
 }

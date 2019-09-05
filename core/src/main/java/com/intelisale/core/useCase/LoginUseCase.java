@@ -1,7 +1,9 @@
 package com.intelisale.core.useCase;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.ui.BaseObservable;
+import com.intelisale.core.util.HttpUtils;
 import com.intelisale.networking.SessionManager;
 import com.intelisale.networking.api.LoginApi;
 import com.intelisale.networking.schema.BaseSchema;
@@ -22,14 +24,16 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
         void onLoginFailed(String message);
     }
 
+    private final ObjectMapper mObjectMapper;
     private final LoginApi mLoginApi;
     private final SettingsManager mSettingsManager;
     private final SessionManager mSessionManager;
 
-    public LoginUseCase(LoginApi mLoginApi, SettingsManager settingsManager, SessionManager sessionManager) {
+    public LoginUseCase(ObjectMapper mObjectMapper, LoginApi mLoginApi, SettingsManager mSettingsManager, SessionManager mSessionManager) {
+        this.mObjectMapper = mObjectMapper;
         this.mLoginApi = mLoginApi;
-        this.mSettingsManager = settingsManager;
-        this.mSessionManager = sessionManager;
+        this.mSettingsManager = mSettingsManager;
+        this.mSessionManager = mSessionManager;
     }
 
     public void loginUser(String username, String password) {
@@ -73,8 +77,9 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
 
                         if (userDetails.getSuccess()) {
 
-                            mSettingsManager.setUserData("");
+                            mSettingsManager.setUserData(HttpUtils.serialize(mObjectMapper, userDetails.getData()));
                             mSettingsManager.setUserLogged(true);
+
                             mSessionManager.setUserDetailsSchema(userDetails.getData());
 
                             onLoginSucceeded();

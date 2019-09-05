@@ -2,11 +2,12 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
 import org.joda.time.DateTime;
 
-@Entity(tableName = "Customers")
+@Entity(tableName = TableNames.CUSTOMERS)
 public class CustomerEntity extends BaseAuditColumns {
 
     private String customerCode;
