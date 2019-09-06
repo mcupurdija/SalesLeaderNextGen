@@ -36,6 +36,12 @@ public class LoginUseCase extends BaseObservable<LoginUseCase.Listener> {
         this.mSessionManager = mSessionManager;
     }
 
+    public void loginInBackground() {
+
+        UserDetailsSchema userDetailsSchema = mSessionManager.getUserDetailsSchema();
+        loginUser(userDetailsSchema.getUserName(), userDetailsSchema.getPassword());
+    }
+
     public void loginUser(String username, String password) {
 
         Single<LoginSchema> login = mLoginApi.login(username, password);

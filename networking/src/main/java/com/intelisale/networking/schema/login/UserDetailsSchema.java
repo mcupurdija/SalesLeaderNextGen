@@ -17,6 +17,8 @@ public class UserDetailsSchema {
     private Integer id;
     @JsonProperty("userName")
     private String userName;
+    @JsonProperty("password")
+    private String password;
     @JsonProperty("fullName")
     private String fullName;
     @JsonProperty("financialEntities")
@@ -50,6 +52,16 @@ public class UserDetailsSchema {
     @JsonProperty("userName")
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    @JsonProperty("password")
+    public String getPassword() {
+        return password;
+    }
+
+    @JsonProperty("password")
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @JsonProperty("fullName")

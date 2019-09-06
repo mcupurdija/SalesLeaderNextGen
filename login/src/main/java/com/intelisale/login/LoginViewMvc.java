@@ -8,6 +8,8 @@ public interface LoginViewMvc extends ObservableViewMvc<LoginViewMvc.Listener> {
 
     void onLoginFailed();
 
+    void showProgressIndicator();
+
     interface Listener {
         void onLoginButtonClicked(String username, String password);
     }

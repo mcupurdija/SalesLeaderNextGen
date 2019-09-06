@@ -1,10 +1,12 @@
 package com.intelisale.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
 import com.intelisale.core.di.presentation.PresentationModule;
 import com.intelisale.core.notifications.DialogManager;
+import com.intelisale.core.notifications.ToastManager;
 import com.intelisale.core.useCase.LoginUseCase;
 import com.intelisale.login.di.DaggerLoginComponent;
 import com.intelisale.salesleader.ui.common.base.BaseActivity;
@@ -18,6 +20,8 @@ public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener
     @Inject
     DialogManager mDialogManager;
     @Inject
+    ToastManager mToastManager;
+    @Inject
     LoginUseCase mLoginUseCase;
 
     private LoginViewMvc mViewMvc;
@@ -28,6 +32,13 @@ public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener
         inject();
         mViewMvc = new LoginViewMvcImpl(layoutInflater, null);
         setContentView(mViewMvc.getRootView());
+
+        boolean tokenExpired = getIntent().getBooleanExtra(Intent.EXTRA_REMOTE_INTENT_TOKEN, false);
+        if (tokenExpired) {
+            mToastManager.displayCenteredToast("SESIJA JE ISTEKLA");
+            mViewMvc.showProgressIndicator();
+            mLoginUseCase.loginInBackground();
+        }
     }
 
     @Override

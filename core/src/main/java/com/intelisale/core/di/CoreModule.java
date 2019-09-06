@@ -1,5 +1,9 @@
 package com.intelisale.core.di;
 
+import android.app.Application;
+
+import androidx.work.WorkManager;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intelisale.core.eventbus.EventBusPoster;
 import com.intelisale.core.eventbus.EventBusSubscriber;
@@ -18,6 +22,12 @@ import dagger.Provides;
 
 @Module
 public class CoreModule {
+
+    @Singleton
+    @Provides
+    WorkManager workManager(Application application) {
+        return WorkManager.getInstance(application);
+    }
 
     @Singleton
     @Provides

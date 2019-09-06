@@ -2,6 +2,8 @@ package com.intelisale.core.di;
 
 import android.app.Application;
 
+import androidx.work.WorkManager;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intelisale.core.di.settings.SettingsModule;
 import com.intelisale.core.eventbus.EventBusPoster;
@@ -42,6 +44,8 @@ public interface CoreComponent {
 
         CoreComponent build();
     }
+
+    WorkManager workManager();
 
     SessionManager sessionManager();
 

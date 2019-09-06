@@ -78,13 +78,19 @@ class LoginViewMvcImpl extends BaseViewMvc<LoginViewMvc.Listener> implements Log
             listener.onLoginButtonClicked(username.toString(), password.toString());
         }
 
-        mLogin.setEnabled(false);
-        mProgressBar.setVisibility(View.VISIBLE);
+        showProgressIndicator();
     }
 
     public void onLoginFailed() {
 
         mProgressBar.setVisibility(View.GONE);
         mLogin.setEnabled(true);
+    }
+
+    @Override
+    public void showProgressIndicator() {
+
+        mLogin.setEnabled(false);
+        mProgressBar.setVisibility(View.VISIBLE);
     }
 }

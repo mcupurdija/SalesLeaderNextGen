@@ -31,6 +31,7 @@ public class UnauthorizedRequestInterceptor implements Interceptor {
             try {
                 Intent intent = new Intent(mContext, Class.forName("com.intelisale.login.LoginActivity"));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra(Intent.EXTRA_REMOTE_INTENT_TOKEN, true);
                 mContext.startActivity(intent);
             } catch (Exception ignored) {
             }
