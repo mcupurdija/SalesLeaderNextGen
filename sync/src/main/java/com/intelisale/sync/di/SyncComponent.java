@@ -5,6 +5,7 @@ import com.intelisale.core.di.presentation.PresentationModule;
 import com.intelisale.core.di.scope.FeatureScope;
 import com.intelisale.sync.SyncFragment;
 import com.intelisale.sync.work.SyncCustomersWork;
+import com.intelisale.sync.work.SyncItemsWork;
 
 import dagger.Component;
 
@@ -15,4 +16,6 @@ public interface SyncComponent {
     void injectSyncFragment(SyncFragment syncFragment);
 
     void injectSyncCustomersWork(SyncCustomersWork syncCustomersWork);
+
+    void injectSyncItemsWork(SyncItemsWork syncItemsWork);
 }

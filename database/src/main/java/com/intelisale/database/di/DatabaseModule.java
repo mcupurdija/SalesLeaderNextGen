@@ -9,6 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.intelisale.database.AppDatabase;
 import com.intelisale.database.repository.SyncCustomersRepository;
+import com.intelisale.database.repository.SyncItemsRepository;
 import com.intelisale.database.repository.UserRepository;
 
 import java.util.concurrent.Executors;
@@ -72,6 +73,14 @@ public class DatabaseModule {
                 appDatabase.getCustomListsLineDao(),
                 appDatabase.getSalesLeaderShelvePerCustomersDao(),
                 appDatabase.getSalesLeaderCategoryAllowedToCustomerDao());
+    }
+
+    @Singleton
+    @Provides
+    static SyncItemsRepository syncItemsRepository(AppDatabase appDatabase) {
+        return new SyncItemsRepository(
+                appDatabase.getItemDao()
+        );
     }
 
 //

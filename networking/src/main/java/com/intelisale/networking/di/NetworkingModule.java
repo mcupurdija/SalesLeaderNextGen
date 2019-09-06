@@ -1,11 +1,14 @@
 package com.intelisale.networking.di;
 
+import android.app.Application;
+
 import com.intelisale.networking.Endpoints;
 import com.intelisale.networking.SessionManager;
 import com.intelisale.networking.api.LoginApi;
 import com.intelisale.networking.api.SyncApi;
 import com.intelisale.networking.interceptor.LoggingInterceptor;
 import com.intelisale.networking.interceptor.TokenInterceptor;
+import com.intelisale.networking.interceptor.UnauthorizedRequestInterceptor;
 
 import javax.inject.Singleton;
 
@@ -21,11 +24,12 @@ public class NetworkingModule {
 
     @Singleton
     @Provides
-    OkHttpClient okHttpClient(SessionManager sessionManager) {
+    OkHttpClient okHttpClient(SessionManager sessionManager, Application application) {
 
         return new OkHttpClient().newBuilder()
                 .addInterceptor(new LoggingInterceptor())
                 .addInterceptor(new TokenInterceptor(sessionManager))
+                .addInterceptor(new UnauthorizedRequestInterceptor(application))
                 .build();
     }
 

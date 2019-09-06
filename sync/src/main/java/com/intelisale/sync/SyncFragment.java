@@ -14,7 +14,7 @@ import androidx.work.WorkManager;
 
 import com.intelisale.salesleader.ui.common.base.BaseFragment;
 import com.intelisale.sync.di.DaggerSyncComponent;
-import com.intelisale.sync.work.SyncCustomersWork;
+import com.intelisale.sync.work.SyncItemsWork;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -28,10 +28,10 @@ public class SyncFragment extends BaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        inject();
+//        inject();
 
         WorkManager mWorkManager = WorkManager.getInstance(mContext.getApplicationContext());
-        WorkContinuation mWorkContinuation = mWorkManager.beginWith(OneTimeWorkRequest.from(SyncCustomersWork.class));
+        WorkContinuation mWorkContinuation = mWorkManager.beginWith(OneTimeWorkRequest.from(SyncItemsWork.class));
         mWorkContinuation.enqueue();
     }
 

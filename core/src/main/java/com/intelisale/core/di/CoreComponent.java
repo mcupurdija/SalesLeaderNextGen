@@ -11,6 +11,7 @@ import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.useCase.LoginUseCase;
 import com.intelisale.database.di.DatabaseModule;
 import com.intelisale.database.repository.SyncCustomersRepository;
+import com.intelisale.database.repository.SyncItemsRepository;
 import com.intelisale.database.repository.UserRepository;
 import com.intelisale.networking.SessionManager;
 import com.intelisale.networking.api.SyncApi;
@@ -59,6 +60,8 @@ public interface CoreComponent {
     UserRepository userRepository();
 
     SyncCustomersRepository syncCustomersRepository();
+
+    SyncItemsRepository syncItemsRepository();
 
     SyncApi syncApi();
 }
