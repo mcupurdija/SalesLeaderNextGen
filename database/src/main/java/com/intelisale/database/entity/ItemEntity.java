@@ -10,18 +10,18 @@ public class ItemEntity extends BaseAuditColumns {
     private String code;
     private String description;
     private String description2;
-    private Integer categoryOfItemsId;
+    private Integer categoryOfItemsID;
     private Double unitSalesPriceLCY;
-    private Integer itemUnitOfMeasureId;
+    private Integer itemUnitOfMeasureID;
     private Double availableQuantity;
-    private Integer itemStatusId;
+    private Integer itemStatusID;
     private String statusOfItem;
     private String itemBarCodeForBSUOM;
     private Double minimumSalesUnitQty;
     private Double suggestedSalesUnitQty;
-    private Integer itemSuccessorId;
-    private Integer itemSuccessorStatusId;
-    private Integer itemVATGroupId;
+    private Integer itemSuccessorID;
+    private Integer itemSuccessorStatusID;
+    private Integer itemVATGroupID;
     private String smallPictureName;
     private String largePictureName;
     private String youtubeVideoCode;
@@ -54,12 +54,12 @@ public class ItemEntity extends BaseAuditColumns {
         this.description2 = description2;
     }
 
-    public Integer getCategoryOfItemsId() {
-        return categoryOfItemsId;
+    public Integer getCategoryOfItemsID() {
+        return categoryOfItemsID;
     }
 
-    public void setCategoryOfItemsId(Integer categoryOfItemsId) {
-        this.categoryOfItemsId = categoryOfItemsId;
+    public void setCategoryOfItemsID(Integer categoryOfItemsID) {
+        this.categoryOfItemsID = categoryOfItemsID;
     }
 
     public Double getUnitSalesPriceLCY() {
@@ -70,12 +70,12 @@ public class ItemEntity extends BaseAuditColumns {
         this.unitSalesPriceLCY = unitSalesPriceLCY;
     }
 
-    public Integer getItemUnitOfMeasureId() {
-        return itemUnitOfMeasureId;
+    public Integer getItemUnitOfMeasureID() {
+        return itemUnitOfMeasureID;
     }
 
-    public void setItemUnitOfMeasureId(Integer itemUnitOfMeasureId) {
-        this.itemUnitOfMeasureId = itemUnitOfMeasureId;
+    public void setItemUnitOfMeasureID(Integer itemUnitOfMeasureID) {
+        this.itemUnitOfMeasureID = itemUnitOfMeasureID;
     }
 
     public Double getAvailableQuantity() {
@@ -86,12 +86,12 @@ public class ItemEntity extends BaseAuditColumns {
         this.availableQuantity = availableQuantity;
     }
 
-    public Integer getItemStatusId() {
-        return itemStatusId;
+    public Integer getItemStatusID() {
+        return itemStatusID;
     }
 
-    public void setItemStatusId(Integer itemStatusId) {
-        this.itemStatusId = itemStatusId;
+    public void setItemStatusID(Integer itemStatusID) {
+        this.itemStatusID = itemStatusID;
     }
 
     public String getStatusOfItem() {
@@ -126,28 +126,28 @@ public class ItemEntity extends BaseAuditColumns {
         this.suggestedSalesUnitQty = suggestedSalesUnitQty;
     }
 
-    public Integer getItemSuccessorId() {
-        return itemSuccessorId;
+    public Integer getItemSuccessorID() {
+        return itemSuccessorID;
     }
 
-    public void setItemSuccessorId(Integer itemSuccessorId) {
-        this.itemSuccessorId = itemSuccessorId;
+    public void setItemSuccessorID(Integer itemSuccessorID) {
+        this.itemSuccessorID = itemSuccessorID;
     }
 
-    public Integer getItemSuccessorStatusId() {
-        return itemSuccessorStatusId;
+    public Integer getItemSuccessorStatusID() {
+        return itemSuccessorStatusID;
     }
 
-    public void setItemSuccessorStatusId(Integer itemSuccessorStatusId) {
-        this.itemSuccessorStatusId = itemSuccessorStatusId;
+    public void setItemSuccessorStatusID(Integer itemSuccessorStatusID) {
+        this.itemSuccessorStatusID = itemSuccessorStatusID;
     }
 
-    public Integer getItemVATGroupId() {
-        return itemVATGroupId;
+    public Integer getItemVATGroupID() {
+        return itemVATGroupID;
     }
 
-    public void setItemVATGroupId(Integer itemVATGroupId) {
-        this.itemVATGroupId = itemVATGroupId;
+    public void setItemVATGroupID(Integer itemVATGroupID) {
+        this.itemVATGroupID = itemVATGroupID;
     }
 
     public String getSmallPictureName() {

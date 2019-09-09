@@ -14,11 +14,11 @@ public class ItemWithCodeBooks {
 
     @Embedded
     private ItemEntity itemEntity;
-    @Relation(parentColumn = "categoryOfItemsId", entityColumn = "serverId")
+    @Relation(parentColumn = "categoryOfItemsID", entityColumn = "serverID")
     private List<CategoryOfItemsEntity> categoryOfItemsEntities;
-    @Relation(parentColumn = "itemStatusId", entityColumn = "serverId")
+    @Relation(parentColumn = "itemStatusID", entityColumn = "serverID")
     private List<ItemStatusEntity> itemStatusEntities;
-    @Relation(parentColumn = "itemUnitOfMeasureId", entityColumn = "serverId")
+    @Relation(parentColumn = "itemUnitOfMeasureID", entityColumn = "serverID")
     private List<ItemUnitOfMeasureEntity> itemUnitOfMeasureEntities;
 
     public ItemEntity getItemEntity() {

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "969215b24a4be7d9cee0150893184ae4",
+    "identityHash": "1c859c96058614c7a4259bdee0222b68",
     "entities": [
       {
         "tableName": "ApprovalStatuses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -27,14 +27,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -46,8 +46,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -77,7 +77,7 @@
       },
       {
         "tableName": "BackOrderShipment",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -98,14 +98,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -117,8 +117,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -148,7 +148,7 @@
       },
       {
         "tableName": "CategoriesOfItems",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`parentCode` TEXT, `parentCategoryOfItemsId` INTEGER, `smallPictureName` TEXT, `largePictureName` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`parentCode` TEXT, `parentCategoryOfItemsId` INTEGER, `smallPictureName` TEXT, `largePictureName` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "parentCode",
@@ -193,14 +193,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -212,8 +212,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -243,7 +243,7 @@
       },
       {
         "tableName": "Comments",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `commentsSourceId` INTEGER, `commentsTargetId` INTEGER, `description` TEXT, `link` TEXT, `userId` INTEGER, `checked` INTEGER, `reminder` TEXT, `createdDate` TEXT, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `commentsSourceId` INTEGER, `commentsTargetId` INTEGER, `description` TEXT, `link` TEXT, `userId` INTEGER, `checked` INTEGER, `reminder` TEXT, `createdDate` TEXT, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "customerId",
@@ -300,14 +300,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -319,8 +319,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -400,7 +400,7 @@
       },
       {
         "tableName": "CommentsSources",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -421,14 +421,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -440,8 +440,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -471,7 +471,7 @@
       },
       {
         "tableName": "CommentsTargets",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -492,14 +492,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -511,8 +511,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -542,7 +542,7 @@
       },
       {
         "tableName": "Companies",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`companyName` TEXT, `companyAddress` TEXT, `companyCity` TEXT, `companyPostCode` TEXT, `disableLogin` INTEGER, `validateVisits` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`companyName` TEXT, `companyAddress` TEXT, `companyCity` TEXT, `companyPostCode` TEXT, `disableLogin` INTEGER, `validateVisits` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "companyName",
@@ -581,14 +581,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -600,8 +600,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -631,7 +631,7 @@
       },
       {
         "tableName": "ContactDepartments",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -652,14 +652,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -671,8 +671,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -702,7 +702,7 @@
       },
       {
         "tableName": "Contacts",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `firstName` TEXT, `lastName` TEXT, `phone` TEXT, `mobile` TEXT, `email` TEXT, `customerId` INTEGER, `contactDepartmentId` INTEGER, `contactPositionId` INTEGER, `employeeId` INTEGER, `address` TEXT, `postalCodeAndCityId` INTEGER, `sent` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `firstName` TEXT, `lastName` TEXT, `phone` TEXT, `mobile` TEXT, `email` TEXT, `customerId` INTEGER, `contactDepartmentId` INTEGER, `contactPositionId` INTEGER, `employeeId` INTEGER, `address` TEXT, `postalCodeAndCityId` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -783,14 +783,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -802,8 +802,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -833,7 +833,7 @@
       },
       {
         "tableName": "ContactPositions",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -854,14 +854,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -873,8 +873,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -904,7 +904,7 @@
       },
       {
         "tableName": "CreatedDocumentStatus",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -925,14 +925,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -944,8 +944,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -975,7 +975,7 @@
       },
       {
         "tableName": "CustomerCustomLists",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `customListHeaderId` INTEGER, `fromDate` TEXT, `toDate` TEXT, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `customListHeaderId` INTEGER, `fromDate` TEXT, `toDate` TEXT, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "customerId",
@@ -1002,14 +1002,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1021,8 +1021,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -1052,7 +1052,7 @@
       },
       {
         "tableName": "Customers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerCode` TEXT, `potentialCustomerCode` TEXT, `customerIdForCustomerBusinessUnit` INTEGER, `customerBusinessUnitCode` TEXT, `realCustomer` INTEGER, `name` TEXT, `name2` TEXT, `address` TEXT, `postalCodeAndCityId` INTEGER, `phone` TEXT, `mobile` TEXT, `email` TEXT, `mb` TEXT, `vatNo` TEXT, `creditLimit` REAL, `balanceLcy` REAL, `balanceDueLcy` REAL, `customerPaymentConditionId` INTEGER, `customerDiscGroupId` INTEGER, `customerPriceGroupId` INTEGER, `groupOfCustomerId` INTEGER, `secondaryGroupOfCustomerId` INTEGER, `smlTurnover` TEXT, `sean` TEXT, `channel` INTEGER, `blueCoatsNo` TEXT, `grayCoatsNo` TEXT, `potential` TEXT, `color` TEXT, `coefficient` TEXT, `customerPersonalTurnover` REAL, `turnover3m` REAL, `turnover6m` REAL, `turnover12m` REAL, `turnoverYTM` REAL, `turnoverLastYear` REAL, `turnoverYear2` REAL, `turnoverYear3` REAL, `planCurrentYear` REAL, `planFulfillment` REAL, `existContractAgreement` INTEGER, `existTradeAgreement` INTEGER, `existOrsy` INTEGER, `existOrsy100` INTEGER, `buttonNo6` INTEGER, `priority` TEXT, `reminderLevel` TEXT, `dateLastPayment` TEXT, `dateLastInvoice` TEXT, `dateOldestOpenInvoice` TEXT, `gp` REAL, `defaultCustomerShipToAddressId` INTEGER, `employeeId` INTEGER, `customerPaymentMethodId` INTEGER, `gpsLatitude` TEXT, `gpsLongitude` TEXT, `gpsAccuracy` TEXT, `customerVATGroupId` INTEGER, `invoiceDiscountPercent` REAL, `parentData` TEXT, `customerHierarchyData` TEXT, `customerTaskCount` INTEGER, `createFromPotential` INTEGER, `primaryContactName` TEXT, `firstInvoiceDate` TEXT, `oldestOpenInvoiceDate` TEXT, `latestInvoiceDate` TEXT, `latestPaymentDate` TEXT, `writeOff` REAL, `customer12MonthsPlan` REAL, `sinRadLat` REAL, `cosRadLat` REAL, `sinRadLong` REAL, `cosRadLong` REAL, `calculatedNumberOfVisits` REAL, `calculatedTimeAtCustomer` REAL, `visitProductivity6m` REAL, `balance1to30` REAL, `balance31to60` REAL, `balance61to90` REAL, `balance91toXyz` REAL, `balanceCritical` REAL, `treasuryBill` INTEGER, `paymentAvgDays` REAL, `fax` TEXT, `emailInvoices` TEXT, `emailReminders` TEXT, `dateOfLastVisit` TEXT, `contractType` TEXT, `pricingClass` TEXT, `fullCustomerCode` TEXT, `centralOffice` INTEGER, `primaryContactId` INTEGER, `assignedUserCode` TEXT, `assignedUserName` TEXT, `focusCustomer` INTEGER, `customerActive` INTEGER, `tradeLicenseNum` TEXT, `tradeLicenseExp` TEXT, `tradeLicenseType` TEXT, `targetContractTurnover` REAL, `contractRealizationPct` REAL, `gallerySyncDate` TEXT, `sent` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerCode` TEXT, `potentialCustomerCode` TEXT, `customerIDForCustomerBusinessUnit` INTEGER, `customerBusinessUnitCode` TEXT, `realCustomer` INTEGER, `name` TEXT, `name2` TEXT, `address` TEXT, `postalCodeAndCityID` INTEGER, `phone` TEXT, `mobile` TEXT, `email` TEXT, `mb` TEXT, `vatNo` TEXT, `creditLimit` REAL, `balanceLcy` REAL, `balanceDueLcy` REAL, `customerPaymentConditionID` INTEGER, `customerDiscGroupID` INTEGER, `customerPriceGroupID` INTEGER, `groupOfCustomerID` INTEGER, `secondaryGroupOfCustomerID` INTEGER, `smlTurnover` TEXT, `sean` TEXT, `channel` INTEGER, `blueCoatsNo` TEXT, `grayCoatsNo` TEXT, `potential` TEXT, `color` TEXT, `coefficient` TEXT, `customerPersonalTurnover` REAL, `turnover3m` REAL, `turnover6m` REAL, `turnover12m` REAL, `turnoverYTM` REAL, `turnoverLastYear` REAL, `turnoverYear2` REAL, `turnoverYear3` REAL, `planCurrentYear` REAL, `planFulfillment` REAL, `existContractAgreement` INTEGER, `existTradeAgreement` INTEGER, `existOrsy` INTEGER, `existOrsy100` INTEGER, `buttonNo6` INTEGER, `priority` TEXT, `reminderLevel` TEXT, `dateLastPayment` TEXT, `dateLastInvoice` TEXT, `dateOldestOpenInvoice` TEXT, `gp` REAL, `defaultCustomerShipToAddressID` INTEGER, `employeeID` INTEGER, `customerPaymentMethodID` INTEGER, `gpsLatitude` TEXT, `gpsLongitude` TEXT, `gpsAccuracy` TEXT, `customerVATGroupID` INTEGER, `invoiceDiscountPercent` REAL, `parentData` TEXT, `customerHierarchyData` TEXT, `customerTaskCount` INTEGER, `createFromPotential` INTEGER, `primaryContactName` TEXT, `firstInvoiceDate` TEXT, `oldestOpenInvoiceDate` TEXT, `latestInvoiceDate` TEXT, `latestPaymentDate` TEXT, `writeOff` REAL, `customer12MonthsPlan` REAL, `sinRadLat` REAL, `cosRadLat` REAL, `sinRadLong` REAL, `cosRadLong` REAL, `calculatedNumberOfVisits` REAL, `calculatedTimeAtCustomer` REAL, `visitProductivity6m` REAL, `balance1to30` REAL, `balance31to60` REAL, `balance61to90` REAL, `balance91toXyz` REAL, `balanceCritical` REAL, `treasuryBill` INTEGER, `paymentAvgDays` REAL, `fax` TEXT, `emailInvoices` TEXT, `emailReminders` TEXT, `dateOfLastVisit` TEXT, `contractType` TEXT, `pricingClass` TEXT, `fullCustomerCode` TEXT, `centralOffice` INTEGER, `primaryContactID` INTEGER, `assignedUserCode` TEXT, `assignedUserName` TEXT, `focusCustomer` INTEGER, `customerActive` INTEGER, `tradeLicenseNum` TEXT, `tradeLicenseExp` TEXT, `tradeLicenseType` TEXT, `targetContractTurnover` REAL, `contractRealizationPct` REAL, `gallerySyncDate` TEXT, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "customerCode",
@@ -1067,8 +1067,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "customerIdForCustomerBusinessUnit",
-            "columnName": "customerIdForCustomerBusinessUnit",
+            "fieldPath": "customerIDForCustomerBusinessUnit",
+            "columnName": "customerIDForCustomerBusinessUnit",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1103,8 +1103,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "postalCodeAndCityId",
-            "columnName": "postalCodeAndCityId",
+            "fieldPath": "postalCodeAndCityID",
+            "columnName": "postalCodeAndCityID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1157,32 +1157,32 @@
             "notNull": false
           },
           {
-            "fieldPath": "customerPaymentConditionId",
-            "columnName": "customerPaymentConditionId",
+            "fieldPath": "customerPaymentConditionID",
+            "columnName": "customerPaymentConditionID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerDiscGroupId",
-            "columnName": "customerDiscGroupId",
+            "fieldPath": "customerDiscGroupID",
+            "columnName": "customerDiscGroupID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerPriceGroupId",
-            "columnName": "customerPriceGroupId",
+            "fieldPath": "customerPriceGroupID",
+            "columnName": "customerPriceGroupID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "groupOfCustomerId",
-            "columnName": "groupOfCustomerId",
+            "fieldPath": "groupOfCustomerID",
+            "columnName": "groupOfCustomerID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "secondaryGroupOfCustomerId",
-            "columnName": "secondaryGroupOfCustomerId",
+            "fieldPath": "secondaryGroupOfCustomerID",
+            "columnName": "secondaryGroupOfCustomerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1361,20 +1361,20 @@
             "notNull": false
           },
           {
-            "fieldPath": "defaultCustomerShipToAddressId",
-            "columnName": "defaultCustomerShipToAddressId",
+            "fieldPath": "defaultCustomerShipToAddressID",
+            "columnName": "defaultCustomerShipToAddressID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "employeeId",
-            "columnName": "employeeId",
+            "fieldPath": "employeeID",
+            "columnName": "employeeID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerPaymentMethodId",
-            "columnName": "customerPaymentMethodId",
+            "fieldPath": "customerPaymentMethodID",
+            "columnName": "customerPaymentMethodID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1397,8 +1397,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "customerVATGroupId",
-            "columnName": "customerVATGroupId",
+            "fieldPath": "customerVATGroupID",
+            "columnName": "customerVATGroupID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1607,8 +1607,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "primaryContactId",
-            "columnName": "primaryContactId",
+            "fieldPath": "primaryContactID",
+            "columnName": "primaryContactID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1679,14 +1679,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1698,8 +1698,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -1729,7 +1729,7 @@
       },
       {
         "tableName": "CustomerPaymentConditions",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noOfDays` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noOfDays` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "noOfDays",
@@ -1756,14 +1756,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1775,8 +1775,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -1806,7 +1806,7 @@
       },
       {
         "tableName": "CustomerPaymentMethods",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -1827,14 +1827,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1846,8 +1846,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -1877,7 +1877,7 @@
       },
       {
         "tableName": "CustomerPlanTurnover",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `screenPosition` TEXT, `planTurnoverValue` REAL, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `screenPosition` TEXT, `planTurnoverValue` REAL, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "customerId",
@@ -1904,14 +1904,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1923,8 +1923,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -1954,7 +1954,7 @@
       },
       {
         "tableName": "CustomerProcesses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`processId` INTEGER, `customerID` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`processId` INTEGER, `customerID` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "processId",
@@ -1987,14 +1987,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2006,8 +2006,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2037,7 +2037,7 @@
       },
       {
         "tableName": "CustomerProductGroupPotential",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsId` INTEGER, `turnover` REAL, `potential` REAL, `unusedPotential` REAL, `noOfItems` INTEGER, `categoryRank` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsId` INTEGER, `turnover` REAL, `potential` REAL, `unusedPotential` REAL, `noOfItems` INTEGER, `categoryRank` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "categoryOfItemsId",
@@ -2076,14 +2076,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2095,8 +2095,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2126,7 +2126,7 @@
       },
       {
         "tableName": "CustomerShipmentMethods",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -2147,14 +2147,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2166,8 +2166,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2197,7 +2197,7 @@
       },
       {
         "tableName": "CustomerShipToAddresses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`description2` TEXT, `address` TEXT, `postalCodeAndCityId` INTEGER, `countyRegion` TEXT, `phoneNo` TEXT, `mobileNo` TEXT, `faxNo` TEXT, `email` TEXT, `homePage` TEXT, `customerId` INTEGER, `municipalityOfOperating` TEXT, `regionOfOperating` TEXT, `cityOfOperating` TEXT, `postCodeOfOperating` TEXT, `countyOfOperating` TEXT, `gpsLatitude` TEXT, `gpsLongitude` TEXT, `gpsAccuracy` TEXT, `contactPerson` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`description2` TEXT, `address` TEXT, `postalCodeAndCityId` INTEGER, `countyRegion` TEXT, `phoneNo` TEXT, `mobileNo` TEXT, `faxNo` TEXT, `email` TEXT, `homePage` TEXT, `customerId` INTEGER, `municipalityOfOperating` TEXT, `regionOfOperating` TEXT, `cityOfOperating` TEXT, `postCodeOfOperating` TEXT, `countyOfOperating` TEXT, `gpsLatitude` TEXT, `gpsLongitude` TEXT, `gpsAccuracy` TEXT, `contactPerson` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "description2",
@@ -2332,14 +2332,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2351,8 +2351,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2382,7 +2382,7 @@
       },
       {
         "tableName": "CustomerStatistics",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `period` TEXT, `turnover` REAL, `items` INTEGER, `lines` INTEGER, `visits` INTEGER, `orders` INTEGER, `offers` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `period` TEXT, `turnover` REAL, `items` INTEGER, `lines` INTEGER, `visits` INTEGER, `orders` INTEGER, `offers` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "customerId",
@@ -2433,14 +2433,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2452,8 +2452,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2483,7 +2483,7 @@
       },
       {
         "tableName": "CustomerVisits",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `customerVisits` INTEGER, `visitDate` TEXT, `customerTime` INTEGER, `productivityPerVisit` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `customerVisits` INTEGER, `visitDate` TEXT, `customerTime` INTEGER, `productivityPerVisit` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "customerId",
@@ -2516,14 +2516,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2535,8 +2535,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2566,7 +2566,7 @@
       },
       {
         "tableName": "CustomListsHeaders",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`salesLeaderSalesLevelTypeId` INTEGER, `salesLevelId` INTEGER, `forAllUsers` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`salesLeaderSalesLevelTypeId` INTEGER, `salesLevelId` INTEGER, `forAllUsers` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "salesLeaderSalesLevelTypeId",
@@ -2605,14 +2605,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2624,8 +2624,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2655,7 +2655,7 @@
       },
       {
         "tableName": "CustomListsLines",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customListHeaderId` INTEGER, `itemId` INTEGER, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customListHeaderId` INTEGER, `itemId` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "customListHeaderId",
@@ -2676,14 +2676,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2695,8 +2695,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2726,7 +2726,7 @@
       },
       {
         "tableName": "DocumentTypes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -2747,14 +2747,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2766,8 +2766,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2797,7 +2797,7 @@
       },
       {
         "tableName": "DocumentVerificationStatuses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -2818,14 +2818,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2837,8 +2837,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -2868,7 +2868,7 @@
       },
       {
         "tableName": "FinancialEntities",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`companyID` INTEGER, `name` TEXT, `address` TEXT, `city` TEXT, `postCode` TEXT, `sqlServerName` TEXT, `databaseName` TEXT, `sqlServerUserName` TEXT, `sqlServerPassword` TEXT, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`companyID` INTEGER, `name` TEXT, `address` TEXT, `city` TEXT, `postCode` TEXT, `sqlServerName` TEXT, `databaseName` TEXT, `sqlServerUserName` TEXT, `sqlServerPassword` TEXT, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "companyID",
@@ -2925,14 +2925,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2944,8 +2944,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -3031,7 +3031,7 @@
       },
       {
         "tableName": "GroupsOfCustomersCategoryItems",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupOfCustomerId` INTEGER, `categoryOfItemsId` INTEGER, `rank` INTEGER, `importance` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupOfCustomerId` INTEGER, `categoryOfItemsId` INTEGER, `rank` INTEGER, `importance` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "groupOfCustomerId",
@@ -3076,14 +3076,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3095,8 +3095,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -3126,7 +3126,7 @@
       },
       {
         "tableName": "GroupsOfCustomers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`parentCode` TEXT, `parentGroupOfCustomerId` INTEGER, `groupsOfCustomersLevelId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`parentCode` TEXT, `parentGroupOfCustomerId` INTEGER, `groupsOfCustomersLevelId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "parentCode",
@@ -3165,14 +3165,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3184,8 +3184,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -3215,7 +3215,7 @@
       },
       {
         "tableName": "Items",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `description2` TEXT, `categoryOfItemsId` INTEGER, `unitSalesPriceLCY` REAL, `itemUnitOfMeasureId` INTEGER, `availableQuantity` REAL, `itemStatusId` INTEGER, `statusOfItem` TEXT, `itemBarCodeForBSUOM` TEXT, `minimumSalesUnitQty` REAL, `suggestedSalesUnitQty` REAL, `itemSuccessorId` INTEGER, `itemSuccessorStatusId` INTEGER, `itemVATGroupId` INTEGER, `smallPictureName` TEXT, `largePictureName` TEXT, `youtubeVideoCode` TEXT, `extraField` TEXT, `catalogCode` TEXT, `productManager` TEXT, `sent` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `description2` TEXT, `categoryOfItemsID` INTEGER, `unitSalesPriceLCY` REAL, `itemUnitOfMeasureID` INTEGER, `availableQuantity` REAL, `itemStatusID` INTEGER, `statusOfItem` TEXT, `itemBarCodeForBSUOM` TEXT, `minimumSalesUnitQty` REAL, `suggestedSalesUnitQty` REAL, `itemSuccessorID` INTEGER, `itemSuccessorStatusID` INTEGER, `itemVATGroupID` INTEGER, `smallPictureName` TEXT, `largePictureName` TEXT, `youtubeVideoCode` TEXT, `extraField` TEXT, `catalogCode` TEXT, `productManager` TEXT, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -3236,8 +3236,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "categoryOfItemsId",
-            "columnName": "categoryOfItemsId",
+            "fieldPath": "categoryOfItemsID",
+            "columnName": "categoryOfItemsID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3248,8 +3248,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "itemUnitOfMeasureId",
-            "columnName": "itemUnitOfMeasureId",
+            "fieldPath": "itemUnitOfMeasureID",
+            "columnName": "itemUnitOfMeasureID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3260,8 +3260,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "itemStatusId",
-            "columnName": "itemStatusId",
+            "fieldPath": "itemStatusID",
+            "columnName": "itemStatusID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3290,20 +3290,20 @@
             "notNull": false
           },
           {
-            "fieldPath": "itemSuccessorId",
-            "columnName": "itemSuccessorId",
+            "fieldPath": "itemSuccessorID",
+            "columnName": "itemSuccessorID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "itemSuccessorStatusId",
-            "columnName": "itemSuccessorStatusId",
+            "fieldPath": "itemSuccessorStatusID",
+            "columnName": "itemSuccessorStatusID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "itemVATGroupId",
-            "columnName": "itemVATGroupId",
+            "fieldPath": "itemVATGroupID",
+            "columnName": "itemVATGroupID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3350,14 +3350,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3369,8 +3369,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -3590,7 +3590,7 @@
       },
       {
         "tableName": "ItemStatuses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -3611,14 +3611,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3630,8 +3630,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -3661,7 +3661,7 @@
       },
       {
         "tableName": "ItemUnitOfMeasures",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -3682,14 +3682,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3701,8 +3701,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -3732,7 +3732,7 @@
       },
       {
         "tableName": "Municipalities",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -3753,14 +3753,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3772,8 +3772,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -3803,7 +3803,7 @@
       },
       {
         "tableName": "NotesAttachments",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteId` INTEGER, `filePath` TEXT, `devicePath` TEXT, `createdDate` TEXT, `typeId` INTEGER, `deletedFromDevice` INTEGER, `sent` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteId` INTEGER, `filePath` TEXT, `devicePath` TEXT, `createdDate` TEXT, `typeId` INTEGER, `deletedFromDevice` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "noteId",
@@ -3848,14 +3848,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3867,8 +3867,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -3898,7 +3898,7 @@
       },
       {
         "tableName": "Notes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteTargetTypeId` INTEGER, `noteTargetId` INTEGER, `noteContent` TEXT, `customerId` INTEGER, `createdByUserId` INTEGER, `createdDate` TEXT, `reminder` TEXT, `sent` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteTargetTypeId` INTEGER, `noteTargetId` INTEGER, `noteContent` TEXT, `customerId` INTEGER, `createdByUserId` INTEGER, `createdDate` TEXT, `reminder` TEXT, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "noteTargetTypeId",
@@ -3949,14 +3949,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3968,8 +3968,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -3999,7 +3999,7 @@
       },
       {
         "tableName": "NotesTargetGroups",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -4020,14 +4020,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4039,8 +4039,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -4070,7 +4070,7 @@
       },
       {
         "tableName": "NotesTargetTypes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteTargetGroupId` INTEGER, `createdByUserId` INTEGER, `createdDate` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteTargetGroupId` INTEGER, `createdByUserId` INTEGER, `createdDate` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "noteTargetGroupId",
@@ -4109,14 +4109,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4128,8 +4128,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -4159,7 +4159,7 @@
       },
       {
         "tableName": "PostalCodesAndCities",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`postalCode` TEXT, `city` TEXT, `municipalityId` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`postalCode` TEXT, `city` TEXT, `municipalityId` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "postalCode",
@@ -4180,14 +4180,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4199,8 +4199,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -4230,7 +4230,7 @@
       },
       {
         "tableName": "SaleOrderHeaders",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`documentTypeId` INTEGER, `salesDocumentDeviceNo` TEXT, `salesDocumentNo` TEXT, `customerId` INTEGER, `documentDate` TEXT, `warehouseId` INTEGER, `visitId` INTEGER, `externalDocumentNo` TEXT, `createdByUserId` INTEGER, `employeeId` INTEGER, `customerShipToAddressId` INTEGER, `paymentMethodId` INTEGER, `customerPaymentConditionId` INTEGER, `shipmentMethodId` INTEGER, `contactId` INTEGER, `sellToContact` TEXT, `sellToContactPhone` TEXT, `quoteNo` TEXT, `backOrderShipmentStatusId` INTEGER, `hideDiscountOnInvoice` INTEGER, `emailForSendingDocument` TEXT, `totalLinesAmount` REAL, `totalDiscount` REAL, `invoiceDiscountPercent` REAL, `invoiceDiscAmountWithoutVAT` REAL, `invoiceDiscAmountWithVAT` REAL, `totalAmountWithoutVAT` REAL, `totalAmountWithVAT` REAL, `requestedDeliveryDate` TEXT, `documentValidUntil` TEXT, `salesDocumentConditionId` INTEGER, `salesDocumentTypeId` INTEGER, `pricesIncludedVAT` INTEGER, `noteInternal` TEXT, `noteForCustomer` TEXT, `documentVerificationStatusId` INTEGER, `selectedFromAllItemsCounter` INTEGER, `timeOnThePhone` INTEGER, `currMaxDiscountTotalAmountDifference` REAL, `documentSentDate` TEXT, `declaration` INTEGER, `discountUsed` INTEGER, `verified` INTEGER, `sent` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`documentTypeId` INTEGER, `salesDocumentDeviceNo` TEXT, `salesDocumentNo` TEXT, `customerId` INTEGER, `documentDate` TEXT, `warehouseId` INTEGER, `visitId` INTEGER, `externalDocumentNo` TEXT, `createdByUserId` INTEGER, `employeeId` INTEGER, `customerShipToAddressId` INTEGER, `paymentMethodId` INTEGER, `customerPaymentConditionId` INTEGER, `shipmentMethodId` INTEGER, `contactId` INTEGER, `sellToContact` TEXT, `sellToContactPhone` TEXT, `quoteNo` TEXT, `backOrderShipmentStatusId` INTEGER, `hideDiscountOnInvoice` INTEGER, `emailForSendingDocument` TEXT, `totalLinesAmount` REAL, `totalDiscount` REAL, `invoiceDiscountPercent` REAL, `invoiceDiscAmountWithoutVAT` REAL, `invoiceDiscAmountWithVAT` REAL, `totalAmountWithoutVAT` REAL, `totalAmountWithVAT` REAL, `requestedDeliveryDate` TEXT, `documentValidUntil` TEXT, `salesDocumentConditionId` INTEGER, `salesDocumentTypeId` INTEGER, `pricesIncludedVAT` INTEGER, `noteInternal` TEXT, `noteForCustomer` TEXT, `documentVerificationStatusId` INTEGER, `selectedFromAllItemsCounter` INTEGER, `timeOnThePhone` INTEGER, `currMaxDiscountTotalAmountDifference` REAL, `documentSentDate` TEXT, `declaration` INTEGER, `discountUsed` INTEGER, `verified` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "documentTypeId",
@@ -4497,14 +4497,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4516,8 +4516,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -4547,7 +4547,7 @@
       },
       {
         "tableName": "SaleOrderLines",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`saleOrderHeaderId` INTEGER, `lineNo` INTEGER, `itemId` INTEGER, `itemDescription` TEXT, `warehouseId` INTEGER, `quantity` REAL, `quantityAvailable` REAL, `ovsQuantityAvailable` REAL, `unitPriceWithoutVAT` REAL, `unitPriceWithVAT` REAL, `lineDiscountPr` REAL, `vatPercent` REAL, `lineDiscountPercent` REAL, `lineDiscAmountWithoutVAT` REAL, `lineDiscAmountWithVAT` REAL, `lineAmountWithoutVAT` REAL, `lineAmountWithVAT` REAL, `maxDiscount` REAL, `taPrice` REAL, `taDiscount` REAL, `ovsPrice` REAL, `ovsDiscount` REAL, `campaignPrice` REAL, `campaignDiscount` REAL, `regularPrice` REAL, `regularDiscount` REAL, `minSalesPrice` REAL, `itemUnitOfMeasureId` INTEGER, `requestedDeliveryDate` TEXT, `backOrderShipmentStatusId` INTEGER, `salesPriceTypeId` INTEGER, `requestedTradeAgreement` INTEGER, `orsyItem` INTEGER, `documentVerificationStatusId` INTEGER, `documentVerificationMessage` TEXT, `bonusEarnings` REAL, `lastPrice` REAL, `minimumPrice` REAL, `basePrice` REAL, `sellingPrice` REAL, `ta` INTEGER, `itemImportance` TEXT, `discountSetAsZero` INTEGER, `priceSetAsZero` INTEGER, `priceLoaded` INTEGER, `priceUnit` REAL, `quantityAvailableAdd` REAL, `stockAvailabilityStatusId` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`saleOrderHeaderId` INTEGER, `lineNo` INTEGER, `itemId` INTEGER, `itemDescription` TEXT, `warehouseId` INTEGER, `quantity` REAL, `quantityAvailable` REAL, `ovsQuantityAvailable` REAL, `unitPriceWithoutVAT` REAL, `unitPriceWithVAT` REAL, `lineDiscountPr` REAL, `vatPercent` REAL, `lineDiscountPercent` REAL, `lineDiscAmountWithoutVAT` REAL, `lineDiscAmountWithVAT` REAL, `lineAmountWithoutVAT` REAL, `lineAmountWithVAT` REAL, `maxDiscount` REAL, `taPrice` REAL, `taDiscount` REAL, `ovsPrice` REAL, `ovsDiscount` REAL, `campaignPrice` REAL, `campaignDiscount` REAL, `regularPrice` REAL, `regularDiscount` REAL, `minSalesPrice` REAL, `itemUnitOfMeasureId` INTEGER, `requestedDeliveryDate` TEXT, `backOrderShipmentStatusId` INTEGER, `salesPriceTypeId` INTEGER, `requestedTradeAgreement` INTEGER, `orsyItem` INTEGER, `documentVerificationStatusId` INTEGER, `documentVerificationMessage` TEXT, `bonusEarnings` REAL, `lastPrice` REAL, `minimumPrice` REAL, `basePrice` REAL, `sellingPrice` REAL, `ta` INTEGER, `itemImportance` TEXT, `discountSetAsZero` INTEGER, `priceSetAsZero` INTEGER, `priceLoaded` INTEGER, `priceUnit` REAL, `quantityAvailableAdd` REAL, `stockAvailabilityStatusId` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "saleOrderHeaderId",
@@ -4838,14 +4838,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4857,8 +4857,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -4888,7 +4888,7 @@
       },
       {
         "tableName": "SalesDocumentConditions",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -4909,14 +4909,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4928,8 +4928,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -4959,7 +4959,7 @@
       },
       {
         "tableName": "SalesDocumentTypes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -4980,14 +4980,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4999,8 +4999,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5030,7 +5030,7 @@
       },
       {
         "tableName": "SalesLeaderCategoriesAllowedToCustomer",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `sourceTable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `sourceTable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "categoryOfItemsId",
@@ -5075,14 +5075,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5094,8 +5094,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5125,7 +5125,7 @@
       },
       {
         "tableName": "SalesLeaderCategoriesAllowedToCustomerTmp",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `sourceTable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `sourceTable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "categoryOfItemsId",
@@ -5170,14 +5170,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5189,8 +5189,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5220,7 +5220,7 @@
       },
       {
         "tableName": "SalesLeaderCustomerCardColors",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`description2` TEXT, `condition` TEXT, `colorCode` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`description2` TEXT, `condition` TEXT, `colorCode` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "description2",
@@ -5259,14 +5259,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5278,8 +5278,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5309,7 +5309,7 @@
       },
       {
         "tableName": "SalesLeaderDirections",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -5330,14 +5330,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5349,8 +5349,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5380,7 +5380,7 @@
       },
       {
         "tableName": "SalesLeaderItemsAllowedToCustomer",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `salesPriceTypeId` INTEGER, `salesPrice` REAL, `salesDiscount` REAL, `comment` TEXT, `fromDate` TEXT, `toDate` TEXT, `approvalStatusId` INTEGER, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `salesPriceTypeId` INTEGER, `salesPrice` REAL, `salesDiscount` REAL, `comment` TEXT, `fromDate` TEXT, `toDate` TEXT, `approvalStatusId` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "itemId",
@@ -5449,14 +5449,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5468,8 +5468,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5499,7 +5499,7 @@
       },
       {
         "tableName": "SalesLeaderItemsAllowedToCustomerTmp",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `salesPriceTypeId` INTEGER, `salesPrice` REAL, `salesDiscount` REAL, `comment` TEXT, `fromDate` TEXT, `toDate` TEXT, `approvalStatusId` INTEGER, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `salesPriceTypeId` INTEGER, `salesPrice` REAL, `salesDiscount` REAL, `comment` TEXT, `fromDate` TEXT, `toDate` TEXT, `approvalStatusId` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "itemId",
@@ -5568,14 +5568,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5587,8 +5587,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5618,7 +5618,7 @@
       },
       {
         "tableName": "SalesLeaderItemConnections",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `connectedItemId` INTEGER, `salesLeaderDirectionId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `connectedItemId` INTEGER, `salesLeaderDirectionId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "itemId",
@@ -5657,14 +5657,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5676,8 +5676,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5707,7 +5707,7 @@
       },
       {
         "tableName": "SalesLeaderItemsCustomersCard",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "itemId",
@@ -5776,14 +5776,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5795,8 +5795,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5826,7 +5826,7 @@
       },
       {
         "tableName": "SalesLeaderItemsCustomersCardIco",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "itemId",
@@ -5895,14 +5895,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5914,8 +5914,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -5945,7 +5945,7 @@
       },
       {
         "tableName": "SalesLeaderItemsPackages",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemPackageId` INTEGER, `itemComponentId` INTEGER, `itemComponentPrice` REAL, `itemComponentQuantity` REAL, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemPackageId` INTEGER, `itemComponentId` INTEGER, `itemComponentPrice` REAL, `itemComponentQuantity` REAL, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "itemPackageId",
@@ -5990,14 +5990,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6009,8 +6009,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -6040,7 +6040,7 @@
       },
       {
         "tableName": "SalesLeaderItemsPerProcessesPerCustomers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "itemId",
@@ -6109,14 +6109,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6128,8 +6128,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -6159,7 +6159,7 @@
       },
       {
         "tableName": "SalesLeaderItemsPerShelvesPerCustomers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "itemId",
@@ -6228,14 +6228,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6247,8 +6247,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -6278,7 +6278,7 @@
       },
       {
         "tableName": "SalesLeaderItemsSoldToCustomerMonthly",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `groupOfCustomerId` INTEGER, `soldYear` INTEGER, `soldMonth` INTEGER, `quantity` REAL, `turnover` REAL, `cogs` REAL, `salesLinesCount` REAL, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `groupOfCustomerId` INTEGER, `soldYear` INTEGER, `soldMonth` INTEGER, `quantity` REAL, `turnover` REAL, `cogs` REAL, `salesLinesCount` REAL, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "itemId",
@@ -6335,14 +6335,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6354,8 +6354,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -6527,7 +6527,7 @@
       },
       {
         "tableName": "SalesLeaderNewItemsCustomersCard",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupsOfCustomerId` INTEGER, `itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupsOfCustomerId` INTEGER, `itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "groupsOfCustomerId",
@@ -6602,14 +6602,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6621,8 +6621,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -6652,7 +6652,7 @@
       },
       {
         "tableName": "SalesLeaderSalesLevelTypes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -6673,14 +6673,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6692,8 +6692,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -6723,7 +6723,7 @@
       },
       {
         "tableName": "SalesLeaderShelvesPerCustomers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`shelfItemId` INTEGER, `customerId` INTEGER, `shelfIsORSY100` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`shelfItemId` INTEGER, `customerId` INTEGER, `shelfIsORSY100` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "shelfItemId",
@@ -6762,14 +6762,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6781,8 +6781,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -6812,7 +6812,7 @@
       },
       {
         "tableName": "SalesPriceTypes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -6833,14 +6833,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6852,8 +6852,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -6883,7 +6883,7 @@
       },
       {
         "tableName": "SalesTypes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -6904,14 +6904,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6923,8 +6923,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -6954,7 +6954,7 @@
       },
       {
         "tableName": "ServiceClassification",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serviceClassificationTypeId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serviceClassificationTypeId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "serviceClassificationTypeId",
@@ -6981,14 +6981,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7000,8 +7000,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7031,7 +7031,7 @@
       },
       {
         "tableName": "ServiceClassificationTypes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -7052,14 +7052,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7071,8 +7071,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7254,7 +7254,7 @@
       },
       {
         "tableName": "ServiceOrdersStatuses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -7275,14 +7275,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7294,8 +7294,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7375,7 +7375,7 @@
       },
       {
         "tableName": "StockAvailabilityStatuses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -7396,14 +7396,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7415,8 +7415,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7446,7 +7446,7 @@
       },
       {
         "tableName": "StockInventoryHeaders",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `sent` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "customerId",
@@ -7461,14 +7461,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7480,8 +7480,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7511,7 +7511,7 @@
       },
       {
         "tableName": "StockInventoryLines",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`stockInventoryHeaderId` INTEGER, `itemId` INTEGER, `quantity` REAL, `unitPrice` REAL, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`stockInventoryHeaderId` INTEGER, `itemId` INTEGER, `quantity` REAL, `unitPrice` REAL, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "stockInventoryHeaderId",
@@ -7538,14 +7538,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7557,8 +7557,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7632,7 +7632,7 @@
       },
       {
         "tableName": "Tags",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -7653,14 +7653,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7672,8 +7672,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7703,7 +7703,7 @@
       },
       {
         "tableName": "TransactionTypes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -7724,14 +7724,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7743,8 +7743,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7774,7 +7774,7 @@
       },
       {
         "tableName": "UserDefinedLists",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`listId` INTEGER, `customerId` INTEGER, `listName` TEXT, `specialType` TEXT, `listEditable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`listId` INTEGER, `customerId` INTEGER, `listName` TEXT, `specialType` TEXT, `listEditable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "listId",
@@ -7825,14 +7825,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7844,8 +7844,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7875,7 +7875,7 @@
       },
       {
         "tableName": "Users",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`firstName` TEXT, `lastName` TEXT, `name` TEXT, `password` TEXT, `lastPassword` TEXT, `companyId` INTEGER, `employeeId` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`firstName` TEXT, `lastName` TEXT, `name` TEXT, `password` TEXT, `lastPassword` TEXT, `companyId` INTEGER, `employeeId` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "firstName",
@@ -7920,14 +7920,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7939,8 +7939,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -7970,7 +7970,7 @@
       },
       {
         "tableName": "VATGroups",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -7991,14 +7991,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -8010,8 +8010,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -8041,7 +8041,7 @@
       },
       {
         "tableName": "Visits",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`visitType` INTEGER, `visitResult` INTEGER, `visitSubResultId` INTEGER, `visitStatus` INTEGER, `visitDate` TEXT, `visitArrivalTime` TEXT, `visitDepartureTime` TEXT, `customerId` INTEGER, `employeeId` INTEGER, `odometerValue` INTEGER, `customerShipToAddressId` INTEGER, `description` TEXT, `gpsLatitude` TEXT, `gpsLongitude` TEXT, `gpsAccuracy` TEXT, `gpsLatitudeEnd` TEXT, `gpsLongitudeEnd` TEXT, `gpsAccuracyEnd` TEXT, `telephoneRealizationDuration` TEXT, `plannedVisitId` INTEGER, `documentHeaderId` INTEGER, `commentId` INTEGER, `onCustomerLocation` INTEGER, `sent` INTEGER, `deleted` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`visitType` INTEGER, `visitResult` INTEGER, `visitSubResultId` INTEGER, `visitStatus` INTEGER, `visitDate` TEXT, `visitArrivalTime` TEXT, `visitDepartureTime` TEXT, `customerId` INTEGER, `employeeId` INTEGER, `odometerValue` INTEGER, `customerShipToAddressId` INTEGER, `description` TEXT, `gpsLatitude` TEXT, `gpsLongitude` TEXT, `gpsAccuracy` TEXT, `gpsLatitudeEnd` TEXT, `gpsLongitudeEnd` TEXT, `gpsAccuracyEnd` TEXT, `telephoneRealizationDuration` TEXT, `plannedVisitId` INTEGER, `documentHeaderId` INTEGER, `commentId` INTEGER, `onCustomerLocation` INTEGER, `sent` INTEGER, `deleted` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "visitType",
@@ -8194,14 +8194,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -8213,8 +8213,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -8244,7 +8244,7 @@
       },
       {
         "tableName": "VisitSubResults",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `visitTypeId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `visitTypeId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "name",
@@ -8277,14 +8277,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -8296,8 +8296,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -8327,7 +8327,7 @@
       },
       {
         "tableName": "Warehouses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`address` TEXT, `addressNo` TEXT, `city` TEXT, `postalCode` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverId` INTEGER, `modifiedByUserId` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditId` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`address` TEXT, `addressNo` TEXT, `city` TEXT, `postalCode` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "address",
@@ -8372,14 +8372,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "modifiedByUserId",
-            "columnName": "modifiedByUserId",
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -8391,8 +8391,8 @@
             "defaultValue": "'1970-01-01T00:00:00.000'"
           },
           {
-            "fieldPath": "auditId",
-            "columnName": "auditId",
+            "fieldPath": "auditID",
+            "columnName": "auditID",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "0"
@@ -8424,7 +8424,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '969215b24a4be7d9cee0150893184ae4')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1c859c96058614c7a4259bdee0222b68')"
     ]
   }
 }

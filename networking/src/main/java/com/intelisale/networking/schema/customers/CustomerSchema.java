@@ -77,7 +77,7 @@ public class CustomerSchema {
     @JsonProperty("color")
     private String color;
     @JsonProperty("coeficient")
-    private String coeficient;
+    private String coefficient;
     @JsonProperty("customerPersonalTurnover")
     private Double customerPersonalTurnover;
     @JsonProperty("turnover3m")
@@ -97,7 +97,7 @@ public class CustomerSchema {
     @JsonProperty("planCurrentYear")
     private Double planCurrentYear;
     @JsonProperty("planFullfilment")
-    private Double planFullfilment;
+    private Double planFulfillment;
     @JsonProperty("existContract_Agreement")
     private Boolean existContractAgreement;
     @JsonProperty("existTradeAgreement")
@@ -113,7 +113,7 @@ public class CustomerSchema {
     @JsonProperty("reminderLevel")
     private String reminderLevel;
     @JsonProperty("gP_")
-    private Double gP;
+    private Double gp;
     @JsonProperty("defaultCustShipToAddressID")
     private Integer defaultCustShipToAddressID;
     @JsonProperty("custPaymentMethodID")
@@ -546,13 +546,13 @@ public class CustomerSchema {
     }
 
     @JsonProperty("coeficient")
-    public String getCoeficient() {
-        return coeficient;
+    public String getCoefficient() {
+        return coefficient;
     }
 
     @JsonProperty("coeficient")
-    public void setCoeficient(String coeficient) {
-        this.coeficient = coeficient;
+    public void setCoefficient(String coefficient) {
+        this.coefficient = coefficient;
     }
 
     @JsonProperty("customerPersonalTurnover")
@@ -646,13 +646,13 @@ public class CustomerSchema {
     }
 
     @JsonProperty("planFullfilment")
-    public Double getPlanFullfilment() {
-        return planFullfilment;
+    public Double getPlanFulfillment() {
+        return planFulfillment;
     }
 
     @JsonProperty("planFullfilment")
-    public void setPlanFullfilment(Double planFullfilment) {
-        this.planFullfilment = planFullfilment;
+    public void setPlanFulfillment(Double planFulfillment) {
+        this.planFulfillment = planFulfillment;
     }
 
     @JsonProperty("existContract_Agreement")
@@ -726,13 +726,13 @@ public class CustomerSchema {
     }
 
     @JsonProperty("gP_")
-    public Double getGP() {
-        return gP;
+    public Double getGp() {
+        return gp;
     }
 
     @JsonProperty("gP_")
-    public void setGP(Double gP) {
-        this.gP = gP;
+    public void setGp(Double gp) {
+        this.gp = gp;
     }
 
     @JsonProperty("defaultCustShipToAddressID")

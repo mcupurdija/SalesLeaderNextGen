@@ -4,33 +4,33 @@ import androidx.room.ColumnInfo;
 
 public class BaseAuditColumns extends BaseColumns {
 
-    private Integer serverId;
+    private Integer serverID;
 
-    private Integer modifiedByUserId;
+    private Integer modifiedByUserID;
 
     @ColumnInfo(defaultValue = "1970-01-01T00:00:00.000")
     private String modifiedDate;
 
     @ColumnInfo(defaultValue = "0")
-    private Integer auditId;
+    private Integer auditID;
 
     @ColumnInfo(defaultValue = "1")
     private Boolean active;
 
-    public Integer getServerId() {
-        return serverId;
+    public Integer getServerID() {
+        return serverID;
     }
 
-    public void setServerId(Integer serverId) {
-        this.serverId = serverId;
+    public void setServerID(Integer serverID) {
+        this.serverID = serverID;
     }
 
-    public Integer getModifiedByUserId() {
-        return modifiedByUserId;
+    public Integer getModifiedByUserID() {
+        return modifiedByUserID;
     }
 
-    public void setModifiedByUserId(Integer modifiedByUserId) {
-        this.modifiedByUserId = modifiedByUserId;
+    public void setModifiedByUserID(Integer modifiedByUserID) {
+        this.modifiedByUserID = modifiedByUserID;
     }
 
     public String getModifiedDate() {
@@ -41,12 +41,12 @@ public class BaseAuditColumns extends BaseColumns {
         this.modifiedDate = modifiedDate;
     }
 
-    public Integer getAuditId() {
-        return auditId;
+    public Integer getAuditID() {
+        return auditID;
     }
 
-    public void setAuditId(Integer auditId) {
-        this.auditId = auditId;
+    public void setAuditID(Integer auditID) {
+        this.auditID = auditID;
     }
 
     public Boolean isActive() {

@@ -112,7 +112,7 @@ abstract class BaseDao<T> {
 
             for (T obj : objList) {
 
-                int id = idServerIdArray.get(((BaseAuditColumns) obj).getServerId());
+                int id = idServerIdArray.get(((BaseAuditColumns) obj).getServerID());
                 if (id > 0) {
                     ((BaseAuditColumns) obj).setId(id);
                     objToUpdateList.add(obj);

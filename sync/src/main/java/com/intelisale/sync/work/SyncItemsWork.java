@@ -54,8 +54,6 @@ public class SyncItemsWork extends BaseWorker {
     @Override
     public Result doWork() {
 
-        ItemMapper itemMapper = ItemMapper.INSTANCE;
-
         while (setSyncRequest()) {
 
             Call<BaseSchema<SyncItemsResponseSchema>> call = syncApi.syncItems(1, new ArrayList<>(syncRequest.values()));
@@ -74,7 +72,7 @@ public class SyncItemsWork extends BaseWorker {
 
                                 if (itemsRecordSchema.getRecords() != null && itemsRecordSchema.getRecords().size() > 0) {
 
-                                    List<ItemEntity> itemEntities = itemMapper.itemSchemaToEntityList(itemsRecordSchema.getRecords());
+                                    List<ItemEntity> itemEntities = ItemMapper.INSTANCE.itemSchemaToEntityList(itemsRecordSchema.getRecords());
                                     syncItemsRepository.syncItems(itemEntities);
 
                                     itemsCounter += ITEMS_PAGE_SIZE;

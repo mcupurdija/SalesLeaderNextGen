@@ -10,13 +10,13 @@ public class CustomerEntity extends BaseAuditColumns {
 
     private String customerCode;
     private String potentialCustomerCode;
-    private Integer customerIdForCustomerBusinessUnit;
+    private Integer customerIDForCustomerBusinessUnit;
     private String customerBusinessUnitCode;
     private Boolean realCustomer;
     private String name;
     private String name2;
     private String address;
-    private Integer postalCodeAndCityId;
+    private Integer postalCodeAndCityID;
     private String phone;
     private String mobile;
     private String email;
@@ -25,11 +25,11 @@ public class CustomerEntity extends BaseAuditColumns {
     private Double creditLimit;
     private Double balanceLcy;
     private Double balanceDueLcy;
-    private Integer customerPaymentConditionId;
-    private Integer customerDiscGroupId;
-    private Integer customerPriceGroupId;
-    private Integer groupOfCustomerId;
-    private Integer secondaryGroupOfCustomerId;
+    private Integer customerPaymentConditionID;
+    private Integer customerDiscGroupID;
+    private Integer customerPriceGroupID;
+    private Integer groupOfCustomerID;
+    private Integer secondaryGroupOfCustomerID;
     private String smlTurnover;
     private String sean;
     private Integer channel;
@@ -52,20 +52,20 @@ public class CustomerEntity extends BaseAuditColumns {
     private Boolean existTradeAgreement;
     private Boolean existOrsy;
     private Boolean existOrsy100;
-    private Integer buttonNo6;
+    private Boolean buttonNo6;
     private String priority;
     private String reminderLevel;
     private String dateLastPayment;
     private String dateLastInvoice;
     private String dateOldestOpenInvoice;
     private Double gp;
-    private Integer defaultCustomerShipToAddressId;
-    private Integer employeeId;
-    private Integer customerPaymentMethodId;
+    private Integer defaultCustomerShipToAddressID;
+    private Integer employeeID;
+    private Integer customerPaymentMethodID;
     private String gpsLatitude;
     private String gpsLongitude;
     private String gpsAccuracy;
-    private Integer customerVATGroupId;
+    private Integer customerVATGroupID;
     private Double invoiceDiscountPercent;
     private String parentData;
     private String customerHierarchyData;
@@ -100,7 +100,7 @@ public class CustomerEntity extends BaseAuditColumns {
     private String pricingClass;
     private String fullCustomerCode;
     private Boolean centralOffice;
-    private Integer primaryContactId;
+    private Integer primaryContactID;
     private String assignedUserCode;
     private String assignedUserName;
     private Boolean focusCustomer;
@@ -129,12 +129,12 @@ public class CustomerEntity extends BaseAuditColumns {
         this.potentialCustomerCode = potentialCustomerCode;
     }
 
-    public Integer getCustomerIdForCustomerBusinessUnit() {
-        return customerIdForCustomerBusinessUnit;
+    public Integer getCustomerIDForCustomerBusinessUnit() {
+        return customerIDForCustomerBusinessUnit;
     }
 
-    public void setCustomerIdForCustomerBusinessUnit(Integer customerIdForCustomerBusinessUnit) {
-        this.customerIdForCustomerBusinessUnit = customerIdForCustomerBusinessUnit;
+    public void setCustomerIDForCustomerBusinessUnit(Integer customerIDForCustomerBusinessUnit) {
+        this.customerIDForCustomerBusinessUnit = customerIDForCustomerBusinessUnit;
     }
 
     public String getCustomerBusinessUnitCode() {
@@ -177,12 +177,12 @@ public class CustomerEntity extends BaseAuditColumns {
         this.address = address;
     }
 
-    public Integer getPostalCodeAndCityId() {
-        return postalCodeAndCityId;
+    public Integer getPostalCodeAndCityID() {
+        return postalCodeAndCityID;
     }
 
-    public void setPostalCodeAndCityId(Integer postalCodeAndCityId) {
-        this.postalCodeAndCityId = postalCodeAndCityId;
+    public void setPostalCodeAndCityID(Integer postalCodeAndCityID) {
+        this.postalCodeAndCityID = postalCodeAndCityID;
     }
 
     public String getPhone() {
@@ -249,44 +249,44 @@ public class CustomerEntity extends BaseAuditColumns {
         this.balanceDueLcy = balanceDueLcy;
     }
 
-    public Integer getCustomerPaymentConditionId() {
-        return customerPaymentConditionId;
+    public Integer getCustomerPaymentConditionID() {
+        return customerPaymentConditionID;
     }
 
-    public void setCustomerPaymentConditionId(Integer customerPaymentConditionId) {
-        this.customerPaymentConditionId = customerPaymentConditionId;
+    public void setCustomerPaymentConditionID(Integer customerPaymentConditionID) {
+        this.customerPaymentConditionID = customerPaymentConditionID;
     }
 
-    public Integer getCustomerDiscGroupId() {
-        return customerDiscGroupId;
+    public Integer getCustomerDiscGroupID() {
+        return customerDiscGroupID;
     }
 
-    public void setCustomerDiscGroupId(Integer customerDiscGroupId) {
-        this.customerDiscGroupId = customerDiscGroupId;
+    public void setCustomerDiscGroupID(Integer customerDiscGroupID) {
+        this.customerDiscGroupID = customerDiscGroupID;
     }
 
-    public Integer getCustomerPriceGroupId() {
-        return customerPriceGroupId;
+    public Integer getCustomerPriceGroupID() {
+        return customerPriceGroupID;
     }
 
-    public void setCustomerPriceGroupId(Integer customerPriceGroupId) {
-        this.customerPriceGroupId = customerPriceGroupId;
+    public void setCustomerPriceGroupID(Integer customerPriceGroupID) {
+        this.customerPriceGroupID = customerPriceGroupID;
     }
 
-    public Integer getGroupOfCustomerId() {
-        return groupOfCustomerId;
+    public Integer getGroupOfCustomerID() {
+        return groupOfCustomerID;
     }
 
-    public void setGroupOfCustomerId(Integer groupOfCustomerId) {
-        this.groupOfCustomerId = groupOfCustomerId;
+    public void setGroupOfCustomerID(Integer groupOfCustomerID) {
+        this.groupOfCustomerID = groupOfCustomerID;
     }
 
-    public Integer getSecondaryGroupOfCustomerId() {
-        return secondaryGroupOfCustomerId;
+    public Integer getSecondaryGroupOfCustomerID() {
+        return secondaryGroupOfCustomerID;
     }
 
-    public void setSecondaryGroupOfCustomerId(Integer secondaryGroupOfCustomerId) {
-        this.secondaryGroupOfCustomerId = secondaryGroupOfCustomerId;
+    public void setSecondaryGroupOfCustomerID(Integer secondaryGroupOfCustomerID) {
+        this.secondaryGroupOfCustomerID = secondaryGroupOfCustomerID;
     }
 
     public String getSmlTurnover() {
@@ -465,11 +465,11 @@ public class CustomerEntity extends BaseAuditColumns {
         this.existOrsy100 = existOrsy100;
     }
 
-    public Integer getButtonNo6() {
+    public Boolean getButtonNo6() {
         return buttonNo6;
     }
 
-    public void setButtonNo6(Integer buttonNo6) {
+    public void setButtonNo6(Boolean buttonNo6) {
         this.buttonNo6 = buttonNo6;
     }
 
@@ -521,28 +521,28 @@ public class CustomerEntity extends BaseAuditColumns {
         this.gp = gp;
     }
 
-    public Integer getDefaultCustomerShipToAddressId() {
-        return defaultCustomerShipToAddressId;
+    public Integer getDefaultCustomerShipToAddressID() {
+        return defaultCustomerShipToAddressID;
     }
 
-    public void setDefaultCustomerShipToAddressId(Integer defaultCustomerShipToAddressId) {
-        this.defaultCustomerShipToAddressId = defaultCustomerShipToAddressId;
+    public void setDefaultCustomerShipToAddressID(Integer defaultCustomerShipToAddressID) {
+        this.defaultCustomerShipToAddressID = defaultCustomerShipToAddressID;
     }
 
-    public Integer getEmployeeId() {
-        return employeeId;
+    public Integer getEmployeeID() {
+        return employeeID;
     }
 
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
+    public void setEmployeeID(Integer employeeID) {
+        this.employeeID = employeeID;
     }
 
-    public Integer getCustomerPaymentMethodId() {
-        return customerPaymentMethodId;
+    public Integer getCustomerPaymentMethodID() {
+        return customerPaymentMethodID;
     }
 
-    public void setCustomerPaymentMethodId(Integer customerPaymentMethodId) {
-        this.customerPaymentMethodId = customerPaymentMethodId;
+    public void setCustomerPaymentMethodID(Integer customerPaymentMethodID) {
+        this.customerPaymentMethodID = customerPaymentMethodID;
     }
 
     public String getGpsLatitude() {
@@ -569,12 +569,12 @@ public class CustomerEntity extends BaseAuditColumns {
         this.gpsAccuracy = gpsAccuracy;
     }
 
-    public Integer getCustomerVATGroupId() {
-        return customerVATGroupId;
+    public Integer getCustomerVATGroupID() {
+        return customerVATGroupID;
     }
 
-    public void setCustomerVATGroupId(Integer customerVATGroupId) {
-        this.customerVATGroupId = customerVATGroupId;
+    public void setCustomerVATGroupID(Integer customerVATGroupID) {
+        this.customerVATGroupID = customerVATGroupID;
     }
 
     public Double getInvoiceDiscountPercent() {
@@ -849,12 +849,12 @@ public class CustomerEntity extends BaseAuditColumns {
         this.centralOffice = centralOffice;
     }
 
-    public Integer getPrimaryContactId() {
-        return primaryContactId;
+    public Integer getPrimaryContactID() {
+        return primaryContactID;
     }
 
-    public void setPrimaryContactId(Integer primaryContactId) {
-        this.primaryContactId = primaryContactId;
+    public void setPrimaryContactID(Integer primaryContactID) {
+        this.primaryContactID = primaryContactID;
     }
 
     public String getAssignedUserCode() {
