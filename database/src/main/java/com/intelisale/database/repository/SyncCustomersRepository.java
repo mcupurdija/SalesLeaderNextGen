@@ -102,11 +102,11 @@ public class SyncCustomersRepository extends SyncRepository {
     }
 
     public void syncCustomerProductGroupPotential(List<CustomerProductGroupPotentialEntity> entityList) {
-        customerProductGroupPotentialDao.insertOrUpdateCustom(entityList);
+        customerProductGroupPotentialDao.insertOrUpdate(entityList);
     }
 
     public void syncCustomerCustomLists(List<CustomerCustomListEntity> entityList) {
-        customerCustomListDao.insertOrUpdateCustom(entityList);
+        customerCustomListDao.insertOrUpdate(entityList);
     }
 
     public void syncCustomListsLines(List<CustomListsLineEntity> entityList) {

@@ -1,11 +1,12 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
 import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = TableNames.CUSTOMER_PRODUCT_GROUP)
+@Entity(tableName = TableNames.CUSTOMER_PRODUCT_GROUP, indices = {@Index(value = {"customerID", "categoryOfItemsID"}, unique = true)})
 public class CustomerProductGroupPotentialEntity extends BaseAuditColumns {
 
     private Integer customerID;
