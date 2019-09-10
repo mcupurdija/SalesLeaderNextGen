@@ -14,19 +14,54 @@ import java.util.Map;
 public class SyncItemsResponseSchema {
 
     @JsonProperty("Items")
-    private BaseRecordSchema<ItemSchema> items = null;
-
+    private BaseRecordSchema<ItemSchema> itemSchema = null;
+    @JsonProperty("SLItemsAllowedToCustomers")
+    private BaseRecordSchema<ItemAllowedToCustomerSchema> itemAllowedToCustomerSchema = null;
+    @JsonProperty("SLItemsConnections")
+    private BaseRecordSchema<ItemConnectionsSchema> itemConnectionsSchema = null;
+    @JsonProperty("SLItemsPackages")
+    private BaseRecordSchema<ItemPackagesSchema> itemPackagesSchema = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Items")
-    public BaseRecordSchema<ItemSchema> getItems() {
-        return items;
+    public BaseRecordSchema<ItemSchema> getItemSchema() {
+        return itemSchema;
     }
 
     @JsonProperty("Items")
-    public void setItems(BaseRecordSchema<ItemSchema> items) {
-        this.items = items;
+    public void setItemSchema(BaseRecordSchema<ItemSchema> itemSchema) {
+        this.itemSchema = itemSchema;
+    }
+
+    @JsonProperty("SLItemsAllowedToCustomers")
+    public BaseRecordSchema<ItemAllowedToCustomerSchema> getItemAllowedToCustomerSchema() {
+        return itemAllowedToCustomerSchema;
+    }
+
+    @JsonProperty("SLItemsAllowedToCustomers")
+    public void setItemAllowedToCustomerSchema(BaseRecordSchema<ItemAllowedToCustomerSchema> itemAllowedToCustomerSchema) {
+        this.itemAllowedToCustomerSchema = itemAllowedToCustomerSchema;
+    }
+
+    @JsonProperty("SLItemsConnections")
+    public BaseRecordSchema<ItemConnectionsSchema> getItemConnectionsSchema() {
+        return itemConnectionsSchema;
+    }
+
+    @JsonProperty("SLItemsConnections")
+    public void setItemConnectionsSchema(BaseRecordSchema<ItemConnectionsSchema> itemConnectionsSchema) {
+        this.itemConnectionsSchema = itemConnectionsSchema;
+    }
+
+    @JsonProperty("SLItemsPackages")
+    public BaseRecordSchema<ItemPackagesSchema> getItemPackagesSchema() {
+        return itemPackagesSchema;
+    }
+
+    @JsonProperty("SLItemsPackages")
+    public void setItemPackagesSchema(BaseRecordSchema<ItemPackagesSchema> itemPackagesSchema) {
+        this.itemPackagesSchema = itemPackagesSchema;
     }
 
     @JsonAnyGetter

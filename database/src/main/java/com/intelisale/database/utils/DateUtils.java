@@ -29,4 +29,8 @@ public class DateUtils {
     public static String formatDateTime(DateTime dateTime) {
         return dateTime != null ? wsDateTimeFormat.print(dateTime) : null;
     }
+
+    public static String getDefaultDate() {
+        return DateUtils.formatDateTime(new DateTime(1970, 1, 1, 0, 0, 0));
+    }
 }

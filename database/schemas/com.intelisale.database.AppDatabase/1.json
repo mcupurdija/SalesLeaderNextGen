@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "1c859c96058614c7a4259bdee0222b68",
+    "identityHash": "9becae2eea6166cd5c702694d95969b9",
     "entities": [
       {
         "tableName": "ApprovalStatuses",
@@ -5379,18 +5379,18 @@
         "foreignKeys": []
       },
       {
-        "tableName": "SalesLeaderItemsAllowedToCustomer",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `salesPriceTypeId` INTEGER, `salesPrice` REAL, `salesDiscount` REAL, `comment` TEXT, `fromDate` TEXT, `toDate` TEXT, `approvalStatusId` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "SLItemsAllowedToCust",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemID` INTEGER, `salesLeaderSalesLevelTypeID` INTEGER, `salesLevelCode` TEXT, `salesPriceTypeID` INTEGER, `salesPrice` REAL, `salesDiscount` REAL, `comment` TEXT, `fromDate` TEXT, `toDate` TEXT, `approvalStatusID` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "salesLeaderSalesLevelTypeId",
-            "columnName": "salesLeaderSalesLevelTypeId",
+            "fieldPath": "salesLeaderSalesLevelTypeID",
+            "columnName": "salesLeaderSalesLevelTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5401,8 +5401,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "salesPriceTypeId",
-            "columnName": "salesPriceTypeId",
+            "fieldPath": "salesPriceTypeID",
+            "columnName": "salesPriceTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5437,8 +5437,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "approvalStatusId",
-            "columnName": "approvalStatusId",
+            "fieldPath": "approvalStatusID",
+            "columnName": "approvalStatusID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5498,18 +5498,18 @@
         "foreignKeys": []
       },
       {
-        "tableName": "SalesLeaderItemsAllowedToCustomerTmp",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `salesPriceTypeId` INTEGER, `salesPrice` REAL, `salesDiscount` REAL, `comment` TEXT, `fromDate` TEXT, `toDate` TEXT, `approvalStatusId` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "SLItemsAllowedToCustTmp",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemID` INTEGER, `salesLeaderSalesLevelTypeID` INTEGER, `salesLevelCode` TEXT, `salesPriceTypeID` INTEGER, `salesPrice` REAL, `salesDiscount` REAL, `comment` TEXT, `fromDate` TEXT, `toDate` TEXT, `approvalStatusID` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "salesLeaderSalesLevelTypeId",
-            "columnName": "salesLeaderSalesLevelTypeId",
+            "fieldPath": "salesLeaderSalesLevelTypeID",
+            "columnName": "salesLeaderSalesLevelTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5520,8 +5520,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "salesPriceTypeId",
-            "columnName": "salesPriceTypeId",
+            "fieldPath": "salesPriceTypeID",
+            "columnName": "salesPriceTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5556,8 +5556,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "approvalStatusId",
-            "columnName": "approvalStatusId",
+            "fieldPath": "approvalStatusID",
+            "columnName": "approvalStatusID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5617,24 +5617,24 @@
         "foreignKeys": []
       },
       {
-        "tableName": "SalesLeaderItemConnections",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `connectedItemId` INTEGER, `salesLeaderDirectionId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "SLItemsConnections",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemID` INTEGER, `connectedItemID` INTEGER, `salesLeaderDirectionID` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "connectedItemId",
-            "columnName": "connectedItemId",
+            "fieldPath": "connectedItemID",
+            "columnName": "connectedItemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "salesLeaderDirectionId",
-            "columnName": "salesLeaderDirectionId",
+            "fieldPath": "salesLeaderDirectionID",
+            "columnName": "salesLeaderDirectionID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5944,18 +5944,18 @@
         "foreignKeys": []
       },
       {
-        "tableName": "SalesLeaderItemsPackages",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemPackageId` INTEGER, `itemComponentId` INTEGER, `itemComponentPrice` REAL, `itemComponentQuantity` REAL, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "SLItemsPackages",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemPackageID` INTEGER, `itemComponentID` INTEGER, `itemComponentPrice` REAL, `itemComponentQuantity` REAL, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemPackageId",
-            "columnName": "itemPackageId",
+            "fieldPath": "itemPackageID",
+            "columnName": "itemPackageID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "itemComponentId",
-            "columnName": "itemComponentId",
+            "fieldPath": "itemComponentID",
+            "columnName": "itemComponentID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7588,11 +7588,11 @@
       },
       {
         "tableName": "SyncStatus",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tableName` TEXT, `syncDate` TEXT, `syncProgress` INTEGER, `status` INTEGER, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupName` TEXT, `syncDate` TEXT, `syncProgress` INTEGER, `status` INTEGER, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "tableName",
-            "columnName": "tableName",
+            "fieldPath": "groupName",
+            "columnName": "groupName",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -8424,7 +8424,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1c859c96058614c7a4259bdee0222b68')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9becae2eea6166cd5c702694d95969b9')"
     ]
   }
 }

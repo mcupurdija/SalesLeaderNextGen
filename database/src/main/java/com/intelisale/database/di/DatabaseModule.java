@@ -8,10 +8,15 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.intelisale.database.AppDatabase;
+import com.intelisale.database.TableNames;
+import com.intelisale.database.entity.SyncStatusEntity;
 import com.intelisale.database.repository.SyncCustomersRepository;
 import com.intelisale.database.repository.SyncItemsRepository;
 import com.intelisale.database.repository.UserRepository;
+import com.intelisale.database.utils.DateUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.Executors;
 
 import javax.inject.Singleton;
@@ -35,6 +40,15 @@ public class DatabaseModule {
                         Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
                             @Override
                             public void run() {
+
+                                String date = DateUtils.getDefaultDate();
+                                SyncStatusEntity obj0 = new SyncStatusEntity(TableNames.CUSTOMERS, date, 0, SyncStatusEntity.STATUS_FAIL);
+                                SyncStatusEntity obj1 = new SyncStatusEntity(TableNames.CONTACTS, date, 0, SyncStatusEntity.STATUS_FAIL);
+                                SyncStatusEntity obj2 = new SyncStatusEntity(TableNames.ITEMS, date, 0, SyncStatusEntity.STATUS_FAIL);
+                                SyncStatusEntity obj3 = new SyncStatusEntity(TableNames.CODEBOOKS, date, 0, SyncStatusEntity.STATUS_FAIL);
+                                SyncStatusEntity obj4 = new SyncStatusEntity(TableNames.SETTINGS, date, 0, SyncStatusEntity.STATUS_FAIL);
+                                SyncStatusEntity obj5 = new SyncStatusEntity(TableNames.NOTES, date, 0, SyncStatusEntity.STATUS_FAIL);
+                                getDatabase().getSyncStatusDao().insert(new ArrayList<>(Arrays.asList(obj0, obj1, obj2, obj3, obj4, obj5)));
 
                                 // Pre-populate
 //                                getDatabase().dataDao().insertAll(DataEntity.populateData());
@@ -79,7 +93,11 @@ public class DatabaseModule {
     @Provides
     static SyncItemsRepository syncItemsRepository(AppDatabase appDatabase) {
         return new SyncItemsRepository(
-                appDatabase.getItemDao()
+                appDatabase.getItemDao(),
+                appDatabase.getItemConnectionsDao(),
+                appDatabase.getItemPackagesDao(),
+                appDatabase.getItemAllowedToCustomerDao(),
+                appDatabase.getSyncStatusDao()
         );
     }
 
@@ -386,19 +404,19 @@ public class DatabaseModule {
 //
 //    @Singleton
 //    @Provides
-//    SalesLeaderItemAllowedToCustomerDao getSalesLeaderItemAllowedToCustomerDao(AppDatabase appDatabase) {
+//    ItemAllowedToCustomerDao getSalesLeaderItemAllowedToCustomerDao(AppDatabase appDatabase) {
 //        return appDatabase.getSalesLeaderItemAllowedToCustomerDao();
 //    }
 //
 //    @Singleton
 //    @Provides
-//    SalesLeaderItemAllowedToCustomerTmpDao getSalesLeaderItemAllowedToCustomerTmpDao(AppDatabase appDatabase) {
+//    ItemAllowedToCustomerTmpDao getSalesLeaderItemAllowedToCustomerTmpDao(AppDatabase appDatabase) {
 //        return appDatabase.getSalesLeaderItemAllowedToCustomerTmpDao();
 //    }
 //
 //    @Singleton
 //    @Provides
-//    SalesLeaderItemConnectionsDao getSalesLeaderItemConnectionsDao(AppDatabase appDatabase) {
+//    ItemConnectionsDao getSalesLeaderItemConnectionsDao(AppDatabase appDatabase) {
 //        return appDatabase.getSalesLeaderItemConnectionsDao();
 //    }
 //
@@ -416,7 +434,7 @@ public class DatabaseModule {
 //
 //    @Singleton
 //    @Provides
-//    SalesLeaderItemPackagesDao getSalesLeaderItemPackagesDao(AppDatabase appDatabase) {
+//    ItemPackagesDao getSalesLeaderItemPackagesDao(AppDatabase appDatabase) {
 //        return appDatabase.getSalesLeaderItemPackagesDao();
 //    }
 //

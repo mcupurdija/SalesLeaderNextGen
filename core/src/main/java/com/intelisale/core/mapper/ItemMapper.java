@@ -1,6 +1,12 @@
 package com.intelisale.core.mapper;
 
+import com.intelisale.database.entity.ItemAllowedToCustomerEntity;
+import com.intelisale.database.entity.ItemConnectionsEntity;
 import com.intelisale.database.entity.ItemEntity;
+import com.intelisale.database.entity.ItemPackagesEntity;
+import com.intelisale.networking.schema.items.ItemAllowedToCustomerSchema;
+import com.intelisale.networking.schema.items.ItemConnectionsSchema;
+import com.intelisale.networking.schema.items.ItemPackagesSchema;
 import com.intelisale.networking.schema.items.ItemSchema;
 
 import org.mapstruct.Mapper;
@@ -22,7 +28,34 @@ public abstract class ItemMapper {
             @Mapping(target = "statusOfItem", ignore = true),
             @Mapping(target = "sent", constant = "true")
     })
-    public abstract ItemEntity itemSchemaToEntity(ItemSchema itemSchema);
+    public abstract ItemEntity itemMapper(ItemSchema itemSchema);
 
-    public abstract List<ItemEntity> itemSchemaToEntityList(List<ItemSchema> itemSchema);
+    @Mappings({
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(source = "slDirectionID", target = "salesLeaderDirectionID"),
+            @Mapping(target = "code", ignore = true),
+            @Mapping(target = "description", ignore = true)
+    })
+    public abstract ItemConnectionsEntity itemConnectionsMapper(ItemConnectionsSchema itemConnectionsSchema);
+
+    @Mappings({
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "code", ignore = true),
+            @Mapping(target = "description", ignore = true)
+    })
+    public abstract ItemPackagesEntity itemPackagesMapper(ItemPackagesSchema itemPackagesSchema);
+
+    @Mappings({
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(source = "slSalesLevelTypeID", target = "salesLeaderSalesLevelTypeID")
+    })
+    public abstract ItemAllowedToCustomerEntity itemAllowedToCustomerMapper(ItemAllowedToCustomerSchema itemAllowedToCustomerSchema);
+
+    public abstract List<ItemEntity> itemListMapper(List<ItemSchema> itemSchemas);
+
+    public abstract List<ItemConnectionsEntity> itemConnectionsListMapper(List<ItemConnectionsSchema> itemConnectionsSchemas);
+
+    public abstract List<ItemPackagesEntity> itemPackagesListMapper(List<ItemPackagesSchema> itemPackagesSchemas);
+
+    public abstract List<ItemAllowedToCustomerEntity> itemAllowedToCustomerListMapper(List<ItemAllowedToCustomerSchema> itemAllowedToCustomerSchemas);
 }

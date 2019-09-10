@@ -35,7 +35,11 @@ import com.intelisale.database.dao.FinancialEntityDao;
 import com.intelisale.database.dao.GalleryDao;
 import com.intelisale.database.dao.GroupOfCustomersCategoryItemsDao;
 import com.intelisale.database.dao.GroupOfCustomersDao;
+import com.intelisale.database.dao.ItemAllowedToCustomerDao;
+import com.intelisale.database.dao.ItemAllowedToCustomerTmpDao;
+import com.intelisale.database.dao.ItemConnectionsDao;
 import com.intelisale.database.dao.ItemDao;
+import com.intelisale.database.dao.ItemPackagesDao;
 import com.intelisale.database.dao.ItemQuantitativeElaborationDao;
 import com.intelisale.database.dao.ItemSaleHistoryDao;
 import com.intelisale.database.dao.ItemStatusDao;
@@ -54,12 +58,8 @@ import com.intelisale.database.dao.SalesLeaderCategoryAllowedToCustomerDao;
 import com.intelisale.database.dao.SalesLeaderCategoryAllowedToCustomerTmpDao;
 import com.intelisale.database.dao.SalesLeaderCustomerCardColorDao;
 import com.intelisale.database.dao.SalesLeaderDirectionDao;
-import com.intelisale.database.dao.SalesLeaderItemAllowedToCustomerDao;
-import com.intelisale.database.dao.SalesLeaderItemAllowedToCustomerTmpDao;
-import com.intelisale.database.dao.SalesLeaderItemConnectionsDao;
 import com.intelisale.database.dao.SalesLeaderItemCustomersCardDao;
 import com.intelisale.database.dao.SalesLeaderItemCustomersCardIcoDao;
-import com.intelisale.database.dao.SalesLeaderItemPackagesDao;
 import com.intelisale.database.dao.SalesLeaderItemPerProcessesPerCustomersDao;
 import com.intelisale.database.dao.SalesLeaderItemPerShelvesPerCustomersDao;
 import com.intelisale.database.dao.SalesLeaderItemSoldToCustomerMonthlyDao;
@@ -118,7 +118,11 @@ import com.intelisale.database.entity.FinancialEntityEntity;
 import com.intelisale.database.entity.GalleryEntity;
 import com.intelisale.database.entity.GroupOfCustomersCategoryItemsEntity;
 import com.intelisale.database.entity.GroupOfCustomersEntity;
+import com.intelisale.database.entity.ItemAllowedToCustomerEntity;
+import com.intelisale.database.entity.ItemAllowedToCustomerTmpEntity;
+import com.intelisale.database.entity.ItemConnectionsEntity;
 import com.intelisale.database.entity.ItemEntity;
+import com.intelisale.database.entity.ItemPackagesEntity;
 import com.intelisale.database.entity.ItemQuantitativeElaborationEntity;
 import com.intelisale.database.entity.ItemSaleHistoryEntity;
 import com.intelisale.database.entity.ItemStatusEntity;
@@ -137,12 +141,8 @@ import com.intelisale.database.entity.SalesLeaderCategoryAllowedToCustomerEntity
 import com.intelisale.database.entity.SalesLeaderCategoryAllowedToCustomerTmpEntity;
 import com.intelisale.database.entity.SalesLeaderCustomerCardColorEntity;
 import com.intelisale.database.entity.SalesLeaderDirectionEntity;
-import com.intelisale.database.entity.SalesLeaderItemAllowedToCustomerEntity;
-import com.intelisale.database.entity.SalesLeaderItemAllowedToCustomerTmpEntity;
-import com.intelisale.database.entity.SalesLeaderItemConnectionsEntity;
 import com.intelisale.database.entity.SalesLeaderItemCustomersCardEntity;
 import com.intelisale.database.entity.SalesLeaderItemCustomersCardIcoEntity;
-import com.intelisale.database.entity.SalesLeaderItemPackagesEntity;
 import com.intelisale.database.entity.SalesLeaderItemPerProcessesPerCustomersEntity;
 import com.intelisale.database.entity.SalesLeaderItemPerShelvesPerCustomersEntity;
 import com.intelisale.database.entity.SalesLeaderItemSoldToCustomerMonthlyEntity;
@@ -221,12 +221,12 @@ import com.intelisale.database.entity.WarehouseEntity;
         SalesLeaderCategoryAllowedToCustomerTmpEntity.class,
         SalesLeaderCustomerCardColorEntity.class,
         SalesLeaderDirectionEntity.class,
-        SalesLeaderItemAllowedToCustomerEntity.class,
-        SalesLeaderItemAllowedToCustomerTmpEntity.class,
-        SalesLeaderItemConnectionsEntity.class,
+        ItemAllowedToCustomerEntity.class,
+        ItemAllowedToCustomerTmpEntity.class,
+        ItemConnectionsEntity.class,
         SalesLeaderItemCustomersCardEntity.class,
         SalesLeaderItemCustomersCardIcoEntity.class,
-        SalesLeaderItemPackagesEntity.class,
+        ItemPackagesEntity.class,
         SalesLeaderItemPerProcessesPerCustomersEntity.class,
         SalesLeaderItemPerShelvesPerCustomersEntity.class,
         SalesLeaderItemSoldToCustomerMonthlyEntity.class,
@@ -357,17 +357,17 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract SalesLeaderDirectionDao getSalesLeaderDirectionDao();
 
-    public abstract SalesLeaderItemAllowedToCustomerDao getSalesLeaderItemAllowedToCustomerDao();
+    public abstract ItemAllowedToCustomerDao getItemAllowedToCustomerDao();
 
-    public abstract SalesLeaderItemAllowedToCustomerTmpDao getSalesLeaderItemAllowedToCustomerTmpDao();
+    public abstract ItemAllowedToCustomerTmpDao getItemAllowedToCustomerTmpDao();
 
-    public abstract SalesLeaderItemConnectionsDao getSalesLeaderItemConnectionsDao();
+    public abstract ItemConnectionsDao getItemConnectionsDao();
 
     public abstract SalesLeaderItemCustomersCardDao getSalesLeaderItemCustomersCardDao();
 
     public abstract SalesLeaderItemCustomersCardIcoDao getSalesLeaderItemCustomersCardIcoDao();
 
-    public abstract SalesLeaderItemPackagesDao getSalesLeaderItemPackagesDao();
+    public abstract ItemPackagesDao getItemPackagesDao();
 
     public abstract SalesLeaderItemPerProcessesPerCustomersDao getSalesLeaderItemPerProcessesPerCustomersDao();
 

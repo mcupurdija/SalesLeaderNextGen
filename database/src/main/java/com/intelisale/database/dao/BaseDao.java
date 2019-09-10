@@ -12,6 +12,7 @@ import androidx.sqlite.db.SimpleSQLiteQuery;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 import com.intelisale.database.entity.custom.IdServerId;
+import com.intelisale.database.utils.DateUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +64,8 @@ abstract class BaseDao<T> {
 
     @Transaction
     public String getMaxModifiedDate(String tableName) {
-        return getMaxModifiedDate(new SimpleSQLiteQuery("SELECT MAX(modifiedDate) FROM " + tableName));
+        String result = getMaxModifiedDate(new SimpleSQLiteQuery("SELECT MAX(modifiedDate) FROM " + tableName));
+        return result != null ? result : DateUtils.getDefaultDate();
     }
 
     @RawQuery

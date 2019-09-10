@@ -277,4 +277,6 @@ public interface TableNames {
             "LEFT JOIN Items ON StockInventoryLines.ItemID = Items.ServerID";
 
     String CUSTOMER_FREQUENCIES = "VisitsFrequencies";
+
+    String CODEBOOKS = "CodeBooks";
 }
