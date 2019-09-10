@@ -65,16 +65,22 @@ abstract class BaseDao<T> {
     }
 
     @Transaction
-    public void insertOrUpdate(List<T> objList) {
+    public void insertOrUpdate(List<T> objList, String tableName) {
 
-        long[] insertResults = insert(objList);
-        List<T> objToUpdateList = new ArrayList<>();
+        if (getCount(tableName) > 0) {
 
-        for (int i = 0; i < insertResults.length; i++) {
-            if (insertResults[i] == -1L) objToUpdateList.add(objList.get(i));
+            long[] insertResults = insert(objList);
+            List<T> objToUpdateList = new ArrayList<>();
+
+            for (int i = 0; i < insertResults.length; i++) {
+                if (insertResults[i] == -1L) objToUpdateList.add(objList.get(i));
+            }
+
+            if (!objToUpdateList.isEmpty()) update(objToUpdateList);
+
+        } else {
+            insert(objList);
         }
-
-        if (!objToUpdateList.isEmpty()) update(objToUpdateList);
     }
 
     @Transaction

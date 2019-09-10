@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "5cc0b8cf424ca679aa7802166bc5cc36",
+    "identityHash": "c57e98124422936d6368267c4002ca0b",
     "entities": [
       {
         "tableName": "ApprovalStatuses",
@@ -1047,7 +1047,17 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustomerCustomLists_customerID_customListHeaderID",
+            "unique": true,
+            "columnNames": [
+              "customerID",
+              "customListHeaderID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustomerCustomLists_customerID_customListHeaderID` ON `${TABLE_NAME}` (`customerID`, `customListHeaderID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -8535,7 +8545,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5cc0b8cf424ca679aa7802166bc5cc36')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c57e98124422936d6368267c4002ca0b')"
     ]
   }
 }
