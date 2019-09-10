@@ -2,20 +2,21 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "CustomerProcesses")
+@Entity(tableName = TableNames.SL_CUSTOMERS_PROCESSES)
 public class CustomerProcessEntity extends CodeBookColumns {
 
-    private Integer processId;
+    private Integer processID;
     private Integer customerID;
 
-    public Integer getProcessId() {
-        return processId;
+    public Integer getProcessID() {
+        return processID;
     }
 
-    public void setProcessId(Integer processId) {
-        this.processId = processId;
+    public void setProcessID(Integer processID) {
+        this.processID = processID;
     }
 
     public Integer getCustomerID() {

@@ -2,24 +2,34 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = "CustomerProductGroupPotential")
+@Entity(tableName = TableNames.CUSTOMER_PRODUCT_GROUP)
 public class CustomerProductGroupPotentialEntity extends BaseAuditColumns {
 
-    private Integer categoryOfItemsId;
+    private Integer customerID;
+    private Integer categoryOfItemsID;
     private Double turnover;
     private Double potential;
     private Double unusedPotential;
     private Integer noOfItems;
     private Integer categoryRank;
 
-    public Integer getCategoryOfItemsId() {
-        return categoryOfItemsId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCategoryOfItemsId(Integer categoryOfItemsId) {
-        this.categoryOfItemsId = categoryOfItemsId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
+    }
+
+    public Integer getCategoryOfItemsID() {
+        return categoryOfItemsID;
+    }
+
+    public void setCategoryOfItemsID(Integer categoryOfItemsID) {
+        this.categoryOfItemsID = categoryOfItemsID;
     }
 
     public Double getTurnover() {

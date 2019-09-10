@@ -2,12 +2,13 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = "CustomerStatistics")
+@Entity(tableName = TableNames.CUSTOMER_STATISTICS)
 public class CustomerStatisticsEntity extends BaseAuditColumns {
 
-    private Integer customerId;
+    private Integer customerID;
     private String period;
     private Double turnover;
     private Integer items;
@@ -16,12 +17,12 @@ public class CustomerStatisticsEntity extends BaseAuditColumns {
     private Integer orders;
     private Integer offers;
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
     public String getPeriod() {

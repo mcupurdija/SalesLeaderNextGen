@@ -2,8 +2,8 @@ package com.intelisale.database.entity.column;
 
 public class ItemsCustomersCardColumns extends BaseAuditColumns {
 
-    private Integer itemId;
-    private Integer customerId;
+    private Integer itemID;
+    private Integer customerID;
     private Integer branchMapRang;
     private Integer squareColor;
     private Boolean soldInCurrentMonth;
@@ -14,20 +14,20 @@ public class ItemsCustomersCardColumns extends BaseAuditColumns {
     private Boolean itemIncludedForCustomer;
     private Integer sortIndex;
 
-    public Integer getItemId() {
-        return itemId;
+    public Integer getItemID() {
+        return itemID;
     }
 
-    public void setItemId(Integer itemId) {
-        this.itemId = itemId;
+    public void setItemID(Integer itemID) {
+        this.itemID = itemID;
     }
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
     public Integer getBranchMapRang() {

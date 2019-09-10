@@ -2,29 +2,30 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "SalesLeaderShelvesPerCustomers")
+@Entity(tableName = TableNames.SL_SHELVES_PER_CUSTOMERS)
 public class SalesLeaderShelvePerCustomersEntity extends CodeBookColumns {
 
-    private Integer shelfItemId;
-    private Integer customerId;
+    private Integer shelfItemID;
+    private Integer customerID;
     private Boolean shelfIsORSY100;
 
-    public Integer getShelfItemId() {
-        return shelfItemId;
+    public Integer getShelfItemID() {
+        return shelfItemID;
     }
 
-    public void setShelfItemId(Integer shelfItemId) {
-        this.shelfItemId = shelfItemId;
+    public void setShelfItemID(Integer shelfItemID) {
+        this.shelfItemID = shelfItemID;
     }
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
     public Boolean isShelfIsORSY100() {

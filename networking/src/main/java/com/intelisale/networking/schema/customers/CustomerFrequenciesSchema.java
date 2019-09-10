@@ -15,7 +15,7 @@ public class CustomerFrequenciesSchema {
     @JsonProperty("id")
     private Integer id;
     @JsonProperty("customerId")
-    private Integer customerId;
+    private Integer customerID;
     @JsonProperty("userId")
     private Integer userId;
     @JsonProperty("week")
@@ -27,7 +27,7 @@ public class CustomerFrequenciesSchema {
     @JsonProperty("modifiedDate")
     private String modifiedDate;
     @JsonProperty("modifiedByUserId")
-    private Integer modifiedByUserId;
+    private Integer modifiedByUserID;
     @JsonProperty("active")
     private Boolean active;
     @JsonProperty("createdDate")
@@ -52,13 +52,13 @@ public class CustomerFrequenciesSchema {
     }
 
     @JsonProperty("customerId")
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
     @JsonProperty("customerId")
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
     @JsonProperty("userId")
@@ -112,13 +112,13 @@ public class CustomerFrequenciesSchema {
     }
 
     @JsonProperty("modifiedByUserId")
-    public Integer getModifiedByUserId() {
-        return modifiedByUserId;
+    public Integer getModifiedByUserID() {
+        return modifiedByUserID;
     }
 
     @JsonProperty("modifiedByUserId")
-    public void setModifiedByUserId(Integer modifiedByUserId) {
-        this.modifiedByUserId = modifiedByUserId;
+    public void setModifiedByUserID(Integer modifiedByUserID) {
+        this.modifiedByUserID = modifiedByUserID;
     }
 
     @JsonProperty("active")

@@ -13,12 +13,12 @@ public class ContactEntity extends BaseAuditColumns {
     private String phone;
     private String mobile;
     private String email;
-    private Integer customerId;
-    private Integer contactDepartmentId;
-    private Integer contactPositionId;
-    private Integer employeeId;
+    private Integer customerID;
+    private Integer contactDepartmentID;
+    private Integer contactPositionID;
+    private Integer employeeID;
     private String address;
-    private Integer postalCodeAndCityId;
+    private Integer postalCodeAndCityID;
     private Boolean sent;
 
     public String getCode() {
@@ -69,36 +69,36 @@ public class ContactEntity extends BaseAuditColumns {
         this.email = email;
     }
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
-    public Integer getContactDepartmentId() {
-        return contactDepartmentId;
+    public Integer getContactDepartmentID() {
+        return contactDepartmentID;
     }
 
-    public void setContactDepartmentId(Integer contactDepartmentId) {
-        this.contactDepartmentId = contactDepartmentId;
+    public void setContactDepartmentID(Integer contactDepartmentID) {
+        this.contactDepartmentID = contactDepartmentID;
     }
 
-    public Integer getContactPositionId() {
-        return contactPositionId;
+    public Integer getContactPositionID() {
+        return contactPositionID;
     }
 
-    public void setContactPositionId(Integer contactPositionId) {
-        this.contactPositionId = contactPositionId;
+    public void setContactPositionID(Integer contactPositionID) {
+        this.contactPositionID = contactPositionID;
     }
 
-    public Integer getEmployeeId() {
-        return employeeId;
+    public Integer getEmployeeID() {
+        return employeeID;
     }
 
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
+    public void setEmployeeID(Integer employeeID) {
+        this.employeeID = employeeID;
     }
 
     public String getAddress() {
@@ -109,12 +109,12 @@ public class ContactEntity extends BaseAuditColumns {
         this.address = address;
     }
 
-    public Integer getPostalCodeAndCityId() {
-        return postalCodeAndCityId;
+    public Integer getPostalCodeAndCityID() {
+        return postalCodeAndCityID;
     }
 
-    public void setPostalCodeAndCityId(Integer postalCodeAndCityId) {
-        this.postalCodeAndCityId = postalCodeAndCityId;
+    public void setPostalCodeAndCityID(Integer postalCodeAndCityID) {
+        this.postalCodeAndCityID = postalCodeAndCityID;
     }
 
     public Boolean isSent() {

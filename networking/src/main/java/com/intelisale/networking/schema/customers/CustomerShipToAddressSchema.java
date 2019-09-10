@@ -23,7 +23,7 @@ public class CustomerShipToAddressSchema {
     @JsonProperty("description2")
     private String description2;
     @JsonProperty("adress")
-    private String adress;
+    private String address;
     @JsonProperty("code")
     private String code;
     @JsonProperty("postalCodeAndCityID")
@@ -124,13 +124,13 @@ public class CustomerShipToAddressSchema {
     }
 
     @JsonProperty("adress")
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     @JsonProperty("adress")
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @JsonProperty("code")

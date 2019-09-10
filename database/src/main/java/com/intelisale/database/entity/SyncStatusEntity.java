@@ -1,6 +1,7 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 
 import com.intelisale.database.entity.column.BaseColumns;
 
@@ -19,6 +20,7 @@ public class SyncStatusEntity extends BaseColumns {
     public SyncStatusEntity() {
     }
 
+    @Ignore
     public SyncStatusEntity(String groupName, String syncDate, Integer syncProgress, Integer status) {
         this.groupName = groupName;
         this.syncDate = syncDate;

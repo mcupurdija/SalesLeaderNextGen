@@ -9,7 +9,7 @@ public class PostalCodesAndCitiesEntity extends BaseAuditColumns {
 
     private String postalCode;
     private String city;
-    private Integer municipalityId;
+    private Integer municipalityID;
 
     public String getPostalCode() {
         return postalCode;
@@ -27,11 +27,11 @@ public class PostalCodesAndCitiesEntity extends BaseAuditColumns {
         this.city = city;
     }
 
-    public Integer getMunicipalityId() {
-        return municipalityId;
+    public Integer getMunicipalityID() {
+        return municipalityID;
     }
 
-    public void setMunicipalityId(Integer municipalityId) {
-        this.municipalityId = municipalityId;
+    public void setMunicipalityID(Integer municipalityID) {
+        this.municipalityID = municipalityID;
     }
 }

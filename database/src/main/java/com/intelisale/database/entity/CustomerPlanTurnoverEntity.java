@@ -2,22 +2,23 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = "CustomerPlanTurnover")
+@Entity(tableName = TableNames.CUSTOMER_PLAN_TURNOVER)
 public class CustomerPlanTurnoverEntity extends BaseAuditColumns {
 
-    private Integer customerId;
+    private Integer customerID;
     private String screenPosition;
     private Double planTurnoverValue;
     private Integer sortIndex;
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
     public String getScreenPosition() {

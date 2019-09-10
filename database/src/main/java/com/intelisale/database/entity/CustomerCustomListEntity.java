@@ -2,30 +2,31 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = "CustomerCustomLists")
+@Entity(tableName = TableNames.CUSTOMER_CUSTOM_LISTS)
 public class CustomerCustomListEntity extends BaseAuditColumns {
 
-    private Integer customerId;
-    private Integer customListHeaderId;
+    private Integer customerID;
+    private Integer customListHeaderID;
     private String fromDate;
     private String toDate;
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
-    public Integer getCustomListHeaderId() {
-        return customListHeaderId;
+    public Integer getCustomListHeaderID() {
+        return customListHeaderID;
     }
 
-    public void setCustomListHeaderId(Integer customListHeaderId) {
-        this.customListHeaderId = customListHeaderId;
+    public void setCustomListHeaderID(Integer customListHeaderID) {
+        this.customListHeaderID = customListHeaderID;
     }
 
     public String getFromDate() {

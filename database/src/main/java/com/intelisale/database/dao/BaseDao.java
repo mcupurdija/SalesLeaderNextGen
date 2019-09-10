@@ -5,8 +5,10 @@ import android.util.SparseIntArray;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
+import androidx.room.RawQuery;
 import androidx.room.Transaction;
 import androidx.room.Update;
+import androidx.sqlite.db.SimpleSQLiteQuery;
 
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
@@ -46,6 +48,14 @@ abstract class BaseDao<T> {
 
     @Delete
     public abstract Single<Integer> deleteRx(T obj);
+
+    @RawQuery
+    abstract int getCount(SimpleSQLiteQuery simpleSQLiteQuery);
+
+    @Transaction
+    public int getCount(String tableName) {
+        return getCount(new SimpleSQLiteQuery(String.format("SELECT COUNT(*) FROM %s", tableName)));
+    }
 
     @Transaction
     public void insertOrUpdateByServerId(T obj) {

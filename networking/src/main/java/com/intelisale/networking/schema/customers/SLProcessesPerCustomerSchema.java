@@ -15,9 +15,9 @@ public class SLProcessesPerCustomerSchema {
     @JsonProperty("description")
     private String description;
     @JsonProperty("id")
-    private Integer iD;
+    private Integer id;
     @JsonProperty("slProcessID")
-    private Integer sLProcessID;
+    private Integer slProcessID;
     @JsonProperty("customerID")
     private Integer customerID;
     @JsonProperty("financialEntityID")
@@ -56,23 +56,23 @@ public class SLProcessesPerCustomerSchema {
     }
 
     @JsonProperty("id")
-    public Integer getID() {
-        return iD;
+    public Integer getId() {
+        return id;
     }
 
     @JsonProperty("id")
-    public void setID(Integer iD) {
-        this.iD = iD;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @JsonProperty("slProcessID")
-    public Integer getSLProcessID() {
-        return sLProcessID;
+    public Integer getSlProcessID() {
+        return slProcessID;
     }
 
     @JsonProperty("slProcessID")
-    public void setSLProcessID(Integer sLProcessID) {
-        this.sLProcessID = sLProcessID;
+    public void setSlProcessID(Integer slProcessID) {
+        this.slProcessID = slProcessID;
     }
 
     @JsonProperty("customerID")

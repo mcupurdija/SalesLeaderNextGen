@@ -2,21 +2,22 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "CustomerShipToAddresses")
+@Entity(tableName = TableNames.CUSTOMER_SHIP_TO_ADDRESSES)
 public class CustomerShipToAddressesEntity extends CodeBookColumns {
 
     private String description2;
     private String address;
-    private Integer postalCodeAndCityId;
+    private Integer postalCodeAndCityID;
     private String countyRegion;
     private String phoneNo;
     private String mobileNo;
     private String faxNo;
     private String email;
     private String homePage;
-    private Integer customerId;
+    private Integer customerID;
     private String municipalityOfOperating;
     private String regionOfOperating;
     private String cityOfOperating;
@@ -43,12 +44,12 @@ public class CustomerShipToAddressesEntity extends CodeBookColumns {
         this.address = address;
     }
 
-    public Integer getPostalCodeAndCityId() {
-        return postalCodeAndCityId;
+    public Integer getPostalCodeAndCityID() {
+        return postalCodeAndCityID;
     }
 
-    public void setPostalCodeAndCityId(Integer postalCodeAndCityId) {
-        this.postalCodeAndCityId = postalCodeAndCityId;
+    public void setPostalCodeAndCityID(Integer postalCodeAndCityID) {
+        this.postalCodeAndCityID = postalCodeAndCityID;
     }
 
     public String getCountyRegion() {
@@ -99,12 +100,12 @@ public class CustomerShipToAddressesEntity extends CodeBookColumns {
         this.homePage = homePage;
     }
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
     public String getMunicipalityOfOperating() {

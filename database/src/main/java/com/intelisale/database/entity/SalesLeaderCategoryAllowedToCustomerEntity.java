@@ -2,30 +2,31 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "SalesLeaderCategoriesAllowedToCustomer")
+@Entity(tableName = TableNames.SL_CATEGORIES_ALLOWED_TO_CUSTOMER)
 public class SalesLeaderCategoryAllowedToCustomerEntity extends CodeBookColumns {
 
-    private Integer categoryOfItemsId;
-    private Integer salesLeaderSalesLevelTypeId;
+    private Integer categoryOfItemsID;
+    private Integer salesLeaderSalesLevelTypeID;
     private String salesLevelCode;
     private Integer sourceTable;
 
-    public Integer getCategoryOfItemsId() {
-        return categoryOfItemsId;
+    public Integer getCategoryOfItemsID() {
+        return categoryOfItemsID;
     }
 
-    public void setCategoryOfItemsId(Integer categoryOfItemsId) {
-        this.categoryOfItemsId = categoryOfItemsId;
+    public void setCategoryOfItemsID(Integer categoryOfItemsID) {
+        this.categoryOfItemsID = categoryOfItemsID;
     }
 
-    public Integer getSalesLeaderSalesLevelTypeId() {
-        return salesLeaderSalesLevelTypeId;
+    public Integer getSalesLeaderSalesLevelTypeID() {
+        return salesLeaderSalesLevelTypeID;
     }
 
-    public void setSalesLeaderSalesLevelTypeId(Integer salesLeaderSalesLevelTypeId) {
-        this.salesLeaderSalesLevelTypeId = salesLeaderSalesLevelTypeId;
+    public void setSalesLeaderSalesLevelTypeID(Integer salesLeaderSalesLevelTypeID) {
+        this.salesLeaderSalesLevelTypeID = salesLeaderSalesLevelTypeID;
     }
 
     public String getSalesLevelCode() {

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "9becae2eea6166cd5c702694d95969b9",
+    "identityHash": "dfe81ea88161e33ee881fe792f78d885",
     "entities": [
       {
         "tableName": "ApprovalStatuses",
@@ -148,7 +148,7 @@
       },
       {
         "tableName": "CategoriesOfItems",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`parentCode` TEXT, `parentCategoryOfItemsId` INTEGER, `smallPictureName` TEXT, `largePictureName` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`parentCode` TEXT, `parentCategoryOfItemsID` INTEGER, `smallPictureName` TEXT, `largePictureName` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "parentCode",
@@ -157,8 +157,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "parentCategoryOfItemsId",
-            "columnName": "parentCategoryOfItemsId",
+            "fieldPath": "parentCategoryOfItemsID",
+            "columnName": "parentCategoryOfItemsID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -702,7 +702,7 @@
       },
       {
         "tableName": "Contacts",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `firstName` TEXT, `lastName` TEXT, `phone` TEXT, `mobile` TEXT, `email` TEXT, `customerId` INTEGER, `contactDepartmentId` INTEGER, `contactPositionId` INTEGER, `employeeId` INTEGER, `address` TEXT, `postalCodeAndCityId` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `firstName` TEXT, `lastName` TEXT, `phone` TEXT, `mobile` TEXT, `email` TEXT, `customerID` INTEGER, `contactDepartmentID` INTEGER, `contactPositionID` INTEGER, `employeeID` INTEGER, `address` TEXT, `postalCodeAndCityID` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "code",
@@ -741,26 +741,26 @@
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "contactDepartmentId",
-            "columnName": "contactDepartmentId",
+            "fieldPath": "contactDepartmentID",
+            "columnName": "contactDepartmentID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "contactPositionId",
-            "columnName": "contactPositionId",
+            "fieldPath": "contactPositionID",
+            "columnName": "contactPositionID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "employeeId",
-            "columnName": "employeeId",
+            "fieldPath": "employeeID",
+            "columnName": "employeeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -771,8 +771,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "postalCodeAndCityId",
-            "columnName": "postalCodeAndCityId",
+            "fieldPath": "postalCodeAndCityID",
+            "columnName": "postalCodeAndCityID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -974,18 +974,18 @@
         "foreignKeys": []
       },
       {
-        "tableName": "CustomerCustomLists",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `customListHeaderId` INTEGER, `fromDate` TEXT, `toDate` TEXT, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "CustomersCustomLists",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerID` INTEGER, `customListHeaderID` INTEGER, `fromDate` TEXT, `toDate` TEXT, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customListHeaderId",
-            "columnName": "customListHeaderId",
+            "fieldPath": "customListHeaderID",
+            "columnName": "customListHeaderID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1877,11 +1877,11 @@
       },
       {
         "tableName": "CustomerPlanTurnover",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `screenPosition` TEXT, `planTurnoverValue` REAL, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerID` INTEGER, `screenPosition` TEXT, `planTurnoverValue` REAL, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -1953,12 +1953,12 @@
         "foreignKeys": []
       },
       {
-        "tableName": "CustomerProcesses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`processId` INTEGER, `customerID` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "CustomersProcesses",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`processID` INTEGER, `customerID` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "processId",
-            "columnName": "processId",
+            "fieldPath": "processID",
+            "columnName": "processID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2037,11 +2037,17 @@
       },
       {
         "tableName": "CustomerProductGroupPotential",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsId` INTEGER, `turnover` REAL, `potential` REAL, `unusedPotential` REAL, `noOfItems` INTEGER, `categoryRank` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerID` INTEGER, `categoryOfItemsID` INTEGER, `turnover` REAL, `potential` REAL, `unusedPotential` REAL, `noOfItems` INTEGER, `categoryRank` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "categoryOfItemsId",
-            "columnName": "categoryOfItemsId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "categoryOfItemsID",
+            "columnName": "categoryOfItemsID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2196,8 +2202,8 @@
         "foreignKeys": []
       },
       {
-        "tableName": "CustomerShipToAddresses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`description2` TEXT, `address` TEXT, `postalCodeAndCityId` INTEGER, `countyRegion` TEXT, `phoneNo` TEXT, `mobileNo` TEXT, `faxNo` TEXT, `email` TEXT, `homePage` TEXT, `customerId` INTEGER, `municipalityOfOperating` TEXT, `regionOfOperating` TEXT, `cityOfOperating` TEXT, `postCodeOfOperating` TEXT, `countyOfOperating` TEXT, `gpsLatitude` TEXT, `gpsLongitude` TEXT, `gpsAccuracy` TEXT, `contactPerson` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "CustShipToAddresses",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`description2` TEXT, `address` TEXT, `postalCodeAndCityID` INTEGER, `countyRegion` TEXT, `phoneNo` TEXT, `mobileNo` TEXT, `faxNo` TEXT, `email` TEXT, `homePage` TEXT, `customerID` INTEGER, `municipalityOfOperating` TEXT, `regionOfOperating` TEXT, `cityOfOperating` TEXT, `postCodeOfOperating` TEXT, `countyOfOperating` TEXT, `gpsLatitude` TEXT, `gpsLongitude` TEXT, `gpsAccuracy` TEXT, `contactPerson` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "description2",
@@ -2212,8 +2218,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "postalCodeAndCityId",
-            "columnName": "postalCodeAndCityId",
+            "fieldPath": "postalCodeAndCityID",
+            "columnName": "postalCodeAndCityID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2254,8 +2260,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2382,11 +2388,11 @@
       },
       {
         "tableName": "CustomerStatistics",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `period` TEXT, `turnover` REAL, `items` INTEGER, `lines` INTEGER, `visits` INTEGER, `orders` INTEGER, `offers` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerID` INTEGER, `period` TEXT, `turnover` REAL, `items` INTEGER, `lines` INTEGER, `visits` INTEGER, `orders` INTEGER, `offers` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2482,12 +2488,107 @@
         "foreignKeys": []
       },
       {
-        "tableName": "CustomerVisits",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `customerVisits` INTEGER, `visitDate` TEXT, `customerTime` INTEGER, `productivityPerVisit` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "VisitsFrequencies",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerID` INTEGER, `userID` INTEGER, `week` INTEGER, `dayOfWeek` INTEGER, `visitTime` REAL, `activityGroup` INTEGER, `cycle` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userID",
+            "columnName": "userID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "week",
+            "columnName": "week",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dayOfWeek",
+            "columnName": "dayOfWeek",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "visitTime",
+            "columnName": "visitTime",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activityGroup",
+            "columnName": "activityGroup",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cycle",
+            "columnName": "cycle",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "serverID",
+            "columnName": "serverID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "modifiedByUserID",
+            "columnName": "modifiedByUserID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "modifiedDate",
+            "columnName": "modifiedDate",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "'1970-01-01T00:00:00.000'"
+          },
+          {
+            "fieldPath": "auditID",
+            "columnName": "auditID",
+            "affinity": "INTEGER",
+            "notNull": false,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "active",
+            "columnName": "active",
+            "affinity": "INTEGER",
+            "notNull": false,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "CustomerVisits",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerID` INTEGER, `customerVisits` INTEGER, `visitDate` TEXT, `customerTime` INTEGER, `productivityPerVisit` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "fields": [
+          {
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -3126,7 +3227,7 @@
       },
       {
         "tableName": "GroupsOfCustomers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`parentCode` TEXT, `parentGroupOfCustomerId` INTEGER, `groupsOfCustomersLevelId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`parentCode` TEXT, `parentGroupOfCustomerID` INTEGER, `groupsOfCustomersLevelID` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "parentCode",
@@ -3135,14 +3236,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "parentGroupOfCustomerId",
-            "columnName": "parentGroupOfCustomerId",
+            "fieldPath": "parentGroupOfCustomerID",
+            "columnName": "parentGroupOfCustomerID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "groupsOfCustomersLevelId",
-            "columnName": "groupsOfCustomersLevelId",
+            "fieldPath": "groupsOfCustomersLevelID",
+            "columnName": "groupsOfCustomersLevelID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4159,7 +4260,7 @@
       },
       {
         "tableName": "PostalCodesAndCities",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`postalCode` TEXT, `city` TEXT, `municipalityId` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`postalCode` TEXT, `city` TEXT, `municipalityID` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "postalCode",
@@ -4174,8 +4275,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "municipalityId",
-            "columnName": "municipalityId",
+            "fieldPath": "municipalityID",
+            "columnName": "municipalityID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4547,11 +4648,11 @@
       },
       {
         "tableName": "SaleOrderLines",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`saleOrderHeaderId` INTEGER, `lineNo` INTEGER, `itemId` INTEGER, `itemDescription` TEXT, `warehouseId` INTEGER, `quantity` REAL, `quantityAvailable` REAL, `ovsQuantityAvailable` REAL, `unitPriceWithoutVAT` REAL, `unitPriceWithVAT` REAL, `lineDiscountPr` REAL, `vatPercent` REAL, `lineDiscountPercent` REAL, `lineDiscAmountWithoutVAT` REAL, `lineDiscAmountWithVAT` REAL, `lineAmountWithoutVAT` REAL, `lineAmountWithVAT` REAL, `maxDiscount` REAL, `taPrice` REAL, `taDiscount` REAL, `ovsPrice` REAL, `ovsDiscount` REAL, `campaignPrice` REAL, `campaignDiscount` REAL, `regularPrice` REAL, `regularDiscount` REAL, `minSalesPrice` REAL, `itemUnitOfMeasureId` INTEGER, `requestedDeliveryDate` TEXT, `backOrderShipmentStatusId` INTEGER, `salesPriceTypeId` INTEGER, `requestedTradeAgreement` INTEGER, `orsyItem` INTEGER, `documentVerificationStatusId` INTEGER, `documentVerificationMessage` TEXT, `bonusEarnings` REAL, `lastPrice` REAL, `minimumPrice` REAL, `basePrice` REAL, `sellingPrice` REAL, `ta` INTEGER, `itemImportance` TEXT, `discountSetAsZero` INTEGER, `priceSetAsZero` INTEGER, `priceLoaded` INTEGER, `priceUnit` REAL, `quantityAvailableAdd` REAL, `stockAvailabilityStatusId` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`saleOrderHeaderID` INTEGER, `lineNo` INTEGER, `itemID` INTEGER, `itemDescription` TEXT, `warehouseID` INTEGER, `quantity` REAL, `quantityAvailable` REAL, `ovsQuantityAvailable` REAL, `unitPriceWithoutVAT` REAL, `unitPriceWithVAT` REAL, `lineDiscountPr` REAL, `vatPercent` REAL, `lineDiscountPercent` REAL, `lineDiscAmountWithoutVAT` REAL, `lineDiscAmountWithVAT` REAL, `lineAmountWithoutVAT` REAL, `lineAmountWithVAT` REAL, `maxDiscount` REAL, `taPrice` REAL, `taDiscount` REAL, `ovsPrice` REAL, `ovsDiscount` REAL, `campaignPrice` REAL, `campaignDiscount` REAL, `regularPrice` REAL, `regularDiscount` REAL, `minSalesPrice` REAL, `itemUnitOfMeasureID` INTEGER, `requestedDeliveryDate` TEXT, `backOrderShipmentStatusID` INTEGER, `salesPriceTypeID` INTEGER, `requestedTradeAgreement` INTEGER, `orsyItem` INTEGER, `documentVerificationStatusID` INTEGER, `documentVerificationMessage` TEXT, `bonusEarnings` REAL, `lastPrice` REAL, `minimumPrice` REAL, `basePrice` REAL, `sellingPrice` REAL, `ta` INTEGER, `itemImportance` TEXT, `discountSetAsZero` INTEGER, `priceSetAsZero` INTEGER, `priceLoaded` INTEGER, `priceUnit` REAL, `quantityAvailableAdd` REAL, `stockAvailabilityStatusID` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "saleOrderHeaderId",
-            "columnName": "saleOrderHeaderId",
+            "fieldPath": "saleOrderHeaderID",
+            "columnName": "saleOrderHeaderID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4562,8 +4663,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4574,8 +4675,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "warehouseId",
-            "columnName": "warehouseId",
+            "fieldPath": "warehouseID",
+            "columnName": "warehouseID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4712,8 +4813,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "itemUnitOfMeasureId",
-            "columnName": "itemUnitOfMeasureId",
+            "fieldPath": "itemUnitOfMeasureID",
+            "columnName": "itemUnitOfMeasureID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4724,14 +4825,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "backOrderShipmentStatusId",
-            "columnName": "backOrderShipmentStatusId",
+            "fieldPath": "backOrderShipmentStatusID",
+            "columnName": "backOrderShipmentStatusID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "salesPriceTypeId",
-            "columnName": "salesPriceTypeId",
+            "fieldPath": "salesPriceTypeID",
+            "columnName": "salesPriceTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4748,8 +4849,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "documentVerificationStatusId",
-            "columnName": "documentVerificationStatusId",
+            "fieldPath": "documentVerificationStatusID",
+            "columnName": "documentVerificationStatusID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4832,8 +4933,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "stockAvailabilityStatusId",
-            "columnName": "stockAvailabilityStatusId",
+            "fieldPath": "stockAvailabilityStatusID",
+            "columnName": "stockAvailabilityStatusID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5029,18 +5130,18 @@
         "foreignKeys": []
       },
       {
-        "tableName": "SalesLeaderCategoriesAllowedToCustomer",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `sourceTable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "SLCategoriesAllowedToCustomer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsID` INTEGER, `salesLeaderSalesLevelTypeID` INTEGER, `salesLevelCode` TEXT, `sourceTable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "categoryOfItemsId",
-            "columnName": "categoryOfItemsId",
+            "fieldPath": "categoryOfItemsID",
+            "columnName": "categoryOfItemsID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "salesLeaderSalesLevelTypeId",
-            "columnName": "salesLeaderSalesLevelTypeId",
+            "fieldPath": "salesLeaderSalesLevelTypeID",
+            "columnName": "salesLeaderSalesLevelTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5125,17 +5226,17 @@
       },
       {
         "tableName": "SalesLeaderCategoriesAllowedToCustomerTmp",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsId` INTEGER, `salesLeaderSalesLevelTypeId` INTEGER, `salesLevelCode` TEXT, `sourceTable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`categoryOfItemsID` INTEGER, `salesLeaderSalesLevelTypeID` INTEGER, `salesLevelCode` TEXT, `sourceTable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "categoryOfItemsId",
-            "columnName": "categoryOfItemsId",
+            "fieldPath": "categoryOfItemsID",
+            "columnName": "categoryOfItemsID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "salesLeaderSalesLevelTypeId",
-            "columnName": "salesLeaderSalesLevelTypeId",
+            "fieldPath": "salesLeaderSalesLevelTypeID",
+            "columnName": "salesLeaderSalesLevelTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5707,17 +5808,17 @@
       },
       {
         "tableName": "SalesLeaderItemsCustomersCard",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemID` INTEGER, `customerID` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -5826,17 +5927,17 @@
       },
       {
         "tableName": "SalesLeaderItemsCustomersCardIco",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemID` INTEGER, `customerID` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6040,17 +6141,17 @@
       },
       {
         "tableName": "SalesLeaderItemsPerProcessesPerCustomers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemID` INTEGER, `customerID` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6159,17 +6260,17 @@
       },
       {
         "tableName": "SalesLeaderItemsPerShelvesPerCustomers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemID` INTEGER, `customerID` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6385,11 +6486,11 @@
       },
       {
         "tableName": "SalesLeaderItemsSoldToCustomerMonthlyTmp",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `m1Qty` REAL, `m2Qty` REAL, `m3Qty` REAL, `m4Qty` REAL, `m5Qty` REAL, `m6Qty` REAL, `m7Qty` REAL, `m8Qty` REAL, `m9Qty` REAL, `m10Qty` REAL, `m11Qty` REAL, `m12Qty` REAL, `total` REAL, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemID` INTEGER, `m1Qty` REAL, `m2Qty` REAL, `m3Qty` REAL, `m4Qty` REAL, `m5Qty` REAL, `m6Qty` REAL, `m7Qty` REAL, `m8Qty` REAL, `m9Qty` REAL, `m10Qty` REAL, `m11Qty` REAL, `m12Qty` REAL, `total` REAL, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6489,11 +6590,11 @@
       },
       {
         "tableName": "SalesLeaderItemsToBring",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`itemID` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6527,7 +6628,7 @@
       },
       {
         "tableName": "SalesLeaderNewItemsCustomersCard",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupsOfCustomerId` INTEGER, `itemId` INTEGER, `customerId` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupsOfCustomerId` INTEGER, `itemID` INTEGER, `customerID` INTEGER, `branchMapRang` INTEGER, `squareColor` INTEGER, `soldInCurrentMonth` INTEGER, `itemHasTAForCustomer` INTEGER, `ovsItem` INTEGER, `itemIsComponentOfPackage` INTEGER, `itemHasCampaign` INTEGER, `itemIncludedForCustomer` INTEGER, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "groupsOfCustomerId",
@@ -6536,14 +6637,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -6722,18 +6823,18 @@
         "foreignKeys": []
       },
       {
-        "tableName": "SalesLeaderShelvesPerCustomers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`shelfItemId` INTEGER, `customerId` INTEGER, `shelfIsORSY100` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "tableName": "SLShelvesPerCustomers",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`shelfItemID` INTEGER, `customerID` INTEGER, `shelfIsORSY100` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "shelfItemId",
-            "columnName": "shelfItemId",
+            "fieldPath": "shelfItemID",
+            "columnName": "shelfItemID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7446,11 +7547,11 @@
       },
       {
         "tableName": "StockInventoryHeaders",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerId` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerID` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7511,17 +7612,17 @@
       },
       {
         "tableName": "StockInventoryLines",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`stockInventoryHeaderId` INTEGER, `itemId` INTEGER, `quantity` REAL, `unitPrice` REAL, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`stockInventoryHeaderID` INTEGER, `itemID` INTEGER, `quantity` REAL, `unitPrice` REAL, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "stockInventoryHeaderId",
-            "columnName": "stockInventoryHeaderId",
+            "fieldPath": "stockInventoryHeaderID",
+            "columnName": "stockInventoryHeaderID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "itemId",
-            "columnName": "itemId",
+            "fieldPath": "itemID",
+            "columnName": "itemID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -8424,7 +8525,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9becae2eea6166cd5c702694d95969b9')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dfe81ea88161e33ee881fe792f78d885')"
     ]
   }
 }

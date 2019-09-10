@@ -13,9 +13,9 @@ import java.util.Map;
 public class CustomerCustomListSchema {
 
     @JsonProperty("customerId")
-    private Integer customerId;
+    private Integer customerID;
     @JsonProperty("customListHeaderId")
-    private Integer customListHeaderId;
+    private Integer customListHeaderID;
     @JsonProperty("dateFrom")
     private String dateFrom;
     @JsonProperty("dateTo")
@@ -23,30 +23,30 @@ public class CustomerCustomListSchema {
     @JsonProperty("modifiedDate")
     private String modifiedDate;
     @JsonProperty("modifiedByUserId")
-    private Integer modifiedByUserId;
+    private Integer modifiedByUserID;
     @JsonProperty("active")
     private Boolean active;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("customerId")
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
     @JsonProperty("customerId")
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
     @JsonProperty("customListHeaderId")
-    public Integer getCustomListHeaderId() {
-        return customListHeaderId;
+    public Integer getCustomListHeaderID() {
+        return customListHeaderID;
     }
 
     @JsonProperty("customListHeaderId")
-    public void setCustomListHeaderId(Integer customListHeaderId) {
-        this.customListHeaderId = customListHeaderId;
+    public void setCustomListHeaderID(Integer customListHeaderID) {
+        this.customListHeaderID = customListHeaderID;
     }
 
     @JsonProperty("dateFrom")
@@ -80,13 +80,13 @@ public class CustomerCustomListSchema {
     }
 
     @JsonProperty("modifiedByUserId")
-    public Integer getModifiedByUserId() {
-        return modifiedByUserId;
+    public Integer getModifiedByUserID() {
+        return modifiedByUserID;
     }
 
     @JsonProperty("modifiedByUserId")
-    public void setModifiedByUserId(Integer modifiedByUserId) {
-        this.modifiedByUserId = modifiedByUserId;
+    public void setModifiedByUserID(Integer modifiedByUserID) {
+        this.modifiedByUserID = modifiedByUserID;
     }
 
     @JsonProperty("active")

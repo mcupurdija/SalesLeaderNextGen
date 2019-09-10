@@ -88,7 +88,8 @@ public class DatabaseModule {
                 appDatabase.getCustomerCustomListDao(),
                 appDatabase.getCustomListsLineDao(),
                 appDatabase.getSalesLeaderShelvePerCustomersDao(),
-                appDatabase.getSalesLeaderCategoryAllowedToCustomerDao());
+                appDatabase.getSalesLeaderCategoryAllowedToCustomerDao(),
+                appDatabase.getCustomerFrequenciesDao());
     }
 
     @Singleton

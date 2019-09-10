@@ -20,7 +20,7 @@ public abstract class GlobalDao {
 
     @Transaction
     public int getCount(String tableName) {
-        return getCount(new SimpleSQLiteQuery("SELECT COUNT(*) FROM " + tableName));
+        return getCount(new SimpleSQLiteQuery(String.format("SELECT COUNT(*) FROM %s", tableName)));
     }
 
     @RawQuery
@@ -28,7 +28,7 @@ public abstract class GlobalDao {
 
     @Transaction
     public String getMaxModifiedDate(String tableName) {
-        String result = getMaxModifiedDate(new SimpleSQLiteQuery("SELECT MAX(modifiedDate) FROM " + tableName));
+        String result = getMaxModifiedDate(new SimpleSQLiteQuery(String.format("SELECT MAX(modifiedDate) FROM %s", tableName)));
         return result != null ? result : DateUtils.getDefaultDate();
     }
 
@@ -38,7 +38,7 @@ public abstract class GlobalDao {
     @Transaction
     public SparseIntArray getIdServerId(String tableName) {
 
-        List<IdServerId> idServerIdList = getIdServerId(new SimpleSQLiteQuery("SELECT id, serverId FROM " + tableName));
+        List<IdServerId> idServerIdList = getIdServerId(new SimpleSQLiteQuery(String.format("SELECT id, serverId FROM %s", tableName)));
 
         SparseIntArray sparseIntArray = new SparseIntArray();
         for (IdServerId idServerId : idServerIdList) {

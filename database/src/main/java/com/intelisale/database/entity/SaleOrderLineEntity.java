@@ -7,11 +7,11 @@ import com.intelisale.database.entity.column.BaseAuditColumns;
 @Entity(tableName = "SaleOrderLines")
 public class SaleOrderLineEntity extends BaseAuditColumns {
 
-    private Integer saleOrderHeaderId;
+    private Integer saleOrderHeaderID;
     private Integer lineNo;
-    private Integer itemId;
+    private Integer itemID;
     private String itemDescription;
-    private Integer warehouseId;
+    private Integer warehouseID;
     private Double quantity;
     private Double quantityAvailable;
     private Double ovsQuantityAvailable;
@@ -34,13 +34,13 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
     private Double regularPrice;
     private Double regularDiscount;
     private Double minSalesPrice;
-    private Integer itemUnitOfMeasureId;
+    private Integer itemUnitOfMeasureID;
     private String requestedDeliveryDate;
-    private Integer backOrderShipmentStatusId;
-    private Integer salesPriceTypeId;
+    private Integer backOrderShipmentStatusID;
+    private Integer salesPriceTypeID;
     private Boolean requestedTradeAgreement;
     private Boolean orsyItem;
-    private Integer documentVerificationStatusId;
+    private Integer documentVerificationStatusID;
     private String documentVerificationMessage;
     private Double bonusEarnings;
     private Double lastPrice;
@@ -54,14 +54,14 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
     private Boolean priceLoaded;
     private Double priceUnit;
     private Double quantityAvailableAdd;
-    private Integer stockAvailabilityStatusId;
+    private Integer stockAvailabilityStatusID;
 
-    public Integer getSaleOrderHeaderId() {
-        return saleOrderHeaderId;
+    public Integer getSaleOrderHeaderID() {
+        return saleOrderHeaderID;
     }
 
-    public void setSaleOrderHeaderId(Integer saleOrderHeaderId) {
-        this.saleOrderHeaderId = saleOrderHeaderId;
+    public void setSaleOrderHeaderID(Integer saleOrderHeaderID) {
+        this.saleOrderHeaderID = saleOrderHeaderID;
     }
 
     public Integer getLineNo() {
@@ -72,12 +72,12 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.lineNo = lineNo;
     }
 
-    public Integer getItemId() {
-        return itemId;
+    public Integer getItemID() {
+        return itemID;
     }
 
-    public void setItemId(Integer itemId) {
-        this.itemId = itemId;
+    public void setItemID(Integer itemID) {
+        this.itemID = itemID;
     }
 
     public String getItemDescription() {
@@ -88,12 +88,12 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.itemDescription = itemDescription;
     }
 
-    public Integer getWarehouseId() {
-        return warehouseId;
+    public Integer getWarehouseID() {
+        return warehouseID;
     }
 
-    public void setWarehouseId(Integer warehouseId) {
-        this.warehouseId = warehouseId;
+    public void setWarehouseID(Integer warehouseID) {
+        this.warehouseID = warehouseID;
     }
 
     public Double getQuantity() {
@@ -272,12 +272,12 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.minSalesPrice = minSalesPrice;
     }
 
-    public Integer getItemUnitOfMeasureId() {
-        return itemUnitOfMeasureId;
+    public Integer getItemUnitOfMeasureID() {
+        return itemUnitOfMeasureID;
     }
 
-    public void setItemUnitOfMeasureId(Integer itemUnitOfMeasureId) {
-        this.itemUnitOfMeasureId = itemUnitOfMeasureId;
+    public void setItemUnitOfMeasureID(Integer itemUnitOfMeasureID) {
+        this.itemUnitOfMeasureID = itemUnitOfMeasureID;
     }
 
     public String getRequestedDeliveryDate() {
@@ -288,23 +288,23 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.requestedDeliveryDate = requestedDeliveryDate;
     }
 
-    public Integer getBackOrderShipmentStatusId() {
-        return backOrderShipmentStatusId;
+    public Integer getBackOrderShipmentStatusID() {
+        return backOrderShipmentStatusID;
     }
 
-    public void setBackOrderShipmentStatusId(Integer backOrderShipmentStatusId) {
-        this.backOrderShipmentStatusId = backOrderShipmentStatusId;
+    public void setBackOrderShipmentStatusID(Integer backOrderShipmentStatusID) {
+        this.backOrderShipmentStatusID = backOrderShipmentStatusID;
     }
 
-    public Integer getSalesPriceTypeId() {
-        return salesPriceTypeId;
+    public Integer getSalesPriceTypeID() {
+        return salesPriceTypeID;
     }
 
-    public void setSalesPriceTypeId(Integer salesPriceTypeId) {
-        this.salesPriceTypeId = salesPriceTypeId;
+    public void setSalesPriceTypeID(Integer salesPriceTypeID) {
+        this.salesPriceTypeID = salesPriceTypeID;
     }
 
-    public Boolean isRequestedTradeAgreement() {
+    public Boolean getRequestedTradeAgreement() {
         return requestedTradeAgreement;
     }
 
@@ -312,7 +312,7 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.requestedTradeAgreement = requestedTradeAgreement;
     }
 
-    public Boolean isOrsyItem() {
+    public Boolean getOrsyItem() {
         return orsyItem;
     }
 
@@ -320,12 +320,12 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.orsyItem = orsyItem;
     }
 
-    public Integer getDocumentVerificationStatusId() {
-        return documentVerificationStatusId;
+    public Integer getDocumentVerificationStatusID() {
+        return documentVerificationStatusID;
     }
 
-    public void setDocumentVerificationStatusId(Integer documentVerificationStatusId) {
-        this.documentVerificationStatusId = documentVerificationStatusId;
+    public void setDocumentVerificationStatusID(Integer documentVerificationStatusID) {
+        this.documentVerificationStatusID = documentVerificationStatusID;
     }
 
     public String getDocumentVerificationMessage() {
@@ -376,7 +376,7 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.sellingPrice = sellingPrice;
     }
 
-    public Boolean isTa() {
+    public Boolean getTa() {
         return ta;
     }
 
@@ -392,7 +392,7 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.itemImportance = itemImportance;
     }
 
-    public Boolean isDiscountSetAsZero() {
+    public Boolean getDiscountSetAsZero() {
         return discountSetAsZero;
     }
 
@@ -400,7 +400,7 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.discountSetAsZero = discountSetAsZero;
     }
 
-    public Boolean isPriceSetAsZero() {
+    public Boolean getPriceSetAsZero() {
         return priceSetAsZero;
     }
 
@@ -408,7 +408,7 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.priceSetAsZero = priceSetAsZero;
     }
 
-    public Boolean isPriceLoaded() {
+    public Boolean getPriceLoaded() {
         return priceLoaded;
     }
 
@@ -432,11 +432,11 @@ public class SaleOrderLineEntity extends BaseAuditColumns {
         this.quantityAvailableAdd = quantityAvailableAdd;
     }
 
-    public Integer getStockAvailabilityStatusId() {
-        return stockAvailabilityStatusId;
+    public Integer getStockAvailabilityStatusID() {
+        return stockAvailabilityStatusID;
     }
 
-    public void setStockAvailabilityStatusId(Integer stockAvailabilityStatusId) {
-        this.stockAvailabilityStatusId = stockAvailabilityStatusId;
+    public void setStockAvailabilityStatusID(Integer stockAvailabilityStatusID) {
+        this.stockAvailabilityStatusID = stockAvailabilityStatusID;
     }
 }

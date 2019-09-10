@@ -7,25 +7,25 @@ import com.intelisale.database.entity.column.BaseAuditColumns;
 @Entity(tableName = "StockInventoryLines")
 public class StockInventoryLineEntity extends BaseAuditColumns {
 
-    private Integer stockInventoryHeaderId;
-    private Integer itemId;
+    private Integer stockInventoryHeaderID;
+    private Integer itemID;
     private Double quantity;
     private Double unitPrice;
 
-    public Integer getStockInventoryHeaderId() {
-        return stockInventoryHeaderId;
+    public Integer getStockInventoryHeaderID() {
+        return stockInventoryHeaderID;
     }
 
-    public void setStockInventoryHeaderId(Integer stockInventoryHeaderId) {
-        this.stockInventoryHeaderId = stockInventoryHeaderId;
+    public void setStockInventoryHeaderID(Integer stockInventoryHeaderID) {
+        this.stockInventoryHeaderID = stockInventoryHeaderID;
     }
 
-    public Integer getItemId() {
-        return itemId;
+    public Integer getItemID() {
+        return itemID;
     }
 
-    public void setItemId(Integer itemId) {
-        this.itemId = itemId;
+    public void setItemID(Integer itemID) {
+        this.itemID = itemID;
     }
 
     public Double getQuantity() {

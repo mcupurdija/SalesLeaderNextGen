@@ -2,6 +2,8 @@ package com.intelisale.sync.work.helper;
 
 import com.intelisale.networking.schema.sync.SyncSchema;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -14,7 +16,7 @@ public class PaginationHelper {
 
     private Map<String, SyncSchema> syncRequest;
 
-    public PaginationHelper(SyncObject[] syncTables) {
+    public PaginationHelper(@NotNull SyncObject[] syncTables) {
         this.syncTables = syncTables;
         this.entityCounter = new int[syncTables.length];
         this.entityResultsCounter = new int[syncTables.length];
@@ -24,7 +26,7 @@ public class PaginationHelper {
     }
 
     public void updateCounters(int index, int results) {
-        entityCounter[index] += syncTables[index].getPageSize();
+        if (results > 0) entityCounter[index] += syncTables[index].getPageSize();
         entityResultsCounter[index] = results;
     }
 

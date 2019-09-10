@@ -2,9 +2,10 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = "CustomListsLines")
+@Entity(tableName = TableNames.CUSTOM_LISTS_LINES)
 public class CustomListsLineEntity extends BaseAuditColumns {
 
     private Integer customListHeaderId;

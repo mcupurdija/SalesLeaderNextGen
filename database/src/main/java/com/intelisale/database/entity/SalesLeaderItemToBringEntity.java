@@ -7,16 +7,16 @@ import com.intelisale.database.entity.column.BaseColumns;
 @Entity(tableName = "SalesLeaderItemsToBring")
 public class SalesLeaderItemToBringEntity extends BaseColumns {
 
-    private Integer itemId;
+    private Integer itemID;
     private Integer branchMapRang;
     private Integer squareColor;
 
-    public Integer getItemId() {
-        return itemId;
+    public Integer getItemID() {
+        return itemID;
     }
 
-    public void setItemId(Integer itemId) {
-        this.itemId = itemId;
+    public void setItemID(Integer itemID) {
+        this.itemID = itemID;
     }
 
     public Integer getBranchMapRang() {

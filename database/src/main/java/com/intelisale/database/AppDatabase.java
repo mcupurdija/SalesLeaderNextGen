@@ -20,6 +20,7 @@ import com.intelisale.database.dao.CustomListsHeaderDao;
 import com.intelisale.database.dao.CustomListsLineDao;
 import com.intelisale.database.dao.CustomerCustomListDao;
 import com.intelisale.database.dao.CustomerDao;
+import com.intelisale.database.dao.CustomerFrequenciesDao;
 import com.intelisale.database.dao.CustomerPaymentConditionDao;
 import com.intelisale.database.dao.CustomerPaymentMethodDao;
 import com.intelisale.database.dao.CustomerPlanTurnoverDao;
@@ -104,6 +105,7 @@ import com.intelisale.database.entity.CustomListsHeaderEntity;
 import com.intelisale.database.entity.CustomListsLineEntity;
 import com.intelisale.database.entity.CustomerCustomListEntity;
 import com.intelisale.database.entity.CustomerEntity;
+import com.intelisale.database.entity.CustomerFrequenciesEntity;
 import com.intelisale.database.entity.CustomerPaymentConditionEntity;
 import com.intelisale.database.entity.CustomerPaymentMethodEntity;
 import com.intelisale.database.entity.CustomerPlanTurnoverEntity;
@@ -194,6 +196,7 @@ import com.intelisale.database.entity.WarehouseEntity;
         CustomerShipmentMethodEntity.class,
         CustomerShipToAddressesEntity.class,
         CustomerStatisticsEntity.class,
+        CustomerFrequenciesEntity.class,
         CustomerVisitsEntity.class,
         CustomListsHeaderEntity.class,
         CustomListsLineEntity.class,
@@ -301,6 +304,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract CustomerShipToAddressesDao getCustomerShipToAddressesDao();
 
     public abstract CustomerStatisticsDao getCustomerStatisticsDao();
+
+    public abstract CustomerFrequenciesDao getCustomerFrequenciesDao();
 
     public abstract CustomerVisitsDao getCustomerVisitsDao();
 

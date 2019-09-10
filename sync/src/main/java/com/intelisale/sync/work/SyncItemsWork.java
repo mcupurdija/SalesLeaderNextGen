@@ -81,7 +81,7 @@ public class SyncItemsWork extends BaseWorker {
 
                             // 0. ITEM
                             BaseRecordSchema<ItemSchema> itemsRecordSchema = syncItemsResponseSchema.getItemSchema();
-                            if (itemsRecordSchema != null && itemsRecordSchema.getRecords() != null && itemsRecordSchema.getRecords().size() > 0) {
+                            if (itemsRecordSchema != null && itemsRecordSchema.getRecords() != null) {
 
                                 List<ItemEntity> itemEntities = itemMapper.itemListMapper(itemsRecordSchema.getRecords());
                                 syncItemsRepository.syncItems(itemEntities);
@@ -91,7 +91,7 @@ public class SyncItemsWork extends BaseWorker {
 
                             // 1. ITEM CONNECTIONS
                             BaseRecordSchema<ItemConnectionsSchema> itemConnectionsSchema = syncItemsResponseSchema.getItemConnectionsSchema();
-                            if (itemConnectionsSchema != null && itemConnectionsSchema.getRecords() != null && itemConnectionsSchema.getRecords().size() > 0) {
+                            if (itemConnectionsSchema != null && itemConnectionsSchema.getRecords() != null) {
 
                                 List<ItemConnectionsEntity> itemConnectionsEntities = itemMapper.itemConnectionsListMapper(itemConnectionsSchema.getRecords());
                                 syncItemsRepository.syncItemConnections(itemConnectionsEntities);
@@ -101,7 +101,7 @@ public class SyncItemsWork extends BaseWorker {
 
                             // 2. ITEM PACKAGES
                             BaseRecordSchema<ItemPackagesSchema> itemPackagesSchema = syncItemsResponseSchema.getItemPackagesSchema();
-                            if (itemPackagesSchema != null && itemPackagesSchema.getRecords() != null && itemPackagesSchema.getRecords().size() > 0) {
+                            if (itemPackagesSchema != null && itemPackagesSchema.getRecords() != null) {
 
                                 List<ItemPackagesEntity> itemPackagesEntities = itemMapper.itemPackagesListMapper(itemPackagesSchema.getRecords());
                                 syncItemsRepository.syncItemPackages(itemPackagesEntities);
@@ -111,7 +111,7 @@ public class SyncItemsWork extends BaseWorker {
 
                             // 3. ITEMS ALLOWED TO CUSTOMERS
                             BaseRecordSchema<ItemAllowedToCustomerSchema> itemAllowedToCustomerSchema = syncItemsResponseSchema.getItemAllowedToCustomerSchema();
-                            if (itemAllowedToCustomerSchema != null && itemAllowedToCustomerSchema.getRecords() != null && itemAllowedToCustomerSchema.getRecords().size() > 0) {
+                            if (itemAllowedToCustomerSchema != null && itemAllowedToCustomerSchema.getRecords() != null) {
 
                                 List<ItemAllowedToCustomerEntity> itemAllowedToCustomerEntities = itemMapper.itemAllowedToCustomerListMapper(itemAllowedToCustomerSchema.getRecords());
                                 syncItemsRepository.syncItemAllowedToCustomer(itemAllowedToCustomerEntities);

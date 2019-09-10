@@ -7,7 +7,7 @@ import com.intelisale.database.entity.column.BaseColumns;
 @Entity(tableName = "SalesLeaderItemsSoldToCustomerMonthlyTmp")
 public class SalesLeaderItemSoldToCustomerMonthlyTmpEntity extends BaseColumns {
 
-    private Integer itemId;
+    private Integer itemID;
     private Double m1Qty;
     private Double m2Qty;
     private Double m3Qty;
@@ -22,12 +22,12 @@ public class SalesLeaderItemSoldToCustomerMonthlyTmpEntity extends BaseColumns {
     private Double m12Qty;
     private Double total;
 
-    public Integer getItemId() {
-        return itemId;
+    public Integer getItemID() {
+        return itemID;
     }
 
-    public void setItemId(Integer itemId) {
-        this.itemId = itemId;
+    public void setItemID(Integer itemID) {
+        this.itemID = itemID;
     }
 
     public Double getM1Qty() {

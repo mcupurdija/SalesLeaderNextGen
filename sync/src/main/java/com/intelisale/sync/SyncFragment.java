@@ -35,10 +35,10 @@ public class SyncFragment extends BaseFragment {
         super.onCreate(savedInstanceState);
         inject();
 
-        OneTimeWorkRequest syncItemsWorkRequest = new OneTimeWorkRequest.Builder(SyncItemsWork.class).addTag(ITEMS_WR_TAG).build();
         OneTimeWorkRequest syncCustomersWorkRequest = new OneTimeWorkRequest.Builder(SyncCustomersWork.class).addTag(CUSTOMERS_WR_TAG).build();
+        OneTimeWorkRequest syncItemsWorkRequest = new OneTimeWorkRequest.Builder(SyncItemsWork.class).addTag(ITEMS_WR_TAG).build();
 
-        WorkContinuation mWorkContinuation = mWorkManager.beginWith(syncItemsWorkRequest); // .then(syncCustomersWorkRequest)
+        WorkContinuation mWorkContinuation = mWorkManager.beginWith(syncCustomersWorkRequest).then(syncItemsWorkRequest);
         mWorkContinuation.enqueue();
     }
 

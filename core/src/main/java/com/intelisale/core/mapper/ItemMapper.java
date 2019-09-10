@@ -29,6 +29,7 @@ public abstract class ItemMapper {
             @Mapping(target = "sent", constant = "true")
     })
     public abstract ItemEntity itemMapper(ItemSchema itemSchema);
+    public abstract List<ItemEntity> itemListMapper(List<ItemSchema> itemSchemas);
 
     @Mappings({
             @Mapping(source = "id", target = "serverID"),
@@ -37,6 +38,7 @@ public abstract class ItemMapper {
             @Mapping(target = "description", ignore = true)
     })
     public abstract ItemConnectionsEntity itemConnectionsMapper(ItemConnectionsSchema itemConnectionsSchema);
+    public abstract List<ItemConnectionsEntity> itemConnectionsListMapper(List<ItemConnectionsSchema> itemConnectionsSchemas);
 
     @Mappings({
             @Mapping(source = "id", target = "serverID"),
@@ -44,18 +46,12 @@ public abstract class ItemMapper {
             @Mapping(target = "description", ignore = true)
     })
     public abstract ItemPackagesEntity itemPackagesMapper(ItemPackagesSchema itemPackagesSchema);
+    public abstract List<ItemPackagesEntity> itemPackagesListMapper(List<ItemPackagesSchema> itemPackagesSchemas);
 
     @Mappings({
             @Mapping(source = "id", target = "serverID"),
             @Mapping(source = "slSalesLevelTypeID", target = "salesLeaderSalesLevelTypeID")
     })
     public abstract ItemAllowedToCustomerEntity itemAllowedToCustomerMapper(ItemAllowedToCustomerSchema itemAllowedToCustomerSchema);
-
-    public abstract List<ItemEntity> itemListMapper(List<ItemSchema> itemSchemas);
-
-    public abstract List<ItemConnectionsEntity> itemConnectionsListMapper(List<ItemConnectionsSchema> itemConnectionsSchemas);
-
-    public abstract List<ItemPackagesEntity> itemPackagesListMapper(List<ItemPackagesSchema> itemPackagesSchemas);
-
     public abstract List<ItemAllowedToCustomerEntity> itemAllowedToCustomerListMapper(List<ItemAllowedToCustomerSchema> itemAllowedToCustomerSchemas);
 }

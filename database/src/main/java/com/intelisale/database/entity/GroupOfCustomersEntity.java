@@ -8,8 +8,8 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 public class GroupOfCustomersEntity extends CodeBookColumns {
 
     private String parentCode;
-    private Integer parentGroupOfCustomerId;
-    private Integer groupsOfCustomersLevelId;
+    private Integer parentGroupOfCustomerID;
+    private Integer groupsOfCustomersLevelID;
 
     public String getParentCode() {
         return parentCode;
@@ -19,19 +19,19 @@ public class GroupOfCustomersEntity extends CodeBookColumns {
         this.parentCode = parentCode;
     }
 
-    public Integer getParentGroupOfCustomerId() {
-        return parentGroupOfCustomerId;
+    public Integer getParentGroupOfCustomerID() {
+        return parentGroupOfCustomerID;
     }
 
-    public void setParentGroupOfCustomerId(Integer parentGroupOfCustomerId) {
-        this.parentGroupOfCustomerId = parentGroupOfCustomerId;
+    public void setParentGroupOfCustomerID(Integer parentGroupOfCustomerID) {
+        this.parentGroupOfCustomerID = parentGroupOfCustomerID;
     }
 
-    public Integer getGroupsOfCustomersLevelId() {
-        return groupsOfCustomersLevelId;
+    public Integer getGroupsOfCustomersLevelID() {
+        return groupsOfCustomersLevelID;
     }
 
-    public void setGroupsOfCustomersLevelId(Integer groupsOfCustomersLevelId) {
-        this.groupsOfCustomersLevelId = groupsOfCustomersLevelId;
+    public void setGroupsOfCustomersLevelID(Integer groupsOfCustomersLevelID) {
+        this.groupsOfCustomersLevelID = groupsOfCustomersLevelID;
     }
 }

@@ -17,7 +17,7 @@ public class CustomerPlanTurnoverSchema {
     @JsonProperty("customerID")
     private Integer customerID;
     @JsonProperty("screnPosition")
-    private String screnPosition;
+    private String screenPosition;
     @JsonProperty("value")
     private Double value;
     @JsonProperty("sortIndex")
@@ -54,13 +54,13 @@ public class CustomerPlanTurnoverSchema {
     }
 
     @JsonProperty("screnPosition")
-    public String getScrenPosition() {
-        return screnPosition;
+    public String getScreenPosition() {
+        return screenPosition;
     }
 
     @JsonProperty("screnPosition")
-    public void setScrenPosition(String screnPosition) {
-        this.screnPosition = screnPosition;
+    public void setScreenPosition(String screenPosition) {
+        this.screenPosition = screenPosition;
     }
 
     @JsonProperty("value")

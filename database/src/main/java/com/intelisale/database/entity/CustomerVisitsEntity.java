@@ -2,23 +2,24 @@ package com.intelisale.database.entity;
 
 import androidx.room.Entity;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = "CustomerVisits")
+@Entity(tableName = TableNames.CUSTOMER_VISITS)
 public class CustomerVisitsEntity extends BaseAuditColumns {
 
-    private Integer customerId;
+    private Integer customerID;
     private Integer customerVisits;
     private String visitDate;
     private Integer customerTime;
     private Integer productivityPerVisit;
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
     public Integer getCustomerVisits() {
