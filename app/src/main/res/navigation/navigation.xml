@@ -13,6 +13,6 @@
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.intelisale.sync.SyncFragment"
-        android:label="Second Fragment" />
+        android:label="Sync" />
 
 </navigation>

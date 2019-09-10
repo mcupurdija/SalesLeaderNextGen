@@ -42,11 +42,9 @@ public class MainViewMvcImpl extends BaseViewMvc<MainViewMvc.Listener> implement
                 .withActivity(mActivity)
                 .withToolbar(toolbar)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName("1st"),
-                        new PrimaryDrawerItem().withName("2nd"),
+                        new PrimaryDrawerItem().withName("Dashboard"),
                         new DividerDrawerItem(),
-                        new PrimaryDrawerItem().withName("3rd"),
-                        new PrimaryDrawerItem().withName("4th")
+                        new PrimaryDrawerItem().withName("Sync")
                 )
                 .withOnDrawerItemClickListener(this)
                 .build();
@@ -60,13 +58,7 @@ public class MainViewMvcImpl extends BaseViewMvc<MainViewMvc.Listener> implement
             case 0:
                 navController.navigate(R.id.firstFragment);
                 return true;
-            case 1:
-                navController.navigate(R.id.secondFragment);
-                return true;
-            case 3:
-                navController.navigate(R.id.firstFragment);
-                return true;
-            case 4:
+            case 2:
                 navController.navigate(R.id.secondFragment);
                 return true;
             default:
