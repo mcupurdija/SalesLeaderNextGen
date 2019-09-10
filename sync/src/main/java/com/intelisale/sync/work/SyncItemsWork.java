@@ -81,66 +81,48 @@ public class SyncItemsWork extends BaseWorker {
 
                             // 0. ITEM
                             BaseRecordSchema<ItemSchema> itemsRecordSchema = syncItemsResponseSchema.getItemSchema();
-                            if (itemsRecordSchema != null) {
+                            if (itemsRecordSchema != null && itemsRecordSchema.getRecords() != null && itemsRecordSchema.getRecords().size() > 0) {
 
-                                if (itemsRecordSchema.getRecords() != null && itemsRecordSchema.getRecords().size() > 0) {
+                                List<ItemEntity> itemEntities = itemMapper.itemListMapper(itemsRecordSchema.getRecords());
+                                syncItemsRepository.syncItems(itemEntities);
 
-                                    List<ItemEntity> itemEntities = itemMapper.itemListMapper(itemsRecordSchema.getRecords());
-                                    syncItemsRepository.syncItems(itemEntities);
-
-                                    paginationHelper.incrementEntityCounter(0);
-                                }
-
-                                paginationHelper.updateEntityResultsCounter(0, itemsRecordSchema.getNumOfRecords());
+                                paginationHelper.updateCounters(0, itemsRecordSchema.getNumOfRecords());
                             }
 
                             // 1. ITEM CONNECTIONS
                             BaseRecordSchema<ItemConnectionsSchema> itemConnectionsSchema = syncItemsResponseSchema.getItemConnectionsSchema();
-                            if (itemConnectionsSchema != null) {
+                            if (itemConnectionsSchema != null && itemConnectionsSchema.getRecords() != null && itemConnectionsSchema.getRecords().size() > 0) {
 
-                                if (itemConnectionsSchema.getRecords() != null && itemConnectionsSchema.getRecords().size() > 0) {
+                                List<ItemConnectionsEntity> itemConnectionsEntities = itemMapper.itemConnectionsListMapper(itemConnectionsSchema.getRecords());
+                                syncItemsRepository.syncItemConnections(itemConnectionsEntities);
 
-                                    List<ItemConnectionsEntity> itemConnectionsEntities = itemMapper.itemConnectionsListMapper(itemConnectionsSchema.getRecords());
-                                    syncItemsRepository.syncItemConnections(itemConnectionsEntities);
-
-                                    paginationHelper.incrementEntityCounter(1);
-                                }
-
-                                paginationHelper.updateEntityResultsCounter(1, itemConnectionsSchema.getNumOfRecords());
+                                paginationHelper.updateCounters(1, itemConnectionsSchema.getNumOfRecords());
                             }
 
                             // 2. ITEM PACKAGES
                             BaseRecordSchema<ItemPackagesSchema> itemPackagesSchema = syncItemsResponseSchema.getItemPackagesSchema();
-                            if (itemPackagesSchema != null) {
+                            if (itemPackagesSchema != null && itemPackagesSchema.getRecords() != null && itemPackagesSchema.getRecords().size() > 0) {
 
-                                if (itemPackagesSchema.getRecords() != null && itemPackagesSchema.getRecords().size() > 0) {
+                                List<ItemPackagesEntity> itemPackagesEntities = itemMapper.itemPackagesListMapper(itemPackagesSchema.getRecords());
+                                syncItemsRepository.syncItemPackages(itemPackagesEntities);
 
-                                    List<ItemPackagesEntity> itemPackagesEntities = itemMapper.itemPackagesListMapper(itemPackagesSchema.getRecords());
-                                    syncItemsRepository.syncItemPackages(itemPackagesEntities);
-
-                                    paginationHelper.incrementEntityCounter(2);
-                                }
-
-                                paginationHelper.updateEntityResultsCounter(2, itemPackagesSchema.getNumOfRecords());
+                                paginationHelper.updateCounters(2, itemPackagesSchema.getNumOfRecords());
                             }
 
                             // 3. ITEMS ALLOWED TO CUSTOMERS
                             BaseRecordSchema<ItemAllowedToCustomerSchema> itemAllowedToCustomerSchema = syncItemsResponseSchema.getItemAllowedToCustomerSchema();
-                            if (itemAllowedToCustomerSchema != null) {
+                            if (itemAllowedToCustomerSchema != null && itemAllowedToCustomerSchema.getRecords() != null && itemAllowedToCustomerSchema.getRecords().size() > 0) {
 
-                                if (itemAllowedToCustomerSchema.getRecords() != null && itemAllowedToCustomerSchema.getRecords().size() > 0) {
+                                List<ItemAllowedToCustomerEntity> itemAllowedToCustomerEntities = itemMapper.itemAllowedToCustomerListMapper(itemAllowedToCustomerSchema.getRecords());
+                                syncItemsRepository.syncItemAllowedToCustomer(itemAllowedToCustomerEntities);
 
-                                    List<ItemAllowedToCustomerEntity> itemAllowedToCustomerEntities = itemMapper.itemAllowedToCustomerListMapper(itemAllowedToCustomerSchema.getRecords());
-                                    syncItemsRepository.syncItemAllowedToCustomer(itemAllowedToCustomerEntities);
-
-                                    paginationHelper.incrementEntityCounter(3);
-                                }
-
-                                paginationHelper.updateEntityResultsCounter(3, itemAllowedToCustomerSchema.getNumOfRecords());
+                                paginationHelper.updateCounters(3, itemAllowedToCustomerSchema.getNumOfRecords());
                             }
                         }
                     } else {
 
+                        syncItemsRepository.updateStatus(false);
+                        return Result.failure();
                     }
                 } else {
 

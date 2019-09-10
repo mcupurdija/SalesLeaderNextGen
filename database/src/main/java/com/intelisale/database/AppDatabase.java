@@ -33,6 +33,7 @@ import com.intelisale.database.dao.DocumentTypeDao;
 import com.intelisale.database.dao.DocumentVerificationStatusDao;
 import com.intelisale.database.dao.FinancialEntityDao;
 import com.intelisale.database.dao.GalleryDao;
+import com.intelisale.database.dao.GlobalDao;
 import com.intelisale.database.dao.GroupOfCustomersCategoryItemsDao;
 import com.intelisale.database.dao.GroupOfCustomersDao;
 import com.intelisale.database.dao.ItemAllowedToCustomerDao;
@@ -422,4 +423,6 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract VisitSubResultDao getVisitSubResultDao();
 
     public abstract WarehouseDao getWarehouseDao();
+
+    public abstract GlobalDao getGlobalDao();
 }

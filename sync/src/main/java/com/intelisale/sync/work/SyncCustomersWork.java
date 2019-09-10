@@ -14,16 +14,14 @@ import com.intelisale.networking.schema.BaseRecordSchema;
 import com.intelisale.networking.schema.BaseSchema;
 import com.intelisale.networking.schema.customers.CustomerSchema;
 import com.intelisale.networking.schema.customers.SyncCustomersResponseSchema;
-import com.intelisale.networking.schema.sync.SyncSchema;
 import com.intelisale.networking.schema.sync.SyncTableNames;
 import com.intelisale.salesleader.ui.common.base.BaseWorker;
 import com.intelisale.sync.di.DaggerSyncComponent;
+import com.intelisale.sync.work.helper.PaginationHelper;
+import com.intelisale.sync.work.helper.SyncObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 import javax.inject.Inject;
 
@@ -32,12 +30,7 @@ import retrofit2.Response;
 
 public class SyncCustomersWork extends BaseWorker {
 
-    private static final int CUSTOMERS_PAGE_SIZE = 500;
-
-    private int customersCounter = 0, customersResultsCounter;
-    private int percentageCompleted;
-
-    private Map<String, SyncSchema> syncRequest;
+    private CustomerMapper customerMapper = CustomerMapper.INSTANCE;
 
     @Inject
     SyncApi syncApi;
@@ -54,9 +47,17 @@ public class SyncCustomersWork extends BaseWorker {
     @Override
     public Result doWork() {
 
-        while (setSyncRequest()) {
+        // 0. CUSTOMERS
+        SyncObject obj0 = new SyncObject(SyncTableNames.Customers, syncCustomersRepository.getModifiedDate(TableNames.CUSTOMERS), 500);
 
-            Call<BaseSchema<SyncCustomersResponseSchema>> call = syncApi.syncCustomers(1, new ArrayList<>(syncRequest.values()));
+
+        PaginationHelper paginationHelper = new PaginationHelper(new SyncObject[]{obj0});
+
+        while (paginationHelper.setSyncRequest()) {
+
+            syncCustomersRepository.updateStatus(paginationHelper.getPercentageCompleted());
+
+            Call<BaseSchema<SyncCustomersResponseSchema>> call = syncApi.syncCustomers(1, new ArrayList<>(paginationHelper.getSyncRequest().values()));
             try {
                 Response<BaseSchema<SyncCustomersResponseSchema>> response = call.execute();
                 if (response.isSuccessful()) {
@@ -68,73 +69,36 @@ public class SyncCustomersWork extends BaseWorker {
                         if (syncCustomersResponseSchema != null) {
 
                             BaseRecordSchema<CustomerSchema> customerRecordSchema = syncCustomersResponseSchema.getCustomers();
-                            if (customerRecordSchema != null) {
+                            if (customerRecordSchema != null && customerRecordSchema.getRecords() != null && customerRecordSchema.getRecords().size() > 0) {
 
-                                if (customerRecordSchema.getRecords() != null && customerRecordSchema.getRecords().size() > 0) {
+                                List<CustomerEntity> customerEntities = customerMapper.customerSchemaToEntityList(customerRecordSchema.getRecords());
+                                syncCustomersRepository.syncCustomers(customerEntities);
 
-                                    List<CustomerEntity> customerEntities = CustomerMapper.INSTANCE.customerSchemaToEntityList(customerRecordSchema.getRecords());
-                                    syncCustomersRepository.syncCustomers(customerEntities);
-
-                                    customersCounter += CUSTOMERS_PAGE_SIZE;
-                                }
-                                customersResultsCounter = customerRecordSchema.getNumOfRecords();
+                                paginationHelper.updateCounters(0, customerRecordSchema.getNumOfRecords());
                             }
+
+
                         }
                     } else {
 
+                        syncCustomersRepository.updateStatus(false);
+                        return Result.failure();
                     }
                 } else {
 
+                    syncCustomersRepository.updateStatus(false);
                     return Result.failure();
                 }
             } catch (Exception e) {
 
+                syncCustomersRepository.updateStatus(false);
                 return Result.failure();
             }
         }
 
+        syncCustomersRepository.updateStatus(true);
         return Result.success();
     }
-
-    private boolean setSyncRequest() {
-
-        if (syncRequest == null) {
-            percentageCompleted = 1;
-
-            syncRequest = new HashMap<>();
-            // CUSTOMERS
-            syncRequest.put(TableNames.CUSTOMERS, new SyncSchema(SyncTableNames.Customers, syncCustomersRepository.getCustomersModifiedDate(), customersCounter, CUSTOMERS_PAGE_SIZE));
-
-        } else {
-            percentageCompleted = 0;
-
-            if (customersCounter < customersResultsCounter) {
-                Objects.requireNonNull(syncRequest.get(TableNames.CUSTOMERS)).setPageNumber(customersCounter);
-                addPercentageCompleted(customersCounter);
-            } else {
-                syncRequest.remove(TableNames.CUSTOMERS);
-                addPercentageCompleted(customersResultsCounter);
-            }
-
-            if (syncRequest.size() > 0) {
-
-                if (syncRequest.containsKey(TableNames.CUSTOMERS))
-                    Objects.requireNonNull(syncRequest.get(TableNames.CUSTOMERS)).setPageSize(CUSTOMERS_PAGE_SIZE);
-
-            }
-        }
-
-//        updateSyncProgress
-
-        return syncRequest.size() > 0;
-    }
-
-    private void addPercentageCompleted(int value) {
-
-        int resultSum = customersResultsCounter;
-        if (resultSum != 0) percentageCompleted += value * 100 / resultSum;
-    }
-
 
     private void inject() {
         DaggerSyncComponent.builder()

@@ -23,12 +23,9 @@ public class PaginationHelper {
         }
     }
 
-    public void incrementEntityCounter(int index) {
+    public void updateCounters(int index, int results) {
         entityCounter[index] += syncTables[index].getPageSize();
-    }
-
-    public void updateEntityResultsCounter(int index, int value) {
-        entityResultsCounter[index] = value;
+        entityResultsCounter[index] = results;
     }
 
     public Map<String, SyncSchema> getSyncRequest() {

@@ -76,6 +76,8 @@ public class DatabaseModule {
     @Provides
     static SyncCustomersRepository syncCustomersRepository(AppDatabase appDatabase) {
         return new SyncCustomersRepository(
+                appDatabase.getGlobalDao(),
+                appDatabase.getSyncStatusDao(),
                 appDatabase.getCustomerDao(),
                 appDatabase.getCustomerProcessDao(),
                 appDatabase.getCustomerShipToAddressesDao(),
@@ -93,11 +95,12 @@ public class DatabaseModule {
     @Provides
     static SyncItemsRepository syncItemsRepository(AppDatabase appDatabase) {
         return new SyncItemsRepository(
+                appDatabase.getGlobalDao(),
+                appDatabase.getSyncStatusDao(),
                 appDatabase.getItemDao(),
                 appDatabase.getItemConnectionsDao(),
                 appDatabase.getItemPackagesDao(),
-                appDatabase.getItemAllowedToCustomerDao(),
-                appDatabase.getSyncStatusDao()
+                appDatabase.getItemAllowedToCustomerDao()
         );
     }
 
