@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "dfe81ea88161e33ee881fe792f78d885",
+    "identityHash": "3004c300ea33a9f110577322831e0249",
     "entities": [
       {
         "tableName": "ApprovalStatuses",
@@ -974,7 +974,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "CustomersCustomLists",
+        "tableName": "CustomerCustomLists",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customerID` INTEGER, `customListHeaderID` INTEGER, `fromDate` TEXT, `toDate` TEXT, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -8525,7 +8525,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dfe81ea88161e33ee881fe792f78d885')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3004c300ea33a9f110577322831e0249')"
     ]
   }
 }

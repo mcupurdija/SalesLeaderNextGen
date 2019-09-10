@@ -22,7 +22,7 @@ public abstract class CustomerCustomListDao extends BaseDao<CustomerCustomListEn
     @Transaction
     @SuppressLint("DefaultLocale")
     public int getIdFromPrimarySet(int customerID, int customListHeaderID) {
-        return getIdFromPrimarySet(new SimpleSQLiteQuery(String.format("SELECT id FROM CustomerCustomLists WHERE customerID = %d AND customListHeaderID = %d", customerID, customListHeaderID)));
+        return getIdFromPrimarySet(new SimpleSQLiteQuery(String.format("SELECT id FROM %s WHERE customerID = %d AND customListHeaderID = %d", TableNames.CUSTOMER_CUSTOM_LISTS, customerID, customListHeaderID)));
     }
 
     @Transaction

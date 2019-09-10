@@ -22,7 +22,7 @@ public abstract class CustomerProductGroupPotentialDao extends BaseDao<CustomerP
     @Transaction
     @SuppressLint("DefaultLocale")
     public int getIdFromPrimarySet(int customerID, int categoryOfItemsID) {
-        return getIdFromPrimarySet(new SimpleSQLiteQuery(String.format("SELECT id FROM CustomerProductGroupPotential WHERE customerID = %d AND categoryOfItemsID = %d", customerID, categoryOfItemsID)));
+        return getIdFromPrimarySet(new SimpleSQLiteQuery(String.format("SELECT id FROM %s WHERE customerID = %d AND categoryOfItemsID = %d", TableNames.CUSTOMER_PRODUCT_GROUP, customerID, categoryOfItemsID)));
     }
 
     @Transaction

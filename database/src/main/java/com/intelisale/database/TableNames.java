@@ -263,7 +263,7 @@ public interface TableNames {
             "LEFT JOIN CategoriesOfItems ON GroupOfCustomersCategoryItems.CategoryOfItemsID = CategoriesOfItems.ServerID " +
             "LEFT JOIN CustomerProductGroupPotential ON GroupOfCustomersCategoryItems.CategoryOfItemsID = CustomerProductGroupPotential.CategoryOfItemsID AND CustomerProductGroupPotential.CustomerID = %d";
 
-    String CUSTOMER_CUSTOM_LISTS = "CustomersCustomLists";
+    String CUSTOMER_CUSTOM_LISTS = "CustomerCustomLists";
     String CUSTOMER_CUSTOM_LISTS_WITH_HEADERS = "CustomersCustomLists " +
             "LEFT JOIN CustomListsHeaders ON CustomersCustomLists.CustomListHeaderID = CustomListsHeaders.ServerID";
     String CUSTOM_LISTS_HEADERS = "CustomListsHeaders";

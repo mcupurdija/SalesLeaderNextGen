@@ -84,9 +84,9 @@ public class SyncCustomersWork extends BaseWorker {
         // 6. CUSTOMER STATISTICS
         SyncObject obj6 = new SyncObject(SyncTableNames.CustomerStatistics, syncCustomersRepository.getModifiedDate(TableNames.CUSTOMER_STATISTICS), 1000);
         // 7. CUSTOMER PLAN TURNOVER
-        SyncObject obj7 = new SyncObject(SyncTableNames.CustomerPlanTurnover, syncCustomersRepository.getModifiedDate(TableNames.CUSTOMER_PLAN_TURNOVER), 1000);
+        SyncObject obj7 = new SyncObject(SyncTableNames.CustomerPlanTurnover, syncCustomersRepository.getModifiedDate(TableNames.CUSTOMER_PLAN_TURNOVER), 5000);
         // 8. CUSTOMER PRODUCT GROUP POTENTIAL
-        SyncObject obj8 = new SyncObject(SyncTableNames.CustomerProductGroupPotential, syncCustomersRepository.getModifiedDate(TableNames.CUSTOMER_PRODUCT_GROUP), 1000);
+        SyncObject obj8 = new SyncObject(SyncTableNames.CustomerProductGroupPotential, syncCustomersRepository.getModifiedDate(TableNames.CUSTOMER_PRODUCT_GROUP), 5000);
         // 9. CUSTOMER CUSTOM LISTS
         SyncObject obj9 = new SyncObject(SyncTableNames.CustomersCustomLists, syncCustomersRepository.getModifiedDate(TableNames.CUSTOMER_CUSTOM_LISTS), 500);
         // 10. CUSTOM LISTS LINES
