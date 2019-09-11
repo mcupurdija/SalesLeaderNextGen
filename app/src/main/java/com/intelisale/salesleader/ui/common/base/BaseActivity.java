@@ -8,13 +8,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.intelisale.core.di.CoreComponent;
 import com.intelisale.salesleader.SalesLeader;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 @SuppressLint("Registered")
 public abstract class BaseActivity extends AppCompatActivity {
+
+    protected CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     @UiThread
     protected abstract void inject();
 
-    public CoreComponent getCoreComponent() {
+    protected CoreComponent getCoreComponent() {
         return ((SalesLeader) getApplication()).getCoreComponent();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        compositeDisposable.dispose();
     }
 }

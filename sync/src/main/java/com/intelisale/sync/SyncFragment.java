@@ -70,9 +70,10 @@ public class SyncFragment extends BaseFragment implements SyncFragmentMvc.Listen
                 mSyncFragmentMvc.bindEntities(entities);
             }
         });
+        compositeDisposable.add(disposable);
     }
 
-    private void inject() {
+    protected void inject() {
         DaggerSyncComponent.builder()
                 .coreComponent(getCoreComponent())
                 .build()

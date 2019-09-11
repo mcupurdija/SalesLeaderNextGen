@@ -23,14 +23,12 @@ import java.util.List;
 
 public class SyncFragmentMvcImpl extends BaseViewMvc<SyncFragmentMvc.Listener> implements SyncFragmentMvc {
 
-    private RecyclerView mRecyclerView;
     private SyncAdapter mSyncAdapter;
-    private MaterialButton mSyncButton;
 
-    public SyncFragmentMvcImpl(LayoutInflater inflater, ViewGroup container) {
+    SyncFragmentMvcImpl(LayoutInflater inflater, ViewGroup container) {
         setRootView(inflater.inflate(R.layout.fragment_sync, container, false));
 
-        mRecyclerView = findViewById(R.id.recyclerView);
+        final RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
 
         final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         mRecyclerView.setLayoutManager(gridLayoutManager);
@@ -39,7 +37,7 @@ public class SyncFragmentMvcImpl extends BaseViewMvc<SyncFragmentMvc.Listener> i
         mSyncAdapter = new SyncAdapter();
         mRecyclerView.setAdapter(mSyncAdapter);
 
-        mSyncButton = findViewById(R.id.bSync);
+        final MaterialButton mSyncButton = findViewById(R.id.bSync);
         mSyncButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,7 +139,7 @@ public class SyncFragmentMvcImpl extends BaseViewMvc<SyncFragmentMvc.Listener> i
             return mEntities.size();
         }
 
-        public List<SyncStatusEntity> getEntities() {
+        List<SyncStatusEntity> getEntities() {
             return mEntities;
         }
     }
