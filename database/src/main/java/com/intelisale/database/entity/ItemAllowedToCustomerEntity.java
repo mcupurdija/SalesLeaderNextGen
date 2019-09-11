@@ -1,11 +1,12 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
 import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = TableNames.SL_ITEMS_ALLOWED_TO_CUSTOMER)
+@Entity(tableName = TableNames.SL_ITEMS_ALLOWED_TO_CUSTOMER, indices = {@Index(value = "serverID", unique = true)})
 public class ItemAllowedToCustomerEntity extends BaseAuditColumns {
 
     private Integer itemID;

@@ -1,7 +1,5 @@
 package com.intelisale.database.repository;
 
-import android.util.SparseIntArray;
-
 import com.intelisale.database.TableNames;
 import com.intelisale.database.dao.CustomListsLineDao;
 import com.intelisale.database.dao.CustomerCustomListDao;
@@ -47,7 +45,6 @@ public class SyncCustomersRepository extends SyncRepository {
     private final SalesLeaderCategoryAllowedToCustomerDao salesLeaderCategoryAllowedToCustomerDao;
     private final CustomerFrequenciesDao customerFrequenciesDao;
 
-    private final SparseIntArray customersIdServerIdArray, customerProcessIdServerIdArray, customerShipToAddressesIdServerIdArray, customerVisitsIdServerIdArray, customerStatisticsIdServerIdArray, customerPlanTurnoverIdServerIdArray, customListsLineIdServerIdArray, salesLeaderShelvePerCustomersIdServerIdArray, salesLeaderCategoryAllowedToCustomerIdServerIdArray, customerFrequenciesIdServerIdArray;
 
     public SyncCustomersRepository(GlobalDao globalDao, SyncStatusDao syncStatusDao, CustomerDao customerDao, CustomerProcessDao customerProcessDao, CustomerShipToAddressesDao customerShipToAddressesDao, CustomerVisitsDao customerVisitsDao, CustomerStatisticsDao customerStatisticsDao, CustomerPlanTurnoverDao customerPlanTurnoverDao, CustomerProductGroupPotentialDao customerProductGroupPotentialDao, CustomerCustomListDao customerCustomListDao, CustomListsLineDao customListsLineDao, SalesLeaderShelvePerCustomersDao salesLeaderShelvePerCustomersDao, SalesLeaderCategoryAllowedToCustomerDao salesLeaderCategoryAllowedToCustomerDao, CustomerFrequenciesDao customerFrequenciesDao) {
         super(globalDao, syncStatusDao, TableNames.CUSTOMERS);
@@ -64,41 +61,30 @@ public class SyncCustomersRepository extends SyncRepository {
         this.salesLeaderShelvePerCustomersDao = salesLeaderShelvePerCustomersDao;
         this.salesLeaderCategoryAllowedToCustomerDao = salesLeaderCategoryAllowedToCustomerDao;
         this.customerFrequenciesDao = customerFrequenciesDao;
-
-        customersIdServerIdArray = globalDao.getIdServerId(TableNames.CUSTOMERS);
-        customerProcessIdServerIdArray = globalDao.getIdServerId(TableNames.SL_CUSTOMERS_PROCESSES);
-        customerShipToAddressesIdServerIdArray = globalDao.getIdServerId(TableNames.CUSTOMER_SHIP_TO_ADDRESSES);
-        customerVisitsIdServerIdArray = globalDao.getIdServerId(TableNames.CUSTOMER_VISITS);
-        customerStatisticsIdServerIdArray = globalDao.getIdServerId(TableNames.CUSTOMER_STATISTICS);
-        customerPlanTurnoverIdServerIdArray = globalDao.getIdServerId(TableNames.CUSTOMER_PLAN_TURNOVER);
-        customListsLineIdServerIdArray = globalDao.getIdServerId(TableNames.CUSTOM_LISTS_LINES);
-        salesLeaderShelvePerCustomersIdServerIdArray = globalDao.getIdServerId(TableNames.SL_SHELVES_PER_CUSTOMERS);
-        salesLeaderCategoryAllowedToCustomerIdServerIdArray = globalDao.getIdServerId(TableNames.SL_CATEGORIES_ALLOWED_TO_CUSTOMER);
-        customerFrequenciesIdServerIdArray = globalDao.getIdServerId(TableNames.CUSTOMER_FREQUENCIES);
     }
 
     public void syncCustomers(List<CustomerEntity> entityList) {
-        customerDao.insertOrUpdateByServerId(entityList, customersIdServerIdArray);
+        customerDao.insertOrUpdate(entityList, TableNames.CUSTOMERS);
     }
 
     public void syncCustomerProcesses(List<CustomerProcessEntity> entityList) {
-        customerProcessDao.insertOrUpdateByServerId(entityList, customerProcessIdServerIdArray);
+        customerProcessDao.insertOrUpdate(entityList, TableNames.SL_CUSTOMERS_PROCESSES);
     }
 
     public void syncCustomerShipToAddresses(List<CustomerShipToAddressesEntity> entityList) {
-        customerShipToAddressesDao.insertOrUpdateByServerId(entityList, customerShipToAddressesIdServerIdArray);
+        customerShipToAddressesDao.insertOrUpdate(entityList, TableNames.CUSTOMER_SHIP_TO_ADDRESSES);
     }
 
     public void syncCustomerVisits(List<CustomerVisitsEntity> entityList) {
-        customerVisitsDao.insertOrUpdateByServerId(entityList, customerVisitsIdServerIdArray);
+        customerVisitsDao.insertOrUpdate(entityList, TableNames.CUSTOMER_VISITS);
     }
 
     public void syncCustomerStatistics(List<CustomerStatisticsEntity> entityList) {
-        customerStatisticsDao.insertOrUpdateByServerId(entityList, customerStatisticsIdServerIdArray);
+        customerStatisticsDao.insertOrUpdate(entityList, TableNames.CUSTOMER_STATISTICS);
     }
 
     public void syncCustomerPlanTurnover(List<CustomerPlanTurnoverEntity> entityList) {
-        customerPlanTurnoverDao.insertOrUpdateByServerId(entityList, customerPlanTurnoverIdServerIdArray);
+        customerPlanTurnoverDao.insertOrUpdate(entityList, TableNames.CUSTOMER_PLAN_TURNOVER);
     }
 
     public void syncCustomerProductGroupPotential(List<CustomerProductGroupPotentialEntity> entityList) {
@@ -110,18 +96,18 @@ public class SyncCustomersRepository extends SyncRepository {
     }
 
     public void syncCustomListsLines(List<CustomListsLineEntity> entityList) {
-        customListsLineDao.insertOrUpdateByServerId(entityList, customListsLineIdServerIdArray);
+        customListsLineDao.insertOrUpdate(entityList, TableNames.CUSTOM_LISTS_LINES);
     }
 
     public void syncSalesLeaderShelvePerCustomers(List<SalesLeaderShelvePerCustomersEntity> entityList) {
-        salesLeaderShelvePerCustomersDao.insertOrUpdateByServerId(entityList, salesLeaderShelvePerCustomersIdServerIdArray);
+        salesLeaderShelvePerCustomersDao.insertOrUpdate(entityList, TableNames.SL_SHELVES_PER_CUSTOMERS);
     }
 
     public void syncSalesLeaderCategoryAllowedToCustomer(List<SalesLeaderCategoryAllowedToCustomerEntity> entityList) {
-        salesLeaderCategoryAllowedToCustomerDao.insertOrUpdateByServerId(entityList, salesLeaderCategoryAllowedToCustomerIdServerIdArray);
+        salesLeaderCategoryAllowedToCustomerDao.insertOrUpdate(entityList, TableNames.SL_CATEGORIES_ALLOWED_TO_CUSTOMER);
     }
 
     public void syncCustomerFrequencies(List<CustomerFrequenciesEntity> entityList) {
-        customerFrequenciesDao.insertOrUpdateByServerId(entityList, customerFrequenciesIdServerIdArray);
+        customerFrequenciesDao.insertOrUpdate(entityList, TableNames.CUSTOMER_FREQUENCIES);
     }
 }

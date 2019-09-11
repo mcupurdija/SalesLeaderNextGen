@@ -11,6 +11,7 @@ import com.intelisale.core.eventbus.EventBusSubscriber;
 import com.intelisale.core.logging.MyLogger;
 import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.useCase.LoginUseCase;
+import com.intelisale.database.dao.SyncStatusDao;
 import com.intelisale.database.di.DatabaseModule;
 import com.intelisale.database.repository.SyncCustomersRepository;
 import com.intelisale.database.repository.SyncItemsRepository;
@@ -66,6 +67,8 @@ public interface CoreComponent {
     SyncCustomersRepository syncCustomersRepository();
 
     SyncItemsRepository syncItemsRepository();
+
+    SyncStatusDao syncStatusDao();
 
     SyncApi syncApi();
 }

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "c57e98124422936d6368267c4002ca0b",
+    "identityHash": "6d9cb707cd6abd4f5e54b7bddcbc49c7",
     "entities": [
       {
         "tableName": "ApprovalStatuses",
@@ -1734,7 +1734,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_Customers_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Customers_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -1959,7 +1968,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustomerPlanTurnover_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustomerPlanTurnover_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -2042,7 +2060,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustomersProcesses_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustomersProcesses_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -2403,7 +2430,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustShipToAddresses_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustShipToAddresses_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -2504,7 +2540,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustomerStatistics_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustomerStatistics_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -2599,7 +2644,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_VisitsFrequencies_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_VisitsFrequencies_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -2682,7 +2736,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustomerVisits_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustomerVisits_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -2842,7 +2905,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustomListsLines_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustomListsLines_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -3516,7 +3588,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_Items_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Items_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -5241,7 +5322,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SLCategoriesAllowedToCustomer_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SLCategoriesAllowedToCustomer_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -5615,7 +5705,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SLItemsAllowedToCust_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SLItemsAllowedToCust_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -5823,7 +5922,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SLItemsConnections_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SLItemsConnections_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -6156,7 +6264,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SLItemsPackages_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SLItemsPackages_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -6928,7 +7045,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SLShelvesPerCustomers_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SLShelvesPerCustomers_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -8545,7 +8671,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c57e98124422936d6368267c4002ca0b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6d9cb707cd6abd4f5e54b7bddcbc49c7')"
     ]
   }
 }

@@ -2,7 +2,7 @@ package com.intelisale.salesleader.ui;
 
 import com.intelisale.core.ui.ObservableViewMvc;
 
-public interface MainViewMvc extends ObservableViewMvc<MainViewMvc.Listener> {
+public interface MainActivityMvc extends ObservableViewMvc<MainActivityMvc.Listener> {
 
     void setNavigationDrawer();
 

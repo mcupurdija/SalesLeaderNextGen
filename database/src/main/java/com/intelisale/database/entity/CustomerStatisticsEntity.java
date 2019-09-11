@@ -1,11 +1,12 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
 import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = TableNames.CUSTOMER_STATISTICS)
+@Entity(tableName = TableNames.CUSTOMER_STATISTICS, indices = {@Index(value = "serverID", unique = true)})
 public class CustomerStatisticsEntity extends BaseAuditColumns {
 
     private Integer customerID;

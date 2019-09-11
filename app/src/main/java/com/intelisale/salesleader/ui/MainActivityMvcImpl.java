@@ -17,7 +17,7 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-public class MainViewMvcImpl extends BaseViewMvc<MainViewMvc.Listener> implements MainViewMvc, Drawer.OnDrawerItemClickListener {
+public class MainActivityMvcImpl extends BaseViewMvc<MainActivityMvc.Listener> implements MainActivityMvc, Drawer.OnDrawerItemClickListener {
 
     private final AppCompatActivity mActivity;
 
@@ -25,7 +25,7 @@ public class MainViewMvcImpl extends BaseViewMvc<MainViewMvc.Listener> implement
     private NavController navController;
     private Drawer drawer;
 
-    MainViewMvcImpl(LayoutInflater layoutInflater, ViewGroup container, AppCompatActivity activity) {
+    MainActivityMvcImpl(LayoutInflater layoutInflater, ViewGroup container, AppCompatActivity activity) {
         mActivity = activity;
         setRootView(layoutInflater.inflate(R.layout.activity_main, container, false));
 

@@ -1,7 +1,5 @@
 package com.intelisale.database.repository;
 
-import android.util.SparseIntArray;
-
 import com.intelisale.database.TableNames;
 import com.intelisale.database.dao.GlobalDao;
 import com.intelisale.database.dao.ItemAllowedToCustomerDao;
@@ -23,8 +21,6 @@ public class SyncItemsRepository extends SyncRepository {
     private final ItemPackagesDao itemPackagesDao;
     private final ItemAllowedToCustomerDao itemAllowedToCustomerDao;
 
-    private final SparseIntArray itemsIdServerIdArray, itemConnectionsIdServerIdArray, itemPackagesIdServerIdArray, itemAllowedToCustomerIdServerIdArray;
-
     public SyncItemsRepository(GlobalDao globalDao, SyncStatusDao syncStatusDao, ItemDao itemDao, ItemConnectionsDao itemConnectionsDao, ItemPackagesDao itemPackagesDao, ItemAllowedToCustomerDao itemAllowedToCustomerDao) {
         super(globalDao, syncStatusDao, TableNames.ITEMS);
 
@@ -32,26 +28,21 @@ public class SyncItemsRepository extends SyncRepository {
         this.itemConnectionsDao = itemConnectionsDao;
         this.itemPackagesDao = itemPackagesDao;
         this.itemAllowedToCustomerDao = itemAllowedToCustomerDao;
-
-        itemsIdServerIdArray = globalDao.getIdServerId(TableNames.ITEMS);
-        itemConnectionsIdServerIdArray = globalDao.getIdServerId(TableNames.SL_ITEMS_CONNECTIONS);
-        itemPackagesIdServerIdArray = globalDao.getIdServerId(TableNames.SL_ITEMS_PACKAGES);
-        itemAllowedToCustomerIdServerIdArray = globalDao.getIdServerId(TableNames.SL_ITEMS_ALLOWED_TO_CUSTOMER);
     }
 
     public void syncItems(List<ItemEntity> entityList) {
-        itemDao.insertOrUpdateByServerId(entityList, itemsIdServerIdArray);
+        itemDao.insertOrUpdate(entityList, TableNames.ITEMS);
     }
 
     public void syncItemConnections(List<ItemConnectionsEntity> entityList) {
-        itemConnectionsDao.insertOrUpdateByServerId(entityList, itemConnectionsIdServerIdArray);
+        itemConnectionsDao.insertOrUpdate(entityList, TableNames.SL_ITEMS_CONNECTIONS);
     }
 
     public void syncItemPackages(List<ItemPackagesEntity> entityList) {
-        itemPackagesDao.insertOrUpdateByServerId(entityList, itemPackagesIdServerIdArray);
+        itemPackagesDao.insertOrUpdate(entityList, TableNames.SL_ITEMS_PACKAGES);
     }
 
     public void syncItemAllowedToCustomer(List<ItemAllowedToCustomerEntity> entityList) {
-        itemAllowedToCustomerDao.insertOrUpdateByServerId(entityList, itemAllowedToCustomerIdServerIdArray);
+        itemAllowedToCustomerDao.insertOrUpdate(entityList, TableNames.SL_ITEMS_ALLOWED_TO_CUSTOMER);
     }
 }

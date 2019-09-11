@@ -19,7 +19,7 @@ import com.intelisale.salesleader.ui.common.base.BaseActivity;
 
 import javax.inject.Inject;
 
-public class MainActivity extends BaseActivity implements MainViewMvc.Listener {
+public class MainActivity extends BaseActivity implements MainActivityMvc.Listener {
 
     private static final int LOGIN_REQUEST_CODE = 0;
 
@@ -32,13 +32,13 @@ public class MainActivity extends BaseActivity implements MainViewMvc.Listener {
     @Inject
     SessionManager mSessionManager;
 
-    private MainViewMvc mViewMvc;
+    private MainActivityMvc mViewMvc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         inject();
-        mViewMvc = new MainViewMvcImpl(mLayoutInflater, null, this);
+        mViewMvc = new MainActivityMvcImpl(mLayoutInflater, null, this);
         setContentView(mViewMvc.getRootView());
 
         mViewMvc.setNavigationDrawer();

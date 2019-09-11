@@ -1,11 +1,12 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
 import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = TableNames.CUSTOM_LISTS_LINES)
+@Entity(tableName = TableNames.CUSTOM_LISTS_LINES, indices = {@Index(value = "serverID", unique = true)})
 public class CustomListsLineEntity extends BaseAuditColumns {
 
     private Integer customListHeaderId;

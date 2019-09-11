@@ -9,6 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.intelisale.database.AppDatabase;
 import com.intelisale.database.TableNames;
+import com.intelisale.database.dao.SyncStatusDao;
 import com.intelisale.database.entity.SyncStatusEntity;
 import com.intelisale.database.repository.SyncCustomersRepository;
 import com.intelisale.database.repository.SyncItemsRepository;
@@ -549,13 +550,13 @@ public class DatabaseModule {
 //    StockInventoryLineDao getStockInventoryLineDao(AppDatabase appDatabase) {
 //        return appDatabase.getStockInventoryLineDao();
 //    }
-//
-//    @Singleton
-//    @Provides
-//    SyncStatusDao getSyncStatusDao(AppDatabase appDatabase) {
-//        return appDatabase.getSyncStatusDao();
-//    }
-//
+
+    @Singleton
+    @Provides
+    SyncStatusDao getSyncStatusDao(AppDatabase appDatabase) {
+        return appDatabase.getSyncStatusDao();
+    }
+
 //    @Singleton
 //    @Provides
 //    TagDao getTagDao(AppDatabase appDatabase) {

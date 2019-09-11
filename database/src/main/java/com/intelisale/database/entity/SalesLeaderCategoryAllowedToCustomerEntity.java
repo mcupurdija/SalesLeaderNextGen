@@ -1,11 +1,12 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
 import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = TableNames.SL_CATEGORIES_ALLOWED_TO_CUSTOMER)
+@Entity(tableName = TableNames.SL_CATEGORIES_ALLOWED_TO_CUSTOMER, indices = {@Index(value = "serverID", unique = true)})
 public class SalesLeaderCategoryAllowedToCustomerEntity extends CodeBookColumns {
 
     private Integer categoryOfItemsID;
