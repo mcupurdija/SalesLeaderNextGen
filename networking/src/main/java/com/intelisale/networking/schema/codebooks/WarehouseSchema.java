@@ -15,9 +15,9 @@ public class WarehouseSchema {
     @JsonProperty("id")
     private Integer id;
     @JsonProperty("adress")
-    private String adress;
+    private String address;
     @JsonProperty("adressNo")
-    private String adressNo;
+    private String addressNo;
     @JsonProperty("city")
     private String city;
     @JsonProperty("postalCode")
@@ -54,23 +54,23 @@ public class WarehouseSchema {
     }
 
     @JsonProperty("adress")
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     @JsonProperty("adress")
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @JsonProperty("adressNo")
-    public String getAdressNo() {
-        return adressNo;
+    public String getAddressNo() {
+        return addressNo;
     }
 
     @JsonProperty("adressNo")
-    public void setAdressNo(String adressNo) {
-        this.adressNo = adressNo;
+    public void setAddressNo(String addressNo) {
+        this.addressNo = addressNo;
     }
 
     @JsonProperty("city")

@@ -13,7 +13,7 @@ import java.util.Map;
 public class ItemUnitOfMeasuresSchema {
 
     @JsonProperty("id")
-    private Integer iD;
+    private Integer id;
     @JsonProperty("code")
     private String code;
     @JsonProperty("description")
@@ -34,13 +34,13 @@ public class ItemUnitOfMeasuresSchema {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("id")
-    public Integer getID() {
-        return iD;
+    public Integer getId() {
+        return id;
     }
 
     @JsonProperty("id")
-    public void setID(Integer iD) {
-        this.iD = iD;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @JsonProperty("code")

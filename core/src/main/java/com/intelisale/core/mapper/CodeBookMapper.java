@@ -99,7 +99,7 @@ public abstract class CodeBookMapper {
     public abstract List<StockAvailabilityStatusEntity> stockAvailabilityStatusEntities(List<StockAvailabilityStatusSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "commentsSourceID", target = "serverID")
     })
     public abstract CommentSourcesEntity commentSourcesEntity(CommentsSourceSchema schema);
     public abstract List<CommentSourcesEntity> commentSourcesEntities(List<CommentsSourceSchema> schemas);
@@ -135,7 +135,7 @@ public abstract class CodeBookMapper {
     public abstract List<SalesLeaderSalesLevelTypeEntity> salesLeaderSalesLevelTypeEntities(List<SLSalesLevelTypeSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "tagID", target = "serverID")
     })
     public abstract TagEntity tagEntity(TagSchema schema);
     public abstract List<TagEntity> tagEntities(List<TagSchema> schemas);
@@ -165,7 +165,7 @@ public abstract class CodeBookMapper {
     public abstract List<SalesTypeEntity> salesTypeEntities(List<SalesTypeSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "municipalityID", target = "serverID")
     })
     public abstract MunicipalityEntity municipalityEntity(MunicipalitySchema schema);
     public abstract List<MunicipalityEntity> municipalityEntities(List<MunicipalitySchema> schemas);
@@ -207,7 +207,7 @@ public abstract class CodeBookMapper {
     public abstract List<WarehouseEntity> warehouseEntities(List<WarehouseSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "commentsTargetID", target = "serverID")
     })
     public abstract CommentTargetsEntity commentTargetsEntity(CommentsTargetSchema schema);
     public abstract List<CommentTargetsEntity> commentTargetsEntities(List<CommentsTargetSchema> schemas);
