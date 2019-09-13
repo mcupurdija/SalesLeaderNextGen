@@ -1,6 +1,5 @@
 package com.intelisale.sync;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,18 +7,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.work.OneTimeWorkRequest;
-import androidx.work.WorkContinuation;
-import androidx.work.WorkManager;
 
-import com.intelisale.database.TableNames;
-import com.intelisale.database.dao.SyncStatusDao;
 import com.intelisale.database.entity.SyncStatusEntity;
+import com.intelisale.database.repository.SyncStatusRepository;
 import com.intelisale.salesleader.ui.common.base.BaseFragment;
+import com.intelisale.salesleader.work.MyWorkManager;
 import com.intelisale.sync.di.DaggerSyncComponent;
-import com.intelisale.sync.work.DummyWork;
-import com.intelisale.sync.work.SyncCustomersWork;
-import com.intelisale.sync.work.SyncItemsWork;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -34,13 +27,10 @@ import io.reactivex.schedulers.Schedulers;
 
 public class SyncFragment extends BaseFragment implements SyncFragmentMvc.Listener {
 
-    private static final String CUSTOMERS_WR_TAG = "SyncCustomersWork";
-    private static final String ITEMS_WR_TAG = "SyncItemsWork";
-
     @Inject
-    SyncStatusDao mSyncStatusDao;
+    SyncStatusRepository mSyncStatusRepository;
     @Inject
-    WorkManager mWorkManager;
+    MyWorkManager myWorkManager;
 
     private SyncFragmentMvc mSyncFragmentMvc;
 
@@ -63,10 +53,9 @@ public class SyncFragment extends BaseFragment implements SyncFragmentMvc.Listen
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Disposable disposable = mSyncStatusDao.getAll().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<List<SyncStatusEntity>>() {
+        Disposable disposable = mSyncStatusRepository.getAll().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<List<SyncStatusEntity>>() {
             @Override
-            public void accept(List<SyncStatusEntity> entities) throws Exception {
-
+            public void accept(List<SyncStatusEntity> entities) {
                 mSyncFragmentMvc.bindEntities(entities);
             }
         });
@@ -93,26 +82,7 @@ public class SyncFragment extends BaseFragment implements SyncFragmentMvc.Listen
     }
 
     @Override
-    @SuppressLint("EnqueueWork")
     public void onSyncButtonClicked(List<String> checkedItems) {
-
-        if (checkedItems.size() > 0) {
-
-            WorkContinuation mWorkContinuation = mWorkManager.beginWith(new OneTimeWorkRequest.Builder(DummyWork.class).build());
-            for (String item : checkedItems) {
-                switch (item) {
-                    case TableNames.CUSTOMERS:
-                        OneTimeWorkRequest syncCustomersWorkRequest = new OneTimeWorkRequest.Builder(SyncCustomersWork.class).addTag(CUSTOMERS_WR_TAG).build();
-                        mWorkContinuation = mWorkContinuation.then(syncCustomersWorkRequest);
-                        break;
-                    case TableNames.ITEMS:
-                        OneTimeWorkRequest syncItemsWorkRequest = new OneTimeWorkRequest.Builder(SyncItemsWork.class).addTag(ITEMS_WR_TAG).build();
-                        mWorkContinuation = mWorkContinuation.then(syncItemsWorkRequest);
-                        break;
-                }
-            }
-
-            mWorkContinuation.enqueue();
-        }
+        myWorkManager.enqueueSelected(checkedItems);
     }
 }

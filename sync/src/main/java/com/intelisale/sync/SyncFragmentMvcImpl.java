@@ -1,11 +1,10 @@
 package com.intelisale.sync;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -46,7 +45,7 @@ public class SyncFragmentMvcImpl extends BaseViewMvc<SyncFragmentMvc.Listener> i
 
                 for (int i = 0; i < mSyncAdapter.getItemCount(); i++) {
 
-                    View childView =  gridLayoutManager.getChildAt(i);
+                    View childView = gridLayoutManager.getChildAt(i);
                     if (childView != null) {
 
                         Switch mSwitch = childView.findViewById(R.id.itemSwitch);
@@ -76,15 +75,15 @@ public class SyncFragmentMvcImpl extends BaseViewMvc<SyncFragmentMvc.Listener> i
         class SyncViewHolder extends RecyclerView.ViewHolder {
 
             TextView mTitle, mSubtitle, mProgress;
-            FrameLayout mProgressLayout;
+            ImageView mStatus;
             Switch mSwitch;
 
             SyncViewHolder(View view) {
                 super(view);
                 mTitle = view.findViewById(R.id.tvTitle);
                 mSubtitle = view.findViewById(R.id.tvSubtitle);
+                mStatus = view.findViewById(R.id.ivStatus);
                 mProgress = view.findViewById(R.id.tvProgress);
-                mProgressLayout = view.findViewById(R.id.progressLayout);
                 mSwitch = view.findViewById(R.id.itemSwitch);
             }
         }
@@ -116,20 +115,26 @@ public class SyncFragmentMvcImpl extends BaseViewMvc<SyncFragmentMvc.Listener> i
             holder.mSubtitle.setText(entity.getSyncDate());
 
             switch (entity.getStatus()) {
-                case SyncStatusEntity.STATUS_IN_PROGRESS:
+                case "RUNNING":
+                    holder.mStatus.setImageResource(com.intelisale.salesleader.R.drawable.ic_status_running);
                     holder.mProgress.setText(String.format("%d%%", entity.getSyncProgress()));
-                    holder.mProgressLayout.setVisibility(View.VISIBLE);
+                    holder.mProgress.setVisibility(View.VISIBLE);
                     holder.mSwitch.setEnabled(false);
                     break;
-                case SyncStatusEntity.STATUS_SUCCESS:
-                    holder.mSubtitle.setTextColor(Color.DKGRAY);
-                    holder.mProgressLayout.setVisibility(View.GONE);
+                case "SUCCEEDED":
+                    holder.mStatus.setImageResource(com.intelisale.salesleader.R.drawable.ic_status_succeeded);
+                    holder.mProgress.setVisibility(View.GONE);
                     holder.mSwitch.setEnabled(true);
                     break;
-                case SyncStatusEntity.STATUS_FAIL:
-                    holder.mSubtitle.setTextColor(Color.RED);
-                    holder.mProgressLayout.setVisibility(View.GONE);
+                case "FAILED":
+                    holder.mStatus.setImageResource(com.intelisale.salesleader.R.drawable.ic_status_failed);
+                    holder.mProgress.setVisibility(View.GONE);
                     holder.mSwitch.setEnabled(true);
+                    break;
+                default:
+                    holder.mStatus.setImageResource(com.intelisale.salesleader.R.drawable.ic_status_waiting);
+                    holder.mProgress.setVisibility(View.GONE);
+                    holder.mSwitch.setEnabled(false);
                     break;
             }
         }

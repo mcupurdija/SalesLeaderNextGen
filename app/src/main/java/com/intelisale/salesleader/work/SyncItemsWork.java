@@ -1,4 +1,4 @@
-package com.intelisale.sync.work;
+package com.intelisale.salesleader.work;
 
 import android.content.Context;
 
@@ -21,10 +21,10 @@ import com.intelisale.networking.schema.items.ItemPackagesSchema;
 import com.intelisale.networking.schema.items.ItemSchema;
 import com.intelisale.networking.schema.items.SyncItemsResponseSchema;
 import com.intelisale.networking.schema.sync.SyncTableNames;
+import com.intelisale.salesleader.di.DaggerWorkComponent;
 import com.intelisale.salesleader.ui.common.base.BaseWorker;
-import com.intelisale.sync.di.DaggerSyncComponent;
-import com.intelisale.sync.work.helper.PaginationHelper;
-import com.intelisale.sync.work.helper.SyncObject;
+import com.intelisale.salesleader.work.helper.PaginationHelper;
+import com.intelisale.salesleader.work.helper.SyncObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +66,7 @@ public class SyncItemsWork extends BaseWorker {
 
         while (paginationHelper.setSyncRequest()) {
 
-            syncItemsRepository.updateStatus(paginationHelper.getPercentageCompleted());
+            syncItemsRepository.updateProgress(paginationHelper.getPercentageCompleted());
 
             Call<BaseSchema<SyncItemsResponseSchema>> call = syncApi.syncItems(1, new ArrayList<>(paginationHelper.getSyncRequest().values()));
             try {
@@ -121,27 +121,23 @@ public class SyncItemsWork extends BaseWorker {
                         }
                     } else {
 
-                        syncItemsRepository.updateStatus(false);
                         return Result.failure();
                     }
                 } else {
 
-                    syncItemsRepository.updateStatus(false);
                     return Result.failure();
                 }
             } catch (Exception e) {
 
-                syncItemsRepository.updateStatus(false);
                 return Result.failure();
             }
         }
 
-        syncItemsRepository.updateStatus(true);
         return Result.success();
     }
 
     private void inject() {
-        DaggerSyncComponent.builder()
+        DaggerWorkComponent.builder()
                 .coreComponent(getCoreComponent())
                 .build()
                 .injectSyncItemsWork(this);

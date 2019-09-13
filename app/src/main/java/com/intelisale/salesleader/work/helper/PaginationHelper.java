@@ -1,4 +1,4 @@
-package com.intelisale.sync.work.helper;
+package com.intelisale.salesleader.work.helper;
 
 import com.intelisale.networking.schema.sync.SyncSchema;
 

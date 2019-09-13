@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "6d9cb707cd6abd4f5e54b7bddcbc49c7",
+    "identityHash": "f90e0e3052db983f6bebd556a2e251ff",
     "entities": [
       {
         "tableName": "ApprovalStatuses",
@@ -828,7 +828,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_Contacts_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Contacts_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -4005,11 +4014,11 @@
       },
       {
         "tableName": "NotesAttachments",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteId` INTEGER, `filePath` TEXT, `devicePath` TEXT, `createdDate` TEXT, `typeId` INTEGER, `deletedFromDevice` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteID` INTEGER, `filePath` TEXT, `devicePath` TEXT, `createdDate` TEXT, `typeID` INTEGER, `deletedFromDevice` INTEGER, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "noteId",
-            "columnName": "noteId",
+            "fieldPath": "noteID",
+            "columnName": "noteID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4032,8 +4041,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "typeId",
-            "columnName": "typeId",
+            "fieldPath": "typeID",
+            "columnName": "typeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4095,22 +4104,31 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_NotesAttachments_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_NotesAttachments_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
         "tableName": "Notes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteTargetTypeId` INTEGER, `noteTargetId` INTEGER, `noteContent` TEXT, `customerId` INTEGER, `createdByUserId` INTEGER, `createdDate` TEXT, `reminder` TEXT, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteTargetTypeID` INTEGER, `noteTargetID` INTEGER, `noteContent` TEXT, `customerID` INTEGER, `createdByUserID` INTEGER, `createdDate` TEXT, `reminder` TEXT, `sent` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "noteTargetTypeId",
-            "columnName": "noteTargetTypeId",
+            "fieldPath": "noteTargetTypeID",
+            "columnName": "noteTargetTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "noteTargetId",
-            "columnName": "noteTargetId",
+            "fieldPath": "noteTargetID",
+            "columnName": "noteTargetID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4121,14 +4139,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "createdByUserId",
-            "columnName": "createdByUserId",
+            "fieldPath": "createdByUserID",
+            "columnName": "createdByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4196,7 +4214,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_Notes_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Notes_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -4267,22 +4294,31 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_NotesTargetGroups_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_NotesTargetGroups_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
         "tableName": "NotesTargetTypes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteTargetGroupId` INTEGER, `createdByUserId` INTEGER, `createdDate` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noteTargetGroupID` INTEGER, `createdByUserID` INTEGER, `createdDate` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "noteTargetGroupId",
-            "columnName": "noteTargetGroupId",
+            "fieldPath": "noteTargetGroupID",
+            "columnName": "noteTargetGroupID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "createdByUserId",
-            "columnName": "createdByUserId",
+            "fieldPath": "createdByUserID",
+            "columnName": "createdByUserID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -4356,7 +4392,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_NotesTargetTypes_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_NotesTargetTypes_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -7572,17 +7617,11 @@
       },
       {
         "tableName": "Settings",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serverId` INTEGER, `financialEntityId` INTEGER, `name` TEXT, `value` TEXT, `active` INTEGER, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serverID` INTEGER, `name` TEXT, `value` TEXT, `active` INTEGER, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "serverId",
-            "columnName": "serverId",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "financialEntityId",
-            "columnName": "financialEntityId",
+            "fieldPath": "serverID",
+            "columnName": "serverID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7617,7 +7656,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_Settings_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Settings_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -7835,7 +7883,7 @@
       },
       {
         "tableName": "SyncStatus",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupName` TEXT, `syncDate` TEXT, `syncProgress` INTEGER, `status` INTEGER, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupName` TEXT, `syncDate` TEXT, `syncProgress` INTEGER, `status` TEXT, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "groupName",
@@ -7858,7 +7906,7 @@
           {
             "fieldPath": "status",
             "columnName": "status",
-            "affinity": "INTEGER",
+            "affinity": "TEXT",
             "notNull": false
           },
           {
@@ -8671,7 +8719,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6d9cb707cd6abd4f5e54b7bddcbc49c7')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f90e0e3052db983f6bebd556a2e251ff')"
     ]
   }
 }

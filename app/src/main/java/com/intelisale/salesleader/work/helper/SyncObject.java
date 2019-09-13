@@ -1,4 +1,4 @@
-package com.intelisale.sync.work.helper;
+package com.intelisale.salesleader.work.helper;
 
 public class SyncObject {
 

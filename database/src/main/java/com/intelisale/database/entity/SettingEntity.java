@@ -1,32 +1,25 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseColumns;
 
-@Entity(tableName = "Settings")
+@Entity(tableName = TableNames.SETTINGS, indices = {@Index(value = "serverID", unique = true)})
 public class SettingEntity extends BaseColumns {
 
-    private Integer serverId;
-    private Integer financialEntityId;
+    private Integer serverID;
     private String name;
     private String value;
     private Boolean active;
 
-    public Integer getServerId() {
-        return serverId;
+    public Integer getServerID() {
+        return serverID;
     }
 
-    public void setServerId(Integer serverId) {
-        this.serverId = serverId;
-    }
-
-    public Integer getFinancialEntityId() {
-        return financialEntityId;
-    }
-
-    public void setFinancialEntityId(Integer financialEntityId) {
-        this.financialEntityId = financialEntityId;
+    public void setServerID(Integer serverID) {
+        this.serverID = serverID;
     }
 
     public String getName() {

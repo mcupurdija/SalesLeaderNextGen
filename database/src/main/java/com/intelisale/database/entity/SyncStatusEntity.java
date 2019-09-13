@@ -8,20 +8,16 @@ import com.intelisale.database.entity.column.BaseColumns;
 @Entity(tableName = "SyncStatus")
 public class SyncStatusEntity extends BaseColumns {
 
-    public static final int STATUS_IN_PROGRESS = 0;
-    public static final int STATUS_SUCCESS = 1;
-    public static final int STATUS_FAIL = 2;
-
     private String groupName;
     private String syncDate;
     private Integer syncProgress;
-    private Integer status;
+    private String status;
 
     public SyncStatusEntity() {
     }
 
     @Ignore
-    public SyncStatusEntity(String groupName, String syncDate, Integer syncProgress, Integer status) {
+    public SyncStatusEntity(String groupName, String syncDate, Integer syncProgress, String status) {
         this.groupName = groupName;
         this.syncDate = syncDate;
         this.syncProgress = syncProgress;
@@ -52,11 +48,11 @@ public class SyncStatusEntity extends BaseColumns {
         this.syncProgress = syncProgress;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 }

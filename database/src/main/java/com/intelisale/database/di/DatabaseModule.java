@@ -6,13 +6,17 @@ import androidx.annotation.NonNull;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.work.WorkInfo;
 
 import com.intelisale.database.AppDatabase;
 import com.intelisale.database.TableNames;
-import com.intelisale.database.dao.SyncStatusDao;
 import com.intelisale.database.entity.SyncStatusEntity;
+import com.intelisale.database.repository.SyncContactsRepository;
 import com.intelisale.database.repository.SyncCustomersRepository;
 import com.intelisale.database.repository.SyncItemsRepository;
+import com.intelisale.database.repository.SyncNotesRepository;
+import com.intelisale.database.repository.SyncSettingsRepository;
+import com.intelisale.database.repository.SyncStatusRepository;
 import com.intelisale.database.repository.UserRepository;
 import com.intelisale.database.utils.DateUtils;
 
@@ -43,12 +47,13 @@ public class DatabaseModule {
                             public void run() {
 
                                 String date = DateUtils.getDefaultDate();
-                                SyncStatusEntity obj0 = new SyncStatusEntity(TableNames.CUSTOMERS, date, 0, SyncStatusEntity.STATUS_FAIL);
-                                SyncStatusEntity obj1 = new SyncStatusEntity(TableNames.CONTACTS, date, 0, SyncStatusEntity.STATUS_FAIL);
-                                SyncStatusEntity obj2 = new SyncStatusEntity(TableNames.ITEMS, date, 0, SyncStatusEntity.STATUS_FAIL);
-                                SyncStatusEntity obj3 = new SyncStatusEntity(TableNames.CODEBOOKS, date, 0, SyncStatusEntity.STATUS_FAIL);
-                                SyncStatusEntity obj4 = new SyncStatusEntity(TableNames.SETTINGS, date, 0, SyncStatusEntity.STATUS_FAIL);
-                                SyncStatusEntity obj5 = new SyncStatusEntity(TableNames.NOTES, date, 0, SyncStatusEntity.STATUS_FAIL);
+                                String statusFailed = WorkInfo.State.FAILED.name();
+                                SyncStatusEntity obj0 = new SyncStatusEntity(TableNames.CUSTOMERS, date, 0, statusFailed);
+                                SyncStatusEntity obj1 = new SyncStatusEntity(TableNames.CONTACTS, date, 0, statusFailed);
+                                SyncStatusEntity obj2 = new SyncStatusEntity(TableNames.ITEMS, date, 0, statusFailed);
+                                SyncStatusEntity obj3 = new SyncStatusEntity(TableNames.CODEBOOKS, date, 0, statusFailed);
+                                SyncStatusEntity obj4 = new SyncStatusEntity(TableNames.SETTINGS, date, 0, statusFailed);
+                                SyncStatusEntity obj5 = new SyncStatusEntity(TableNames.NOTES, date, 0, statusFailed);
                                 getDatabase().getSyncStatusDao().insert(new ArrayList<>(Arrays.asList(obj0, obj1, obj2, obj3, obj4, obj5)));
 
                                 // Pre-populate
@@ -71,6 +76,12 @@ public class DatabaseModule {
     @Provides
     static UserRepository userRepository(AppDatabase appDatabase) {
         return new UserRepository(appDatabase.getUserDao());
+    }
+
+    @Singleton
+    @Provides
+    static SyncStatusRepository syncStatusRepository(AppDatabase appDatabase) {
+        return new SyncStatusRepository(appDatabase.getSyncStatusDao());
     }
 
     @Singleton
@@ -103,6 +114,39 @@ public class DatabaseModule {
                 appDatabase.getItemConnectionsDao(),
                 appDatabase.getItemPackagesDao(),
                 appDatabase.getItemAllowedToCustomerDao()
+        );
+    }
+
+    @Singleton
+    @Provides
+    static SyncContactsRepository syncContactsRepository(AppDatabase appDatabase) {
+        return new SyncContactsRepository(
+                appDatabase.getGlobalDao(),
+                appDatabase.getSyncStatusDao(),
+                appDatabase.getContactDao()
+        );
+    }
+
+    @Singleton
+    @Provides
+    static SyncNotesRepository syncNotesRepository(AppDatabase appDatabase) {
+        return new SyncNotesRepository(
+                appDatabase.getGlobalDao(),
+                appDatabase.getSyncStatusDao(),
+                appDatabase.getNoteDao(),
+                appDatabase.getNoteTargetGroupsDao(),
+                appDatabase.getNoteTargetTypesDao(),
+                appDatabase.getNoteAttachmentsDao()
+        );
+    }
+
+    @Singleton
+    @Provides
+    static SyncSettingsRepository syncSettingsRepository(AppDatabase appDatabase) {
+        return new SyncSettingsRepository(
+                appDatabase.getGlobalDao(),
+                appDatabase.getSyncStatusDao(),
+                appDatabase.getSettingDao()
         );
     }
 
@@ -550,13 +594,13 @@ public class DatabaseModule {
 //    StockInventoryLineDao getStockInventoryLineDao(AppDatabase appDatabase) {
 //        return appDatabase.getStockInventoryLineDao();
 //    }
-
-    @Singleton
-    @Provides
-    SyncStatusDao getSyncStatusDao(AppDatabase appDatabase) {
-        return appDatabase.getSyncStatusDao();
-    }
-
+//
+//    @Singleton
+//    @Provides
+//    SyncStatusDao getSyncStatusDao(AppDatabase appDatabase) {
+//        return appDatabase.getSyncStatusDao();
+//    }
+//
 //    @Singleton
 //    @Provides
 //    TagDao getTagDao(AppDatabase appDatabase) {

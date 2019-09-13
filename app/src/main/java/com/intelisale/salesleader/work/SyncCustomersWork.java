@@ -1,4 +1,4 @@
-package com.intelisale.sync.work;
+package com.intelisale.salesleader.work;
 
 import android.content.Context;
 
@@ -37,10 +37,10 @@ import com.intelisale.networking.schema.customers.SLProcessesPerCustomerSchema;
 import com.intelisale.networking.schema.customers.SLShelvesPerCustomerSchema;
 import com.intelisale.networking.schema.customers.SyncCustomersResponseSchema;
 import com.intelisale.networking.schema.sync.SyncTableNames;
+import com.intelisale.salesleader.di.DaggerWorkComponent;
 import com.intelisale.salesleader.ui.common.base.BaseWorker;
-import com.intelisale.sync.di.DaggerSyncComponent;
-import com.intelisale.sync.work.helper.PaginationHelper;
-import com.intelisale.sync.work.helper.SyncObject;
+import com.intelisale.salesleader.work.helper.PaginationHelper;
+import com.intelisale.salesleader.work.helper.SyncObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,7 +98,7 @@ public class SyncCustomersWork extends BaseWorker {
 
         while (paginationHelper.setSyncRequest()) {
 
-            syncCustomersRepository.updateStatus(paginationHelper.getPercentageCompleted());
+            syncCustomersRepository.updateProgress(paginationHelper.getPercentageCompleted());
 
             Call<BaseSchema<SyncCustomersResponseSchema>> call = syncApi.syncCustomers(1, new ArrayList<>(paginationHelper.getSyncRequest().values()));
             try {
@@ -233,27 +233,23 @@ public class SyncCustomersWork extends BaseWorker {
                         }
                     } else {
 
-                        syncCustomersRepository.updateStatus(false);
                         return Result.failure();
                     }
                 } else {
 
-                    syncCustomersRepository.updateStatus(false);
                     return Result.failure();
                 }
             } catch (Exception e) {
 
-                syncCustomersRepository.updateStatus(false);
                 return Result.failure();
             }
         }
 
-        syncCustomersRepository.updateStatus(true);
         return Result.success();
     }
 
     private void inject() {
-        DaggerSyncComponent.builder()
+        DaggerWorkComponent.builder()
                 .coreComponent(getCoreComponent())
                 .build()
                 .injectSyncCustomersWork(this);

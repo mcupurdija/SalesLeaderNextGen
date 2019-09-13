@@ -1,26 +1,28 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = "NotesAttachments")
+@Entity(tableName = TableNames.NOTES_ATTACHMENTS, indices = {@Index(value = "serverID", unique = true)})
 public class NoteAttachmentsEntity extends BaseAuditColumns {
 
-    private Integer noteId;
+    private Integer noteID;
     private String filePath;
     private String devicePath;
     private String createdDate;
-    private Integer typeId;
+    private Integer typeID;
     private Boolean deletedFromDevice;
     private Boolean sent;
 
-    public Integer getNoteId() {
-        return noteId;
+    public Integer getNoteID() {
+        return noteID;
     }
 
-    public void setNoteId(Integer noteId) {
-        this.noteId = noteId;
+    public void setNoteID(Integer noteID) {
+        this.noteID = noteID;
     }
 
     public String getFilePath() {
@@ -47,12 +49,12 @@ public class NoteAttachmentsEntity extends BaseAuditColumns {
         this.createdDate = createdDate;
     }
 
-    public Integer getTypeId() {
-        return typeId;
+    public Integer getTypeID() {
+        return typeID;
     }
 
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
+    public void setTypeID(Integer typeID) {
+        this.typeID = typeID;
     }
 
     public Boolean isDeletedFromDevice() {

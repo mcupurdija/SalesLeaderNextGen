@@ -13,7 +13,7 @@ import com.intelisale.salesleader.ui.common.base.BaseActivity;
 
 import javax.inject.Inject;
 
-public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener, LoginUseCase.Listener {
+public class LoginActivity extends BaseActivity implements LoginActivityMvc.Listener, LoginUseCase.Listener {
 
     @Inject
     LayoutInflater layoutInflater;
@@ -24,13 +24,13 @@ public class LoginActivity extends BaseActivity implements LoginViewMvc.Listener
     @Inject
     LoginUseCase mLoginUseCase;
 
-    private LoginViewMvc mViewMvc;
+    private LoginActivityMvc mViewMvc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         inject();
-        mViewMvc = new LoginViewMvcImpl(layoutInflater, null);
+        mViewMvc = new LoginActivityMvcImpl(layoutInflater, null);
         setContentView(mViewMvc.getRootView());
 
         boolean tokenExpired = getIntent().getBooleanExtra(Intent.EXTRA_REMOTE_INTENT_TOKEN, false);

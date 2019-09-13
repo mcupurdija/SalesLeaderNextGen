@@ -16,7 +16,7 @@ import com.intelisale.core.ui.BaseViewMvc;
 
 import org.apache.commons.lang3.StringUtils;
 
-class LoginViewMvcImpl extends BaseViewMvc<LoginViewMvc.Listener> implements LoginViewMvc, TextView.OnEditorActionListener, View.OnClickListener {
+class LoginActivityMvcImpl extends BaseViewMvc<LoginActivityMvc.Listener> implements LoginActivityMvc, TextView.OnEditorActionListener, View.OnClickListener {
 
     private TextInputLayout mUsernameLayout;
     private TextInputEditText mUsername;
@@ -25,7 +25,7 @@ class LoginViewMvcImpl extends BaseViewMvc<LoginViewMvc.Listener> implements Log
     private MaterialButton mLogin;
     private ProgressBar mProgressBar;
 
-    LoginViewMvcImpl(LayoutInflater layoutInflater, ViewGroup container) {
+    LoginActivityMvcImpl(LayoutInflater layoutInflater, ViewGroup container) {
         setRootView(layoutInflater.inflate(R.layout.activity_login, container, false));
 
         mUsernameLayout = findViewById(R.id.etlUsername);

@@ -1,30 +1,32 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "NotesTargetTypes")
+@Entity(tableName = TableNames.NOTES_TARGET_TYPES, indices = {@Index(value = "serverID", unique = true)})
 public class NoteTargetTypesEntity extends CodeBookColumns {
 
-    private Integer noteTargetGroupId;
-    private Integer createdByUserId;
+    private Integer noteTargetGroupID;
+    private Integer createdByUserID;
     private String createdDate;
 
-    public Integer getNoteTargetGroupId() {
-        return noteTargetGroupId;
+    public Integer getNoteTargetGroupID() {
+        return noteTargetGroupID;
     }
 
-    public void setNoteTargetGroupId(Integer noteTargetGroupId) {
-        this.noteTargetGroupId = noteTargetGroupId;
+    public void setNoteTargetGroupID(Integer noteTargetGroupID) {
+        this.noteTargetGroupID = noteTargetGroupID;
     }
 
-    public Integer getCreatedByUserId() {
-        return createdByUserId;
+    public Integer getCreatedByUserID() {
+        return createdByUserID;
     }
 
-    public void setCreatedByUserId(Integer createdByUserId) {
-        this.createdByUserId = createdByUserId;
+    public void setCreatedByUserID(Integer createdByUserID) {
+        this.createdByUserID = createdByUserID;
     }
 
     public String getCreatedDate() {

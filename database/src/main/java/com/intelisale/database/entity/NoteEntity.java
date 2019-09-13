@@ -1,35 +1,37 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.BaseAuditColumns;
 
-@Entity(tableName = "Notes")
+@Entity(tableName = TableNames.NOTES, indices = {@Index(value = "serverID", unique = true)})
 public class NoteEntity extends BaseAuditColumns {
 
-    private Integer noteTargetTypeId;
-    private Integer noteTargetId;
+    private Integer noteTargetTypeID;
+    private Integer noteTargetID;
     private String noteContent;
-    private Integer customerId;
-    private Integer createdByUserId;
+    private Integer customerID;
+    private Integer createdByUserID;
     private String createdDate;
     private String reminder;
     private Boolean sent;
 
-    public Integer getNoteTargetTypeId() {
-        return noteTargetTypeId;
+    public Integer getNoteTargetTypeID() {
+        return noteTargetTypeID;
     }
 
-    public void setNoteTargetTypeId(Integer noteTargetTypeId) {
-        this.noteTargetTypeId = noteTargetTypeId;
+    public void setNoteTargetTypeID(Integer noteTargetTypeID) {
+        this.noteTargetTypeID = noteTargetTypeID;
     }
 
-    public Integer getNoteTargetId() {
-        return noteTargetId;
+    public Integer getNoteTargetID() {
+        return noteTargetID;
     }
 
-    public void setNoteTargetId(Integer noteTargetId) {
-        this.noteTargetId = noteTargetId;
+    public void setNoteTargetID(Integer noteTargetID) {
+        this.noteTargetID = noteTargetID;
     }
 
     public String getNoteContent() {
@@ -40,20 +42,20 @@ public class NoteEntity extends BaseAuditColumns {
         this.noteContent = noteContent;
     }
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
-    public Integer getCreatedByUserId() {
-        return createdByUserId;
+    public Integer getCreatedByUserID() {
+        return createdByUserID;
     }
 
-    public void setCreatedByUserId(Integer createdByUserId) {
-        this.createdByUserId = createdByUserId;
+    public void setCreatedByUserID(Integer createdByUserID) {
+        this.createdByUserID = createdByUserID;
     }
 
     public String getCreatedDate() {
