@@ -35,7 +35,7 @@ public class MyWorkManager {
     private Map<String, String> successTracker = new HashMap<>();
 
     @Inject
-    public MyWorkManager(WorkManager mWorkManager, SyncStatusRepository mSyncStatusRepository, ToastManager mToastManager) {
+    MyWorkManager(WorkManager mWorkManager, SyncStatusRepository mSyncStatusRepository, ToastManager mToastManager) {
         this.mWorkManager = mWorkManager;
         this.mSyncStatusRepository = mSyncStatusRepository;
         this.mToastManager = mToastManager;
@@ -120,37 +120,37 @@ public class MyWorkManager {
         mWorkManager.getWorkInfosByTagLiveData(Constants.SETTINGS_WR_TAG).observeForever(new Observer<List<WorkInfo>>() {
             @Override
             public void onChanged(List<WorkInfo> infoList) {
-                updateSyncStatus(TableNames.SETTINGS, infoList);
+                updateSyncStatusAndTrackSuccess(TableNames.SETTINGS, infoList);
             }
         });
         mWorkManager.getWorkInfosByTagLiveData(Constants.CODEBOOKS_WR_TAG).observeForever(new Observer<List<WorkInfo>>() {
             @Override
             public void onChanged(List<WorkInfo> infoList) {
-                updateSyncStatus(TableNames.CODEBOOKS, infoList);
+                updateSyncStatusAndTrackSuccess(TableNames.CODEBOOKS, infoList);
             }
         });
         mWorkManager.getWorkInfosByTagLiveData(Constants.CUSTOMERS_WR_TAG).observeForever(new Observer<List<WorkInfo>>() {
             @Override
             public void onChanged(List<WorkInfo> infoList) {
-                updateSyncStatus(TableNames.CUSTOMERS, infoList);
+                updateSyncStatusAndTrackSuccess(TableNames.CUSTOMERS, infoList);
             }
         });
         mWorkManager.getWorkInfosByTagLiveData(Constants.CONTACTS_WR_TAG).observeForever(new Observer<List<WorkInfo>>() {
             @Override
             public void onChanged(List<WorkInfo> infoList) {
-                updateSyncStatus(TableNames.CONTACTS, infoList);
+                updateSyncStatusAndTrackSuccess(TableNames.CONTACTS, infoList);
             }
         });
         mWorkManager.getWorkInfosByTagLiveData(Constants.ITEMS_WR_TAG).observeForever(new Observer<List<WorkInfo>>() {
             @Override
             public void onChanged(List<WorkInfo> infoList) {
-                updateSyncStatus(TableNames.ITEMS, infoList);
+                updateSyncStatusAndTrackSuccess(TableNames.ITEMS, infoList);
             }
         });
         mWorkManager.getWorkInfosByTagLiveData(Constants.NOTES_WR_TAG).observeForever(new Observer<List<WorkInfo>>() {
             @Override
             public void onChanged(List<WorkInfo> infoList) {
-                updateSyncStatus(TableNames.NOTES, infoList);
+                updateSyncStatusAndTrackSuccess(TableNames.NOTES, infoList);
             }
         });
 
@@ -158,14 +158,18 @@ public class MyWorkManager {
         workContinuation.enqueue();
     }
 
-    private void updateSyncStatus(String tableName, List<WorkInfo> infoList) {
+    private void updateSyncStatusAndTrackSuccess(String tableName, List<WorkInfo> infoList) {
 
         if (infoList.size() == 0) return;
 
-        String state = infoList.get(infoList.size() - 1).getState().name();
-        mSyncStatusRepository.updateStatus(tableName, state);
+        WorkInfo.State state = infoList.get(infoList.size() - 1).getState();
+        if (state == WorkInfo.State.SUCCEEDED || state == WorkInfo.State.FAILED) {
+            mSyncStatusRepository.updateStatusCompleted(tableName, state.name());
+        } else {
+            mSyncStatusRepository.updateStatus(tableName, state.name());
+        }
 
-        successTracker.put(tableName, state);
+        successTracker.put(tableName, state.name());
         if (Collections.frequency(successTracker.values(), WorkInfo.State.SUCCEEDED.name()) == 6) {
 
             mToastManager.displayCenteredToast("SYNC HAS COMPLETED SUCCESSFULLY");

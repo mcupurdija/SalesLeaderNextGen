@@ -16,6 +16,9 @@ public abstract class SyncStatusDao extends BaseDao<SyncStatusEntity> {
     @Query("UPDATE SyncStatus SET status = :status WHERE groupName = :groupName")
     public abstract Completable updateStatus(String groupName, String status);
 
+    @Query("UPDATE SyncStatus SET status = :status, syncProgress = 0, syncDate = datetime() WHERE groupName = :groupName")
+    public abstract Completable updateStatusCompleted(String groupName, String status);
+
     @Query("UPDATE SyncStatus SET syncProgress = :syncProgress WHERE groupName = :groupName")
     public abstract void updateProgress(String groupName, int syncProgress);
 

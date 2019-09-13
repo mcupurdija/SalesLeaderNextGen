@@ -25,4 +25,8 @@ public class SyncStatusRepository {
     public Disposable updateStatus(String groupName, String status) {
         return syncStatusDao.updateStatus(groupName, status).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe();
     }
+
+    public Disposable updateStatusCompleted(String groupName, String status) {
+        return syncStatusDao.updateStatusCompleted(groupName, status).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe();
+    }
 }
