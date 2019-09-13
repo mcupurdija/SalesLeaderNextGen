@@ -47,6 +47,7 @@ public class MainActivityMvcImpl extends BaseViewMvc<MainActivityMvc.Listener> i
                         new PrimaryDrawerItem().withName("Sync")
                 )
                 .withOnDrawerItemClickListener(this)
+                .withDelayDrawerClickEvent(500)
                 .build();
     }
 

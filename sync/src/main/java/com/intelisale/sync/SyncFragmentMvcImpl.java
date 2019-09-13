@@ -6,12 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textview.MaterialTextView;
 import com.intelisale.core.ui.BaseViewMvc;
 import com.intelisale.database.entity.SyncStatusEntity;
 
@@ -85,7 +85,7 @@ public class SyncFragmentMvcImpl extends BaseViewMvc<SyncFragmentMvc.Listener> i
 
         class SyncViewHolder extends RecyclerView.ViewHolder {
 
-            TextView mTitle, mSubtitle, mProgress;
+            MaterialTextView mTitle, mSubtitle, mProgress;
             ImageView mStatus;
             Switch mSwitch;
 
