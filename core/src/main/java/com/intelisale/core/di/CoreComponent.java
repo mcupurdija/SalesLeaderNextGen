@@ -9,6 +9,7 @@ import com.intelisale.core.di.settings.SettingsModule;
 import com.intelisale.core.eventbus.EventBusPoster;
 import com.intelisale.core.eventbus.EventBusSubscriber;
 import com.intelisale.core.logging.MyLogger;
+import com.intelisale.core.notifications.ToastManager;
 import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.useCase.LoginUseCase;
 import com.intelisale.database.di.DatabaseModule;
@@ -48,6 +49,8 @@ public interface CoreComponent {
 
         CoreComponent build();
     }
+
+    ToastManager toastManager();
 
     WorkManager workManager();
 

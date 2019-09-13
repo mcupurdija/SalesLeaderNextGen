@@ -10,6 +10,8 @@ public interface SyncFragmentMvc extends ObservableViewMvc<SyncFragmentMvc.Liste
     void bindEntities(List<SyncStatusEntity> entities);
 
     interface Listener {
-        void onSyncButtonClicked(List<String> checkedItems);
+        void onSyncSelectedButtonClicked(List<String> checkedItems);
+
+        void onSyncAllButtonClicked();
     }
 }

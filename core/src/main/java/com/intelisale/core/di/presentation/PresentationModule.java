@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentManager;
 import com.intelisale.core.dialogFragment.DialogFragmentManager;
 import com.intelisale.core.imageLoader.ImageLoader;
 import com.intelisale.core.notifications.DialogManager;
-import com.intelisale.core.notifications.ToastManager;
 
 import dagger.Module;
 import dagger.Provides;
@@ -37,11 +36,6 @@ public class PresentationModule {
     @Provides
     static DialogManager dialogManager(Context context) {
         return new DialogManager(context);
-    }
-
-    @Provides
-    static ToastManager toastManager(Context context) {
-        return new ToastManager(context);
     }
 
     @Provides

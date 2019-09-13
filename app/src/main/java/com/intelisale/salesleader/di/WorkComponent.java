@@ -2,6 +2,7 @@ package com.intelisale.salesleader.di;
 
 import com.intelisale.core.di.CoreComponent;
 import com.intelisale.core.di.scope.FeatureScope;
+import com.intelisale.salesleader.work.SyncCodeBooksWork;
 import com.intelisale.salesleader.work.SyncContactsWork;
 import com.intelisale.salesleader.work.SyncCustomersWork;
 import com.intelisale.salesleader.work.SyncItemsWork;
@@ -14,13 +15,15 @@ import dagger.Component;
 @Component(dependencies = {CoreComponent.class})
 public interface WorkComponent {
 
-    void injectSyncCustomersWork(SyncCustomersWork syncCustomersWork);
+    void injectSyncSettingsWork(SyncSettingsWork syncSettingsWork);
 
-    void injectSyncItemsWork(SyncItemsWork syncItemsWork);
+    void injectSyncCodeBooksWork(SyncCodeBooksWork syncCodeBooksWork);
+
+    void injectSyncCustomersWork(SyncCustomersWork syncCustomersWork);
 
     void injectSyncContactsWork(SyncContactsWork syncContactsWork);
 
-    void injectSyncNotesWork(SyncNotesWork syncNotesWork);
+    void injectSyncItemsWork(SyncItemsWork syncItemsWork);
 
-    void injectSyncSettingsWork(SyncSettingsWork syncSettingsWork);
+    void injectSyncNotesWork(SyncNotesWork syncNotesWork);
 }

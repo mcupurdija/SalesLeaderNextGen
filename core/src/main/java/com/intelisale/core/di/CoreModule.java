@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intelisale.core.eventbus.EventBusPoster;
 import com.intelisale.core.eventbus.EventBusSubscriber;
 import com.intelisale.core.logging.MyLogger;
+import com.intelisale.core.notifications.ToastManager;
 import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.useCase.LoginUseCase;
 import com.intelisale.networking.SessionManager;
@@ -51,6 +52,12 @@ public class CoreModule {
     @Provides
     EventBusSubscriber eventBusSubscriber() {
         return new EventBusSubscriber(EventBus.getDefault());
+    }
+
+    @Singleton
+    @Provides
+    static ToastManager toastManager(Application application) {
+        return new ToastManager(application.getApplicationContext());
     }
 
     @Singleton

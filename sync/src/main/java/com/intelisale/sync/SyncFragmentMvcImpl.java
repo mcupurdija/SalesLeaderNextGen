@@ -36,8 +36,8 @@ public class SyncFragmentMvcImpl extends BaseViewMvc<SyncFragmentMvc.Listener> i
         mSyncAdapter = new SyncAdapter();
         mRecyclerView.setAdapter(mSyncAdapter);
 
-        final MaterialButton mSyncButton = findViewById(R.id.bSync);
-        mSyncButton.setOnClickListener(new View.OnClickListener() {
+        final MaterialButton mSyncSelectedButton = findViewById(R.id.bSyncSelected);
+        mSyncSelectedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -57,7 +57,18 @@ public class SyncFragmentMvcImpl extends BaseViewMvc<SyncFragmentMvc.Listener> i
                 }
 
                 for (Listener listener : getListeners()) {
-                    listener.onSyncButtonClicked(checkedItems);
+                    listener.onSyncSelectedButtonClicked(checkedItems);
+                }
+            }
+        });
+
+        final MaterialButton mSyncAllButton = findViewById(R.id.bSyncAll);
+        mSyncAllButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                for (Listener listener : getListeners()) {
+                    listener.onSyncAllButtonClicked();
                 }
             }
         });

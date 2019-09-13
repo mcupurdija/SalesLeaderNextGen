@@ -82,7 +82,12 @@ public class SyncFragment extends BaseFragment implements SyncFragmentMvc.Listen
     }
 
     @Override
-    public void onSyncButtonClicked(List<String> checkedItems) {
+    public void onSyncSelectedButtonClicked(List<String> checkedItems) {
         myWorkManager.enqueueSelected(checkedItems);
+    }
+
+    @Override
+    public void onSyncAllButtonClicked() {
+        myWorkManager.enqueueAll();
     }
 }
