@@ -1,10 +1,12 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "CustomListsHeaders")
+@Entity(tableName = TableNames.CUSTOM_LISTS_HEADERS, indices = {@Index(value = "serverID", unique = true)})
 public class CustomListsHeaderEntity extends CodeBookColumns {
 
     private Integer salesLeaderSalesLevelTypeId;

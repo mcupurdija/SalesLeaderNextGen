@@ -24,8 +24,8 @@ public class CustomListSchema {
     private Integer salesLevelId;
     @JsonProperty("active")
     private Boolean active;
-    @JsonProperty("modifiedByUserId")
-    private Integer modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    private Integer modifiedByUserID;
     @JsonProperty("forAllUsers")
     private Boolean forAllUsers;
     @JsonProperty("sortIndex")
@@ -101,14 +101,14 @@ public class CustomListSchema {
         this.active = active;
     }
 
-    @JsonProperty("modifiedByUserId")
-    public Integer getModifiedByUserId() {
-        return modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    public Integer getModifiedByUserID() {
+        return modifiedByUserID;
     }
 
-    @JsonProperty("modifiedByUserId")
-    public void setModifiedByUserId(Integer modifiedByUserId) {
-        this.modifiedByUserId = modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    public void setModifiedByUserID(Integer modifiedByUserID) {
+        this.modifiedByUserID = modifiedByUserID;
     }
 
     @JsonProperty("forAllUsers")

@@ -28,8 +28,8 @@ public class ServiceClassificationSchema {
     private String modifiedDate;
     @JsonProperty("auditID")
     private Integer auditID;
-    @JsonProperty("modifiedByUserId")
-    private Integer modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    private Integer modifiedByUserID;
     @JsonProperty("active")
     private Boolean active;
     @JsonIgnore
@@ -115,14 +115,14 @@ public class ServiceClassificationSchema {
         this.auditID = auditID;
     }
 
-    @JsonProperty("modifiedByUserId")
-    public Integer getModifiedByUserId() {
-        return modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    public Integer getModifiedByUserID() {
+        return modifiedByUserID;
     }
 
-    @JsonProperty("modifiedByUserId")
-    public void setModifiedByUserId(Integer modifiedByUserId) {
-        this.modifiedByUserId = modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    public void setModifiedByUserID(Integer modifiedByUserID) {
+        this.modifiedByUserID = modifiedByUserID;
     }
 
     @JsonProperty("active")

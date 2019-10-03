@@ -1,9 +1,11 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "ContactDepartments")
+@Entity(tableName = TableNames.CONTACTS_DEPARTMENTS, indices = {@Index(value = "serverID", unique = true)})
 public class ContactDepartmentEntity extends CodeBookColumns {
 }

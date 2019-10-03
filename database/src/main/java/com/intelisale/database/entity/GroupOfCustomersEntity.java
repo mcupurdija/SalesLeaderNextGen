@@ -1,10 +1,12 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "GroupsOfCustomers")
+@Entity(tableName = TableNames.GROUPS_OF_CUSTOMERS, indices = {@Index(value = "serverID", unique = true)})
 public class GroupOfCustomersEntity extends CodeBookColumns {
 
     private String parentCode;

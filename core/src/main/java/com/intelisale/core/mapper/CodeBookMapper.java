@@ -91,9 +91,10 @@ public abstract class CodeBookMapper {
     public abstract ApprovalStatusEntity approvalStatusEntity(ApprovalStatusSchema schema);
     public abstract List<ApprovalStatusEntity> approvalStatusEntities(List<ApprovalStatusSchema> schemas);
 
-
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "sortIndex", ignore = true),
+            @Mapping(target = "auditID", ignore = true)
     })
     public abstract StockAvailabilityStatusEntity stockAvailabilityStatusEntity(StockAvailabilityStatusSchema schema);
     public abstract List<StockAvailabilityStatusEntity> stockAvailabilityStatusEntities(List<StockAvailabilityStatusSchema> schemas);
@@ -111,7 +112,8 @@ public abstract class CodeBookMapper {
     public abstract List<ContactPositionEntity> contactPositionEntities(List<ContactsPositionSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract GroupOfCustomersEntity groupOfCustomersEntity(GroupsOfCustomersSchema schema);
     public abstract List<GroupOfCustomersEntity> groupOfCustomersEntities(List<GroupsOfCustomersSchema> schemas);
@@ -165,7 +167,8 @@ public abstract class CodeBookMapper {
     public abstract List<SalesTypeEntity> salesTypeEntities(List<SalesTypeSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "municipalityID", target = "serverID")
+            @Mapping(source = "municipalityID", target = "serverID"),
+            @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract MunicipalityEntity municipalityEntity(MunicipalitySchema schema);
     public abstract List<MunicipalityEntity> municipalityEntities(List<MunicipalitySchema> schemas);
@@ -225,7 +228,8 @@ public abstract class CodeBookMapper {
     public abstract List<SalesDocumentConditionEntity> salesDocumentConditionEntities(List<SalesDocumentConditionSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "auditID", ignore = true)
     })
     public abstract UserDefinedListEntity userDefinedListEntity(CustomListSchema schema);
     public abstract List<UserDefinedListEntity> userDefinedListEntities(List<CustomListSchema> schemas);
@@ -237,7 +241,8 @@ public abstract class CodeBookMapper {
     public abstract List<SalesLeaderCustomerCardColorEntity> salesLeaderCustomerCardColorEntities(List<SLCustomerCardColorSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract CategoryOfItemsEntity categoryOfItemsEntity(CategoriesOfItemSchema schema);
     public abstract List<CategoryOfItemsEntity> categoryOfItemsEntities(List<CategoriesOfItemSchema> schemas);
@@ -267,7 +272,8 @@ public abstract class CodeBookMapper {
     public abstract List<TransactionTypeEntity> transactionTypeEntities(List<TransactionTypeSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "auditID", ignore = true)
     })
     public abstract ServiceOrdersStatusEntity serviceOrdersStatusEntity(ServiceOrderStatusSchema schema);
     public abstract List<ServiceOrdersStatusEntity> serviceOrdersStatusEntities(List<ServiceOrderStatusSchema> schemas);
@@ -291,7 +297,9 @@ public abstract class CodeBookMapper {
     public abstract List<UserEntity> userEntities(List<UserSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "sortIndex", ignore = true),
+            @Mapping(target = "auditID", ignore = true)
     })
     public abstract GroupOfCustomersCategoryItemsEntity groupOfCustomersCategoryItemsEntity(GroupOfCustomersCategoryItemSchema schema);
     public abstract List<GroupOfCustomersCategoryItemsEntity> groupOfCustomersCategoryItemsEntities(List<GroupOfCustomersCategoryItemSchema> schemas);

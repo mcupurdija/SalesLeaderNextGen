@@ -24,8 +24,8 @@ public class GroupOfCustomersCategoryItemSchema {
     private Integer importance;
     @JsonProperty("modifiedDate")
     private String modifiedDate;
-    @JsonProperty("modifiedByUserId")
-    private Integer modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    private Integer modifiedByUserID;
     @JsonProperty("active")
     private Boolean active;
     @JsonIgnore
@@ -91,14 +91,14 @@ public class GroupOfCustomersCategoryItemSchema {
         this.modifiedDate = modifiedDate;
     }
 
-    @JsonProperty("modifiedByUserId")
-    public Integer getModifiedByUserId() {
-        return modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    public Integer getModifiedByUserID() {
+        return modifiedByUserID;
     }
 
-    @JsonProperty("modifiedByUserId")
-    public void setModifiedByUserId(Integer modifiedByUserId) {
-        this.modifiedByUserId = modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    public void setModifiedByUserID(Integer modifiedByUserID) {
+        this.modifiedByUserID = modifiedByUserID;
     }
 
     @JsonProperty("active")

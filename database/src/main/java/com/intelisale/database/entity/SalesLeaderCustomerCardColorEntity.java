@@ -1,10 +1,12 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "SalesLeaderCustomerCardColors")
+@Entity(tableName = TableNames.SL_CUSTOMER_CARD_COLORS, indices = {@Index(value = "serverID", unique = true)})
 public class SalesLeaderCustomerCardColorEntity extends CodeBookColumns {
 
     private String description2;

@@ -25,8 +25,8 @@ public class UserSchema {
     private String modifiedDate;
     @JsonProperty("companyId")
     private String companyId;
-    @JsonProperty("modifiedByUserId")
-    private Integer modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    private Integer modifiedByUserID;
     @JsonProperty("active")
     private Boolean active;
     @JsonIgnore
@@ -92,14 +92,14 @@ public class UserSchema {
         this.companyId = companyId;
     }
 
-    @JsonProperty("modifiedByUserId")
-    public Integer getModifiedByUserId() {
-        return modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    public Integer getModifiedByUserID() {
+        return modifiedByUserID;
     }
 
-    @JsonProperty("modifiedByUserId")
-    public void setModifiedByUserId(Integer modifiedByUserId) {
-        this.modifiedByUserId = modifiedByUserId;
+    @JsonProperty("modifiedByUserID")
+    public void setModifiedByUserID(Integer modifiedByUserID) {
+        this.modifiedByUserID = modifiedByUserID;
     }
 
     @JsonProperty("active")

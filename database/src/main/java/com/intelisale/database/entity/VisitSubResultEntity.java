@@ -1,14 +1,16 @@
 package com.intelisale.database.entity;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 
+import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = "VisitSubResults")
+@Entity(tableName = TableNames.VISIT_SUB_RESULTS, indices = {@Index(value = "serverID", unique = true)})
 public class VisitSubResultEntity extends CodeBookColumns {
 
     private String name;
-    private Integer visitTypeId;
+    private Integer visitTypeID;
 
     public String getName() {
         return name;
@@ -18,11 +20,11 @@ public class VisitSubResultEntity extends CodeBookColumns {
         this.name = name;
     }
 
-    public Integer getVisitTypeId() {
-        return visitTypeId;
+    public Integer getVisitTypeID() {
+        return visitTypeID;
     }
 
-    public void setVisitTypeId(Integer visitTypeId) {
-        this.visitTypeId = visitTypeId;
+    public void setVisitTypeID(Integer visitTypeID) {
+        this.visitTypeID = visitTypeID;
     }
 }

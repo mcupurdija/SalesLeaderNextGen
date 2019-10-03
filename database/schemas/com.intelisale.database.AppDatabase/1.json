@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "f90e0e3052db983f6bebd556a2e251ff",
+    "identityHash": "d696f66e24bdfbfabd03ecc2a472c072",
     "entities": [
       {
         "tableName": "ApprovalStatuses",
@@ -8539,7 +8539,7 @@
       },
       {
         "tableName": "VisitSubResults",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `visitTypeId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `visitTypeID` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "name",
@@ -8548,8 +8548,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "visitTypeId",
-            "columnName": "visitTypeId",
+            "fieldPath": "visitTypeID",
+            "columnName": "visitTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -8719,7 +8719,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f90e0e3052db983f6bebd556a2e251ff')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd696f66e24bdfbfabd03ecc2a472c072')"
     ]
   }
 }
