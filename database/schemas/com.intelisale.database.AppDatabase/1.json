@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "d696f66e24bdfbfabd03ecc2a472c072",
+    "identityHash": "bda9ab6b72bbfc0caf5c17db2193d717",
     "entities": [
       {
         "tableName": "ApprovalStatuses",
@@ -72,11 +72,20 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_ApprovalStatuses_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ApprovalStatuses_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
-        "tableName": "BackOrderShipment",
+        "tableName": "BackOrderShipmentStatuses",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -143,7 +152,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_BackOrderShipmentStatuses_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_BackOrderShipmentStatuses_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -238,7 +256,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CategoriesOfItems_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CategoriesOfItems_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -466,7 +493,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CommentsSources_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CommentsSources_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -537,7 +573,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CommentsTargets_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CommentsTargets_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -630,7 +675,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "ContactDepartments",
+        "tableName": "ContactsDepartments",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -697,7 +742,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_ContactsDepartments_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ContactsDepartments_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -841,7 +895,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "ContactPositions",
+        "tableName": "ContactsPositions",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -908,7 +962,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_ContactsPositions_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ContactsPositions_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -979,7 +1042,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CreatedDocumentStatus_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CreatedDocumentStatus_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -1756,7 +1828,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "CustomerPaymentConditions",
+        "tableName": "CustPaymentConditions",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`noOfDays` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -1829,11 +1901,20 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustPaymentConditions_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustPaymentConditions_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
-        "tableName": "CustomerPaymentMethods",
+        "tableName": "CustPaymentMethods",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -1900,7 +1981,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustPaymentMethods_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustPaymentMethods_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -2187,7 +2277,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "CustomerShipmentMethods",
+        "tableName": "CustShipmentMethods",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -2254,7 +2344,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustShipmentMethods_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustShipmentMethods_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -2759,17 +2858,17 @@
       },
       {
         "tableName": "CustomListsHeaders",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`salesLeaderSalesLevelTypeId` INTEGER, `salesLevelId` INTEGER, `forAllUsers` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`salesLeaderSalesLevelTypeID` INTEGER, `salesLevelID` INTEGER, `forAllUsers` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "salesLeaderSalesLevelTypeId",
-            "columnName": "salesLeaderSalesLevelTypeId",
+            "fieldPath": "salesLeaderSalesLevelTypeID",
+            "columnName": "salesLeaderSalesLevelTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "salesLevelId",
-            "columnName": "salesLevelId",
+            "fieldPath": "salesLevelID",
+            "columnName": "salesLevelID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -2843,7 +2942,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_CustomListsHeaders_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CustomListsHeaders_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -2994,7 +3102,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_DocumentTypes_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_DocumentTypes_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -3065,7 +3182,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_DocumentVerificationStatuses_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_DocumentVerificationStatuses_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -3232,7 +3358,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "GroupsOfCustomersCategoryItems",
+        "tableName": "GroupOfCustomersCategoryItems",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`groupOfCustomerId` INTEGER, `categoryOfItemsId` INTEGER, `rank` INTEGER, `importance` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -3323,7 +3449,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_GroupOfCustomersCategoryItems_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_GroupOfCustomersCategoryItems_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -3412,7 +3547,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_GroupsOfCustomers_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_GroupsOfCustomers_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -3867,7 +4011,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_ItemStatuses_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ItemStatuses_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -3938,7 +4091,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_ItemUnitOfMeasures_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ItemUnitOfMeasures_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -4009,7 +4171,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_Municipalities_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Municipalities_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -4472,7 +4643,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_PostalCodesAndCities_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_PostalCodesAndCities_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -5201,7 +5381,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SalesDocumentConditions_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SalesDocumentConditions_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -5272,7 +5461,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SalesDocumentTypes_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SalesDocumentTypes_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -5475,7 +5673,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "SalesLeaderCustomerCardColors",
+        "tableName": "SLCustomerCardColors",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`description2` TEXT, `condition` TEXT, `colorCode` TEXT, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -5560,11 +5758,20 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SLCustomerCardColors_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SLCustomerCardColors_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
-        "tableName": "SalesLeaderDirections",
+        "tableName": "SLDirection",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -5631,7 +5838,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SLDirection_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SLDirection_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -6934,7 +7150,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "SalesLeaderSalesLevelTypes",
+        "tableName": "SLSalesLevelTypes",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -7001,7 +7217,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SLSalesLevelTypes_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SLSalesLevelTypes_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -7170,7 +7395,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SalesPriceTypes_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SalesPriceTypes_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -7241,16 +7475,25 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_SalesTypes_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SalesTypes_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
         "tableName": "ServiceClassification",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serviceClassificationTypeId` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serviceClassificationTypeID` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "serviceClassificationTypeId",
-            "columnName": "serviceClassificationTypeId",
+            "fieldPath": "serviceClassificationTypeID",
+            "columnName": "serviceClassificationTypeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -7318,7 +7561,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_ServiceClassification_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ServiceClassification_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -7389,7 +7641,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_ServiceClassificationTypes_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ServiceClassificationTypes_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -7545,7 +7806,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "ServiceOrdersStatuses",
+        "tableName": "ServiceOrdersStatus",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
@@ -7612,7 +7873,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_ServiceOrdersStatus_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ServiceOrdersStatus_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -7736,7 +8006,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_StockAvailabilityStatuses_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_StockAvailabilityStatuses_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -8064,22 +8343,31 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_TransactionTypes_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_TransactionTypes_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
         "tableName": "UserDefinedLists",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`listId` INTEGER, `customerId` INTEGER, `listName` TEXT, `specialType` TEXT, `listEditable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`listID` INTEGER, `customerID` INTEGER, `listName` TEXT, `specialType` TEXT, `listEditable` INTEGER, `code` TEXT, `description` TEXT, `sortIndex` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "listId",
-            "columnName": "listId",
+            "fieldPath": "listID",
+            "columnName": "listID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "customerId",
-            "columnName": "customerId",
+            "fieldPath": "customerID",
+            "columnName": "customerID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -8165,12 +8453,22 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_UserDefinedLists_listID_customerID",
+            "unique": true,
+            "columnNames": [
+              "listID",
+              "customerID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_UserDefinedLists_listID_customerID` ON `${TABLE_NAME}` (`listID`, `customerID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
         "tableName": "Users",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`firstName` TEXT, `lastName` TEXT, `name` TEXT, `password` TEXT, `lastPassword` TEXT, `companyId` INTEGER, `employeeId` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`firstName` TEXT, `lastName` TEXT, `name` TEXT, `password` TEXT, `lastPassword` TEXT, `companyID` INTEGER, `employeeID` INTEGER, `serverID` INTEGER, `modifiedByUserID` INTEGER, `modifiedDate` TEXT DEFAULT '1970-01-01T00:00:00.000', `auditID` INTEGER DEFAULT 0, `active` INTEGER DEFAULT 1, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "firstName",
@@ -8203,14 +8501,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "companyId",
-            "columnName": "companyId",
+            "fieldPath": "companyID",
+            "columnName": "companyID",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "employeeId",
-            "columnName": "employeeId",
+            "fieldPath": "employeeID",
+            "columnName": "employeeID",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -8260,7 +8558,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_Users_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Users_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -8617,7 +8924,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_VisitSubResults_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_VisitSubResults_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -8712,14 +9028,23 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_Warehouses_serverID",
+            "unique": true,
+            "columnNames": [
+              "serverID"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Warehouses_serverID` ON `${TABLE_NAME}` (`serverID`)"
+          }
+        ],
         "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd696f66e24bdfbfabd03ecc2a472c072')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bda9ab6b72bbfc0caf5c17db2193d717')"
     ]
   }
 }

@@ -9,7 +9,7 @@ import com.intelisale.networking.schema.BaseRecordSchema;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SyncCodeBooksResponseDataSchema {
+public class SyncCodeBooksResponseSchema {
 
     @JsonProperty("ApprovalStatuses")
     private BaseRecordSchema<ApprovalStatusSchema> approvalStatuses = null;

@@ -11,6 +11,7 @@ import androidx.work.WorkInfo;
 import com.intelisale.database.AppDatabase;
 import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.SyncStatusEntity;
+import com.intelisale.database.repository.SyncCodeBooksRepository;
 import com.intelisale.database.repository.SyncContactsRepository;
 import com.intelisale.database.repository.SyncCustomersRepository;
 import com.intelisale.database.repository.SyncItemsRepository;
@@ -114,6 +115,51 @@ public class DatabaseModule {
                 appDatabase.getItemConnectionsDao(),
                 appDatabase.getItemPackagesDao(),
                 appDatabase.getItemAllowedToCustomerDao()
+        );
+    }
+
+    @Singleton
+    @Provides
+    static SyncCodeBooksRepository syncCodeBooksRepository(AppDatabase appDatabase) {
+        return new SyncCodeBooksRepository(
+                appDatabase.getGlobalDao(),
+                appDatabase.getSyncStatusDao(),
+                appDatabase.getApprovalStatusDao(),
+                appDatabase.getStockAvailabilityStatusDao(),
+                appDatabase.getBackOrderShipmentDao(),
+                appDatabase.getCategoryOfItemsDao(),
+                appDatabase.getContactDepartmentDao(),
+                appDatabase.getContactPositionDao(),
+                appDatabase.getCustomerPaymentMethodDao(),
+                appDatabase.getCustomerPaymentConditionDao(),
+                appDatabase.getCustomerShipmentMethodDao(),
+                appDatabase.getDocumentTypeDao(),
+                appDatabase.getGroupOfCustomersDao(),
+                appDatabase.getItemUnitOfMeasureDao(),
+                appDatabase.getPostalCodesAndCitiesDao(),
+                appDatabase.getSalesDocumentConditionDao(),
+                appDatabase.getSalesDocumentTypeDao(),
+                appDatabase.getSalesPriceTypeDao(),
+                appDatabase.getSalesTypeDao(),
+                appDatabase.getVisitSubResultDao(),
+                appDatabase.getWarehouseDao(),
+                appDatabase.getSalesLeaderDirectionDao(),
+                appDatabase.getSalesLeaderSalesLevelTypeDao(),
+                appDatabase.getSalesLeaderCustomerCardColorDao(),
+                appDatabase.getDocumentVerificationStatusDao(),
+                appDatabase.getItemStatusDao(),
+                appDatabase.getUserDefinedListDao(),
+                appDatabase.getCreatedDocumentStatusDao(),
+                appDatabase.getTransactionTypeDao(),
+                appDatabase.getServiceOrdersStatusDao(),
+                appDatabase.getServiceClassificationDao(),
+                appDatabase.getServiceClassificationTypeDao(),
+                appDatabase.getUserDao(),
+                appDatabase.getGroupOfCustomersCategoryItemsDao(),
+                appDatabase.getCustomListsHeaderDao(),
+                appDatabase.getMunicipalityDao(),
+                appDatabase.getCommentSourcesDao(),
+                appDatabase.getCommentTargetsDao()
         );
     }
 

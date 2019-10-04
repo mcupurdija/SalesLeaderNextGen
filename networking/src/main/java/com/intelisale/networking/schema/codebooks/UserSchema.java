@@ -24,7 +24,7 @@ public class UserSchema {
     @JsonProperty("modifiedDate")
     private String modifiedDate;
     @JsonProperty("companyId")
-    private String companyId;
+    private String companyID;
     @JsonProperty("modifiedByUserID")
     private Integer modifiedByUserID;
     @JsonProperty("active")
@@ -83,13 +83,13 @@ public class UserSchema {
     }
 
     @JsonProperty("companyId")
-    public String getCompanyId() {
-        return companyId;
+    public String getCompanyID() {
+        return companyID;
     }
 
     @JsonProperty("companyId")
-    public void setCompanyId(String companyId) {
-        this.companyId = companyId;
+    public void setCompanyID(String companyID) {
+        this.companyID = companyID;
     }
 
     @JsonProperty("modifiedByUserID")

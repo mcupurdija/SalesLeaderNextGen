@@ -13,6 +13,7 @@ import com.intelisale.core.notifications.ToastManager;
 import com.intelisale.core.settings.SettingsManager;
 import com.intelisale.core.useCase.LoginUseCase;
 import com.intelisale.database.di.DatabaseModule;
+import com.intelisale.database.repository.SyncCodeBooksRepository;
 import com.intelisale.database.repository.SyncContactsRepository;
 import com.intelisale.database.repository.SyncCustomersRepository;
 import com.intelisale.database.repository.SyncItemsRepository;
@@ -75,6 +76,8 @@ public interface CoreComponent {
     SyncCustomersRepository syncCustomersRepository();
 
     SyncItemsRepository syncItemsRepository();
+
+    SyncCodeBooksRepository syncCodeBooksRepository();
 
     SyncContactsRepository syncContactsRepository();
 

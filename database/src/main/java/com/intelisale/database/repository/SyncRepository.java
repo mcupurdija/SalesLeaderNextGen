@@ -21,6 +21,5 @@ public class SyncRepository {
 
     public void updateProgress(int syncProgress) {
         syncStatusDao.updateProgress(groupName, syncProgress);
-
     }
 }

@@ -13,6 +13,7 @@ import com.intelisale.database.entity.CustomerPaymentConditionEntity;
 import com.intelisale.database.entity.CustomerPaymentMethodEntity;
 import com.intelisale.database.entity.CustomerShipmentMethodEntity;
 import com.intelisale.database.entity.DocumentTypeEntity;
+import com.intelisale.database.entity.DocumentVerificationStatusEntity;
 import com.intelisale.database.entity.GroupOfCustomersCategoryItemsEntity;
 import com.intelisale.database.entity.GroupOfCustomersEntity;
 import com.intelisale.database.entity.ItemStatusEntity;
@@ -50,6 +51,7 @@ import com.intelisale.networking.schema.codebooks.CustShipmentMethodSchema;
 import com.intelisale.networking.schema.codebooks.CustomListSchema;
 import com.intelisale.networking.schema.codebooks.CustomListsHeaderSchema;
 import com.intelisale.networking.schema.codebooks.DocumentTypeSchema;
+import com.intelisale.networking.schema.codebooks.DocumentVerificationStatusSchema;
 import com.intelisale.networking.schema.codebooks.GroupOfCustomersCategoryItemSchema;
 import com.intelisale.networking.schema.codebooks.GroupsOfCustomersSchema;
 import com.intelisale.networking.schema.codebooks.ItemStatusSchema;
@@ -93,6 +95,7 @@ public abstract class CodeBookMapper {
 
     @Mappings({
             @Mapping(source = "id", target = "serverID"),
+            @Mapping(source = "statusName", target = "code"),
             @Mapping(target = "sortIndex", ignore = true),
             @Mapping(target = "auditID", ignore = true)
     })
@@ -100,7 +103,8 @@ public abstract class CodeBookMapper {
     public abstract List<StockAvailabilityStatusEntity> stockAvailabilityStatusEntities(List<StockAvailabilityStatusSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "commentsSourceID", target = "serverID")
+            @Mapping(source = "commentsSourceID", target = "serverID"),
+            @Mapping(target = "id", ignore = true)
     })
     public abstract CommentSourcesEntity commentSourcesEntity(CommentsSourceSchema schema);
     public abstract List<CommentSourcesEntity> commentSourcesEntities(List<CommentsSourceSchema> schemas);
@@ -113,6 +117,7 @@ public abstract class CodeBookMapper {
 
     @Mappings({
             @Mapping(source = "id", target = "serverID"),
+            @Mapping(source = "parentID", target = "parentGroupOfCustomerID"),
             @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract GroupOfCustomersEntity groupOfCustomersEntity(GroupsOfCustomersSchema schema);
@@ -137,7 +142,11 @@ public abstract class CodeBookMapper {
     public abstract List<SalesLeaderSalesLevelTypeEntity> salesLeaderSalesLevelTypeEntities(List<SLSalesLevelTypeSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "tagID", target = "serverID")
+            @Mapping(source = "tagID", target = "serverID"),
+            @Mapping(source = "name", target = "description"),
+            @Mapping(target = "id", ignore = true),
+            @Mapping(target = "code", ignore = true),
+            @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract TagEntity tagEntity(TagSchema schema);
     public abstract List<TagEntity> tagEntities(List<TagSchema> schemas);
@@ -168,6 +177,9 @@ public abstract class CodeBookMapper {
 
     @Mappings({
             @Mapping(source = "municipalityID", target = "serverID"),
+            @Mapping(source = "municipalityCode", target = "code"),
+            @Mapping(source = "municipalityName", target = "description"),
+            @Mapping(target = "id", ignore = true),
             @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract MunicipalityEntity municipalityEntity(MunicipalitySchema schema);
@@ -198,10 +210,11 @@ public abstract class CodeBookMapper {
     public abstract List<PostalCodesAndCitiesEntity> postalCodesAndCitiesEntities(List<PostalCodesAndCitySchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract ItemUnitOfMeasureEntity itemUnitOfMeasureEntity(ItemUnitOfMeasuresSchema schema);
-    public abstract List<ItemUnitOfMeasureEntity> itemUnitOfMeasureEntity(List<ItemUnitOfMeasuresSchema> schemas);
+    public abstract List<ItemUnitOfMeasureEntity> itemUnitOfMeasureEntities(List<ItemUnitOfMeasuresSchema> schemas);
 
     @Mappings({
             @Mapping(source = "id", target = "serverID")
@@ -210,7 +223,8 @@ public abstract class CodeBookMapper {
     public abstract List<WarehouseEntity> warehouseEntities(List<WarehouseSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "commentsTargetID", target = "serverID")
+            @Mapping(source = "commentsTargetID", target = "serverID"),
+            @Mapping(target = "id", ignore = true)
     })
     public abstract CommentTargetsEntity commentTargetsEntity(CommentsTargetSchema schema);
     public abstract List<CommentTargetsEntity> commentTargetsEntities(List<CommentsTargetSchema> schemas);
@@ -235,13 +249,15 @@ public abstract class CodeBookMapper {
     public abstract List<UserDefinedListEntity> userDefinedListEntities(List<CustomListSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract SalesLeaderCustomerCardColorEntity salesLeaderCustomerCardColorEntity(SLCustomerCardColorSchema schema);
     public abstract List<SalesLeaderCustomerCardColorEntity> salesLeaderCustomerCardColorEntities(List<SLCustomerCardColorSchema> schemas);
 
     @Mappings({
             @Mapping(source = "id", target = "serverID"),
+            @Mapping(source = "parentID", target = "parentCategoryOfItemsID"),
             @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract CategoryOfItemsEntity categoryOfItemsEntity(CategoriesOfItemSchema schema);
@@ -254,7 +270,8 @@ public abstract class CodeBookMapper {
     public abstract List<CustomerPaymentConditionEntity> customerPaymentConditionEntities(List<CustPaymentConditionSchema> schemas);
 
     @Mappings({
-            @Mapping(source = "id", target = "serverID")
+            @Mapping(source = "id", target = "serverID"),
+            @Mapping(target = "sortIndex", ignore = true)
     })
     public abstract ItemStatusEntity itemStatusEntity(ItemStatusSchema schema);
     public abstract List<ItemStatusEntity> itemStatusEntities(List<ItemStatusSchema> schemas);
@@ -309,4 +326,10 @@ public abstract class CodeBookMapper {
     })
     public abstract CustomListsHeaderEntity customListsHeaderEntity(CustomListsHeaderSchema schema);
     public abstract List<CustomListsHeaderEntity> customListsHeaderEntities(List<CustomListsHeaderSchema> schemas);
+
+    @Mappings({
+            @Mapping(source = "id", target = "serverID")
+    })
+    public abstract DocumentVerificationStatusEntity documentVerificationStatusEntity(DocumentVerificationStatusSchema schema);
+    public abstract List<DocumentVerificationStatusEntity> documentVerificationStatusEntities(List<DocumentVerificationStatusSchema> schemas);
 }

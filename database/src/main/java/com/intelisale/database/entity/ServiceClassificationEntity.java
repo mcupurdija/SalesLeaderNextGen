@@ -9,13 +9,13 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = TableNames.SERVICE_CLASSIFICATION, indices = {@Index(value = "serverID", unique = true)})
 public class ServiceClassificationEntity extends CodeBookColumns {
 
-    private Integer serviceClassificationTypeId;
+    private Integer serviceClassificationTypeID;
 
-    public Integer getServiceClassificationTypeId() {
-        return serviceClassificationTypeId;
+    public Integer getServiceClassificationTypeID() {
+        return serviceClassificationTypeID;
     }
 
-    public void setServiceClassificationTypeId(Integer serviceClassificationTypeId) {
-        this.serviceClassificationTypeId = serviceClassificationTypeId;
+    public void setServiceClassificationTypeID(Integer serviceClassificationTypeID) {
+        this.serviceClassificationTypeID = serviceClassificationTypeID;
     }
 }

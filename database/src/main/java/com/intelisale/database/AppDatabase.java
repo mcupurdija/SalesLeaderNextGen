@@ -281,7 +281,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract ContactDepartmentDao getContactDepartmentDao();
 
-    public abstract ContactPositionDao getPositionDao();
+    public abstract ContactPositionDao getContactPositionDao();
 
     public abstract CreatedDocumentStatusDao getCreatedDocumentStatusDao();
 

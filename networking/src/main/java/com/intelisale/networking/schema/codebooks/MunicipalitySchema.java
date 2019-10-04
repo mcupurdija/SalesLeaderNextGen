@@ -64,13 +64,13 @@ public class MunicipalitySchema {
     }
 
     @JsonProperty("municipalityCode1")
-    public String getMunicipalityCode1() {
+    public String getMunicipalityCode() {
         return municipalityCode;
     }
 
     @JsonProperty("municipalityCode1")
-    public void setMunicipalityCode1(String municipalityCode1) {
-        this.municipalityCode = municipalityCode1;
+    public void setMunicipalityCode(String municipalityCode) {
+        this.municipalityCode = municipalityCode;
     }
 
     @JsonProperty("municipalityName")

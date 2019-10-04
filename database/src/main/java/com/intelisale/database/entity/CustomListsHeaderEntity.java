@@ -9,24 +9,24 @@ import com.intelisale.database.entity.column.CodeBookColumns;
 @Entity(tableName = TableNames.CUSTOM_LISTS_HEADERS, indices = {@Index(value = "serverID", unique = true)})
 public class CustomListsHeaderEntity extends CodeBookColumns {
 
-    private Integer salesLeaderSalesLevelTypeId;
-    private Integer salesLevelId;
+    private Integer salesLeaderSalesLevelTypeID;
+    private Integer salesLevelID;
     private Boolean forAllUsers;
 
-    public Integer getSalesLeaderSalesLevelTypeId() {
-        return salesLeaderSalesLevelTypeId;
+    public Integer getSalesLeaderSalesLevelTypeID() {
+        return salesLeaderSalesLevelTypeID;
     }
 
-    public void setSalesLeaderSalesLevelTypeId(Integer salesLeaderSalesLevelTypeId) {
-        this.salesLeaderSalesLevelTypeId = salesLeaderSalesLevelTypeId;
+    public void setSalesLeaderSalesLevelTypeID(Integer salesLeaderSalesLevelTypeID) {
+        this.salesLeaderSalesLevelTypeID = salesLeaderSalesLevelTypeID;
     }
 
-    public Integer getSalesLevelId() {
-        return salesLevelId;
+    public Integer getSalesLevelID() {
+        return salesLevelID;
     }
 
-    public void setSalesLevelId(Integer salesLevelId) {
-        this.salesLevelId = salesLevelId;
+    public void setSalesLevelID(Integer salesLevelID) {
+        this.salesLevelID = salesLevelID;
     }
 
     public Boolean isForAllUsers() {

@@ -6,29 +6,29 @@ import androidx.room.Index;
 import com.intelisale.database.TableNames;
 import com.intelisale.database.entity.column.CodeBookColumns;
 
-@Entity(tableName = TableNames.USER_DEFINED_LISTS, indices = {@Index(value = {"listId", "customerId"}, unique = true)})
+@Entity(tableName = TableNames.USER_DEFINED_LISTS, indices = {@Index(value = {"listID", "customerID"}, unique = true)})
 public class UserDefinedListEntity extends CodeBookColumns {
 
-    private Integer listId;
-    private Integer customerId;
+    private Integer listID;
+    private Integer customerID;
     private String listName;
     private String specialType;
     private Boolean listEditable;
 
-    public Integer getListId() {
-        return listId;
+    public Integer getListID() {
+        return listID;
     }
 
-    public void setListId(Integer listId) {
-        this.listId = listId;
+    public void setListID(Integer listID) {
+        this.listID = listID;
     }
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerID(Integer customerID) {
+        this.customerID = customerID;
     }
 
     public String getListName() {

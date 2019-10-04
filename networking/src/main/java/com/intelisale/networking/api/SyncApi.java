@@ -1,6 +1,7 @@
 package com.intelisale.networking.api;
 
 import com.intelisale.networking.schema.BaseSchema;
+import com.intelisale.networking.schema.codebooks.SyncCodeBooksResponseSchema;
 import com.intelisale.networking.schema.contacts.SyncContactsResponseSchema;
 import com.intelisale.networking.schema.customers.SyncCustomersResponseSchema;
 import com.intelisale.networking.schema.items.SyncItemsResponseSchema;
@@ -22,10 +23,13 @@ public interface SyncApi {
     Call<BaseSchema<SyncCustomersResponseSchema>> syncCustomers(@Path("financialEntityId") int financialEntityId, @Body List<SyncSchema> syncRequest);
 
     @POST("api/{financialEntityId}/SyncData")
+    Call<BaseSchema<SyncContactsResponseSchema>> syncContacts(@Path("financialEntityId") int financialEntityId, @Body List<SyncSchema> syncRequest);
+
+    @POST("api/{financialEntityId}/SyncData")
     Call<BaseSchema<SyncItemsResponseSchema>> syncItems(@Path("financialEntityId") int financialEntityId, @Body List<SyncSchema> syncRequest);
 
     @POST("api/{financialEntityId}/SyncData")
-    Call<BaseSchema<SyncContactsResponseSchema>> syncContacts(@Path("financialEntityId") int financialEntityId, @Body List<SyncSchema> syncRequest);
+    Call<BaseSchema<SyncCodeBooksResponseSchema>> syncCodeBooks(@Path("financialEntityId") int financialEntityId, @Body List<SyncSchema> syncRequest);
 
     @POST("api/{financialEntityId}/SyncData")
     Call<BaseSchema<SyncNotesResponseSchema>> syncNotes(@Path("financialEntityId") int financialEntityId, @Body List<SyncSchema> syncRequest);
